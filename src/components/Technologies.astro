@@ -113,17 +113,14 @@
 </div>
 
 <script>
-const hero = document.getElementById('icons')
-const svgs = Array.from(hero.querySelectorAll('svg'))
-
 document.addEventListener('DOMContentLoaded', () => {
-  const icons = document.querySelectorAll('#icons > svg');
+  const icons = document.querySelectorAll('#icons > svg') as NodeListOf<SVGElement>;
   const container = document.getElementById('icons');
-
-  function animateIcon(icon) {
+  
+  function animateIcon(icon: SVGElement) {
+    if (!container) return;
     const startX = Math.random() * (container.clientWidth - icon.clientWidth);
     const startY = Math.random() * (container.clientHeight - icon.clientHeight);
-    const endY = container.clientHeight;
 
     icon.style.left = `${startX}px`;
     icon.style.top = `${startY}px`;

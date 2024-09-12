@@ -2,10 +2,13 @@
 import Logo from "../components/Logo.astro"
 import Layout from "../layouts/Layout.astro"
 import Footer from "../components/Footer.astro"
+import Technologies from "@components/Technologies.astro"
+import YellowBackground from "@components/YellowBackground.astro"
 ---
 
 <Layout title="JSConf España 2024">
-  <div class="w-screen min-h-1/2 pb-10 text-black font-sans bg-yellow-300">
+  <YellowBackground>
+  <div class="w-screen min-h-1/2 pb-10 text-black font-sans relative">
     <div class="container mx-auto">
       <header class="mx-auto px-4 py-6 flex justify-between items-center">
         <div class="flex items-center space-x-4">
@@ -28,7 +31,7 @@ import Footer from "../components/Footer.astro"
       <main class="container mx-auto px-4 py-48 text-center">
         <h2 class="text-6xl md:text-7xl lg:text-9xl font-bold mb-2">JSConf España</h2>
         <div class="space-y-4 mb-12">
-          <p class="bg-yellow-300 text-black text-xl font-bold inline-block px-4 py-2">Conferencia internacional de JavaScript</p>
+          <p class="text-black text-xl font-bold inline-block px-4 py-2">Conferencia internacional de JavaScript</p>
         </div>
         <div class="flex flex-col gap-2">
           <div>
@@ -51,7 +54,9 @@ import Footer from "../components/Footer.astro"
         </div>
       </footer>
     </div>
+    <Technologies />
   </div>
+</YellowBackground>
 
   <div class="w-screen py-10 pb-48 text-white font-sans bg-black">
     <div class="container mx-auto">
@@ -83,7 +88,7 @@ import Footer from "../components/Footer.astro"
                       <img class="p-4 w-full rounded-lg" src="/javi-velasco.jpeg" alt="Javi Velasco">
                   </a>
                   <div class="px-5 pb-5">
-                      <h3 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                      <h3 class="text-2xl font-bold tracking-tight text-white">
                           <a href="https://x.com/javivelasco">Javier Velasco</a>
                       </h3>
                       <span class="text-yellow-300">Tech Lead @vercel</span>
@@ -91,12 +96,12 @@ import Footer from "../components/Footer.astro"
                       <ul class="flex space-x-4 sm:mt-0 items-center">
                           
                           <li>
-                              <a href="https://x.com/javivelasco" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                              <a href="https://x.com/javivelasco" class="text-gray-500 hover:hover:text-white">
                                 <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="1200" height="1227" fill="none" viewBox="0 0 1200 1227"><path fill="currentColor" d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"/></svg>
                               </a>
                           </li>
                           <li>
-                              <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                              <a href="#" class="text-gray-500 hover:hover:text-white">
                                 <svg
                                 class="w-6 h-6"
                                 viewBox="0 0 256 250"
@@ -120,7 +125,7 @@ import Footer from "../components/Footer.astro"
                       <img class="p-4 w-full rounded-lg" src="/carmen-ansio.webp" alt="Carmen Ansio">
                   </a>
                   <div class="px-5 pb-5">
-                      <h3 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                      <h3 class="text-2xl font-bold tracking-tight text-white">
                           <a href="https://x.com/carmenansio">Carmen Ansio</a>
                       </h3>
                       <span class="text-yellow-300">Design Engineer @LottieFiles</span>
@@ -128,12 +133,12 @@ import Footer from "../components/Footer.astro"
                       <ul class="flex space-x-4 sm:mt-0 items-center">
                           
                           <li>
-                              <a href="https://x.com/carmenansio" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                              <a href="https://x.com/carmenansio" class="text-gray-500 hover:hover:text-white">
                                 <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="1200" height="1227" fill="none" viewBox="0 0 1200 1227"><path fill="currentColor" d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"/></svg>
                               </a>
                           </li>
                           <li>
-                              <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                              <a href="#" class="text-gray-500 hover:hover:text-white">
                                 <svg
                                 class="w-6 h-6"
                                 viewBox="0 0 256 250"
@@ -164,7 +169,7 @@ import Footer from "../components/Footer.astro"
         <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
             <img class="w-full rounded" src="/midudev.webp" alt="Midudev"> 
             <div class="mt-4 md:mt-0">
-                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Presentado por midudev</h2>
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">Presentado por midudev</h2>
                 <p class="mb-6 font-light text-gray-50 md:text-lg dark:text-gray-200">¡midudev será el maestro de ceremonias del evento! Estará dinamizando toda la jornada en el auditorio</p>
                 <a href="https://twitch.tv/midudev" target="_blank" rel="noreferrer nofollow" class="inline-flex items-center bg-yellow-400 text-black hover:scale-105 transition focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
                     ¿Quién es midudev?
@@ -177,7 +182,7 @@ import Footer from "../components/Footer.astro"
         <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
             
             <div class="mt-4 md:mt-0">
-                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">¿Por qué asistir?</h2>
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">¿Por qué asistir?</h2>
                 <p class="mb-6 font-light text-gray-50 md:text-lg dark:text-gray-200 text-pretty">¡Más de 500 personas para hacer networking, charlas top internacionales, talleres, café y comida incluida y muchas sorpresas y sorteos!</p>
                 <a href="https://ti.to/js-conf/js-conf-2025/with/earlybird" class="inline-flex items-center bg-yellow-400 text-black hover:scale-105 transition focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
                     Quiero mi entrada
@@ -191,7 +196,7 @@ import Footer from "../components/Footer.astro"
         <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
             <img class="w-full rounded" src="/auditorio.jpg" alt="Auditorio">
             <div class="mt-4 md:mt-0">
-                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Un espacio para todos</h2>
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">Un espacio para todos</h2>
                 <p class="mb-6 font-light text-gray-50 md:text-lg dark:text-gray-200">La JSConf España se celebra en La Nave de Madrid, un lugar con espacio para poder reunir a todos los participantes de la comunidad JavaScript.</p>
                 <a href="https://maps.app.goo.gl/AWd5ohsAqWvzc7En7" class="inline-flex items-center bg-yellow-400 text-black hover:scale-105 transition focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
                     ¿Cómo se llega?

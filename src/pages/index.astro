@@ -35,9 +35,11 @@ import YellowBackground from "@components/YellowBackground.astro"
         </div>
         <div class="flex flex-col gap-2">
           <div>
-            <a href="https://ti.to/js-conf/js-conf-2025/with/earlybird" target="_blank" class="bg-white border-4 border-black text-black font-bold text-xl px-8 py-3 rounded-full hover:bg-opacity-90 duration-300 hover:scale-110 transition uppercase inline-block">
-              ¡Consigue tu ticket!
-            </a>
+            <tito-button event="js-conf/js-conf-2025" discount-code="MIDUCONF">
+            <button class="bg-white border-4 border-black text-black font-bold text-xl px-8 py-3 rounded-full hover:bg-opacity-90 duration-300 hover:scale-110 transition uppercase inline-block">
+                ¡Consigue tu entrada!
+            </button>
+            </tito-button>
           </div>
         <small>¡Sólo por hoy! Usa cupón "MIDUCONF" para descuento especial</small>
       </div>
@@ -64,6 +66,7 @@ import YellowBackground from "@components/YellowBackground.astro"
         <h2 class="text-4xl font-bold text-center text-white md:text-6xl">Patrocinadores</h2>
         <p class="max-w-xl text-2xl text-white/80 text-center [text-wrap:balance] mt-4">¡Gracias a ellos hacemos posible el evento!</p>
         <div class="relative flex flex-col items-center justify-center w-full h-full gap-4 py-20 overflow-hidden rounded-lg max-w-screen-base bg-background">
+          <a href='https://midu.link/keepcoding' class="hover:scale-105 transition" target="_blank" rel="noopener"></a>
           <img src="/keepcoding.webp" alt="KeepCoding" class="w-full h-full object-cover max-w-2xl mx-auto">
           <span class="text-base opacity-70">Los mejores bootcamps online</span>
         </div>

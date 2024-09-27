@@ -1,0 +1,11 @@
+---
+const { link, text, type } = Astro.props;
+
+const yellow = "inline-flex items-center bg-yellow-400 text-black hover:bg-yellow-400/60 text-black font-bold text-lg px-8 py-3 rounded-full hover:bg-opacity-90 hover:scale-105 transition"
+const white = "inline-flex items-center bg-white text-black font-bold text-lg px-8 py-3 rounded-full hover:bg-opacity-90 hover:scale-105 transition"
+---
+
+<a href={link} class={type === "yellow" ? yellow : white}>
+  {text}
+  <slot name="icon"></slot>
+</a>

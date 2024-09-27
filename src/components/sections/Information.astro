@@ -1,27 +1,30 @@
+---
+import Button from "@components/Button.astro";
+import ArrowRightIcon from "@assets/icons/ArrowRight.astro"
+---
+
 <div class="w-screen min-h-screen py-10 text-white font-sans bg-slate-900">
   <div class="container mx-auto">
     <section class="">
       <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
           <img class="w-full rounded" src="/midudev.jpg" alt="Midudev">
           <div class="mt-4 md:mt-0">
-              <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">Presentado por midudev</h2>
-              <p class="mb-6 font-light text-gray-50 md:text-lg dark:text-gray-200">¡midudev será el maestro de ceremonias del evento! Estará dinamizando toda la jornada en el auditorio</p>
-              <a href="https://twitch.tv/midudev" target="_blank" rel="noreferrer nofollow" class="inline-flex items-center bg-yellow-400 text-black hover:scale-105 transition focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
-                  ¿Quién es midudev?
-                  <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-              </a>
+              <h2 class="mb-4 text-4xl tracking-tight font-bold text-white">Presentado por midudev</h2>
+              <p class="mb-6 font-medium text-gray-400 md:text-lg">¡midudev será el maestro de ceremonias del evento! Estará dinamizando toda la jornada en el auditorio</p>
+              <Button link="https://twitch.tv/midudev" text="¿Quién es midudev?" type="yellow">
+                <ArrowRightIcon slot="icon" />
+              </Button>
           </div>
       </div>
     </section>
     <section class="">
       <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
           <div class="mb-6 md:mb-0">
-              <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">¿Por qué asistir?</h2>
-              <p class="mb-6 font-light text-gray-50 md:text-lg dark:text-gray-200 text-pretty">¡Más de 500 personas para hacer networking, charlas top internacionales, talleres, café y comida incluida y muchas sorpresas y sorteos!</p>
-              <a href="https://ti.to/js-conf/js-conf-2025/with/earlybird" class="inline-flex items-center bg-yellow-400 text-black hover:scale-105 transition focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
-                  Quiero mi entrada
-                  <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-              </a>
+              <h2 class="mb-4 text-4xl tracking-tight font-bold text-white">¿Por qué asistir?</h2>
+              <p class="mb-6 font-medium text-gray-400 md:text-lg text-pretty">¡Más de 500 personas para hacer networking, charlas top internacionales, talleres, café y comida incluida y muchas sorpresas y sorteos!</p>
+              <Button link="https://ti.to/js-conf/js-conf-2025/with/earlybird" text="Quiero mi entrada" type="yellow">
+                <ArrowRightIcon slot="icon" />
+              </Button>
           </div>
           <img class="w-full rounded" src="/networking.jpg" alt="Auditorio">
       </div>
@@ -30,12 +33,11 @@
       <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
           <img class="w-full rounded" src="/auditorio.jpg" alt="Auditorio">
           <div class="mt-4 md:mt-0">
-              <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">Un espacio para todos</h2>
-              <p class="mb-6 font-light text-gray-50 md:text-lg dark:text-gray-200">La JSConf España se celebra en La Nave de Madrid, un lugar con espacio para poder reunir a todos los participantes de la comunidad JavaScript.</p>
-              <a href="https://maps.app.goo.gl/AWd5ohsAqWvzc7En7" class="inline-flex items-center bg-yellow-400 text-black hover:scale-105 transition focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
-                  ¿Cómo se llega?
-                  <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-              </a>
+              <h2 class="mb-4 text-4xl tracking-tight font-bold text-white">Un espacio para todos</h2>
+              <p class="mb-6 font-medium text-gray-400 md:text-lg">La JSConf España se celebra en La Nave de Madrid, un lugar con espacio para poder reunir a todos los participantes de la comunidad JavaScript.</p>
+              <Button link="https://maps.app.goo.gl/AWd5ohsAqWvzc7En7" text="¿Cómo se llega?" type="yellow">
+                <ArrowRightIcon slot="icon" />
+              </But>
           </div>
       </div>
     </section>

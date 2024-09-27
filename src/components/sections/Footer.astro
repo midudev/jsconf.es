@@ -1,0 +1,52 @@
+---
+import TwitchIcon from "@assets/icons/Twitch.astro";
+import TwitterIcon from "@assets/icons/Twitter.astro";
+
+const socialLinks = [
+  {
+    name: "Twitch",
+    url: "https://twitch.tv/midudev",
+    svg: TwitchIcon
+  },
+  {
+    name: "Twitter",
+    url: "https://twitter.com/midudev",
+    svg: TwitterIcon
+  },
+];
+---
+
+<div class="container mx-auto text-center text-white">
+  <div class="flex flex-col items-center">
+    <div class="mb-4 mt-4 ml-12 flex items-center gap-1">
+      <span class="text-sm opacity-55">Una iniciativa de</span>
+      <a
+        href="https://midu.dev"
+        target="_blank"
+        rel="noreferrer"
+        title="Ir a la página de midudev"
+      >
+        <img
+          class="w-fit h-6"
+          alt="Logo de midudev"
+          src="https://midu.dev/logo.png"
+          width="28"
+          height="28"
+          loading="lazy"
+        />
+      </a>
+    </div>
+  </div>
+  <div class="flex place-content-center gap-2">
+    <p class="flex flex-col items-center gap-x-1 text-md text-gray-500">
+      <span class="text-sm text-white/55">Sígueme en</span>
+      <div class="flex flex-row items-center gap-2">
+        {socialLinks.map((link) => (
+          <a href={link.url}>
+            <link.svg />
+          </a>
+        ))}
+      </div>
+    </p>
+  </div>
+</div>

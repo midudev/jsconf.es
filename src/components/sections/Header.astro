@@ -1,0 +1,36 @@
+---
+import Logo from "../../assets/Logo.astro"
+
+import SpeakersIcon from "@assets/icons/Speakers.astro"
+import SponsorsIcon from "@assets/icons/Sponsors.astro"
+import AgendaIcon from "@assets/icons/Agenda.astro"
+
+const pages = [
+  { title: "Patrocinadores", href: "#sponsors", icon: SponsorsIcon },
+  { title: "Speakers", href: "#speakers", icon: SpeakersIcon },
+  { title: "Agenda", href: "#agenda", icon: AgendaIcon, disabled: true },
+]
+---
+
+<header class="mx-auto px-4 py-6 flex justify-between items-center">
+  <div class="flex items-center space-x-4">
+    <Logo />
+    <div>
+      <h1 class="font-bold text-3xl">JSConf España 2025</h1>
+      <p class="text-sm">1 Marzo 2025</p>
+    </div>
+  </div>
+  <nav class="hidden md:flex space-x-6">
+    <ul class="flex flex-col items-center overflow-x-auto overflow-y-hidden md:overflow-hidden md:flex-row">
+      {pages.map((page) => {
+        const { href, title, disabled } = page;
+        return (
+          <li class="flex justify-center w-full first:mt-5 md:first:mt-0 md:block md:w-auto">
+            <a href={href} class={`${disabled ? "opacity-50 pointer-events-none" : ""} flex items-center justify-center w-full gap-1 px-5 py-4 text-xl duration-300 md:w-auto md:py-2 md:text-base`}>
+              <page.icon /> {title}
+            </a>
+          </li>
+        )
+      })}
+  </nav>
+</header>

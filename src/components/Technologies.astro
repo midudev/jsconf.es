@@ -1,4 +1,4 @@
-<div class='absolute inset-0  pointer-events-none'>
+<div class='absolute inset-0 pointer-events-none'>
 	<div
 		id='icons'
 		class='relative [&>svg]:p-4 [&>svg]:w-24 [&>svg]:h-24 [&>svg]:fill-current [&>svg]:opacity-0 [&>svg]:absolute h-full'
@@ -116,7 +116,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const icons = document.querySelectorAll('#icons > svg') as NodeListOf<SVGElement>;
   const container = document.getElementById('icons');
-  
+
   function animateIcon(icon: SVGElement) {
     if (!container) return;
     const startX = Math.random() * (container.clientWidth - icon.clientWidth);

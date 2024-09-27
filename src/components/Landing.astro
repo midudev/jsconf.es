@@ -1,0 +1,44 @@
+---
+import YellowBackground from "@components/YellowBackground.astro"
+
+import Header from "./Header.astro"
+import Technologies from "@components/Technologies.astro"
+---
+
+<YellowBackground>
+  <div class="w-screen min-h-1/2 pb-10 text-black font-sans relative">
+    <div class="container mx-auto">
+      <Header />
+      <main class="container mx-auto px-4 py-48 text-center">
+        <h2 class="text-6xl md:text-7xl lg:text-9xl font-bold mb-2">JSConf España</h2>
+        <div class="space-y-4 mb-12">
+          <p class="text-black text-xl font-bold inline-block px-4 py-2">Conferencia internacional de JavaScript</p>
+        </div>
+        <div class="flex flex-col gap-6">
+          <div class="flex gap-6 justify-center items-center flex-col md:flex-row">
+            <tito-button event="js-conf/js-conf-2025" discount-code="EARLY">
+            <button class="bg-white border-4 border-black text-black font-bold text-xl px-8 py-3 rounded-full hover:bg-opacity-90 duration-300 hover:scale-110 transition uppercase inline-block">
+                ¡Consigue tu entrada!
+            </button>
+            </tito-button>
+            <a href="https://tally.so/r/3xyl4v" target="_blank" rel="noopener" class="bg-yellow-100 border-4 border-black text-black font-bold text-xl px-8 py-3 rounded-full hover:bg-opacity-90 duration-300 hover:scale-110 transition uppercase inline-block">
+              Envía propuesta de charla
+            </a>
+          </div>
+      </div>
+      </main>
+
+      <footer class="container mx-auto px-4 py-8 flex justify-between items-center gap-x-2">
+        <div class="flex flex-col">
+          <span class="text-xl md:text-2xl opacity-80">¿Cuándo?</span>
+          <span class="text-2xl md:text-4xl font-bold opacity-90">1 de Marzo 2025</span>
+        </div>
+        <div class="flex flex-col text-right">
+          <span class="text-xl md:text-2xl opacity-80">¿Dónde?</span>
+          <span class="text-2xl md:text-4xl font-bold opacity-90">La Nave, Madrid</span>
+        </div>
+      </footer>
+    </div>
+    <Technologies />
+  </div>
+</YellowBackground>

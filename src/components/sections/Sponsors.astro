@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets"
+
+const sponsors = [
+  {
+    name: "KeepCoding",
+    description: "Los mejores bootcamps online",
+    image: "/keepcoding.webp",
+    url: "https://midu.link/keepcoding"
+  }
+]
+---
+
+<div class="w-screen py-10 pb-48 text-white font-sans bg-black">
+  <div class="container mx-auto">
+    <section id="patrocinadores" class="flex flex-col flex-wrap items-center justify-center px-4 pt-32">
+      <h2 class="text-4xl font-bold text-center text-white md:text-6xl">Patrocinadores</h2>
+      <p class="text-xl text-white/80 text-center [text-wrap:balance] mt-4">¡Gracias a ellos hacemos posible el evento!</p>
+      <ul>
+        {sponsors.map((sponsor) => {
+          const { name, description, image, url } = sponsor;
+          return (
+            <li>
+              <div class="relative flex flex-col items-center justify-center w-full h-full gap-4 py-20 overflow-hidden rounded-lg max-w-screen-base bg-background">
+                <a href={url} class="hover:scale-105 transition" target="_blank" rel="noopener"></a>
+                <Image class="w-4xl object-cover pointer-events-none mb-4" width={600} height={250} src={image} alt={name} format="webp" alt={name} />
+                {description && (
+                  <span class="text-base opacity-70">{description}</span>
+                )}
+              </div>
+            </li>
+          )
+        })}
+      </ul>
+      <a href="mailto:miduga@gmail.com" target="_blank" class="bg-white border-4 border-black text-black font-bold text-xl px-8 py-3 rounded-full hover:bg-opacity-90 duration-300 hover:scale-110 transition uppercase inline-block">
+        ¡Quiero patrocinar!
+      </a>
+    </section>
+  </div>
+</div>

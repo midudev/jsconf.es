@@ -6,7 +6,7 @@ import Technologies from "@components/Technologies.astro"
 import YellowBackground from "@components/YellowBackground.astro"
 ---
 
-<Layout title="JSConf España 2024">
+<Layout title="JSConf España 2025 - Conferencia presencial de programación de JavaScript">
   <YellowBackground>
   <div class="w-screen min-h-1/2 pb-10 text-black font-sans relative">
     <div class="container mx-auto">
@@ -68,8 +68,9 @@ import YellowBackground from "@components/YellowBackground.astro"
         <h2 class="text-4xl font-bold text-center text-white md:text-6xl">Patrocinadores</h2>
         <p class="max-w-xl text-2xl text-white/80 text-center [text-wrap:balance] mt-4">¡Gracias a ellos hacemos posible el evento!</p>
         <div class="relative flex flex-col items-center justify-center w-full h-full gap-4 py-20 overflow-hidden rounded-lg max-w-screen-base bg-background">
-          <a href='https://midu.link/keepcoding' class="hover:scale-105 transition" target="_blank" rel="noopener"></a>
-          <img src="/keepcoding.webp" alt="KeepCoding" class="w-full h-full object-cover max-w-2xl mx-auto">
+          <a href='https://midu.link/keepcoding' class="hover:scale-105 transition" target="_blank" rel="noopener">
+            <img src="/keepcoding.webp" alt="KeepCoding" class="w-full h-full object-cover max-w-2xl mx-auto">
+          </a>
           <span class="text-base opacity-70">Los mejores bootcamps online</span>
         </div>
         <a href="mailto:miduga@gmail.com" target="_blank" class="bg-white border-4 border-black text-black font-bold text-xl px-8 py-3 rounded-full hover:bg-opacity-90 duration-300 hover:scale-110 transition uppercase inline-block">
@@ -85,7 +86,7 @@ import YellowBackground from "@components/YellowBackground.astro"
         <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
           <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
             <h2 class="text-4xl font-bold text-center text-black md:text-6xl">¡Speakers!</h2>
-            <p class="max-w-xl text-2xl text-black/80 text-center [text-wrap:balance] mt-4">¡Aprende del mejor talento de la comunidad hispana!</p>
+            <p class="max-w-full text-2xl text-black/80 text-center [text-wrap:balance] mt-4">¡Aprende del mejor talento de la comunidad hispana!</p>
           </div> 
           <div class="grid gap-6 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
               <article class="bg-slate-950 text-white rounded-sm ">
@@ -93,7 +94,7 @@ import YellowBackground from "@components/YellowBackground.astro"
                       <img class="p-4 w-full rounded-lg" src="/javi-velasco.jpeg" alt="Javi Velasco">
                   </a>
                   <div class="px-5 pb-5">
-                      <h3 class="text-2xl font-bold tracking-tight text-white">
+                      <h3 class="text-2xl font-bold tracking-tight text-white hover:underline">
                           <a href="https://x.com/javivelasco">Javier Velasco</a>
                       </h3>
                       <span class="text-yellow-300">Tech Lead @vercel</span>
@@ -101,12 +102,12 @@ import YellowBackground from "@components/YellowBackground.astro"
                       <ul class="flex space-x-4 sm:mt-0 items-center">
                           
                           <li>
-                              <a href="https://x.com/javivelasco" class="text-gray-500 hover:hover:text-white">
+                              <a href="https://x.com/javivelasco" class="text-gray-500 hover:hover:text-white" aria-label="X (Twitter)">
                                 <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="1200" height="1227" fill="none" viewBox="0 0 1200 1227"><path fill="currentColor" d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"/></svg>
                               </a>
                           </li>
                           <li>
-                              <a href="https://github.com/javivelasco" class="text-gray-500 hover:hover:text-white">
+                              <a href="https://github.com/javivelasco" class="text-gray-500 hover:hover:text-white" aria-label="Github">
                                 <svg
                                 class="w-6 h-6"
                                 viewBox="0 0 256 250"
@@ -130,7 +131,7 @@ import YellowBackground from "@components/YellowBackground.astro"
                       <img class="p-4 w-full rounded-lg" src="/carmen-ansio.webp" alt="Carmen Ansio">
                   </a>
                   <div class="px-5 pb-5">
-                      <h3 class="text-2xl font-bold tracking-tight text-white">
+                      <h3 class="text-2xl font-bold tracking-tight text-white hover:underline">
                           <a href="https://x.com/carmenansio">Carmen Ansio</a>
                       </h3>
                       <span class="text-yellow-300">Design Engineer @LottieFiles</span>
@@ -138,12 +139,12 @@ import YellowBackground from "@components/YellowBackground.astro"
                       <ul class="flex space-x-4 sm:mt-0 items-center">
                           
                           <li>
-                              <a href="https://x.com/carmenansio" class="text-gray-500 hover:hover:text-white">
+                              <a href="https://x.com/carmenansio" class="text-gray-500 hover:hover:text-white" aria-label="X (Twitter)">
                                 <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="1200" height="1227" fill="none" viewBox="0 0 1200 1227"><path fill="currentColor" d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"/></svg>
                               </a>
                           </li>
                           <li>
-                              <a href="https://github.com/carmenansio" class="text-gray-500 hover:hover:text-white">
+                              <a href="https://github.com/carmenansio" class="text-gray-500 hover:hover:text-white" aria-label="Github">
                                 <svg
                                 class="w-6 h-6"
                                 viewBox="0 0 256 250"

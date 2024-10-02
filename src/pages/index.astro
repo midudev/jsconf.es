@@ -1,79 +1,226 @@
 ---
-import Logo from "../components/Logo.astro"
-import Layout from "../layouts/Layout.astro"
-import Footer from "../components/Footer.astro"
-import Technologies from "@components/Technologies.astro"
-import YellowBackground from "@components/YellowBackground.astro"
+import Logo from "../components/Logo.astro";
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import Technologies from "@components/Technologies.astro";
+import YellowBackground from "@components/YellowBackground.astro";
 ---
 
-<Layout title="JSConf España 2025 - Conferencia presencial de programación de JavaScript">
+<Layout
+  title="JSConf España 2025 - Conferencia presencial de programación de JavaScript"
+>
   <YellowBackground>
-  <div class="w-screen min-h-1/2 pb-10 text-black font-sans relative">
-    <div class="container mx-auto">
-      <header class="mx-auto px-4 py-6 flex justify-between items-center">
-        <div class="flex items-center space-x-4">
-          <Logo />
-          <div>
-            <h1 class="font-bold text-3xl">JSConf España 2025</h1>
-            <p class="text-sm">1 MARZO 2025</p>
+    <div class="w-screen min-h-1/2 pb-10 text-black font-sans relative">
+      <div class="container mx-auto">
+        <header class="mx-auto px-4 py-6 flex justify-between items-center">
+          <div class="flex items-center space-x-4">
+            <Logo />
+            <div>
+              <h1 class="font-bold text-3xl">JSConf España 2025</h1>
+              <p class="text-sm">1 MARZO 2025</p>
+            </div>
           </div>
-        </div>
-        <nav class="hidden md:flex space-x-6">
-          <ul class="flex flex-col items-center overflow-x-auto overflow-y-hidden md:overflow-hidden md:flex-row">
-  <li class="flex justify-center w-full first:mt-5 md:first:mt-0 md:block md:w-auto"><a href="/#speakers" class="flex items-center justify-center w-full gap-1 px-5 py-4 text-xl duration-300 md:w-auto md:py-2 md:text-base hover:scale-110"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_1_124)"><path d="M5 7C5 8.06087 5.42143 9.07828 6.17157 9.82843C6.92172 10.5786 7.93913 11 9 11C10.0609 11 11.0783 10.5786 11.8284 9.82843C12.5786 9.07828 13 8.06087 13 7C13 5.93913 12.5786 4.92172 11.8284 4.17157C11.0783 3.42143 10.0609 3 9 3C7.93913 3 6.92172 3.42143 6.17157 4.17157C5.42143 4.92172 5 5.93913 5 7Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 21V19C3 17.9391 3.42143 16.9217 4.17157 16.1716C4.92172 15.4214 5.93913 15 7 15H11C12.0609 15 13.0783 15.4214 13.8284 16.1716C14.5786 16.9217 15 17.9391 15 19V21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16 3.12988C16.8604 3.35018 17.623 3.85058 18.1676 4.55219C18.7122 5.2538 19.0078 6.11671 19.0078 7.00488C19.0078 7.89305 18.7122 8.75596 18.1676 9.45757C17.623 10.1592 16.8604 10.6596 16 10.8799" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M21 20.9999V18.9999C20.9949 18.1171 20.6979 17.2607 20.1553 16.5643C19.6126 15.8679 18.8548 15.3706 18 15.1499" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_1_124"><rect width="24" height="24" fill="currentColor"></rect></clipPath></defs></svg>Speakers</a></li>
-  <li class="flex justify-center w-full first:mt-5 md:first:mt-0 md:block md:w-auto"><a href="/#sponsors" class="flex items-center justify-center w-full gap-1 px-5 py-4 text-xl duration-300 md:w-auto md:py-2 md:text-base hover:scale-110"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_66_861)"><path d="M16 18C16.5304 18 17.0391 18.2107 17.4142 18.5858C17.7893 18.9609 18 19.4696 18 20C18 19.4696 18.2107 18.9609 18.5858 18.5858C18.9609 18.2107 19.4696 18 20 18C19.4696 18 18.9609 17.7893 18.5858 17.4142C18.2107 17.0391 18 16.5304 18 16C18 16.5304 17.7893 17.0391 17.4142 17.4142C17.0391 17.7893 16.5304 18 16 18ZM16 6C16.5304 6 17.0391 6.21071 17.4142 6.58579C17.7893 6.96086 18 7.46957 18 8C18 7.46957 18.2107 6.96086 18.5858 6.58579C18.9609 6.21071 19.4696 6 20 6C19.4696 6 18.9609 5.78929 18.5858 5.41421C18.2107 5.03914 18 4.53043 18 4C18 4.53043 17.7893 5.03914 17.4142 5.41421C17.0391 5.78929 16.5304 6 16 6ZM9 18C9 16.4087 9.63214 14.8826 10.7574 13.7574C11.8826 12.6321 13.4087 12 15 12C13.4087 12 11.8826 11.3679 10.7574 10.2426C9.63214 9.11742 9 7.5913 9 6C9 7.5913 8.36786 9.11742 7.24264 10.2426C6.11742 11.3679 4.5913 12 3 12C4.5913 12 6.11742 12.6321 7.24264 13.7574C8.36786 14.8826 9 16.4087 9 18Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_66_861"><rect width="24" height="24" fill="black"></rect></clipPath></defs></svg>Patrocinadores</a></li>
-  
-  <li class="flex justify-center w-full first:mt-5 md:first:mt-0 md:block md:w-auto"><a href="/#agenda" class="flex items-center justify-center w-full gap-1 px-5 py-4 text-xl duration-300 md:w-auto md:py-2 md:text-base hover:scale-110"><svg width="24" height="24" fill="none" viewBox="0 0 24 24" class="" xmlns="http://www.w3.org/2000/svg"><g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" clip-path="url(#a)"><path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7ZM16 3v4M8 3v4M4 11h16"></path><path d="M8 15h2v2H8v-2Z"></path></g><defs><clipPath id="a"><path fill="currentColor" d="M0 0h24v24H0z"></path></clipPath></defs></svg>Agenda</a></li></ul>
-        </nav>
-        
-      </header>
-    
-      <main class="container mx-auto px-4 py-48 text-center">
-        <h2 class="text-6xl md:text-7xl lg:text-9xl font-bold mb-2">JSConf España</h2>
-        <div class="space-y-4 mb-12">
-          <p class="text-black text-xl font-bold inline-block px-4 py-2">Conferencia Internacional de JavaScript</p>
-        </div>
-        <div class="flex flex-col gap-6">
-          <div class="flex gap-6 justify-center items-center flex-col md:flex-row">
-            <tito-button event="js-conf/js-conf-2025" discount-code="EARLY">
-            <button class="bg-white border-4 border-black text-black font-bold text-xl px-8 py-3 rounded-full hover:bg-opacity-90 duration-300 hover:scale-110 transition uppercase inline-block">
-                ¡Consigue tu entrada!
-            </button>
-            </tito-button>
-            <a href="https://tally.so/r/3xyl4v" target="_blank" rel="noopener" class="bg-yellow-100 border-4 border-black text-black font-bold text-xl px-8 py-3 rounded-full hover:bg-opacity-90 duration-300 hover:scale-110 transition uppercase inline-block">
-              Envía propuesta de charla
-            </a>
+          <nav class="hidden md:flex space-x-6">
+            <ul
+              class="flex flex-col items-center overflow-x-auto overflow-y-hidden md:overflow-hidden md:flex-row"
+            >
+              <li
+                class="flex justify-center w-full first:mt-5 md:first:mt-0 md:block md:w-auto"
+              >
+                <a
+                  href="/#speakers"
+                  class="flex items-center justify-center w-full gap-1 px-5 py-4 text-xl duration-300 md:w-auto md:py-2 md:text-base hover:scale-110"
+                  ><svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    class=""
+                    xmlns="http://www.w3.org/2000/svg"
+                    ><g clip-path="url(#clip0_1_124)"
+                      ><path
+                        d="M5 7C5 8.06087 5.42143 9.07828 6.17157 9.82843C6.92172 10.5786 7.93913 11 9 11C10.0609 11 11.0783 10.5786 11.8284 9.82843C12.5786 9.07828 13 8.06087 13 7C13 5.93913 12.5786 4.92172 11.8284 4.17157C11.0783 3.42143 10.0609 3 9 3C7.93913 3 6.92172 3.42143 6.17157 4.17157C5.42143 4.92172 5 5.93913 5 7Z"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path><path
+                        d="M3 21V19C3 17.9391 3.42143 16.9217 4.17157 16.1716C4.92172 15.4214 5.93913 15 7 15H11C12.0609 15 13.0783 15.4214 13.8284 16.1716C14.5786 16.9217 15 17.9391 15 19V21"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path><path
+                        d="M16 3.12988C16.8604 3.35018 17.623 3.85058 18.1676 4.55219C18.7122 5.2538 19.0078 6.11671 19.0078 7.00488C19.0078 7.89305 18.7122 8.75596 18.1676 9.45757C17.623 10.1592 16.8604 10.6596 16 10.8799"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path><path
+                        d="M21 20.9999V18.9999C20.9949 18.1171 20.6979 17.2607 20.1553 16.5643C19.6126 15.8679 18.8548 15.3706 18 15.1499"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path></g
+                    ><defs
+                      ><clipPath id="clip0_1_124"
+                        ><rect width="24" height="24" fill="currentColor"
+                        ></rect></clipPath
+                      ></defs
+                    ></svg
+                  >Speakers</a>
+              </li>
+              <li
+                class="flex justify-center w-full first:mt-5 md:first:mt-0 md:block md:w-auto"
+              >
+                <a
+                  href="/#sponsors"
+                  class="flex items-center justify-center w-full gap-1 px-5 py-4 text-xl duration-300 md:w-auto md:py-2 md:text-base hover:scale-110"
+                  ><svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    class=""
+                    xmlns="http://www.w3.org/2000/svg"
+                    ><g clip-path="url(#clip0_66_861)"
+                      ><path
+                        d="M16 18C16.5304 18 17.0391 18.2107 17.4142 18.5858C17.7893 18.9609 18 19.4696 18 20C18 19.4696 18.2107 18.9609 18.5858 18.5858C18.9609 18.2107 19.4696 18 20 18C19.4696 18 18.9609 17.7893 18.5858 17.4142C18.2107 17.0391 18 16.5304 18 16C18 16.5304 17.7893 17.0391 17.4142 17.4142C17.0391 17.7893 16.5304 18 16 18ZM16 6C16.5304 6 17.0391 6.21071 17.4142 6.58579C17.7893 6.96086 18 7.46957 18 8C18 7.46957 18.2107 6.96086 18.5858 6.58579C18.9609 6.21071 19.4696 6 20 6C19.4696 6 18.9609 5.78929 18.5858 5.41421C18.2107 5.03914 18 4.53043 18 4C18 4.53043 17.7893 5.03914 17.4142 5.41421C17.0391 5.78929 16.5304 6 16 6ZM9 18C9 16.4087 9.63214 14.8826 10.7574 13.7574C11.8826 12.6321 13.4087 12 15 12C13.4087 12 11.8826 11.3679 10.7574 10.2426C9.63214 9.11742 9 7.5913 9 6C9 7.5913 8.36786 9.11742 7.24264 10.2426C6.11742 11.3679 4.5913 12 3 12C4.5913 12 6.11742 12.6321 7.24264 13.7574C8.36786 14.8826 9 16.4087 9 18Z"
+                        stroke="black"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path></g
+                    ><defs
+                      ><clipPath id="clip0_66_861"
+                        ><rect width="24" height="24" fill="black"
+                        ></rect></clipPath
+                      ></defs
+                    ></svg
+                  >Patrocinadores</a>
+              </li>
+
+              <li
+                class="flex justify-center w-full first:mt-5 md:first:mt-0 md:block md:w-auto"
+              >
+                <a
+                  href="/#agenda"
+                  class="flex items-center justify-center w-full gap-1 px-5 py-4 text-xl duration-300 md:w-auto md:py-2 md:text-base hover:scale-110"
+                  ><svg
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    class=""
+                    xmlns="http://www.w3.org/2000/svg"
+                    ><g
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      clip-path="url(#a)"
+                      ><path
+                        d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7ZM16 3v4M8 3v4M4 11h16"
+                      ></path><path d="M8 15h2v2H8v-2Z"></path></g
+                    ><defs
+                      ><clipPath id="a"
+                        ><path fill="currentColor" d="M0 0h24v24H0z"
+                        ></path></clipPath
+                      ></defs
+                    ></svg
+                  >Agenda</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+
+        <main class="container mx-auto px-4 py-48 text-center">
+          <h2 class="text-6xl md:text-7xl lg:text-9xl font-bold mb-2">
+            JSConf España
+          </h2>
+          <div class="space-y-4 mb-12">
+            <p class="text-black text-xl font-bold inline-block px-4 py-2">
+              Conferencia Internacional de JavaScript
+            </p>
           </div>
+          <div class="flex flex-col gap-6">
+            <div
+              class="flex gap-6 justify-center items-center flex-col md:flex-row"
+            >
+              <tito-button event="js-conf/js-conf-2025" discount-code="EARLY">
+                <button
+                  class="bg-white border-4 border-black text-black font-bold text-xl px-8 py-3 rounded-full hover:bg-opacity-90 duration-300 hover:scale-110 transition uppercase inline-block"
+                >
+                  ¡Consigue tu entrada!
+                </button>
+              </tito-button>
+              <a
+                href="https://tally.so/r/3xyl4v"
+                target="_blank"
+                rel="noopener"
+                class="bg-yellow-100 border-4 border-black text-black font-bold text-xl px-8 py-3 rounded-full hover:bg-opacity-90 duration-300 hover:scale-110 transition uppercase inline-block"
+              >
+                Envía propuesta de charla
+              </a>
+            </div>
+          </div>
+        </main>
+
+        <footer
+          class="container mx-auto px-4 py-8 flex justify-between items-center gap-x-2"
+        >
+          <div class="flex flex-col">
+            <span class="text-xl md:text-2xl opacity-80">¿Cuándo?</span>
+            <span class="text-2xl md:text-4xl font-bold opacity-90"
+              >1 de Marzo 2025</span
+            >
+          </div>
+          <div class="flex flex-col text-right">
+            <span class="text-xl md:text-2xl opacity-80">¿Dónde?</span>
+            <a
+              class="text-2xl md:text-4xl font-bold opacity-90 hover:bg-opacity-90 duration-300 hover:scale-110 transition"
+              href="https://maps.app.goo.gl/GaFUGBkZc8P7x4eZA"
+              target="_blank">La Nave, Madrid</a
+            >
+          </div>
+        </footer>
       </div>
-      </main>
-    
-      <footer class="container mx-auto px-4 py-8 flex justify-between items-center gap-x-2">
-        <div class="flex flex-col">
-          <span class="text-xl md:text-2xl opacity-80">¿Cuándo?</span>
-          <span class="text-2xl md:text-4xl font-bold opacity-90">1 de Marzo 2025</span>
-        </div>
-        <div class="flex flex-col text-right">
-          <span class="text-xl md:text-2xl opacity-80">¿Dónde?</span>
-          <span class="text-2xl md:text-4xl font-bold opacity-90">La Nave, Madrid</span>
-        </div>
-      </footer>
+      <Technologies />
     </div>
-    <Technologies />
-  </div>
-</YellowBackground>
+  </YellowBackground>
 
   <div class="w-screen py-10 pb-48 text-white font-sans bg-black">
     <div class="container mx-auto">
-      <section id="sponsors" class="flex flex-col flex-wrap items-center justify-center px-4 pt-32">
-        <h2 class="text-4xl font-bold text-center text-white md:text-6xl">Patrocinadores</h2>
-        <p class="max-w-xl text-2xl text-white/80 text-center [text-wrap:balance] mt-4">¡Gracias a ellos hacemos posible el evento!</p>
-        <div class="relative flex flex-col items-center justify-center w-full h-full gap-4 py-20 overflow-hidden rounded-lg max-w-screen-base bg-background">
-          <a href='https://midu.link/keepcoding' class="hover:scale-105 transition" target="_blank" rel="noopener">
-            <img src="/keepcoding.webp" alt="KeepCoding" class="w-full h-full object-cover max-w-2xl mx-auto">
+      <section
+        id="sponsors"
+        class="flex flex-col flex-wrap items-center justify-center px-4 pt-32"
+      >
+        <h2 class="text-4xl font-bold text-center text-white md:text-6xl">
+          Patrocinadores
+        </h2>
+        <p
+          class="max-w-xl text-2xl text-white/80 text-center [text-wrap:balance] mt-4"
+        >
+          ¡Gracias a ellos hacemos posible el evento!
+        </p>
+        <div
+          class="relative flex flex-col items-center justify-center w-full h-full gap-4 py-20 overflow-hidden rounded-lg max-w-screen-base bg-background"
+        >
+          <a
+            href="https://midu.link/keepcoding"
+            class="hover:scale-105 transition"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              src="/keepcoding.webp"
+              alt="KeepCoding"
+              class="w-full h-full object-cover max-w-2xl mx-auto"
+            />
           </a>
           <span class="text-base opacity-70">Los mejores bootcamps online</span>
         </div>
-        <a href="mailto:miduga@gmail.com" target="_blank" class="bg-white border-4 border-black text-black font-bold text-xl px-8 py-3 rounded-full hover:bg-opacity-90 duration-300 hover:scale-110 transition uppercase inline-block">
+        <a
+          href="mailto:miduga@gmail.com"
+          target="_blank"
+          class="bg-white border-4 border-black text-black font-bold text-xl px-8 py-3 rounded-full hover:bg-opacity-90 duration-300 hover:scale-110 transition uppercase inline-block"
+        >
           ¡Quiero patrocinar!
         </a>
       </section>
@@ -82,89 +229,153 @@ import YellowBackground from "@components/YellowBackground.astro"
 
   <div class="w-screen py-10 pb-48 text-white font-sans bg-yellow-300">
     <div class="container mx-auto">
-      <section id="speakers" class="flex flex-col flex-wrap items-center justify-center px-4 pt-32">
+      <section
+        id="speakers"
+        class="flex flex-col flex-wrap items-center justify-center px-4 pt-32"
+      >
         <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
           <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
-            <h2 class="text-4xl font-bold text-center text-black md:text-6xl">¡Speakers!</h2>
-            <p class="max-w-full text-2xl text-black/80 text-center [text-wrap:balance] mt-4">¡Aprende del mejor talento de la comunidad hispana!</p>
-          </div> 
-          <div class="grid gap-6 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
-              <article class="bg-slate-950 text-white rounded-sm ">
-                  <a href="https://x.com/javivelasco">
-                      <img class="p-4 w-full rounded-lg" src="/javi-velasco.jpeg" alt="Javi Velasco">
-                  </a>
-                  <div class="px-5 pb-5">
-                      <h3 class="text-2xl font-bold tracking-tight text-white hover:underline">
-                          <a href="https://x.com/javivelasco">Javier Velasco</a>
-                      </h3>
-                      <span class="text-yellow-300">Tech Lead @vercel</span>
-                      <p class="mt-3 mb-4 font-light text-white/80">El 7º programador de Vercel. Muchas cosas buenas de Next.js son por su mano y gracia.</p>
-                      <ul class="flex space-x-4 sm:mt-0 items-center">
-                          
-                          <li>
-                              <a href="https://x.com/javivelasco" class="text-gray-500 hover:hover:text-white" aria-label="X (Twitter)">
-                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="1200" height="1227" fill="none" viewBox="0 0 1200 1227"><path fill="currentColor" d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"/></svg>
-                              </a>
-                          </li>
-                          <li>
-                              <a href="https://github.com/javivelasco" class="text-gray-500 hover:hover:text-white" aria-label="Github">
-                                <svg
-                                class="w-6 h-6"
-                                viewBox="0 0 256 250"
-                                width="256"
-                                height="250"
-                                fill="currentColor"
-                                xmlns="http://www.w3.org/2000/svg"
-                                preserveAspectRatio="xMidYMid"
-                            >
-                                <path
-                                    d="M128.001 0C57.317 0 0 57.307 0 128.001c0 56.554 36.676 104.535 87.535 121.46 6.397 1.185 8.746-2.777 8.746-6.158 0-3.052-.12-13.135-.174-23.83-35.61 7.742-43.124-15.103-43.124-15.103-5.823-14.795-14.213-18.73-14.213-18.73-11.613-7.944.876-7.78.876-7.78 12.853.902 19.621 13.19 19.621 13.19 11.417 19.568 29.945 13.911 37.249 10.64 1.149-8.272 4.466-13.92 8.127-17.116-28.431-3.236-58.318-14.212-58.318-63.258 0-13.975 5-25.394 13.188-34.358-1.329-3.224-5.71-16.242 1.24-33.874 0 0 10.749-3.44 35.21 13.121 10.21-2.836 21.16-4.258 32.038-4.307 10.878.049 21.837 1.47 32.066 4.307 24.431-16.56 35.165-13.12 35.165-13.12 6.967 17.63 2.584 30.65 1.255 33.873 8.207 8.964 13.173 20.383 13.173 34.358 0 49.163-29.944 59.988-58.447 63.157 4.591 3.972 8.682 11.762 8.682 23.704 0 17.126-.148 30.91-.148 35.126 0 3.407 2.304 7.398 8.792 6.14C219.37 232.5 256 184.537 256 128.002 256 57.307 198.691 0 128.001 0Zm-80.06 182.34c-.282.636-1.283.827-2.194.39-.929-.417-1.45-1.284-1.15-1.922.276-.655 1.279-.838 2.205-.399.93.418 1.46 1.293 1.139 1.931Zm6.296 5.618c-.61.566-1.804.303-2.614-.591-.837-.892-.994-2.086-.375-2.66.63-.566 1.787-.301 2.626.591.838.903 1 2.088.363 2.66Zm4.32 7.188c-.785.545-2.067.034-2.86-1.104-.784-1.138-.784-2.503.017-3.05.795-.547 2.058-.055 2.861 1.075.782 1.157.782 2.522-.019 3.08Zm7.304 8.325c-.701.774-2.196.566-3.29-.49-1.119-1.032-1.43-2.496-.726-3.27.71-.776 2.213-.558 3.315.49 1.11 1.03 1.45 2.505.701 3.27Zm9.442 2.81c-.31 1.003-1.75 1.459-3.199 1.033-1.448-.439-2.395-1.613-2.103-2.626.301-1.01 1.747-1.484 3.207-1.028 1.446.436 2.396 1.602 2.095 2.622Zm10.744 1.193c.036 1.055-1.193 1.93-2.715 1.95-1.53.034-2.769-.82-2.786-1.86 0-1.065 1.202-1.932 2.733-1.958 1.522-.03 2.768.818 2.768 1.868Zm10.555-.405c.182 1.03-.875 2.088-2.387 2.37-1.485.271-2.861-.365-3.05-1.386-.184-1.056.893-2.114 2.376-2.387 1.514-.263 2.868.356 3.061 1.403Z" />
-                            </svg>
-                              </a>
-                          </li>
-                          
-                      </ul>
-                  </div>
-                </article>
-                <article class="bg-slate-950 text-white rounded-sm ">
-                  <a href="https://x.com/carmenansio">
-                      <img class="p-4 w-full rounded-lg" src="/carmen-ansio.webp" alt="Carmen Ansio">
-                  </a>
-                  <div class="px-5 pb-5">
-                      <h3 class="text-2xl font-bold tracking-tight text-white hover:underline">
-                          <a href="https://x.com/carmenansio">Carmen Ansio</a>
-                      </h3>
-                      <span class="text-yellow-300">Design Engineer @LottieFiles</span>
-                      <p class="mt-3 mb-4 font-light text-white/80">La maga del CSS, la que lleva las animaciones al próximo nivel. Verás lo que sabe de JavaScript.</p>
-                      <ul class="flex space-x-4 sm:mt-0 items-center">
-                          
-                          <li>
-                              <a href="https://x.com/carmenansio" class="text-gray-500 hover:hover:text-white" aria-label="X (Twitter)">
-                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="1200" height="1227" fill="none" viewBox="0 0 1200 1227"><path fill="currentColor" d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"/></svg>
-                              </a>
-                          </li>
-                          <li>
-                              <a href="https://github.com/carmenansio" class="text-gray-500 hover:hover:text-white" aria-label="Github">
-                                <svg
-                                class="w-6 h-6"
-                                viewBox="0 0 256 250"
-                                width="256"
-                                height="250"
-                                fill="currentColor"
-                                xmlns="http://www.w3.org/2000/svg"
-                                preserveAspectRatio="xMidYMid"
-                            >
-                                <path
-                                    d="M128.001 0C57.317 0 0 57.307 0 128.001c0 56.554 36.676 104.535 87.535 121.46 6.397 1.185 8.746-2.777 8.746-6.158 0-3.052-.12-13.135-.174-23.83-35.61 7.742-43.124-15.103-43.124-15.103-5.823-14.795-14.213-18.73-14.213-18.73-11.613-7.944.876-7.78.876-7.78 12.853.902 19.621 13.19 19.621 13.19 11.417 19.568 29.945 13.911 37.249 10.64 1.149-8.272 4.466-13.92 8.127-17.116-28.431-3.236-58.318-14.212-58.318-63.258 0-13.975 5-25.394 13.188-34.358-1.329-3.224-5.71-16.242 1.24-33.874 0 0 10.749-3.44 35.21 13.121 10.21-2.836 21.16-4.258 32.038-4.307 10.878.049 21.837 1.47 32.066 4.307 24.431-16.56 35.165-13.12 35.165-13.12 6.967 17.63 2.584 30.65 1.255 33.873 8.207 8.964 13.173 20.383 13.173 34.358 0 49.163-29.944 59.988-58.447 63.157 4.591 3.972 8.682 11.762 8.682 23.704 0 17.126-.148 30.91-.148 35.126 0 3.407 2.304 7.398 8.792 6.14C219.37 232.5 256 184.537 256 128.002 256 57.307 198.691 0 128.001 0Zm-80.06 182.34c-.282.636-1.283.827-2.194.39-.929-.417-1.45-1.284-1.15-1.922.276-.655 1.279-.838 2.205-.399.93.418 1.46 1.293 1.139 1.931Zm6.296 5.618c-.61.566-1.804.303-2.614-.591-.837-.892-.994-2.086-.375-2.66.63-.566 1.787-.301 2.626.591.838.903 1 2.088.363 2.66Zm4.32 7.188c-.785.545-2.067.034-2.86-1.104-.784-1.138-.784-2.503.017-3.05.795-.547 2.058-.055 2.861 1.075.782 1.157.782 2.522-.019 3.08Zm7.304 8.325c-.701.774-2.196.566-3.29-.49-1.119-1.032-1.43-2.496-.726-3.27.71-.776 2.213-.558 3.315.49 1.11 1.03 1.45 2.505.701 3.27Zm9.442 2.81c-.31 1.003-1.75 1.459-3.199 1.033-1.448-.439-2.395-1.613-2.103-2.626.301-1.01 1.747-1.484 3.207-1.028 1.446.436 2.396 1.602 2.095 2.622Zm10.744 1.193c.036 1.055-1.193 1.93-2.715 1.95-1.53.034-2.769-.82-2.786-1.86 0-1.065 1.202-1.932 2.733-1.958 1.522-.03 2.768.818 2.768 1.868Zm10.555-.405c.182 1.03-.875 2.088-2.387 2.37-1.485.271-2.861-.365-3.05-1.386-.184-1.056.893-2.114 2.376-2.387 1.514-.263 2.868.356 3.061 1.403Z" />
-                            </svg>
-                              </a>
-                          </li>
-                          
-                      </ul>
-                  </div>
-                </article>
-            </div>
+            <h2 class="text-4xl font-bold text-center text-black md:text-6xl">
+              ¡Speakers!
+            </h2>
+            <p
+              class="max-w-full text-2xl text-black/80 text-center [text-wrap:balance] mt-4"
+            >
+              ¡Aprende del mejor talento de la comunidad hispana!
+            </p>
           </div>
+          <div class="grid gap-6 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+            <article class="bg-slate-950 text-white rounded-sm">
+              <a href="https://x.com/javivelasco">
+                <img
+                  class="p-4 w-full rounded-lg"
+                  src="/javi-velasco.jpeg"
+                  alt="Javi Velasco"
+                />
+              </a>
+              <div class="px-5 pb-5">
+                <h3
+                  class="text-2xl font-bold tracking-tight text-white hover:underline"
+                >
+                  <a href="https://x.com/javivelasco">Javier Velasco</a>
+                </h3>
+                <span class="text-yellow-300">Tech Lead @vercel</span>
+                <p class="mt-3 mb-4 font-light text-white/80">
+                  El 7º programador de Vercel. Muchas cosas buenas de Next.js
+                  son por su mano y gracia.
+                </p>
+                <ul class="flex space-x-4 sm:mt-0 items-center">
+                  <li>
+                    <a
+                      href="https://x.com/javivelasco"
+                      class="text-gray-500 hover:hover:text-white"
+                      aria-label="X (Twitter)"
+                    >
+                      <svg
+                        class="w-5 h-5"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1200"
+                        height="1227"
+                        fill="none"
+                        viewBox="0 0 1200 1227"
+                        ><path
+                          fill="currentColor"
+                          d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"
+                        ></path></svg
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/javivelasco"
+                      class="text-gray-500 hover:hover:text-white"
+                      aria-label="Github"
+                    >
+                      <svg
+                        class="w-6 h-6"
+                        viewBox="0 0 256 250"
+                        width="256"
+                        height="250"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="xMidYMid"
+                      >
+                        <path
+                          d="M128.001 0C57.317 0 0 57.307 0 128.001c0 56.554 36.676 104.535 87.535 121.46 6.397 1.185 8.746-2.777 8.746-6.158 0-3.052-.12-13.135-.174-23.83-35.61 7.742-43.124-15.103-43.124-15.103-5.823-14.795-14.213-18.73-14.213-18.73-11.613-7.944.876-7.78.876-7.78 12.853.902 19.621 13.19 19.621 13.19 11.417 19.568 29.945 13.911 37.249 10.64 1.149-8.272 4.466-13.92 8.127-17.116-28.431-3.236-58.318-14.212-58.318-63.258 0-13.975 5-25.394 13.188-34.358-1.329-3.224-5.71-16.242 1.24-33.874 0 0 10.749-3.44 35.21 13.121 10.21-2.836 21.16-4.258 32.038-4.307 10.878.049 21.837 1.47 32.066 4.307 24.431-16.56 35.165-13.12 35.165-13.12 6.967 17.63 2.584 30.65 1.255 33.873 8.207 8.964 13.173 20.383 13.173 34.358 0 49.163-29.944 59.988-58.447 63.157 4.591 3.972 8.682 11.762 8.682 23.704 0 17.126-.148 30.91-.148 35.126 0 3.407 2.304 7.398 8.792 6.14C219.37 232.5 256 184.537 256 128.002 256 57.307 198.691 0 128.001 0Zm-80.06 182.34c-.282.636-1.283.827-2.194.39-.929-.417-1.45-1.284-1.15-1.922.276-.655 1.279-.838 2.205-.399.93.418 1.46 1.293 1.139 1.931Zm6.296 5.618c-.61.566-1.804.303-2.614-.591-.837-.892-.994-2.086-.375-2.66.63-.566 1.787-.301 2.626.591.838.903 1 2.088.363 2.66Zm4.32 7.188c-.785.545-2.067.034-2.86-1.104-.784-1.138-.784-2.503.017-3.05.795-.547 2.058-.055 2.861 1.075.782 1.157.782 2.522-.019 3.08Zm7.304 8.325c-.701.774-2.196.566-3.29-.49-1.119-1.032-1.43-2.496-.726-3.27.71-.776 2.213-.558 3.315.49 1.11 1.03 1.45 2.505.701 3.27Zm9.442 2.81c-.31 1.003-1.75 1.459-3.199 1.033-1.448-.439-2.395-1.613-2.103-2.626.301-1.01 1.747-1.484 3.207-1.028 1.446.436 2.396 1.602 2.095 2.622Zm10.744 1.193c.036 1.055-1.193 1.93-2.715 1.95-1.53.034-2.769-.82-2.786-1.86 0-1.065 1.202-1.932 2.733-1.958 1.522-.03 2.768.818 2.768 1.868Zm10.555-.405c.182 1.03-.875 2.088-2.387 2.37-1.485.271-2.861-.365-3.05-1.386-.184-1.056.893-2.114 2.376-2.387 1.514-.263 2.868.356 3.061 1.403Z"
+                        ></path>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <article class="bg-slate-950 text-white rounded-sm">
+              <a href="https://x.com/carmenansio">
+                <img
+                  class="p-4 w-full rounded-lg"
+                  src="/carmen-ansio.webp"
+                  alt="Carmen Ansio"
+                />
+              </a>
+              <div class="px-5 pb-5">
+                <h3
+                  class="text-2xl font-bold tracking-tight text-white hover:underline"
+                >
+                  <a href="https://x.com/carmenansio">Carmen Ansio</a>
+                </h3>
+                <span class="text-yellow-300">Design Engineer @LottieFiles</span
+                >
+                <p class="mt-3 mb-4 font-light text-white/80">
+                  La maga del CSS, la que lleva las animaciones al próximo
+                  nivel. Verás lo que sabe de JavaScript.
+                </p>
+                <ul class="flex space-x-4 sm:mt-0 items-center">
+                  <li>
+                    <a
+                      href="https://x.com/carmenansio"
+                      class="text-gray-500 hover:hover:text-white"
+                      aria-label="X (Twitter)"
+                    >
+                      <svg
+                        class="w-5 h-5"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1200"
+                        height="1227"
+                        fill="none"
+                        viewBox="0 0 1200 1227"
+                        ><path
+                          fill="currentColor"
+                          d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"
+                        ></path></svg
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/carmenansio"
+                      class="text-gray-500 hover:hover:text-white"
+                      aria-label="Github"
+                    >
+                      <svg
+                        class="w-6 h-6"
+                        viewBox="0 0 256 250"
+                        width="256"
+                        height="250"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="xMidYMid"
+                      >
+                        <path
+                          d="M128.001 0C57.317 0 0 57.307 0 128.001c0 56.554 36.676 104.535 87.535 121.46 6.397 1.185 8.746-2.777 8.746-6.158 0-3.052-.12-13.135-.174-23.83-35.61 7.742-43.124-15.103-43.124-15.103-5.823-14.795-14.213-18.73-14.213-18.73-11.613-7.944.876-7.78.876-7.78 12.853.902 19.621 13.19 19.621 13.19 11.417 19.568 29.945 13.911 37.249 10.64 1.149-8.272 4.466-13.92 8.127-17.116-28.431-3.236-58.318-14.212-58.318-63.258 0-13.975 5-25.394 13.188-34.358-1.329-3.224-5.71-16.242 1.24-33.874 0 0 10.749-3.44 35.21 13.121 10.21-2.836 21.16-4.258 32.038-4.307 10.878.049 21.837 1.47 32.066 4.307 24.431-16.56 35.165-13.12 35.165-13.12 6.967 17.63 2.584 30.65 1.255 33.873 8.207 8.964 13.173 20.383 13.173 34.358 0 49.163-29.944 59.988-58.447 63.157 4.591 3.972 8.682 11.762 8.682 23.704 0 17.126-.148 30.91-.148 35.126 0 3.407 2.304 7.398 8.792 6.14C219.37 232.5 256 184.537 256 128.002 256 57.307 198.691 0 128.001 0Zm-80.06 182.34c-.282.636-1.283.827-2.194.39-.929-.417-1.45-1.284-1.15-1.922.276-.655 1.279-.838 2.205-.399.93.418 1.46 1.293 1.139 1.931Zm6.296 5.618c-.61.566-1.804.303-2.614-.591-.837-.892-.994-2.086-.375-2.66.63-.566 1.787-.301 2.626.591.838.903 1 2.088.363 2.66Zm4.32 7.188c-.785.545-2.067.034-2.86-1.104-.784-1.138-.784-2.503.017-3.05.795-.547 2.058-.055 2.861 1.075.782 1.157.782 2.522-.019 3.08Zm7.304 8.325c-.701.774-2.196.566-3.29-.49-1.119-1.032-1.43-2.496-.726-3.27.71-.776 2.213-.558 3.315.49 1.11 1.03 1.45 2.505.701 3.27Zm9.442 2.81c-.31 1.003-1.75 1.459-3.199 1.033-1.448-.439-2.395-1.613-2.103-2.626.301-1.01 1.747-1.484 3.207-1.028 1.446.436 2.396 1.602 2.095 2.622Zm10.744 1.193c.036 1.055-1.193 1.93-2.715 1.95-1.53.034-2.769-.82-2.786-1.86 0-1.065 1.202-1.932 2.733-1.958 1.522-.03 2.768.818 2.768 1.868Zm10.555-.405c.182 1.03-.875 2.088-2.387 2.37-1.485.271-2.861-.365-3.05-1.386-.184-1.056.893-2.114 2.376-2.387 1.514-.263 2.868.356 3.061 1.403Z"
+                        ></path>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
       </section>
     </div>
   </div>
@@ -172,42 +383,109 @@ import YellowBackground from "@components/YellowBackground.astro"
   <div class="w-screen min-h-screen py-10 text-white font-sans bg-slate-900">
     <div class="container mx-auto">
       <section class="">
-        <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-            <img class="w-full rounded" src="/midudev.jpg" alt="Midudev"> 
-            <div class="mt-4 md:mt-0">
-                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">Presentado por midudev</h2>
-                <p class="mb-6 font-light text-gray-50 md:text-lg dark:text-gray-200">¡midudev será el maestro de ceremonias del evento! Estará dinamizando toda la jornada en el auditorio.</p>
-                <a href="https://twitch.tv/midudev" target="_blank" rel="noreferrer nofollow" class="inline-flex items-center bg-yellow-400 text-black hover:scale-105 transition focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
-                    ¿Quién es midudev?
-                    <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                </a>
-            </div>
+        <div
+          class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6"
+        >
+          <img class="w-full rounded" src="/midudev.jpg" alt="Midudev" />
+          <div class="mt-4 md:mt-0">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">
+              Presentado por midudev
+            </h2>
+            <p
+              class="mb-6 font-light text-gray-50 md:text-lg dark:text-gray-200"
+            >
+              ¡midudev será el maestro de ceremonias del evento! Estará
+              dinamizando toda la jornada en el auditorio.
+            </p>
+            <a
+              href="https://twitch.tv/midudev"
+              target="_blank"
+              rel="noreferrer nofollow"
+              class="inline-flex items-center bg-yellow-400 text-black hover:scale-105 transition focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900"
+            >
+              ¿Quién es midudev?
+              <svg
+                class="ml-2 -mr-1 w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+                ><path
+                  fill-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path></svg
+              >
+            </a>
+          </div>
         </div>
       </section>
       <section class="">
-        <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-            <div class="mb-6 md:mb-0">
-                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">¿Por qué asistir?</h2>
-                <p class="mb-6 font-light text-gray-50 md:text-lg dark:text-gray-200 text-pretty">¡Más de 500 personas para hacer networking, charlas top internacionales, talleres, café, comida incluída, sorteos y muchas sorpresas más!</p>
-                <a href="https://ti.to/js-conf/js-conf-2025/with/earlybird" class="inline-flex items-center bg-yellow-400 text-black hover:scale-105 transition focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
-                    Quiero mi entrada
-                    <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                </a>
-            </div>
-            <img class="w-full rounded" src="/networking.jpg" alt="Auditorio">
+        <div
+          class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6"
+        >
+          <div class="mb-6 md:mb-0">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">
+              ¿Por qué asistir?
+            </h2>
+            <p
+              class="mb-6 font-light text-gray-50 md:text-lg dark:text-gray-200 text-pretty"
+            >
+              ¡Más de 500 personas para hacer networking, charlas top
+              internacionales, talleres, café, comida incluída, sorteos y muchas
+              sorpresas más!
+            </p>
+            <a
+              href="https://ti.to/js-conf/js-conf-2025/with/earlybird"
+              class="inline-flex items-center bg-yellow-400 text-black hover:scale-105 transition focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900"
+            >
+              Quiero mi entrada
+              <svg
+                class="ml-2 -mr-1 w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+                ><path
+                  fill-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path></svg
+              >
+            </a>
+          </div>
+          <img class="w-full rounded" src="/networking.jpg" alt="Auditorio" />
         </div>
       </section>
       <section class="">
-        <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-            <img class="w-full rounded" src="/auditorio.jpg" alt="Auditorio">
-            <div class="mt-4 md:mt-0">
-                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">Un espacio para todos</h2>
-                <p class="mb-6 font-light text-gray-50 md:text-lg dark:text-gray-200">La JSConf España se celebra en La Nave de Madrid, un lugar con espacio para poder reunir a todos los participantes de la comunidad JavaScript.</p>
-                <a href="https://maps.app.goo.gl/AWd5ohsAqWvzc7En7" class="inline-flex items-center bg-yellow-400 text-black hover:scale-105 transition focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
-                    ¿Cómo se llega?
-                    <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                </a>
-            </div>
+        <div
+          class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6"
+        >
+          <img class="w-full rounded" src="/auditorio.jpg" alt="Auditorio" />
+          <div class="mt-4 md:mt-0">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">
+              Un espacio para todos
+            </h2>
+            <p
+              class="mb-6 font-light text-gray-50 md:text-lg dark:text-gray-200"
+            >
+              La JSConf España se celebra en La Nave de Madrid, un lugar con
+              espacio para poder reunir a todos los participantes de la
+              comunidad JavaScript.
+            </p>
+            <a
+              href="https://maps.app.goo.gl/AWd5ohsAqWvzc7En7"
+              class="inline-flex items-center bg-yellow-400 text-black hover:scale-105 transition focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900"
+            >
+              ¿Cómo se llega?
+              <svg
+                class="ml-2 -mr-1 w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+                ><path
+                  fill-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path></svg
+              >
+            </a>
+          </div>
         </div>
       </section>
     </div>

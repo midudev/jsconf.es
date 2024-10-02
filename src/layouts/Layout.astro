@@ -1,39 +1,89 @@
 ---
 interface Props {
-  title: string
+  title: string;
 }
 
-const { title } = Astro.props
+const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <meta name="description" content="Conferencia de Programación de JavaScript en España en La Nave de Madrid" />
-    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="Únete a JSConf España 2025, la conferencia más importante sobre JavaScript en España, del 12 al 14 de junio en La Nave de Madrid. ¡Reserva tu entrada ahora!"
+    />
+    <meta
+      name="keywords"
+      content="JSConf, JavaScript, España, Conferencias, Programación, La Nave Madrid"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title}</title>
-    <!-- add og image -->
-    <meta property="og:image" content="https://jsconfes.com/og.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:title" content="JSConf España 2025">
-    <meta property="og:description" content="Conferencia de Programación de JavaScript en España en La Nave de Madrid">
-    <meta property="og:url" content="https://jsconfes.com">
-    <!-- add twitter card -->
-     <meta name="twitter:card" content="summary_large_image">
-     <meta name="twitter:site" content="@midudev">
-     <meta name="twitter:creator" content="@midudev">
-     <meta name="twitter:title" content="JSConf España 2025">
-     <meta name="twitter:description" content="Conferencia de Programación de JavaScript en España en La Nave de Madrid">
-     <meta name="twitter:image" content="https://jsconfes.com/og.jpg">
-     <script src="https://js.tito.io/v2" async></script>
+    <link rel="canonical" href="https://jsconfes.com" />
+    <title>{title} | JSConf España 2025</title>
+
+    <!-- OG Meta Tags -->
+    <meta property="og:image" content="https://jsconfes.com/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:title" content="JSConf España 2025" />
+    <meta
+      property="og:description"
+      content="Conferencia de Programación de JavaScript en España en La Nave de Madrid"
+    />
+    <meta property="og:url" content="https://jsconfes.com" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@midudev" />
+    <meta name="twitter:creator" content="@midudev" />
+    <meta name="twitter:title" content="JSConf España 2025" />
+    <meta
+      name="twitter:description"
+      content="Conferencia de Programación de JavaScript en España en La Nave de Madrid"
+    />
+    <meta name="twitter:image" content="https://jsconfes.com/og.jpg" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "JSConf España 2025",
+        "startDate": "2025-06-12",
+        "endDate": "2025-06-14",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+          "@type": "Place",
+          "name": "La Nave Madrid",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Calle Cifuentes, 5",
+            "addressLocality": "Madrid",
+            "postalCode": "28021",
+            "addressCountry": "ES"
+          }
+        },
+        "image": "https://jsconfes.com/og.jpg",
+        "description": "Conferencia de Programación de JavaScript en España en La Nave de Madrid",
+        "organizer": {
+          "@type": "Organization",
+          "name": "JSConf España",
+          "url": "https://jsconfes.com"
+        }
+      }
+    </script>
+
+    <script src="https://js.tito.io/v2" async></script>
   </head>
-  <body>
+  <body class="scroll-smooth">
     <slot />
   </body>
 </html>
+
 <style is:global>
   html {
     font-family: system-ui, sans-serif;

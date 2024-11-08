@@ -1,9 +1,9 @@
 ---
-import Logo from "../components/Logo.astro"
-import Layout from "../layouts/Layout.astro"
-import Footer from "../components/Footer.astro"
 import Technologies from "@components/Technologies.astro"
 import YellowBackground from "@components/YellowBackground.astro"
+import Footer from "../components/Footer.astro"
+import Logo from "../components/Logo.astro"
+import Layout from "../layouts/Layout.astro"
 ---
 
 <Layout title="JSConf España 2025 - Conferencia presencial de programación de JavaScript">
@@ -15,7 +15,9 @@ import YellowBackground from "@components/YellowBackground.astro"
           <Logo />
           <div>
             <h1 class="font-bold text-3xl">JSConf España 2025</h1>
-            <p class="text-sm">1 MARZO 2025</p>
+              <a class="text-sm" href="https://checkout.tito.io/js-conf/js-conf-2025?format=ics" title="Añadir al calendario">
+                1 MARZO 2025
+              </a>
           </div>
         </div>
         <nav class="hidden md:flex space-x-6">
@@ -50,11 +52,17 @@ import YellowBackground from "@components/YellowBackground.astro"
       <footer class="container mx-auto px-4 py-8 flex justify-between items-center gap-x-2">
         <div class="flex flex-col">
           <span class="text-xl md:text-2xl opacity-80">¿Cuándo?</span>
-          <span class="text-2xl md:text-4xl font-bold opacity-90">1 de Marzo 2025</span>
+          <a href="https://checkout.tito.io/js-conf/js-conf-2025?format=ics" title="Añadir al calendario" class="text-2xl md:text-4xl font-bold opacity-90">
+            📅 1 de Marzo de 2025
+          </a>
         </div>
         <div class="flex flex-col text-right">
           <span class="text-xl md:text-2xl opacity-80">¿Dónde?</span>
-          <span class="text-2xl md:text-4xl font-bold opacity-90">La Nave, Madrid</span>
+          <span class="text-2xl md:text-4xl font-bold opacity-90">
+            <a href="maps://?q=La Nave, C. Cifuentes, 5, Villaverde, 28021 Madrid" title="Ver localización en tu app de mapas">
+              📍 La Nave, Madrid
+            </a>
+          </span>
         </div>
       </footer>
     </div>

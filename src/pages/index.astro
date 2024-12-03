@@ -1,11 +1,27 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "@/layouts/Layout.astro"
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import LandingSection from "@/sections/Landing.astro"
+import WhenAndWhereSection from "@/sections/WhenAndWhere.astro"
+import WhySection from "@/sections/Why.astro"
+import SpeakersSection from "@/sections/Speakers.astro"
+import SponsorsSection from "@/sections/Sponsors.astro"
+import WorkshopsSection from "@/sections/Workshops.astro"
+import AgendaSection from "@/sections/Agenda.astro"
+import PresenterSection from "@/sections/Presenter.astro"
+import PreEventSection from "@/sections/PreEvent.astro"
+import RunAndFunSection from "@/sections/RunAndFun.astro"
 ---
 
 <Layout>
-	<Welcome />
+  <LandingSection />
+  <WhenAndWhereSection />
+  <WhySection />
+  <SpeakersSection />
+  <SponsorsSection />
+  <WorkshopsSection />
+  <AgendaSection />
+  <PresenterSection />
+  <PreEventSection />
+  <RunAndFunSection />
 </Layout>

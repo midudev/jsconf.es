@@ -1,6 +1,6 @@
 # JSConf España 2025 - Sitio Web Oficial
 
-[![JSConf ES Banner](./public/screenshot.webp)](https://www.jsconf.es)
+![CleanShot 2024-12-06 at 11 08 41@2x](https://github.com/user-attachments/assets/04fac705-fc4b-40ba-9d6f-133bcefcb8d7)
 
 Este es el repositorio oficial del sitio web de JSConf España 2025, la conferencia internacional de JavaScript más importante de España que se celebrará el 1 de Marzo de 2025 en La Nave, Madrid.
 
@@ -18,12 +18,12 @@ Este proyecto es una iniciativa open source del canal de [midudev](https://twitc
 
 Instala las dependencias
 ```sh
-npm install
+pnpm install
 ```
 
 Inicia el proyecto en modo desarrollo
 ```sh
-npm run dev
+pnpm run dev
 ```
 
 ## 🤝 Cómo Contribuir

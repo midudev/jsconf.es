@@ -4,6 +4,8 @@
 
 Este es el repositorio oficial del sitio web de JSConf España 2025, la conferencia internacional de JavaScript más importante de España que se celebrará el 1 de Marzo de 2025 en La Nave, Madrid.
 
+[🖼️ Diseño en Figma](https://www.figma.com/design/cLUljIwWWJil5ESwyWJrbH/JSConf-%7C-2025?node-id=0-1&node-type=canvas&t=aMr2371pM1bFreOo-0)
+
 ## 🚀 Sobre el Proyecto
 
 Este proyecto es una iniciativa de [midudev](https://twitch.tv/midudev) para crear el sitio web oficial de JSConf España. La web está construida utilizando tecnologías modernas

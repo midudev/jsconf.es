@@ -1,59 +1,89 @@
 ---
-import SponsorPlatinum from "@/icons/SponsorPlatinum.svg";
-import SponsorPro from "@/icons/SponsorPro.svg";
-import sponsorsData from "@/data/sponsors.json";
+import SponsorPlatinum from "@/icons/SponsorPlatinum.svg"
+import SponsorPro from "@/icons/SponsorPro.svg"
+import sponsorsData from "@/data/sponsors.json"
+import Container from "@/components/Container.astro"
 
 const icons: Record<string, any> = {
-    "platinum": SponsorPlatinum,
-    "pro": SponsorPro,
-};
+  platinum: SponsorPlatinum,
+  pro: SponsorPro,
+}
 ---
 
 <section class="bg-white text-black flex flex-col px-6 xl:px-0">
-    <div class="flex py-12 flex-col xl:w-[1392px] xs:w-100 mx-auto">
-        <p class="text-gray-500 uppercase">Nuestros Sponsors</p>
-        <div class="flex items-start justify-between gap-12 mb-12 flex-col md:flex-row">
-            <div class="flex-1">
-                <h3 class="text-5xl xs:text-6xl font-bold text-balance">
-                    Agradecemos la confianza de los que están ayudando a que este proyecto se lleve a cabo 
-                </h3>
-            </div>
-            <a class="px-12 py-4 border border-black flex justify-center hover:bg-black hover:text-white w-full md:w-auto gap-2" href="#">
-                <span>¡Quiero patrocinar!</span>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" fill="currentColor"/>
-                </svg>
-            </a>
-        </div>
-        <div class="flex items-center justify-between bg-black py-6 px-12 mb-12 flex-col md:flex-row">
-            <img src="/sponsors/keepcoding.webp" alt="sponsor top" class="h-24 object-contain" />
-            <p class="text-white text-xl text-balance">
-                Quienes hacen que nuestro evento sea una realidad
-            </p>
-        </div>
-        
-        {sponsorsData && sponsorsData.map(sponsor => (
-            <div class="flex flex-col gap-4 text-gray-700 col-span-1">
-                <div class="flex items-center justify-end gap-1">
-                    <div class="flex items-center w-full">
-                        <div class="flex-grow border-t border-gray-300 w-auto flex-1"></div>
-                        <div class="ml-4 flex items-center w-100 gap-2">
-                            <span>{sponsor.category}</span>
-                            {(() => {
-                                const IconComponent = icons[sponsor.icon];
-                                return IconComponent ? <IconComponent className="size-4" /> : null;
-                            })()}
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-wrap">
-                    {sponsor.companies.map((company, index) => (
-                        <div class="flex items-center justify-center p-2 w-full md:w-1/2 lg:w-1/4">
-                            <img src={company.image} alt={company.name} class="h-24 max-w-48 object-contain" />
-                        </div>
-                    ))}
-                </div>
-            </div>
-        ))}
+  <Container>
+    <p class="text-gray-500 uppercase">Nuestros Sponsors</p>
+    <div
+      class="flex items-start justify-between gap-12 mb-12 flex-col md:flex-row"
+    >
+      <div class="flex-1">
+        <h3 class="text-5xl xs:text-6xl font-bold text-balance">
+          Agradecemos la confianza de los que están ayudando a que este proyecto
+          se lleve a cabo
+        </h3>
+      </div>
+      <a
+        class="px-12 py-4 border border-black flex justify-center hover:bg-black hover:text-white w-full md:w-auto gap-2"
+        href="#"
+      >
+        <span>¡Quiero patrocinar!</span>
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"
+            fill="currentColor"></path>
+        </svg>
+      </a>
     </div>
+    <div
+      class="flex items-center justify-between bg-black py-6 px-12 mb-12 flex-col md:flex-row"
+    >
+      <img
+        src="/sponsors/keepcoding.webp"
+        alt="sponsor top"
+        class="h-24 object-contain"
+      />
+      <p class="text-white text-xl text-balance">
+        Quienes hacen que nuestro evento sea una realidad
+      </p>
+    </div>
+
+    {
+      sponsorsData &&
+        sponsorsData.map((sponsor) => (
+          <div class="flex flex-col gap-4 text-gray-700 col-span-1">
+            <div class="flex items-center justify-end gap-1">
+              <div class="flex items-center w-full">
+                <div class="flex-grow border-t border-gray-300 w-auto flex-1" />
+                <div class="ml-4 flex items-center w-100 gap-2">
+                  <span>{sponsor.category}</span>
+                  {(() => {
+                    const IconComponent = icons[sponsor.icon]
+                    return IconComponent ? (
+                      <IconComponent className="size-4" />
+                    ) : null
+                  })()}
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-wrap">
+              {sponsor.companies.map((company, index) => (
+                <div class="flex items-center justify-center p-2 w-full md:w-1/2 lg:w-1/4">
+                  <img
+                    src={company.image}
+                    alt={company.name}
+                    class="h-24 max-w-48 object-contain"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        ))
+    }
+  </Container>
 </section>

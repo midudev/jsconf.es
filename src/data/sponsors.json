@@ -1,0 +1,50 @@
+[
+    {
+        "category": "Sponsors platinum",
+        "icon": "platinum",
+        "companies": [
+            {
+                "name": "Google",
+                "image": "/sponsors/google.webp"
+            },
+            {
+                "name": "Infojobs",
+                "image": "/sponsors/infojobs.webp"
+            },
+            {
+                "name": "Google",
+                "image": "/sponsors/google.webp"
+            },
+            {
+                "name": "Infojobs",
+                "image": "/sponsors/infojobs.webp"
+            },
+            {
+                "name": "Google",
+                "image": "/sponsors/google.webp"
+            }
+        ]
+    },
+    {
+        "category": "Sponsors pro",
+        "icon": "pro",
+        "companies": [
+            {
+                "name": "Don Dominio",
+                "image": "/sponsors/dondominio.webp"
+            },
+            {
+                "name": "Codely",
+                "image": "/sponsors/codely.webp"
+            },
+            {
+                "name": "Don Dominio",
+                "image": "/sponsors/dondominio.webp"
+            },
+            {
+                "name": "Codely",
+                "image": "/sponsors/codely.webp"
+            }
+        ]
+    }
+]

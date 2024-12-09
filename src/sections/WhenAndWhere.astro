@@ -4,7 +4,7 @@ import Container from "@/components/Container.astro"
 import UnderlineWord from "@/components/UnderlineWord.astro"
 ---
 
-<section class="bg-javascript text-black pt-18 pb-8">
+<section class="bg-javascript text-black pt-18 pb-8 px-6">
   <Container>
     <h2 class="text-6xl text-center font-clash max-w-5xl mx-auto">
       El día que Madrid se convertirá en la <strong class="font-semibold"
@@ -12,8 +12,8 @@ import UnderlineWord from "@/components/UnderlineWord.astro"
       >
     </h2>
 
-    <div class="flex py-12 gap-x-4 justify-around">
-      <article class="p-12 border border-black w-[45%]">
+    <div class="flex py-12 gap-x-4 justify-around flex-col md:flex-row gap-y-8">
+      <article class="md:p-12 border border-black md:w-[45%] w-full p-8">
         <span class="flex justify-start gap-x-2 items-center text-xl opacity-70"
           ><svg
             width="20"
@@ -32,7 +32,7 @@ import UnderlineWord from "@/components/UnderlineWord.astro"
         <h5 class="text-xl font-light">Sábado</h5>
       </article>
 
-      <article class="p-12 border border-black w-[45%]">
+      <article class="md:p-12 border border-black md:w-[45%] w-full p-8">
         <span class="flex justify-start gap-x-2 items-center text-xl opacity-70"
           ><svg
             width="18"

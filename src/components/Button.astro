@@ -5,7 +5,7 @@ const Component = href ? 'a' : 'button'
 const STYLES: Record<string, string> = {
   white: 'text-black hover:bg-black hover:text-white',
   black: 'text-white bg-black border-black hover:bg-white hover:text-black',
-  yellow: 'text-black bg-javascript hover:bg-white',
+  yellow: 'text-black bg-javascript border-transparent hover:bg-white',
 }
 
 const currentStyle = STYLES[style] ?? STYLES.white

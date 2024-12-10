@@ -7,9 +7,9 @@ import tailwind from '@astrojs/tailwind'
 export default defineConfig({
   experimental: {
     svg: {
-      mode: 'sprite'
-    }
+      mode: 'sprite',
+    },
   },
 
-  integrations: [tailwind()]
+  integrations: [tailwind()],
 })

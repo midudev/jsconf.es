@@ -22,11 +22,13 @@ Ten en cuenta que este proyecto es de código abierto y abierto a contribuciones
 ## 🔧 Instalación
 
 Instala las dependencias
+
 ```sh
 pnpm install
 ```
 
 Inicia el proyecto en modo desarrollo
+
 ```sh
 pnpm run dev
 ```
@@ -44,6 +46,7 @@ pnpm run dev
 ### 📋 Estándares de Código
 
 #### Commits
+
 Si es posible describe tus proyectos para que los mantenedores los puedan analizar de una forma más rápida y eficiente.
 
 - `feat:` - Nuevas características
@@ -57,6 +60,7 @@ Si es posible describe tus proyectos para que los mantenedores los puedan analiz
 Ejemplo: `feat: add newsletter subscription component`
 
 #### Código
+
 - Utiliza en lo posible el estilo de codificación configurado
 - Nombra las variables y funciones en camelCase
 - Utiliza nombres descriptivos en variables y funciones
@@ -65,10 +69,12 @@ Ejemplo: `feat: add newsletter subscription component`
 - Sigue las reglas de ESLint configuradas en el proyecto
 
 #### CSS/TailwindCSS
+
 - Utiliza las clases de Tailwind siempre que sea posible
 - Evita CSS personalizado a menos que sea absolutamente necesario
 
 #### Pull Requests
+
 - Describe claramente los cambios realizados
 - Incluye capturas de pantalla si hay cambios visuales
 - Asegúrate de que los tests pasen
@@ -76,12 +82,14 @@ Ejemplo: `feat: add newsletter subscription component`
 - Mantén los PR pequeños y enfocados en una sola característica
 
 ### Formas de contribuir
+
 - Todos los aportes son importantes
 - Codificación
 - Pruebas manuales o automatizadas
 - Traducciones, correcciones ortográficas
 
 ### 🚫 Qué evitar
+
 - No hagas commit directamente a `main`
 - No uses `!important` en CSS
 - No dejes console.logs en el código
@@ -90,6 +98,7 @@ Ejemplo: `feat: add newsletter subscription component`
 - Evita ser groser o imponerte en las discusiones
 
 ### 👥 Proceso de Review
+
 1. Los PR necesitan al menos una aprobación
-3. Atiende los comentarios del review
-4. Asegúrate de que el CI/CD pase
+2. Atiende los comentarios del review
+3. Asegúrate de que el CI/CD pase

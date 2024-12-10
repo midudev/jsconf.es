@@ -1,8 +1,8 @@
 ---
-import SponsorPlatinum from "@/icons/SponsorPlatinum.svg"
-import SponsorPro from "@/icons/SponsorPro.svg"
-import sponsorsData from "@/data/sponsors.json"
-import Container from "@/components/Container.astro"
+import SponsorPlatinum from '@/icons/SponsorPlatinum.svg'
+import SponsorPro from '@/icons/SponsorPro.svg'
+import sponsorsData from '@/data/sponsors.json'
+import Container from '@/components/Container.astro'
 
 const icons: Record<string, any> = {
   platinum: SponsorPlatinum,
@@ -13,13 +13,10 @@ const icons: Record<string, any> = {
 <section class="bg-white text-black flex flex-col px-6 xl:px-0">
   <Container>
     <p class="text-gray-500 uppercase">Nuestros Sponsors</p>
-    <div
-      class="flex items-start justify-between gap-12 mb-12 flex-col md:flex-row"
-    >
+    <div class="flex items-start justify-between gap-12 mb-12 flex-col md:flex-row">
       <div class="flex-1">
         <h3 class="text-5xl xs:text-6xl font-bold text-balance">
-          Agradecemos la confianza de los que están ayudando a que este proyecto
-          se lleve a cabo
+          Agradecemos la confianza de los que están ayudando a que este proyecto se lleve a cabo
         </h3>
       </div>
       <a
@@ -40,14 +37,8 @@ const icons: Record<string, any> = {
         </svg>
       </a>
     </div>
-    <div
-      class="flex items-center justify-between bg-black py-6 px-12 mb-12 flex-col md:flex-row"
-    >
-      <img
-        src="/sponsors/keepcoding.webp"
-        alt="sponsor top"
-        class="h-24 object-contain"
-      />
+    <div class="flex items-center justify-between bg-black py-6 px-12 mb-12 flex-col md:flex-row">
+      <img src="/sponsors/keepcoding.webp" alt="sponsor top" class="h-24 object-contain" />
       <p class="text-white text-xl text-balance">
         Quienes hacen que nuestro evento sea una realidad
       </p>
@@ -64,9 +55,7 @@ const icons: Record<string, any> = {
                   <span>{sponsor.category}</span>
                   {(() => {
                     const IconComponent = icons[sponsor.icon]
-                    return IconComponent ? (
-                      <IconComponent className="size-4" />
-                    ) : null
+                    return IconComponent ? <IconComponent className="size-4" /> : null
                   })()}
                 </div>
               </div>

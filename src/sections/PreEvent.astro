@@ -8,43 +8,47 @@ import InfojobsLogo from '@/icons/InfojobsLogo.svg'
 
 <section class="bg-black text-black flex flex-col px-0">
   <Container>
-    <div class="bg-javascript-radial pt-6 xl:pt-12 pb-4 px-6 xl:px-12">
-      <div class="flex items-start justify-between flex-col xl:flex-row gap-3 xl:gap-24">
-        <div class="flex flex-col flex-1 gap-4 text-balance font-clash pt-6">
-          <h3 class="text-6xl font-medium">Únete al Pre-Evento en Barcelona</h3>
-          <p class="text-xl font-medium">¡Porque la JSConf no empieza en marzo, empieza antes!</p>
-          <p class="text-base">
+    <div class="bg-javascript-radial pt-6 xl:pt-12 pb-4 px-6">
+      <div class="flex flex-col xl:flex-row gap-6 xl:gap-0">
+        <div class="flex flex-col flex-1 gap-4 font-clash pt-6 xl:px-6">
+          <h3 class="text-4xl xl:text-7xl font-medium">Únete al Pre-Evento en Barcelona</h3>
+          <p class="text-lg xl:text-2xl font-medium">
+            ¡Porque la JSConf no empieza en marzo, empieza antes!
+          </p>
+          <p class="text-base xl:text-xl">
             Te invitamos a un Pre-Evento exclusivo en Barcelona, donde podrás disfrutar de charlas
             inspiradoras, sorteos y un adelanto de lo que te espera en la JSConf España 2025.
           </p>
+          
           <div class="bg-javascript w-full text-white gap-6 flex flex-col p-6">
             <p class="text-sm">
+
               <Agenda class="w-6 h-6 inline-block mr-2" />
               Fecha por confirmar en enero.
             </p>
-            <p class="text-sm">
+            <p class="text-base xl:text-lg">
               <PointerMap class="w-6 h-6 inline-block mr-2" />
               Oficinas de Adevinta Jobs, Barcelona.
             </p>
-            <p class="text-sm">
+            <p class="text-sm xl:text-lg flex items-center">
               <Ticket class="w-6 h-6 inline-block mr-2" />
-              <strong>¡Es Gratis!</strong>
-              <span class="text-gray-500">
+              <span class="text-gray-500 flex flex-col xl:flex-row xl:gap-1">
+                <strong class="font-medium text-white">¡Es Gratis!</strong>
                 Prioridad para asistentes confirmados de la JSConf.
               </span>
             </p>
           </div>
         </div>
-        <div class="w-full xl:w-[45%] bg-blue-200">
+        <div class="w-full xl:w-[43%] flex items-end justify-end xl:px-0">
           <img
             src="/preevent.webp"
             alt="Foto de un Speaker del evento dando una charla en un escenario"
-            class="w-full object-cover"
+            class="w-full object-cover xl:max-w-lg h-full"
           />
         </div>
       </div>
-      <div class="w-full justify-center flex xl:justify-start pt-4">
-        <p class="text-sm xl:p-0">
+      <div class="w-full justify-center flex xl:justify-start pt-4 px-6">
+        <p class="text-sm xl:p-0 font-medium">
           <InfojobsLogo class="h-10 inline-block" />
           Patrocinador oficial
         </p>

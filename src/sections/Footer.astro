@@ -3,19 +3,23 @@ import LogoIcon from '@/icons/Logo.svg'
 import MiduLogoIcon from '@/icons/MiduLogo.svg'
 ---
 
-<footer class="mx-auto w-[1392px]">
-  <div class="flex justify-between items-center border-b border-white/10 pb-2">
-    <div class="flex flex-row gap-x-3 items-center justify-center">
-      <LogoIcon />
+<footer class="mx-auto xl:w-[1392px] xs:w-100">
+  <div
+    class="flex md:flex-row flex-col max-md:gap-y-4 justify-between items-center border-b border-white/10 pb-2"
+  >
+    <div class="flex flex-row gap-x-3 md:items-center items-start justify-center">
+      <LogoIcon class="md:size-16 size-9" />
       <div>
-        <h5 class="font-clash font-semibold text-2xl flex flex-row gap-x-2 text-white">
+        <h5
+          class="font-clash font-semibold max-md:h-4 md:text-2xl text-lg flex flex-row items-center gap-x-2 text-white"
+        >
           JSConf España
           <span
-            class="rounded-full bg-javascript text-black font-semibold text-lg px-3 flex justify-center items-center"
+            class="rounded-full bg-javascript text-black font-semibold md:text-lg text-xs md:px-3 px-2 leading-none flex justify-center items-center"
             >2025
           </span>
         </h5>
-        <span class="uppercase font-light text-white">1 MARZO 2025</span>
+        <span class="uppercase font-light text-white max-md:text-xs">1 MARZO 2025</span>
       </div>
     </div>
 

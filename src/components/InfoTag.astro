@@ -1,0 +1,14 @@
+---
+export interface Props {
+  text: string
+}
+
+const { text } = Astro.props
+---
+
+<span
+  class="flex flex-row gap-x-2 items-center font-clash font-medium justify-center w-fit bg-neutral-100 px-6 py-3"
+>
+  <slot />
+  {text}
+</span>

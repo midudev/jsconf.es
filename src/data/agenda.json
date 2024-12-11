@@ -1,0 +1,124 @@
+[
+  {
+    "day": "Día 1",
+    "date": "1 de marzo de 2025",
+    "agenda": [
+      {
+        "type": "break",
+        "time": "09:00 - 10:00",
+        "topic": "Bienvenida y acreditación"
+      },
+      {
+        "type": "talk",
+        "time": "10:00 - 11:00",
+        "topic": "Explorando el potencial de Firebase Genkit y la Innovación en Inteligencia Artificial",
+        "speaker": "Javier Velasco",
+        "role": "Design Engineer @LottieFiles"
+      },
+      {
+        "type": "talk",
+        "time": "11:00 - 12:00",
+        "topic": "Lorem ipsum Theme Topic",
+        "speaker": "Javier Velasco",
+        "role": "Design Engineer @LottieFiles"
+      },
+      {
+        "type": "talk",
+        "time": "12:00 - 13:00",
+        "topic": "Explorando el Futuro: Innovaciones en Tecnología y Aprendizaje Automático",
+        "speaker": "Javier Velasco",
+        "role": "Design Engineer @LottieFiles"
+      },
+      {
+        "type": "break",
+        "time": "13:00 - 14:00",
+        "topic": "Coffee Break"
+      },
+      {
+        "type": "talk",
+        "time": "14:00 - 15:00",
+        "topic": "Lorem ipsum Theme Topic",
+        "speaker": "Javier Velasco",
+        "role": "Design Engineer @LottieFiles"
+      },
+      {
+        "type": "talk",
+        "time": "15:00 - 16:00",
+        "topic": "Lorem ipsum Theme Topic",
+        "speaker": "Javier Velasco",
+        "role": "Design Engineer @LottieFiles"
+      },
+      {
+        "type": "break",
+        "time": "16:00 - 18:00",
+        "topic": "Coffee Break"
+      },
+      {
+        "type": "talk",
+        "time": "18:00 - 19:00",
+        "topic": "Lorem ipsum Theme Topic",
+        "speaker": "Javier Velasco",
+        "role": "Design Engineer @LottieFiles"
+      },
+      {
+        "type": "talk",
+        "time": "19:00 - 20:00",
+        "topic": "Lorem ipsum Theme Topic",
+        "speaker": "Javier Velasco",
+        "role": "Design Engineer @LottieFiles"
+      }
+    ]
+  },
+  {
+    "day": "Día 2",
+    "date": "2 de marzo de 2025",
+    "agenda": [
+      {
+        "type": "break",
+        "time": "09:00 - 10:00",
+        "topic": "Presentación de la Conferencia"
+      },
+      {
+        "type": "talk",
+        "time": "10:00 - 11:00",
+        "topic": "Lorem ipsum Theme Topic",
+        "speaker": "Javier Velasco",
+        "role": "Design Engineer @LottieFiles"
+      },
+      {
+        "type": "talk",
+        "time": "11:00 - 12:00",
+        "topic": "Lorem ipsum Theme Topic",
+        "speaker": "Javier Velasco",
+        "role": "Design Engineer @LottieFiles"
+      },
+      {
+        "type": "talk",
+        "time": "12:00 - 13:00",
+        "topic": "Lorem ipsum Theme Topic",
+        "speaker": "Javier Velasco",
+        "role": "Design Engineer @LottieFiles"
+      },
+      {
+        "type": "break",
+        "time": "13:00 - 14:00",
+        "topic": "Coffee Break"
+      },
+      {
+        "type": "talk",
+        "time": "14:00 - 15:00",
+        "topic": "Lorem ipsum Theme Topic",
+        "speaker": "Javier Velasco",
+        "role": "Design Engineer @LottieFiles"
+      },
+      {
+        "type": "talk",
+        "time": "15:00 - 16:00",
+        "topic": "Lorem ipsum Theme Topic",
+        "speaker": "Javier Velasco",
+        "role": "Design Engineer @LottieFiles"
+      }
+    ]
+  }
+]
+

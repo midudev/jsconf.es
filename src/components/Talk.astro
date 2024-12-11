@@ -1,0 +1,22 @@
+---
+const { item } = Astro.props
+const { time, topic, speaker, role } = item
+---
+
+<div class="flex justify-between items-center bg-[#191919] p-4 px-12">
+  <div class="flex gap-4">
+    <h4 class="border-r border-white pr-4 text-xl">{time}</h4>
+    <p class="text-xl">{topic}</p>
+  </div>
+  <div class="flex items-center">
+    <img
+      src="https://i.pravatar.cc/300"
+      alt={`Imagen de avatar de ${speaker} - ${role}`}
+      class="size-12 rounded-full mr-4"
+    />
+    <div>
+      <p>{speaker}</p>
+      <p class="text-javascript">{role}</p>
+    </div>
+  </div>
+</div>

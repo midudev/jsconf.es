@@ -1,0 +1,99 @@
+---
+import Container from '@/components/Container.astro'
+import { Image } from 'astro:assets'
+import MiduRun from '@/assets/midu-run.png'
+import MiduRunMobile from '@/assets/midu-run-mobile.png'
+import RunGym from '@/assets/run-gym.png'
+import RunLighting from '@/assets/run-lightning.png'
+import InfoTag from '@/components/InfoTag.astro'
+---
+
+<section class="bg-white text-black md:max-w-5/6 px-8 mx-auto">
+  <Image src={RunGym} alt="Pesa de fondo" class="absolute mt-72 max-md:-left-32" />
+  <Image src={RunLighting} alt="Pesa de fondo" class="absolute right-0 max-md:hidden" />
+  <Container>
+    <div class="flex flex-col xl:py-20 items-center text-center gap-y-14">
+      <div class="flex flex-col items-center md:px-12">
+        <span class="text-2xl font-clash font-medium flex items-center mb-4 gap-x-2 text-blue-500"
+          ><svg width="24" height="25" viewBox="0 0 24 25" fill="none">
+            <path
+              d="M18.8032 8.9928C19.4663 9.31764 20.2118 9.5 21 9.5C21.3425 9.5 21.6769 9.46557 22 9.39998V20.5C22 21.0523 21.5523 21.5 21 21.5H3C2.44772 21.5 2 21.0523 2 20.5V4.5C2 3.94772 2.44772 3.5 3 3.5H16.1C16.0344 3.82311 16 4.15753 16 4.5C16 5.73672 16.449 6.86857 17.1929 7.74142L12.0606 12.1829L5.64722 6.7377L4.35278 8.2623L12.0731 14.8171L18.8032 8.9928ZM21 7.5C19.3431 7.5 18 6.15685 18 4.5C18 2.84315 19.3431 1.5 21 1.5C22.6569 1.5 24 2.84315 24 4.5C24 6.15685 22.6569 7.5 21 7.5Z"
+              fill="#007AFF"></path>
+          </svg>
+          Has recibido una invitación</span
+        >
+        <h2 class="md:text-[76px] text-5xl font-medium font-clash">Muévete con la comunidad JS</h2>
+        <h4 class="text-xl text-zinc-500 lg:py-8 py-4 lg:mb-8 mb-4">
+          JSConf España 2025 no es solo código, charlas y networking, <strong class="text-black"
+            >¡también es movimiento!</strong
+          >
+        </h4>
+        <h3 class="md:text-4xl text-lg max-md:text-center">
+          Te invitamos a una carrera de 8KM en el icónico Parque del Retiro de Madrid, un espacio
+          único para compartir con otros desarrolladores en un ambiente relajado y divertido.
+        </h3>
+      </div>
+      <div class="flex items-center w-full">
+        <hr class="flex-grow border-t border-black/10" />
+        <span class="mx-4 text-zinc-500">Code run</span>
+        <hr class="flex-grow border-t border-black/10" />
+      </div>
+      <div class="flex lg:flex-row flex-col-reverse text-start gap-x-20">
+        <div class="flex flex-col lg:gap-y-12 gap-y-4 max-lg:mt-8">
+          <div>
+            <h3 class="lg:text-4xl text-2xl font-medium font-clash mb-4">
+              ¿Quién puede participar?
+            </h3>
+            <h4 class="lg:text-2xl text-lg font-medium font-clash mb-2">
+              Todos los asistentes a la JSConf están invitados a este evento
+            </h4>
+            <p class="lg:text-2xl text text-zinc-500">
+              No importa si eres corredor habitual o es tu primera vez: el objetivo es disfrutar,
+              compartir y moverse a un ritmo relajado.
+            </p>
+          </div>
+          <div>
+            <h3 class="lg:text-4xl text-2xl font-medium font-clash mb-4">¿Por qué participar?</h3>
+            <ul
+              class="list-disc lg:text-2xl leading-loose lg:pl-8 pl-6 list-image-[url(/img/checkmark.svg)]"
+            >
+              <li class="pl-2">
+                Descubre la belleza del Parque del Retiro en una experiencia única.
+              </li>
+              <li class="leading-normal pl-2">
+                Reflexiona y comparte lo que aprendiste en la JSConf mientras corres junto a otros
+                apasionados del desarrollo.
+              </li>
+              <li class="pl-2">Vive un momento diferente en compañía de la comunidad JS.</li>
+            </ul>
+          </div>
+          <div class="flex flex-wrap gap-x-3 gap-y-3">
+            <InfoTag text="2 de marzo de 2025."
+              ><svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path
+                  d="M15 2H19C19.5523 2 20 2.44772 20 3V19C20 19.5523 19.5523 20 19 20H1C0.44772 20 0 19.5523 0 19V3C0 2.44772 0.44772 2 1 2H5V0H7V2H13V0H15V2ZM2 8V18H18V8H2ZM4 12H9V16H4V12Z"
+                  fill="currentColor"></path>
+              </svg>
+            </InfoTag>
+            <InfoTag text="10:00 H"
+              ><svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path
+                  d="M10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20ZM11 10V5H9V12H15V10H11Z"
+                  fill="currentColor"></path>
+              </svg>
+            </InfoTag>
+            <InfoTag text="Entrada principal del Parque del Retiro, Madrid."
+              ><svg width="16" height="21" viewBox="0 0 16 21" fill="none">
+                <path
+                  d="M7 15.9381C3.05369 15.446 0 12.0796 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8C16 12.0796 12.9463 15.446 9 15.9381V18.0116C12.9463 18.1039 16 18.7351 16 19.5C16 20.3284 12.4183 21 8 21C3.58172 21 0 20.3284 0 19.5C0 18.7351 3.05369 18.1039 7 18.0116V15.9381ZM8 10C9.1046 10 10 9.1046 10 8C10 6.89543 9.1046 6 8 6C6.8954 6 6 6.89543 6 8C6 9.1046 6.8954 10 8 10Z"
+                  fill="currentColor"></path>
+              </svg>
+            </InfoTag>
+          </div>
+        </div>
+        <Image src={MiduRun} alt="Midu corriendo" class="max-lg:hidden" />
+        <Image src={MiduRunMobile} alt="Midu corriendo" class="lg:hidden" />
+      </div>
+    </div>
+  </Container>
+</section>

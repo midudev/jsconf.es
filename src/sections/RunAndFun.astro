@@ -1,16 +1,12 @@
 ---
 import Container from '@/components/Container.astro'
-import { Image } from 'astro:assets'
-import MiduRun from '@/assets/midu-run.png'
-import MiduRunMobile from '@/assets/midu-run-mobile.png'
-import RunGym from '@/assets/run-gym.png'
-import RunLighting from '@/assets/run-lightning.png'
 import InfoTag from '@/components/InfoTag.astro'
+import { Image } from 'astro:assets';
 ---
 
 <section class="bg-white text-black md:max-w-5/6 mx-auto">
-  <Image src={RunGym} alt="Pesa de fondo" class="absolute mt-72 max-md:-left-32" />
-  <Image src={RunLighting} alt="Pesa de fondo" class="absolute right-0 max-md:hidden" />
+  <img src="/img/run-gym.png" alt="Pesa de fondo" class="absolute mt-72 max-md:-left-32" />
+  <img src="/img/run-lightning.png" alt="Pesa de fondo" class="absolute right-0 max-md:hidden" />
   <Container>
     <div class="flex flex-col px-8 xl:py-20 items-center text-center gap-y-14">
       <div class="flex flex-col items-center md:px-12">
@@ -91,8 +87,8 @@ import InfoTag from '@/components/InfoTag.astro'
             </InfoTag>
           </div>
         </div>
-        <Image src={MiduRun} alt="Midu corriendo" class="max-lg:hidden" />
-        <Image src={MiduRunMobile} alt="Midu corriendo" class="lg:hidden" />
+        <img src="/img/midu-run.webp" alt="Midu corriendo" class="max-lg:hidden" />
+        <img src="/img/midu-run-mobile.webp" alt="Midu corriendo" class="lg:hidden" />
       </div>
     </div>
   </Container>

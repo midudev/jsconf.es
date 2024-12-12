@@ -1,0 +1,31 @@
+---
+import ArrowUp from '@/icons/ArrowUp.svg'
+
+const { theme } = Astro.props
+const STYLES = {
+  light: 'bg-white text-black hover:bg-black hover:text-white',
+  dark: 'bg-black text-white hover:bg-white hover:text-black',
+}
+const currentStyle = STYLES[theme] ?? STYLES.light
+---
+
+<a
+  class={`
+    font-clash
+    px-12
+    py-4
+    border
+    border-black
+    flex
+    justify-center
+    w-full
+    md:w-auto
+    gap-2
+    ${currentStyle}
+  `}
+  href="#"
+  style="black"
+>
+  <span>¡Quiero patrocinar!</span>
+  <ArrowUp class="size-4" />
+</a>

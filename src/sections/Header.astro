@@ -1,6 +1,7 @@
 ---
 import LogoIcon from '@/icons/Logo.svg'
 import Button from '@/components/Button.astro'
+import LinkSponsor from '@/components/LinkSponsor.astro'
 ---
 
 <header class="py-4">
@@ -26,27 +27,7 @@ import Button from '@/components/Button.astro'
       </nav>
     </div>
     <div class="flex items-center gap-4">
-      <Button
-        class="px-12 py-4 border border-black flex justify-center hover:bg-black hover:text-white w-full md:w-auto gap-2"
-        href="#"
-        style="black"
-      >
-        <span>¡Quiero patrocinar!</span>
-        <svg
-          slot="icon-right"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"
-            fill="currentColor"
-          >
-          </path>
-        </svg>
-      </Button>
+      <LinkSponsor theme="dark" />
       <Button class="flex items-center" style="yellow" href="#"> ¡Consigue tu entrada! </Button>
     </div>
   </div>

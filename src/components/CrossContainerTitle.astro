@@ -1,0 +1,13 @@
+---
+import Cross from '@/assets/cross.svg';
+---
+
+<div class="relative inline-block align-baseline m-0 pl-4 pr-4 border border-dotted border-neutral-700/80 text-javascript">
+
+  <Cross class="absolute -top-2 -left-2 w-4 h-4" />
+  <Cross class="absolute -top-2 -right-2 w-4 h-4" />
+  <Cross class="absolute -bottom-2 -left-2 w-4 h-4" />
+  <Cross class="absolute -bottom-2 -right-2 w-4 h-4" />
+
+  <span class="relative z-10"><slot /></span>
+</div>

@@ -7,14 +7,17 @@ const miduNetworks = [
   {
     name: 'LinkedIn',
     url: 'https://linkedin.com/in/midudev',
+    icon: 'LinkedInLogo',
   },
   {
     name: 'X',
     url: 'https://x.com/midudev',
+    icon: 'XLogo',
   },
   {
     name: 'Twitch',
     url: 'https://twitch.tv/midudev',
+    icon: 'TwitchLogo',
   },
 ]
 
@@ -51,14 +54,19 @@ const miduButtons = [
     <p class="max-w-96 tracking-wider">
       Este hombre conviertirá la conferencia en un evento inolvidable.  No te arrepentirás
     </p>
-    <ul class="flex gap-4">
+    <ul class="flex items-center gap-4">
       {
         miduNetworks.map((network) => (
-          <li>
+          <li class="hover:scale-110 transition">
             <a
-              href=""
+              target="_blank"
+              rel="noreferrer"
+              href={network.url}
             >
-              {network.name}
+              <img
+                src={`/src/icons/${network.icon}.svg`}
+                alt={network.name}
+              />
             </a>
           </li>
         ))

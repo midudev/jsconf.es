@@ -1,6 +1,7 @@
 ---
 import Container from '@/components/Container.astro'
 import UnderlineWord from '@/components/UnderlineWord.astro'
+import ArrowUp from '@/icons/ArrowUp.svg'
 
 const miduNetworks = [
   {
@@ -63,19 +64,22 @@ const miduButtons = [
         ))
       }
     </ul>
-    <ul class="flex flex-col gap-4">
+    <div class="flex flex-col gap-4">
       {
         miduButtons.map((button) => (
           <a
             href={button.url}
             target="_blank"
             rel="noreferrer"
-            class="px-10 py-4 border-2 border-white w-fit hover:bg-white hover:text-black transition duration-300"
+            class="group flex items-center gap-2 px-10 py-4 border-2 border-white w-fit hover:bg-white hover:text-black transition duration-300"
           >
-            {button.name}
+            <p>
+              {button.name}
+            </p>
+            <ArrowUp class="size-5 group-hover:!fill-black transition duration-300" />
           </a>
         ))
       }
-    </ul>
+    </div>
   </div>
 </Container>

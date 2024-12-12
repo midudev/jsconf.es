@@ -3,6 +3,7 @@ import SponsorPlatinum from '@/icons/SponsorPlatinum.svg'
 import SponsorPro from '@/icons/SponsorPro.svg'
 import sponsorsData from '@/data/sponsors.json'
 import Container from '@/components/Container.astro'
+import ArrowUp from '@/icons/ArrowUp.svg'
 
 const icons: Record<string, any> = {
   platinum: SponsorPlatinum,
@@ -24,19 +25,7 @@ const icons: Record<string, any> = {
         href="#"
       >
         <span>¡Quiero patrocinar!</span>
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"
-            fill="currentColor"
-          >
-          </path>
-        </svg>
+        <ArrowUp />
       </a>
     </div>
     <div class="flex items-center justify-between bg-black py-6 px-12 mb-12 flex-col md:flex-row">

@@ -1,0 +1,72 @@
+[
+  {
+    "day": "Día 1",
+    "date": "1 de marzo de 2025",
+    "agenda": [
+      {
+        "type": "break",
+        "time": "09:00 - 10:00",
+        "topic": "Bienvenida y acreditación"
+      },
+      {
+        "type": "talk",
+        "time": "10:00 - 11:00",
+        "topic": "Construyendo el Futuro de las Interfaces con React Server Components",
+        "speaker": "Dan Abramov",
+        "role": "Creador de Redux y Core Developer en React"
+      },
+      {
+        "type": "talk",
+        "time": "11:00 - 12:00",
+        "topic": "State of the Vue: Novedades y el Futuro del Framework",
+        "speaker": "Evan You",
+        "role": "Creador de Vue.js"
+      },
+      {
+        "type": "talk",
+        "time": "12:00 - 13:00",
+        "topic": "JavaScript en la Era de los Edge Functions",
+        "speaker": "Guillermo Rauch",
+        "role": "CEO de Vercel y Creador de Next.js"
+      },
+      {
+        "type": "break",
+        "time": "13:00 - 14:00",
+        "topic": "Coffee Break"
+      },
+      {
+        "type": "talk",
+        "time": "14:00 - 15:00",
+        "topic": "TypeScript 2025: Nuevas Herramientas para Código Más Seguro",
+        "speaker": "Anders Hejlsberg",
+        "role": "Creador de TypeScript y C#"
+      },
+      {
+        "type": "talk",
+        "time": "15:00 - 16:00",
+        "topic": "Construyendo Aplicaciones Universales con Svelte y SvelteKit",
+        "speaker": "Rich Harris",
+        "role": "Creador de Svelte"
+      },
+      {
+        "type": "break",
+        "time": "16:00 - 18:00",
+        "topic": "Coffee Break"
+      },
+      {
+        "type": "talk",
+        "time": "18:00 - 19:00",
+        "topic": "Automatización y DevOps con Node.js y Serverless Framework",
+        "speaker": "Erica Windisch",
+        "role": "Mantenedora de Serverless Framework"
+      },
+      {
+        "type": "talk",
+        "time": "19:00 - 20:00",
+        "topic": "El Futuro de la Programación con AI y JavaScript",
+        "speaker": "Amjad Masad",
+        "role": "CEO de Replit"
+      }
+    ]
+  }
+]

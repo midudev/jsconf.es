@@ -1,0 +1,36 @@
+---
+import Container from '@/components/Container.astro'
+import agendaData from '@/data/agenda.json'
+import Talk from '@/components/Talk.astro'
+import Break from '@/components/Break.astro'
+---
+
+<section class="bg-black flex flex-col px-6 xl:px-0 text-white font-clash">
+  <Container>
+    <div class="flex gap-4 justify-between pb-6 flex-col md:flex-row md:items-center">
+      <h2 class="text-5xl font-semibold">Programa del evento</h2>
+      <div class="flex items-center">
+        {
+          agendaData.map((day) => (
+            <p class="text-center text-2xl font-light">{day.date}</p>
+          ))
+        }
+      </div>
+    </div>
+    <div class="space-y-4">
+      {
+        agendaData[0].agenda.map((item) => {
+          return (
+            item.type === 'talk'
+              ? (
+              <Talk item={item} />
+                )
+              : (
+              <Break item={item} />
+                )
+          )
+        })
+      }
+    </div>
+  </Container>
+</section>

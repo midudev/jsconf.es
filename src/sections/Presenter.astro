@@ -1,0 +1,81 @@
+---
+import Container from '@/components/Container.astro'
+import UnderlineWord from '@/components/UnderlineWord.astro'
+
+const miduNetworks = [
+  {
+    name: 'LinkedIn',
+    url: 'https://linkedin.com/in/midudev',
+  },
+  {
+    name: 'X',
+    url: 'https://x.com/midudev',
+  },
+  {
+    name: 'Twitch',
+    url: 'https://twitch.tv/midudev',
+  },
+]
+
+const miduButtons = [
+  {
+    name: '¿Quién es midudev?',
+    url: 'https://midu.dev',
+  },
+  {
+    name: '¿Quién es midudev?',
+    url: 'https://midu.dev',
+  },
+]
+---
+<Container
+  class="!grid !grid-cols-2"
+>
+  <div
+    style="background-image: url('/img/midu-presenter.webp');"
+    class="aspect-square my-10 mr-10 bg-center bg-cover"
+  />
+  <div class="flex flex-col justify-center gap-6 m-10">
+    <h5 class="text-4xl font-semibold">
+      Presentado por
+      <UnderlineWord
+        class="!-translate-x-4"
+        color="white"
+      >
+        <span class="text-yellow-300">
+          midudev
+        </span>
+      </UnderlineWord>
+    </h5>
+    <p class="max-w-96 tracking-wider">
+      Este hombre conviertirá la conferencia en un evento inolvidable.  No te arrepentirás
+    </p>
+    <ul class="flex gap-4">
+      {
+        miduNetworks.map((network) => (
+          <li>
+            <a
+              href=""
+            >
+              {network.name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <ul class="flex flex-col gap-4">
+      {
+        miduButtons.map((button) => (
+          <a
+            href={button.url}
+            target="_blank"
+            rel="noreferrer"
+            class="px-10 py-4 border-2 border-white w-fit hover:bg-white hover:text-black transition duration-300"
+          >
+            {button.name}
+          </a>
+        ))
+      }
+    </ul>
+  </div>
+</Container>

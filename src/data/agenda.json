@@ -11,23 +11,23 @@
       {
         "type": "talk",
         "time": "10:00 - 11:00",
-        "topic": "Explorando el potencial de Firebase Genkit y la Innovación en Inteligencia Artificial",
-        "speaker": "Javier Velasco",
-        "role": "Design Engineer @LottieFiles"
+        "topic": "Construyendo el Futuro de las Interfaces con React Server Components",
+        "speaker": "Dan Abramov",
+        "role": "Creador de Redux y Core Developer en React"
       },
       {
         "type": "talk",
         "time": "11:00 - 12:00",
-        "topic": "Lorem ipsum Theme Topic",
-        "speaker": "Javier Velasco",
-        "role": "Design Engineer @LottieFiles"
+        "topic": "State of the Vue: Novedades y el Futuro del Framework",
+        "speaker": "Evan You",
+        "role": "Creador de Vue.js"
       },
       {
         "type": "talk",
         "time": "12:00 - 13:00",
-        "topic": "Explorando el Futuro: Innovaciones en Tecnología y Aprendizaje Automático",
-        "speaker": "Javier Velasco",
-        "role": "Design Engineer @LottieFiles"
+        "topic": "JavaScript en la Era de los Edge Functions",
+        "speaker": "Guillermo Rauch",
+        "role": "CEO de Vercel y Creador de Next.js"
       },
       {
         "type": "break",
@@ -37,16 +37,16 @@
       {
         "type": "talk",
         "time": "14:00 - 15:00",
-        "topic": "Lorem ipsum Theme Topic",
-        "speaker": "Javier Velasco",
-        "role": "Design Engineer @LottieFiles"
+        "topic": "TypeScript 2025: Nuevas Herramientas para Código Más Seguro",
+        "speaker": "Anders Hejlsberg",
+        "role": "Creador de TypeScript y C#"
       },
       {
         "type": "talk",
         "time": "15:00 - 16:00",
-        "topic": "Lorem ipsum Theme Topic",
-        "speaker": "Javier Velasco",
-        "role": "Design Engineer @LottieFiles"
+        "topic": "Construyendo Aplicaciones Universales con Svelte y SvelteKit",
+        "speaker": "Rich Harris",
+        "role": "Creador de Svelte"
       },
       {
         "type": "break",
@@ -56,69 +56,17 @@
       {
         "type": "talk",
         "time": "18:00 - 19:00",
-        "topic": "Lorem ipsum Theme Topic",
-        "speaker": "Javier Velasco",
-        "role": "Design Engineer @LottieFiles"
+        "topic": "Automatización y DevOps con Node.js y Serverless Framework",
+        "speaker": "Erica Windisch",
+        "role": "Mantenedora de Serverless Framework"
       },
       {
         "type": "talk",
         "time": "19:00 - 20:00",
-        "topic": "Lorem ipsum Theme Topic",
-        "speaker": "Javier Velasco",
-        "role": "Design Engineer @LottieFiles"
-      }
-    ]
-  },
-  {
-    "day": "Día 2",
-    "date": "2 de marzo de 2025",
-    "agenda": [
-      {
-        "type": "break",
-        "time": "09:00 - 10:00",
-        "topic": "Presentación de la Conferencia"
-      },
-      {
-        "type": "talk",
-        "time": "10:00 - 11:00",
-        "topic": "Lorem ipsum Theme Topic",
-        "speaker": "Javier Velasco",
-        "role": "Design Engineer @LottieFiles"
-      },
-      {
-        "type": "talk",
-        "time": "11:00 - 12:00",
-        "topic": "Lorem ipsum Theme Topic",
-        "speaker": "Javier Velasco",
-        "role": "Design Engineer @LottieFiles"
-      },
-      {
-        "type": "talk",
-        "time": "12:00 - 13:00",
-        "topic": "Lorem ipsum Theme Topic",
-        "speaker": "Javier Velasco",
-        "role": "Design Engineer @LottieFiles"
-      },
-      {
-        "type": "break",
-        "time": "13:00 - 14:00",
-        "topic": "Coffee Break"
-      },
-      {
-        "type": "talk",
-        "time": "14:00 - 15:00",
-        "topic": "Lorem ipsum Theme Topic",
-        "speaker": "Javier Velasco",
-        "role": "Design Engineer @LottieFiles"
-      },
-      {
-        "type": "talk",
-        "time": "15:00 - 16:00",
-        "topic": "Lorem ipsum Theme Topic",
-        "speaker": "Javier Velasco",
-        "role": "Design Engineer @LottieFiles"
+        "topic": "El Futuro de la Programación con AI y JavaScript",
+        "speaker": "Amjad Masad",
+        "role": "CEO de Replit"
       }
     ]
   }
 ]
-

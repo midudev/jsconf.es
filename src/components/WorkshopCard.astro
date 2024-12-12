@@ -1,0 +1,35 @@
+---
+import Clock from '@/icons/Clock.svg'
+import WorkshopSkillTag from '@/components/WorkshopSkillTag.astro'
+import { TypeTag } from '@/components/WorkshopSkillTag.astro'
+export interface Props {
+  hour: string
+  title: string
+  author: string
+  authorDesc: string
+  workshopDesc: string
+  tags?: Array<TypeTag>
+}
+const { hour, title, author, authorDesc, workshopDesc, tags } = Astro.props
+---
+
+<div
+  class="bg-gradient-to-b from-white/5 shadow-md p-6 text-white border border-zinc-900 font-clash"
+>
+  <span class="flex flex-row items-center gap-x-2 text-white text-[16px] mb-4"><Clock />{hour}</span
+  >
+
+  <h6 class="text-[28px] font-clash leading-none mb-2 font-medium">
+    {title}
+  </h6>
+  <p class="text-light font-medium text-javascript">
+    {author}
+    <span class="text-zinc-500 font-clash font-medium ml-6">{authorDesc}</span>
+  </p>
+  <p class="text-zinc-500 text-[16px] font-normal mt-4 mb-6 text-left">
+    {workshopDesc}
+  </p>
+  <div class="flex flex-wrap gap-2">
+    {tags?.map((tag) => <WorkshopSkillTag tag={tag} />)}
+  </div>
+</div>

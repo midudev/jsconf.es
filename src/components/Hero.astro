@@ -1,0 +1,46 @@
+---
+import Button from '@/components/Button.astro'
+
+// import KeepCodingLogo from './KeepCodingLogo.astro'
+---
+
+<div class="relative min-h-screen flex flex-col items-center justify-center px-4 text-center">
+  <div class="space-y-8">
+    <h1 class="text-6xl md:text-8xl font-bold tracking-tighter">JSConf España 2025</h1>
+
+    <div class="text-3xl md:text-5xl font-light space-y-2">
+      <p>
+        Una experiencia <span
+          class="bg-gradient-to-r from-[#FFFE65] to-[#F7DF1F] text-black relative">exclusiva</span
+        > de
+      </p>
+      <p>JavaScript</p>
+    </div>
+
+    <div class="flex items-center justify-center gap-2">
+      <span>Powered by</span>
+      <!-- <KeepCodingLogo class="h-8" /> -->
+    </div>
+
+    <div class="flex flex-col md:flex-row gap-4 justify-center mt-12">
+      <Button href="#" style="yellow">
+        <span> ¡Consigue tu entrada! </span>
+      </Button>
+      <Button href="#" style="black">
+        <span> ¡Quiero patrocinar! </span>
+      </Button>
+    </div>
+
+    <div
+      class="inline-flex items-center justify-center gap-2.5 bg-white/5 px-4 py-2.5 rounded-full"
+    >
+      <span>🔥</span>
+      <p
+        class="bg-gradient-to-bl from-[#F7DF1F] to-[#FF5011] text-transparent bg-clip-text leading-normal"
+      >
+        ¡Ya se ha vendido el 50% de las entradas!
+      </p>
+      <span class="text-white ml-2">Asegura tu lugar en el evento</span>
+    </div>
+  </div>
+</div>

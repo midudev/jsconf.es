@@ -24,7 +24,6 @@ pnpm-debug.log*
 .idea/
 
 # only allow bun.lock to be committed
-!bun.lockb
+bun.lockb
 package-lock.json
 yarn.lock
-pnpm-lock.yaml

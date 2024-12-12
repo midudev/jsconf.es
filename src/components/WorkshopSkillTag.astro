@@ -5,15 +5,15 @@ import NodeJS from '@/icons/NodeJSLogo.svg'
 import Optimization from '@/icons/OptimizationLogo.svg'
 import Testing from '@/icons/TestingLogo.svg'
 
-export interface Props {
-  tag: TypeTag
-}
-
 const { tag } = Astro.props
 
 export type TypeTag = {
   name: string
   icon: any
+}
+
+export interface Props {
+  tag: TypeTag
 }
 
 export const TAGS = {

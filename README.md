@@ -10,7 +10,7 @@ Este es el repositorio oficial del sitio web de JSConf España 2025, la conferen
 
 Este proyecto es una iniciativa de [midudev](https://twitch.tv/midudev) para crear el sitio web oficial de JSConf España. La web está construida utilizando tecnologías modernas
 
-### 📝 Licencia del Proyecto
+### 📝 Licencia del Proyecto
 
 Ten en cuenta que este proyecto es de código abierto y abierto a contribuciones de la comunidad pero **su licencia no permite trabajos derivados, ni gratuitos ni comerciales**. Revisa el archivo [LICENSE.md](LICENSE.md) para más información.
 

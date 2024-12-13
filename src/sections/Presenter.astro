@@ -1,93 +1,46 @@
 ---
 import Container from '@/components/Container.astro'
-import UnderlineWord from '@/components/UnderlineWord.astro'
 import ArrowUp from '@/icons/ArrowUp.svg'
-
-const miduNetworks = [
-  {
-    name: 'LinkedIn',
-    url: 'https://linkedin.com/in/midudev',
-    icon: 'LinkedInLogo',
-  },
-  {
-    name: 'X',
-    url: 'https://x.com/midudev',
-    icon: 'XLogo',
-  },
-  {
-    name: 'Twitch',
-    url: 'https://twitch.tv/midudev',
-    icon: 'TwitchLogo',
-  },
-]
-
-const miduButtons = [
-  {
-    name: '¿Quién es midudev?',
-    url: 'https://midu.dev',
-  },
-  {
-    name: '¿Quién es midudev?',
-    url: 'https://midu.dev',
-  },
-]
+import XLogo from '@/icons/XLogo.svg'
+import TwitchLogo from '@/icons/TwitchLogo.svg'
+import LinkedInSmallLogo from '@/icons/LinkedInSmallLogo.svg'
+import Button from '@/components/Button.astro'
+import UnderlineWord from '@/components/UnderlineWord.astro'
 ---
-<Container
-  class="!grid !grid-cols-2"
->
-  <div
-    style="background-image: url('/img/midu-presenter.webp');"
-    class="aspect-square my-10 mr-10 bg-center bg-cover"
-  />
-  <div class="flex flex-col justify-center gap-6 m-10">
-    <h5 class="text-4xl font-semibold">
-      Presentado por
-      <UnderlineWord
-        class="!-translate-x-4"
-        color="white"
-      >
-        <span class="text-yellow-300">
-          midudev
-        </span>
-      </UnderlineWord>
-    </h5>
-    <p class="max-w-96 tracking-wider">
-      Este hombre conviertirá la conferencia en un evento inolvidable.  No te arrepentirás
-    </p>
-    <ul class="flex items-center gap-4">
-      {
-        miduNetworks.map((network) => (
-          <li class="hover:scale-110 transition">
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href={network.url}
-            >
-              <img
-                src={`/src/icons/${network.icon}.svg`}
-                alt={network.name}
-              />
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-    <div class="flex flex-col gap-4">
-      {
-        miduButtons.map((button) => (
-          <a
-            href={button.url}
-            target="_blank"
-            rel="noreferrer"
-            class="group flex items-center gap-2 px-10 py-4 border-2 border-white w-fit hover:bg-white hover:text-black transition duration-300"
+
+<section class="bg-black text-white mx-auto px-4 py-12">
+  <Container class="lg:p-24">
+    <div class="flex md:flex-row flex-col-reverse lg:gap-x-20 gap-x-10">
+      <img
+        src="/img/midu-presenter.webp"
+        alt="Miguel Ángel Durán"
+        class="md:w-5/12 max-md:mt-8 object-scale-down"
+      />
+      <div class="md:w-7/12 flex flex-col md:p-10 md:gap-y-10 gap-y-8">
+        <h2 class="md:text-5xl text-[34px] font-clash font-medium">
+          Presentado por <UnderlineWord class="text-white"
+            ><span class="text-javascript">midudev</span></UnderlineWord
           >
-            <p>
-              {button.name}
-            </p>
-            <ArrowUp class="size-5 group-hover:!fill-black transition duration-300" />
+        </h2>
+        <h3 class="md:text-2xl text-lg font-clash">
+          Este hombre conviertirá la conferencia en un evento inolvidable. No te arrepentirás
+        </h3>
+        <div class="flex flex-row gap-x-4 items-center mb-8">
+          <a href="https://www.linkedin.com/in/midudev/" target="_blank" class="text-white">
+            <LinkedInSmallLogo class="size-8" />
           </a>
-        ))
-      }
+          <a href="https://x.com/midudev" target="_blank" class="text-white">
+            <XLogo class="size-8" />
+          </a>
+          <a href="https://www.twitch.tv/midudev" target="_blank">
+            <TwitchLogo class="size-8" />
+          </a>
+        </div>
+        <Button class="py-6 lg:px-24 w-fit md:w-fit" style="black" href="#">
+          <ArrowUp slot="icon-right" />
+          ¿Quién es midudev?
+        </Button>
+      </div>
     </div>
-  </div>
-</Container>
+  </Container>
+</section>

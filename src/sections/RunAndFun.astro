@@ -24,8 +24,8 @@ import InfoTag from '@/components/InfoTag.astro'
           >
         </h4>
         <h3 class="md:text-4xl text-lg max-md:text-center">
-          Te invitamos a una carrera de 8KM en el icónico Parque del Retiro de Madrid, un espacio
-          único para compartir con otros desarrolladores en un ambiente relajado y divertido.
+          Una carrera de 8KM en el icónico Parque del Retiro de Madrid, un espacio único para
+          compartir con otros desarrolladores en un ambiente relajado y divertido.
         </h3>
       </div>
       <div class="flex items-center w-full">
@@ -50,11 +50,9 @@ import InfoTag from '@/components/InfoTag.astro'
           <div>
             <h3 class="lg:text-4xl text-2xl font-medium font-clash mb-4">¿Por qué participar?</h3>
             <ul
-              class="list-disc lg:text-2xl leading-loose lg:pl-8 pl-6 list-image-[url(/img/checkmark.svg)]"
+              class="list-disc text-xl leading-loose lg:pl-8 pl-6 list-image-[url(/img/checkmark.svg)]"
             >
-              <li class="pl-2">
-                Descubre la belleza del Parque del Retiro en una experiencia única.
-              </li>
+              <li class="pl-2">Descubre el Parque del Retiro en una experiencia única.</li>
               <li class="leading-normal pl-2">
                 Reflexiona y comparte lo que aprendiste en la JSConf mientras corres junto a otros
                 apasionados del desarrollo.
@@ -77,13 +75,20 @@ import InfoTag from '@/components/InfoTag.astro'
                   fill="currentColor"></path>
               </svg>
             </InfoTag>
-            <InfoTag text="Entrada principal del Parque del Retiro, Madrid."
-              ><svg width="16" height="21" viewBox="0 0 16 21" fill="none">
-                <path
-                  d="M7 15.9381C3.05369 15.446 0 12.0796 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8C16 12.0796 12.9463 15.446 9 15.9381V18.0116C12.9463 18.1039 16 18.7351 16 19.5C16 20.3284 12.4183 21 8 21C3.58172 21 0 20.3284 0 19.5C0 18.7351 3.05369 18.1039 7 18.0116V15.9381ZM8 10C9.1046 10 10 9.1046 10 8C10 6.89543 9.1046 6 8 6C6.8954 6 6 6.89543 6 8C6 9.1046 6.8954 10 8 10Z"
-                  fill="currentColor"></path>
-              </svg>
-            </InfoTag>
+            <a
+              href="https://maps.app.goo.gl/PYvuti2SYu3b1cYz6"
+              target="_blank"
+              rel="noreferrer noopener"
+              class="block hover:invert transition"
+            >
+              <InfoTag text="C/ de Alfonso XII con Puerta del Angel Caído">
+                <svg width="16" height="21" viewBox="0 0 16 21" fill="none">
+                  <path
+                    d="M7 15.9381C3.05369 15.446 0 12.0796 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8C16 12.0796 12.9463 15.446 9 15.9381V18.0116C12.9463 18.1039 16 18.7351 16 19.5C16 20.3284 12.4183 21 8 21C3.58172 21 0 20.3284 0 19.5C0 18.7351 3.05369 18.1039 7 18.0116V15.9381ZM8 10C9.1046 10 10 9.1046 10 8C10 6.89543 9.1046 6 8 6C6.8954 6 6 6.89543 6 8C6 9.1046 6.8954 10 8 10Z"
+                    fill="currentColor"></path>
+                </svg>
+              </InfoTag>
+            </a>
           </div>
         </div>
         <img src="/img/midu-run.webp" alt="Midu corriendo" class="max-lg:hidden" />

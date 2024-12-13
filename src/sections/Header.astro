@@ -12,15 +12,15 @@ const sections = [
 ]
 ---
 
-<header class="py-4 z-[999] fixed top-0 left-0 right-0 bg-black">
+<header class="pt-4 z-[999] fixed top-0 left-0 right-0 bg-black/80 backdrop-blur">
   <div
-    class="flex lg:justify-around justify-between items-center border-b border-white/10 pb-2 max-lg:pt-2 max-lg:px-6"
+    class="flex lg:justify-around justify-between items-center border-b border-white/10 pb-4 max-lg:pt-2 max-lg:px-6"
   >
     <div class="flex flex-row gap-x-3 md:items-center items-start justify-center">
       <LogoIcon class="md:size-16 size-9" />
       <div>
         <h5
-          class="font-clash font-semibold max-md:h-4 md:text-2xl text-lg flex flex-row items-center gap-x-2 text-white"
+          class="font-clash font-[550] max-md:h-4 md:text-2xl text-lg flex flex-row items-center gap-x-2 text-white"
         >
           JSConf España
           <span
@@ -28,16 +28,20 @@ const sections = [
             >2025
           </span>
         </h5>
-        <span class="uppercase font-light text-white max-md:text-xs">1 MARZO 2025</span>
+        <span class="uppercase font-light opacity-80 text-sm text-white max-md:text-xs"
+          >1 MARZO 2025</span
+        >
       </div>
     </div>
     <div class="text-white">
-      <nav class="hidden md:flex gap-8 text-sm underline underline-offset-4">
+      <nav class="hidden md:flex gap-8 text-sm">
         {
           sections.slice(1).map(({ name, href }, key) => (
             <a
               href={href}
-              class:list={['hover:text-gray-300 transition']}
+              class:list={[
+                'hover:text-gray-300 py-1 border-b border-b-transparent transition hover:border-b-white font-clash text-lg',
+              ]}
               id={`navmob-link-${key}`}
             >
               {name}
@@ -47,13 +51,13 @@ const sections = [
       </nav>
     </div>
     <div class="flex items-center gap-4 max-lg:hidden">
-      <Button href="#" style="black">
+      <Button href="mailto:info@jsconf.es" style="black">
         <span>¡Quiero patrocinar!</span>
         <ArrowUp slot="icon-right" />
       </Button>
       <Button class="flex items-center" style="yellow" href="#"> ¡Consigue tu entrada! </Button>
     </div>
-    <HamburgerButton class:list={'block lg:hidden'} id="menuButton" />
+    <HamburgerButton class:list="block lg:hidden" id="menuButton" />
     <div
       class="fixed inset-0 z-[888] flex w-screen flex-col items-center overflow-x-auto px-3 lg:hidden backdrop-blur-lg bg-black/85"
       id={MOBILE_MENU_CONTENT_ID}

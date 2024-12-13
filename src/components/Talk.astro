@@ -3,7 +3,9 @@ const { item } = Astro.props
 const { time, topic, speaker, role } = item
 ---
 
-<div class="flex justify-between items-center bg-[#191919] p-4 px-12 border border-white border-opacity-5 flex-col md:flex-row">
+<div
+  class="flex justify-between items-center bg-[#191919] p-4 px-12 border border-white border-opacity-5 flex-col md:flex-row"
+>
   <div class="flex gap-4 flex-1 flex-col md:flex-row">
     <h4 class="border-0 md:border-r border-white border-opacity-5 pr-4 text-xl">{time}</h4>
     <p class="text-xl text-balance">{topic}</p>

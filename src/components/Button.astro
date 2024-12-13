@@ -1,5 +1,5 @@
 ---
-const { href, style } = Astro.props
+const { href, style, class: className } = Astro.props
 const Component = href ? 'a' : 'button'
 
 const STYLES: Record<string, string> = {
@@ -14,8 +14,9 @@ const currentStyle = STYLES[style] ?? STYLES.white
 
 <Component
   class:list={[
-    'px-12 py-4 border flex justify-center w-full md:w-auto gap-2 transition items-center',
+    'px-5 py-3 font-clash font-[450] border flex justify-center w-full md:w-auto gap-2 transition items-center',
     currentStyle,
+    className,
   ]}
   href="#"
 >

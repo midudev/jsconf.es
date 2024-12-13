@@ -3,6 +3,7 @@ import { MOBILE_MENU_CONTENT_ID } from '@/consts/mobile-menu'
 import HamburgerButton from '@/components/HamburgerButton.astro'
 import LogoIcon from '@/icons/Logo.svg'
 import Button from '@/components/Button.astro'
+import LinkSponsor from '@/components/LinkSponsor.astro'
 import ArrowUp from '@/icons/ArrowUp.svg'
 const sections = [
   { name: 'HOME', href: '#home' },
@@ -50,11 +51,8 @@ const sections = [
         }
       </nav>
     </div>
-    <div class="flex items-center gap-4 max-lg:hidden">
-      <Button href="#" style="black">
-        <span>¡Quiero patrocinar!</span>
-        <ArrowUp slot="icon-right" />
-      </Button>
+    <div class="flex items-center gap-4">
+      <LinkSponsor theme="dark" />
       <Button class="flex items-center" style="yellow" href="#"> ¡Consigue tu entrada! </Button>
     </div>
     <HamburgerButton class:list="block lg:hidden" id="menuButton" />
@@ -79,14 +77,7 @@ const sections = [
             </>
           ))
         }
-        <Button
-          class="px-12 py-4 border border-black flex justify-center hover:bg-black hover:text-white w-full md:w-auto gap-2"
-          href="#"
-          style="transparent"
-        >
-          <span>¡Quiero patrocinar!</span>
-          <ArrowUp slot="icon-right" />
-        </Button>
+        <LinkSponsor theme="dark" />
         <Button class="flex items-center" style="yellow" href="#"> ¡Consigue tu entrada! </Button>
       </nav>
     </div>

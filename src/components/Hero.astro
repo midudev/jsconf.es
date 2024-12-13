@@ -1,7 +1,7 @@
 ---
 import Button from '@/components/Button.astro'
-
-// import KeepCodingLogo from './KeepCodingLogo.astro'
+import Mouse from '@/icons/Mouse.svg'
+import ArrowDown from '@/icons/ArrowDown.svg'
 ---
 
 <div class="relative min-h-screen flex flex-col items-center justify-center px-4 text-center">
@@ -24,7 +24,7 @@ import Button from '@/components/Button.astro'
 
     <div class="flex items-center justify-center gap-2">
       <span>Powered by</span>
-      <!-- <KeepCodingLogo class="h-8" /> -->
+      <img src="/sponsors/keepcoding_small.webp" alt="KeepCoding logo" class="h-11" />
     </div>
 
     <div class="flex flex-col md:flex-row gap-4 justify-center mt-12">
@@ -48,4 +48,10 @@ import Button from '@/components/Button.astro'
       <span class="text-white">¡Consigue la tuya antes de que se agoten!</span>
     </div>
   </div>
+
+  <div class="max-sm:hidden flex flex-col items-center justify-center mt-24 space-y-2">
+    <Mouse class="size-8" />
+    <ArrowDown class="size-6 animate-bounce" />
+  </div>
+
 </div>

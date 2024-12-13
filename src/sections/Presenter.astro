@@ -18,25 +18,42 @@ import UnderlineWord from '@/components/UnderlineWord.astro'
       />
       <div class="md:w-7/12 flex flex-col md:p-10 md:gap-y-10 gap-y-8">
         <h2 class="md:text-5xl text-[34px] font-clash font-medium">
-          Presentado por <UnderlineWord class="text-white !-translate-x-5 !-translate-y-2 md:!translate-x-0 md:!translate-y-0"
+          Presentado por <UnderlineWord
+            class="text-white !-translate-x-5 !-translate-y-2 md:!translate-x-0 md:!translate-y-0"
             ><span class="text-javascript">midudev</span></UnderlineWord
           >
         </h2>
-        <h3 class="md:text-2xl text-lg font-clash">
-          Este hombre conviertirá la conferencia en un evento inolvidable. No te arrepentirás
+        <h3 class="md:text-2xl text-lg font-clash text-pretty">
+          Uno de los mayores divulgadores de Programación de habla hispana. Más de 15 años de
+          experiencia en <span class="text-javascript">JavaScript</span>.
         </h3>
         <div class="flex flex-row gap-x-4 items-center mb-8">
-          <a href="https://www.linkedin.com/in/midudev/" target="_blank" class="text-white">
+          <a
+            href="https://www.linkedin.com/in/midudev/"
+            target="_blank"
+            class="text-white hover:scale-150 transition-transform"
+            rel="noreferrer"
+          >
             <LinkedInSmallLogo class="size-8" />
           </a>
-          <a href="https://x.com/midudev" target="_blank" class="text-white">
+          <a
+            href="https://x.com/midudev"
+            target="_blank"
+            class="text-white hover:scale-150 transition-transform"
+            rel="noreferrer"
+          >
             <XLogo class="size-8" />
           </a>
-          <a href="https://www.twitch.tv/midudev" target="_blank">
+          <a
+            class="text-white hover:scale-150 transition-transform"
+            href="https://www.twitch.tv/midudev"
+            target="_blank"
+            rel="noreferrer"
+          >
             <TwitchLogo class="size-8" />
           </a>
         </div>
-        <Button class="py-6 lg:px-24 w-fit md:w-fit" style="black" href="#">
+        <Button class="lg:px-10 max-w-fit" style="transparent" href="https://twitch.tv/midudev">
           <ArrowUp slot="icon-right" />
           ¿Quién es midudev?
         </Button>

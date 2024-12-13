@@ -42,7 +42,7 @@ const sections = [
               class:list={[
                 'hover:text-gray-300 py-1 border-b border-b-transparent transition hover:border-b-white font-clash text-lg',
               ]}
-              id={`navmob-link-${key}`}
+              id={`navdesk-link-${key}`}
             >
               {name}
             </a>
@@ -153,15 +153,31 @@ const sections = [
     const innerMenuButton = document.querySelector('#innerMenuButton') as HTMLElement
     const menuMobileContext = document.getElementById('menuMobileContent') as HTMLElement
 
-    const links = document.querySelectorAll('a[id^="navmob-link-"]')
-    links.forEach((link) => {
-      link.addEventListener('click', (event) => {
-        event.preventDefault()
-        const id = link.getAttribute('href')?.slice(1)
-        document.getElementById(id as string)?.scrollIntoView({ behavior: 'smooth' })
+    const linksMobile = document.querySelectorAll('a[id^="navmob-link-"]')
+    const linksDesktop = document.querySelectorAll('a[id^="navdesk-link-"]')
+
+    function scrollSmoothlyToLink(link: Element) {
+      const id = link.getAttribute('href')?.slice(1)
+      if (id) {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+
+    function handleLinkClick(event: Event, link: Element, isMobile: boolean) {
+      event.preventDefault()
+      scrollSmoothlyToLink(link)
+      if (isMobile) {
         toggleMenu(nav, menuMobileContext, innerMenuButton)
         menuButton.classList.toggle('hidden')
-      })
+      }
+    }
+
+    linksMobile.forEach((link) => {
+      link.addEventListener('click', (event) => handleLinkClick(event, link, true))
+    })
+
+    linksDesktop.forEach((link) => {
+      link.addEventListener('click', (event) => handleLinkClick(event, link, false))
     })
 
     menuButton?.addEventListener('click', () => {

@@ -1,24 +1,69 @@
 ---
+import Container from '@/components/Container.astro'
 import Button from '@/components/Button.astro'
 import CrossContainerTitle from '@/components/CrossContainerTitle.astro'
+import WorkshopCard from '@/components/WorkshopCard.astro'
+import Ticket from '@/icons/Ticket.svg'
+import type { TypeTag } from '@/components/WorkshopSkillTag.astro'
+import { TAGS } from '@/components/WorkshopSkillTag.astro'
+
+type Workshop = {
+  hour: string
+  title: string
+  author: string
+  authorDesc: string
+  workshopDesc: string
+  tags: Array<TypeTag>
+}
+
+const workshops: Workshop[] = [
+  {
+    hour: '16:00',
+    title: 'Introducción a Firebase Genkit y Inteligencia Artificial',
+    author: 'Xavier Portilla',
+    authorDesc: 'Software Engineer en Google',
+    workshopDesc:
+      'Descubre Firebase Genkit en este taller introductorio en el DevFest Madrid. Exploraremos cómo este versátil framework permite a los desarrolladores crear aplicaciones impulsadas por inteligencia artificial con facilidad. Aprende a implementar las bibliotecas de código abierto de Genkit para Node.js y Go, integrarte con modelos de IA generativa y ejecutarlo de manera independiente de los servicios de Google. Perfecto para quienes buscan optimizar su proceso de desarrollo de IA.',
+    tags: [TAGS.FIREBASE, TAGS.IA],
+  },
+  {
+    hour: '16:00',
+    title: 'Cómo mantener un desarrollo con TDD rápido y eficaz',
+    author: 'Xavier Portilla',
+    authorDesc: 'Software Engineer en Google',
+    workshopDesc:
+      'Descubre Firebase Genkit en este taller introductorio en el DevFest Madrid. Exploraremos cómo este versátil framework permite a los desarrolladores crear aplicaciones impulsadas por inteligencia artificial con facilidad. Aprende a implementar las bibliotecas de código abierto de Genkit para Node.js y Go, integrarte con modelos de IA generativa y ejecutarlo de manera independiente de los servicios de Google. Perfecto para quienes buscan optimizar su proceso de desarrollo de IA.',
+    tags: [TAGS.NODEJS, TAGS.OPTIMIZATION],
+  },
+  {
+    hour: '16:00',
+    title: 'Aprende a desarrollar skills de Alexa con NodeJS',
+    author: 'Xavier Portilla',
+    authorDesc: 'Software Engineer en Google',
+    workshopDesc:
+      'Descubre Firebase Genkit en este taller introductorio en el DevFest Madrid. Exploraremos cómo este versátil framework permite a los desarrolladores crear aplicaciones impulsadas por inteligencia artificial con facilidad. Aprende a implementar las bibliotecas de código abierto de Genkit para Node.js y Go, integrarte con modelos de IA generativa y ejecutarlo de manera independiente de los servicios de Google. Perfecto para quienes buscan optimizar su proceso de desarrollo de IA.',
+    tags: [TAGS.TESTING_AVANZADO, TAGS.OPTIMIZATION],
+  },
+]
 ---
 
-<main class="bg-black m-[120px]">
-  <div class="flex justify-center flex-wrap">
-    <h1 class="font-clash text-white text-7xl text-center leading-tight">
-      No solo aprendizaje, también
-      <br />
-      conexión,
-      <CrossContainerTitle>workshops del evento</CrossContainerTitle>
-    </h1>
-    <p class="text-paragraph">
-      Aprende, conecta y colabora en sesiones prácticas diseñadas para inspirar y potenciar tus
-      habilidades.
-    </p>
-  </div>
-  <div class="m-[120px]">
-    <div class="flex justify-between">
-      <h5 class="text-white text-[34px]">Talleres prácticos destacados</h5>
+<section id="whorkshop" class="px-6 xl:px-0">
+  <Container>
+    <div class="flex justify-center flex-wrap">
+      <h1 class="font-clash text-white lg:text-7xl sm:text-5xl text-3xl text-center leading-tight">
+        No solo aprendizaje, también conexión,
+        <CrossContainerTitle>workshops del evento</CrossContainerTitle>
+      </h1>
+      <p class="text-zinc-500 max-lg:text-center max-lg:mt-8 max-lg:w-5/6">
+        Aprende, conecta y colabora en sesiones prácticas diseñadas para inspirar y potenciar tus
+        habilidades.
+      </p>
+    </div>
+    <div></div>
+    <div class="flex sm:flex-row flex-col justify-between mb-6 lg:mt-24 mt-12">
+      <h5 class="text-white font-clash font-medium md:text-[34px] text-2xl">
+        Talleres prácticos destacados
+      </h5>
       <a
         href="#"
         target="_blank"
@@ -41,109 +86,25 @@ import CrossContainerTitle from '@/components/CrossContainerTitle.astro'
         </svg>
       </a>
     </div>
-    <div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 bg-black">
-        <div
-          class="bg-backgroundCards shadow-md p-6 text-white border-[1px] border-backgroundCards font-clash max-w-[400px]"
-        >
-          <p class="text-white text-[16px] mb-4">16:00</p>
-          <h6 class="text-[28px] font-clash mb-2 font-medium">
-            Introducción a Firebase Genkit y Inteligencia Artificial
-          </h6>
-          <p class="text-light text-javascript font-light">
-            Xavier Portilla |<span class="text-paragraph ml-6">Software Engineer en Google</span>
-          </p>
-          <p class="text-paragraph text-[16px] font-normal mt-4 mb-6 text-left ">
-            <strong>Descubre Firebase Genkit</strong> en este taller introductorio en el DevFest Madrid.
-            Exploraremos cómo este versátil framework permite a los desarrolladores crear aplicaciones
-            impulsadas por inteligencia artificial con facilidad. Aprende a implementar las bibliotecas
-            de código abierto de Genkit para Node.js y Go, integrarte con modelos de IA generativa y
-            ejecutarlo de manera independiente de los servicios de Google. Perfecto para quienes buscan
-            optimizar su proceso de desarrollo de IA.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-yellow-500 text-black text-xs font-medium px-3 py-1 rounded-full">
-              Firebase
-            </span>
-            <span class="bg-blue-500 text-white text-xs font-medium px-3 py-1 rounded-full">
-              Inteligencia Artificial
-            </span>
-          </div>
-        </div>
-        <div
-          class="bg-backgroundCards shadow-md p-6 text-white border-[1px] border-backgroundCards font-clash"
-        >
-          <p class="text-white text-[16px] mb-4">16:00</p>
-          <h6 class="text-[28px] font-clash mb-2 font-medium">
-            Introducción a Firebase Genkit y Inteligencia Artificial
-          </h6>
-          <p class="text-light text-javascript font-light">
-            Xavier Portilla |<span class="text-paragraph ml-6">Software Engineer en Google</span>
-          </p>
-          <p class="text-paragraph text-[16px] font-normal mt-4 mb-6 text-left max-w-[400px]">
-            <strong>Descubre Firebase Genkit</strong> en este taller introductorio en el DevFest Madrid.
-            Exploraremos cómo este versátil framework permite a los desarrolladores crear aplicaciones
-            impulsadas por inteligencia artificial con facilidad. Aprende a implementar las bibliotecas
-            de código abierto de Genkit para Node.js y Go, integrarte con modelos de IA generativa y
-            ejecutarlo de manera independiente de los servicios de Google. Perfecto para quienes buscan
-            optimizar su proceso de desarrollo de IA.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-yellow-500 text-black text-xs font-medium px-3 py-1 rounded-full">
-              Firebase
-            </span>
-            <span class="bg-blue-500 text-white text-xs font-medium px-3 py-1 rounded-full">
-              Inteligencia Artificial
-            </span>
-          </div>
-        </div>
-        <div
-          class="bg-backgroundCards shadow-md p-6 text-white border-[1px] border-backgroundCards font-clash"
-        >
-          <p class="text-white text-[16px] mb-4">16:00</p>
-          <h6 class="text-[28px] font-clash mb-2 font-medium">
-            Introducción a Firebase Genkit y Inteligencia Artificial
-          </h6>
-          <p class="text-light text-javascript font-light">
-            Xavier Portilla |<span class="text-paragraph ml-6">Software Engineer en Google</span>
-          </p>
-          <p class="text-paragraph text-[16px] font-normal mt-4 mb-6 text-left max-w-[400px]">
-            <strong>Descubre Firebase Genkit</strong> en este taller introductorio en el DevFest Madrid.
-            Exploraremos cómo este versátil framework permite a los desarrolladores crear aplicaciones
-            impulsadas por inteligencia artificial con facilidad. Aprende a implementar las bibliotecas
-            de código abierto de Genkit para Node.js y Go, integrarte con modelos de IA generativa y
-            ejecutarlo de manera independiente de los servicios de Google. Perfecto para quienes buscan
-            optimizar su proceso de desarrollo de IA.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-yellow-500 text-black text-xs font-medium px-3 py-1 rounded-full">
-              Firebase
-            </span>
-            <span class="bg-blue-500 text-white text-xs font-medium px-3 py-1 rounded-full">
-              Inteligencia Artificial
-            </span>
-          </div>
-        </div>
-      </div>
+    <div class="flex lg:flex-row flex-col lg:gap-x-6 gap-y-6">
+      {
+        workshops.map(({ hour, title, author, authorDesc, workshopDesc, tags }) => (
+          <WorkshopCard
+            hour={hour}
+            title={title}
+            author={author}
+            authorDesc={authorDesc}
+            workshopDesc={workshopDesc}
+            tags={tags}
+          />
+        ))
+      }
     </div>
-    <div class="flex justify-center max-md:mx-9">
+    <div class="flex justify-center max-sm:mx-12 mt-14">
       <Button href="#" style="yellow">
         ¡Consigue tu entrada!
-        <svg
-          slot="icon-left"
-          width="20"
-          height="18"
-          viewBox="0 0 20 18"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M9.0049 17.9998C9.0049 17.1713 8.3333 16.4998 7.50488 16.4998C6.67646 16.4998 6.00488 17.1713 6.00488 17.9998H1.00488C0.452603 17.9998 0.00488281 17.552 0.00488281 16.9998V0.999756C0.00488281 0.447476 0.452603 -0.000244141 1.00488 -0.000244141H6.00488C6.00488 0.828186 6.67646 1.49976 7.50488 1.49976C8.3333 1.49976 9.0049 0.828186 9.0049 -0.000244141H19.0049C19.5572 -0.000244141 20.0049 0.447476 20.0049 0.999756V6.49976C18.6242 6.49976 17.5049 7.6191 17.5049 8.9998C17.5049 10.3805 18.6242 11.4998 20.0049 11.4998V16.9998C20.0049 17.552 19.5572 17.9998 19.0049 17.9998H9.0049ZM7.50488 7.4998C8.3333 7.4998 9.0049 6.82819 9.0049 5.99976C9.0049 5.17134 8.3333 4.49976 7.50488 4.49976C6.67646 4.49976 6.00488 5.17134 6.00488 5.99976C6.00488 6.82819 6.67646 7.4998 7.50488 7.4998ZM7.50488 13.4998C8.3333 13.4998 9.0049 12.8282 9.0049 11.9998C9.0049 11.1713 8.3333 10.4998 7.50488 10.4998C6.67646 10.4998 6.00488 11.1713 6.00488 11.9998C6.00488 12.8282 6.67646 13.4998 7.50488 13.4998Z"
-            fill="currentColor"
-          >
-          </path>
-        </svg>
+        <Ticket slot="icon-left" />
       </Button>
     </div>
-  </div>
-</main>
+  </Container>
+</section>

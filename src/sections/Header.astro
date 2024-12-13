@@ -1,34 +1,167 @@
 ---
+import { MOBILE_MENU_CONTENT_ID } from '@/consts/mobile-menu'
+import HamburgerButton from '@/components/HamburgerButton.astro'
 import LogoIcon from '@/icons/Logo.svg'
 import Button from '@/components/Button.astro'
 import LinkSponsor from '@/components/LinkSponsor.astro'
+import ArrowUp from '@/icons/ArrowUp.svg'
+const sections = [
+  { name: 'HOME', href: '#home' },
+  { name: 'AGENDA', href: '#agenda' },
+  { name: 'SPEAKERS', href: '#speakers' },
+  { name: 'SPONSORS', href: '#sponsors' },
+]
 ---
 
-<header class="py-4">
-  <div class="flex justify-around items-center pb-2">
-    <div class="flex flex-row gap-x-3 items-center justify-center">
-      <LogoIcon />
+<header class="py-4 z-[999] fixed top-0 left-0 right-0 bg-black">
+  <div
+    class="flex lg:justify-around justify-between items-center border-b border-white/10 pb-2 max-lg:pt-2 max-lg:px-6"
+  >
+    <div class="flex flex-row gap-x-3 md:items-center items-start justify-center">
+      <LogoIcon class="md:size-16 size-9" />
       <div>
-        <h5 class="font-clash font-semibold text-2xl flex flex-row gap-x-2 text-white">
+        <h5
+          class="font-clash font-semibold max-md:h-4 md:text-2xl text-lg flex flex-row items-center gap-x-2 text-white"
+        >
           JSConf España
           <span
-            class="rounded-full bg-javascript text-black font-semibold text-lg px-3 flex justify-center items-center"
+            class="rounded-full bg-javascript text-black font-semibold md:text-lg text-xs md:px-3 px-2 leading-none flex justify-center items-center"
             >2025
           </span>
         </h5>
-        <span class="uppercase font-light text-white">1 MARZO 2025</span>
+        <span class="uppercase font-light text-white max-md:text-xs">1 MARZO 2025</span>
       </div>
     </div>
     <div class="text-white">
-      <nav class="hidden md:flex gap-8 text-sm">
-        <a href="#agenda" class="hover:text-gray-300 transition">AGENDA</a>
-        <a href="#speakers" class="hover:text-gray-300 transition">SPEAKERS</a>
-        <a href="#sponsors" class="hover:text-gray-300 transition">SPONSORS</a>
+      <nav class="hidden md:flex gap-8 text-sm underline underline-offset-4">
+        {
+          sections.slice(1).map(({ name, href }, key) => (
+            <a
+              href={href}
+              class:list={['hover:text-gray-300 transition']}
+              id={`navmob-link-${key}`}
+            >
+              {name}
+            </a>
+          ))
+        }
       </nav>
     </div>
     <div class="flex items-center gap-4">
       <LinkSponsor theme="dark" />
       <Button class="flex items-center" style="yellow" href="#"> ¡Consigue tu entrada! </Button>
     </div>
+    <HamburgerButton class:list="block lg:hidden" id="menuButton" />
+    <div
+      class="fixed inset-0 z-[888] flex w-screen flex-col items-center overflow-x-auto px-3 lg:hidden backdrop-blur-lg bg-black/85"
+      id={MOBILE_MENU_CONTENT_ID}
+    >
+      <aside class="flex min-h-16 w-full items-center justify-end px-3 pt-4">
+        <HamburgerButton id="innerMenuButton" />
+      </aside>
+      <nav class="navContent flex w-full flex-col items-start justify-end px-6 gap-5 mt-auto mb-8">
+        {
+          sections.map(({ name, href }, key) => (
+            <>
+              <a
+                href={href}
+                class:list={['text-white font-clash text-5xl font-medium']}
+                id={`navmob-link-${key}`}
+              >
+                {name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()}
+              </a>
+            </>
+          ))
+        }
+        <LinkSponsor theme="dark" />
+        <Button class="flex items-center" style="yellow" href="#"> ¡Consigue tu entrada! </Button>
+      </nav>
+    </div>
   </div>
 </header>
+<style>
+  .nav-item .background {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .nav-item:hover .background,
+  .nav-item:focus .background {
+    opacity: 1;
+  }
+
+  #menuMobileContent {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    scrollbar-gutter: stable;
+  }
+
+  #menuMobileContent.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  @media (prefers-reduced-motion) {
+    .nav-item .background {
+      transition: opacity 0s;
+    }
+
+    .nav-item:hover .background,
+    .nav-item:focus .background {
+      opacity: 1;
+    }
+
+    #menuMobileContent {
+      transition: opacity 0s;
+    }
+  }
+</style>
+<script>
+  function toggleMenu(
+    nav: HTMLElement | null,
+    menuMobileContent: HTMLElement | null,
+    innerMenuButton: HTMLElement | null
+  ) {
+    menuMobileContent?.classList.toggle('open')
+    nav?.classList.toggle('open')
+    innerMenuButton?.classList.toggle('open')
+    document.body.classList.toggle('overflow-hidden')
+    document.body.classList.toggle('lg:overflow-auto')
+  }
+
+  window.onload = () => {
+    const nav = document.querySelector('nav') as HTMLElement
+    const menuButton = document.querySelector('#menuButton') as HTMLElement
+    const innerMenuButton = document.querySelector('#innerMenuButton') as HTMLElement
+    const menuMobileContext = document.getElementById('menuMobileContent') as HTMLElement
+
+    const links = document.querySelectorAll('a[id^="navmob-link-"]')
+    links.forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault()
+        const id = link.getAttribute('href')?.slice(1)
+        document.getElementById(id as string)?.scrollIntoView({ behavior: 'smooth' })
+        toggleMenu(nav, menuMobileContext, innerMenuButton)
+        menuButton.classList.toggle('hidden')
+      })
+    })
+
+    menuButton?.addEventListener('click', () => {
+      menuButton?.classList.toggle('hidden')
+      toggleMenu(nav, menuMobileContext, innerMenuButton)
+    })
+    innerMenuButton?.addEventListener('click', () => {
+      menuButton?.classList.toggle('hidden')
+      toggleMenu(nav, menuMobileContext, innerMenuButton)
+    })
+
+    if (menuMobileContext?.classList.contains('open')) {
+      toggleMenu(nav, menuMobileContext, innerMenuButton)
+    }
+  }
+</script>

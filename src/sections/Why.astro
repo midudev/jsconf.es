@@ -2,6 +2,8 @@
 import Button from '@/components/Button.astro'
 import Container from '@/components/Container.astro'
 import WhyCard from '@/components/WhyCard.astro'
+import ArrowRight from '@/icons/ArrowRight.svg'
+import Ticket from '@/icons/Ticket.svg'
 ---
 
 <section class="bg-black text-white md:max-w-5/6 mx-auto px-4 py-12">
@@ -94,14 +96,10 @@ import WhyCard from '@/components/WhyCard.astro'
           <a
             target="_blank"
             href="#"
-            class="py-2 text-javascript flex flex-row items-center gap-x-2"
+            class="group py-2 text-javascript flex flex-row items-center gap-x-2"
           >
             Aprovecha la oportunidad <span
-              ><svg width="19" height="18" viewBox="0 0 19 18" fill="none">
-                <path
-                  d="M12.9621 8.24968L8.93907 4.22667L9.99972 3.16602L15.8334 8.99968L9.99972 14.8333L8.93907 13.7726L12.9621 9.74968H3.83337V8.24968H12.9621Z"
-                  fill="currentColor"></path>
-              </svg>
+              ><ArrowRight class="group-hover:translate-x-1 transition" />
             </span></a
           >
         </div>
@@ -111,20 +109,7 @@ import WhyCard from '@/components/WhyCard.astro'
     <div class="flex justify-center max-md:mx-9">
       <Button href="#" style="yellow">
         ¡Consigue tu entrada!
-        <svg
-          slot="icon-left"
-          width="20"
-          height="18"
-          viewBox="0 0 20 18"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M9.0049 17.9998C9.0049 17.1713 8.3333 16.4998 7.50488 16.4998C6.67646 16.4998 6.00488 17.1713 6.00488 17.9998H1.00488C0.452603 17.9998 0.00488281 17.552 0.00488281 16.9998V0.999756C0.00488281 0.447476 0.452603 -0.000244141 1.00488 -0.000244141H6.00488C6.00488 0.828186 6.67646 1.49976 7.50488 1.49976C8.3333 1.49976 9.0049 0.828186 9.0049 -0.000244141H19.0049C19.5572 -0.000244141 20.0049 0.447476 20.0049 0.999756V6.49976C18.6242 6.49976 17.5049 7.6191 17.5049 8.9998C17.5049 10.3805 18.6242 11.4998 20.0049 11.4998V16.9998C20.0049 17.552 19.5572 17.9998 19.0049 17.9998H9.0049ZM7.50488 7.4998C8.3333 7.4998 9.0049 6.82819 9.0049 5.99976C9.0049 5.17134 8.3333 4.49976 7.50488 4.49976C6.67646 4.49976 6.00488 5.17134 6.00488 5.99976C6.00488 6.82819 6.67646 7.4998 7.50488 7.4998ZM7.50488 13.4998C8.3333 13.4998 9.0049 12.8282 9.0049 11.9998C9.0049 11.1713 8.3333 10.4998 7.50488 10.4998C6.67646 10.4998 6.00488 11.1713 6.00488 11.9998C6.00488 12.8282 6.67646 13.4998 7.50488 13.4998Z"
-            fill="currentColor"
-          >
-          </path>
-        </svg>
+        <Ticket slot="icon-left" />
       </Button>
     </div>
   </Container>

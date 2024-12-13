@@ -1,0 +1,45 @@
+---
+import Firebase from '@/icons/FirebaseLogo.svg'
+import IA from '@/icons/IALogo.svg'
+import NodeJS from '@/icons/NodeJSLogo.svg'
+import Optimization from '@/icons/OptimizationLogo.svg'
+import Testing from '@/icons/TestingLogo.svg'
+
+const { tag } = Astro.props
+
+export type TypeTag = {
+  name: string
+  icon: any
+}
+
+export interface Props {
+  tag: TypeTag
+}
+
+export const TAGS = {
+  FIREBASE: {
+    name: 'Firebase',
+    icon: Firebase,
+  },
+  IA: {
+    name: 'Inteligencia Aritificial',
+    icon: IA,
+  },
+  NODEJS: {
+    name: 'NodeJS',
+    icon: NodeJS,
+  },
+  OPTIMIZATION: {
+    name: 'Optimización',
+    icon: Optimization,
+  },
+  TESTING_AVANZADO: {
+    name: 'Testing Avanzado',
+    icon: Testing,
+  },
+}
+---
+
+<span class="bg-zinc-900 flex flex-row items-center justify-between gap-x-2 px-[14px] py-2"
+  ><tag.icon class="size-4" /> {tag.name}</span
+>

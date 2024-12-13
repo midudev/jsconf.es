@@ -4,7 +4,7 @@ import HamburgerButton from '@/components/HamburgerButton.astro'
 import LogoIcon from '@/icons/Logo.svg'
 import Button from '@/components/Button.astro'
 import LinkSponsor from '@/components/LinkSponsor.astro'
-import ArrowUp from '@/icons/ArrowUp.svg'
+
 const sections = [
   { name: 'HOME', href: '#home' },
   { name: 'AGENDA', href: '#agenda' },
@@ -52,7 +52,7 @@ const sections = [
       </nav>
     </div>
     <div class="flex items-center gap-4">
-      <LinkSponsor theme="dark" />
+      <LinkSponsor style="transparent" />
       <Button class="flex items-center" style="yellow" href="#"> ¡Consigue tu entrada! </Button>
     </div>
     <HamburgerButton class:list="block lg:hidden" id="menuButton" />
@@ -77,7 +77,7 @@ const sections = [
             </>
           ))
         }
-        <LinkSponsor theme="dark" />
+        <LinkSponsor style="dark" />
         <Button class="flex items-center" style="yellow" href="#"> ¡Consigue tu entrada! </Button>
       </nav>
     </div>

@@ -2,6 +2,8 @@
 import Button from '@/components/Button.astro'
 import Mouse from '@/icons/Mouse.svg'
 import ArrowDown from '@/icons/ArrowDown.svg'
+import ArrowUp from '@/icons/ArrowUp.svg'
+import Ticket from '@/icons/Ticket.svg'
 ---
 
 <div class="relative min-h-screen flex flex-col items-center justify-center px-4 text-center">
@@ -30,9 +32,11 @@ import ArrowDown from '@/icons/ArrowDown.svg'
     <div class="flex flex-col md:flex-row gap-4 justify-center mt-12">
       <Button href="#" style="yellow">
         <span> ¡Consigue tu entrada! </span>
+        <Ticket slot="icon-left" />
       </Button>
       <Button href="#" style="transparent">
         <span> ¡Quiero patrocinar! </span>
+        <ArrowUp slot="icon-right" />
       </Button>
     </div>
 

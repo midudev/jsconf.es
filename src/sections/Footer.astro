@@ -5,7 +5,7 @@ import MiduLogoIcon from '@/icons/MiduLogo.svg'
 ---
 
 <footer>
-  <Container class="pb-0 pt-12">
+  <Container class="pb-0 pt-12 px-section">
     <div
       class="flex md:flex-row flex-col max-md:gap-y-4 justify-between items-center border-b border-white/10 pb-2"
     >
@@ -31,14 +31,19 @@ import MiduLogoIcon from '@/icons/MiduLogo.svg'
       </h5>
     </div>
     <div
-      class="flex flex-row text-white/70 md:gap-x-6 gap-x-3 py-6 md:justify-start items-center justify-center"
+      class="flex flex-row text-white/70 md:gap-x-6 gap-x-3 py-6 md:justify-between items-center justify-center flex-wrap"
     >
-      <a href="#" target="_self" class="hover:text-javascript">Legal</a>
-      <svg width="4" height="4" viewBox="0 0 4 4" fill="none">
-        <circle cx="2" cy="2" r="2" fill="currentColor"></circle>
-      </svg>
+      <div class="flex items-center gap-2">
+        <a href="#" target="_self" class="hover:text-javascript">Legal</a>
+        <svg width="4" height="4" viewBox="0 0 4 4" fill="none">
+          <circle cx="2" cy="2" r="2" fill="currentColor"></circle>
+        </svg>
 
-      <a href="#" target="_self" class="hover:text-javascript">Política de privacidad</a>
+        <a href="#" target="_self" class="hover:text-javascript">Política de privacidad</a>
+      </div>
+      <div class="text-white">
+        <p>Diseñado con ❤️ by <a href="#" class="underline underline-offset-4">Vladyslav</a></p>
+      </div>
     </div>
   </Container>
 </footer>

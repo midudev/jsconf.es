@@ -8,16 +8,16 @@ import Pin from '@/icons/Pin.svg'
 import ArrowRight from '@/icons/ArrowRight.svg'
 ---
 
-<section class="bg-javascript text-black pt-18 pb-8 px-6">
+<section class="bg-javascript text-black pb-8 py-12 px-6">
   <Container>
     <h2 class="text-6xl text-center font-clash max-w-5xl mx-auto">
       El día que Madrid se convertirá en la <strong class="font-semibold"
-        >capital española de <UnderlineWord>JavaScript</UnderlineWord>
+        >capital española de <UnderlineWord class="translate-x-1/4">JavaScript</UnderlineWord>
       </strong>
     </h2>
 
-    <div class="flex py-12 gap-x-4 justify-around flex-col md:flex-row gap-y-8">
-      <article class="md:p-12 border border-black md:w-[45%] w-full p-8">
+    <div class="flex py-12 gap-x-10 justify-between flex-col md:flex-row gap-y-8">
+      <article class="md:p-12 border border-black w-full p-8">
         <span class="flex justify-start gap-x-2 items-center text-xl opacity-70"
           ><Agenda slot="icon-left" />
           ¿Cuándo?
@@ -26,10 +26,10 @@ import ArrowRight from '@/icons/ArrowRight.svg'
         <h5 class="text-xl font-light">Sábado</h5>
       </article>
 
-      <article class="md:p-12 border border-black md:w-[45%] w-full p-8">
+      <article class="md:p-12 border border-black w-full p-8">
         <span class="flex justify-start gap-x-2 items-center text-xl opacity-70">
           <Pin slot="icon-left" />
-          Esteremos en...
+          Estaremos en...
         </span>
         <h4 class="text-6xl font-clash font-medium">La Nave, Madrid</h4>
         <h5 class="text-xl font-light">

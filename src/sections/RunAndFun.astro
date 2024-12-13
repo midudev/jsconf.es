@@ -1,13 +1,12 @@
 ---
 import Container from '@/components/Container.astro'
 import InfoTag from '@/components/InfoTag.astro'
-import { Image } from 'astro:assets';
 ---
 
 <section class="bg-white text-black md:max-w-5/6 mx-auto">
-  <img src="/img/run-gym.png" alt="Pesa de fondo" class="absolute mt-72 max-md:-left-32" />
-  <img src="/img/run-lightning.png" alt="Pesa de fondo" class="absolute right-0 max-md:hidden" />
-  <Container>
+  <img src="/img/run-gym.webp" alt="Pesa de fondo" class="absolute mt-72 max-md:-left-32" />
+  <img src="/img/run-lightning.webp" alt="Pesa de fondo" class="absolute right-0 max-md:hidden" />
+  <Container class="px-section">
     <div class="flex flex-col px-8 xl:py-20 items-center text-center gap-y-14">
       <div class="flex flex-col items-center md:px-12">
         <span class="text-2xl font-clash font-medium flex items-center mb-4 gap-x-2 text-blue-500"
@@ -25,8 +24,8 @@ import { Image } from 'astro:assets';
           >
         </h4>
         <h3 class="md:text-4xl text-lg max-md:text-center">
-          Te invitamos a una carrera de 8KM en el icónico Parque del Retiro de Madrid, un espacio
-          único para compartir con otros desarrolladores en un ambiente relajado y divertido.
+          Una carrera de 8KM en el icónico Parque del Retiro de Madrid, un espacio único para
+          compartir con otros desarrolladores en un ambiente relajado y divertido.
         </h3>
       </div>
       <div class="flex items-center w-full">
@@ -51,11 +50,9 @@ import { Image } from 'astro:assets';
           <div>
             <h3 class="lg:text-4xl text-2xl font-medium font-clash mb-4">¿Por qué participar?</h3>
             <ul
-              class="list-disc lg:text-2xl leading-loose lg:pl-8 pl-6 list-image-[url(/img/checkmark.svg)]"
+              class="list-disc lg:text-xl leading-loose lg:pl-8 pl-6 list-image-[url(/img/checkmark.svg)]"
             >
-              <li class="pl-2">
-                Descubre la belleza del Parque del Retiro en una experiencia única.
-              </li>
+              <li class="pl-2">Descubre el Parque del Retiro en una experiencia única.</li>
               <li class="leading-normal pl-2">
                 Reflexiona y comparte lo que aprendiste en la JSConf mientras corres junto a otros
                 apasionados del desarrollo.
@@ -64,7 +61,7 @@ import { Image } from 'astro:assets';
             </ul>
           </div>
           <div class="flex flex-wrap gap-x-3 gap-y-3">
-            <InfoTag text="2 de marzo de 2025."
+            <InfoTag text="2 de marzo de 2025"
               ><svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
                   d="M15 2H19C19.5523 2 20 2.44772 20 3V19C20 19.5523 19.5523 20 19 20H1C0.44772 20 0 19.5523 0 19V3C0 2.44772 0.44772 2 1 2H5V0H7V2H13V0H15V2ZM2 8V18H18V8H2ZM4 12H9V16H4V12Z"
@@ -78,17 +75,28 @@ import { Image } from 'astro:assets';
                   fill="currentColor"></path>
               </svg>
             </InfoTag>
-            <InfoTag text="Entrada principal del Parque del Retiro, Madrid."
-              ><svg width="16" height="21" viewBox="0 0 16 21" fill="none">
-                <path
-                  d="M7 15.9381C3.05369 15.446 0 12.0796 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8C16 12.0796 12.9463 15.446 9 15.9381V18.0116C12.9463 18.1039 16 18.7351 16 19.5C16 20.3284 12.4183 21 8 21C3.58172 21 0 20.3284 0 19.5C0 18.7351 3.05369 18.1039 7 18.0116V15.9381ZM8 10C9.1046 10 10 9.1046 10 8C10 6.89543 9.1046 6 8 6C6.8954 6 6 6.89543 6 8C6 9.1046 6.8954 10 8 10Z"
-                  fill="currentColor"></path>
-              </svg>
-            </InfoTag>
+            <a
+              href="https://maps.app.goo.gl/PYvuti2SYu3b1cYz6"
+              target="_blank"
+              rel="noreferrer noopener"
+              class="block hover:invert transition"
+            >
+              <InfoTag text="C/ de Alfonso XII con Puerta del Angel Caído">
+                <svg width="16" height="21" viewBox="0 0 16 21" fill="none">
+                  <path
+                    d="M7 15.9381C3.05369 15.446 0 12.0796 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8C16 12.0796 12.9463 15.446 9 15.9381V18.0116C12.9463 18.1039 16 18.7351 16 19.5C16 20.3284 12.4183 21 8 21C3.58172 21 0 20.3284 0 19.5C0 18.7351 3.05369 18.1039 7 18.0116V15.9381ZM8 10C9.1046 10 10 9.1046 10 8C10 6.89543 9.1046 6 8 6C6.8954 6 6 6.89543 6 8C6 9.1046 6.8954 10 8 10Z"
+                    fill="currentColor"></path>
+                </svg>
+              </InfoTag>
+            </a>
           </div>
         </div>
-        <img src="/img/midu-run.webp" alt="Midu corriendo" class="max-lg:hidden" />
-        <img src="/img/midu-run-mobile.webp" alt="Midu corriendo" class="lg:hidden" />
+        <img src="/img/midu-run.webp" alt="Midu corriendo" class="max-lg:hidden object-contain" />
+        <img
+          src="/img/midu-run-mobile.webp"
+          alt="Midu corriendo"
+          class="lg:hidden object-contain"
+        />
       </div>
     </div>
   </Container>

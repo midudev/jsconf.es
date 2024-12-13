@@ -1,46 +1,61 @@
 ---
 import Button from '@/components/Button.astro'
-
-// import KeepCodingLogo from './KeepCodingLogo.astro'
+import Mouse from '@/icons/Mouse.svg'
+import ArrowDown from '@/icons/ArrowDown.svg'
+import ArrowUp from '@/icons/ArrowUp.svg'
+import Ticket from '@/icons/Ticket.svg'
 ---
 
 <div class="relative min-h-screen flex flex-col items-center justify-center px-4 text-center">
   <div class="space-y-8">
-    <h1 class="text-6xl md:text-8xl font-bold tracking-tighter">JSConf España 2025</h1>
-
-    <div class="text-3xl md:text-5xl font-light space-y-2">
+    <h1
+      class="text-6xl md:text-8xl font-clash font-semibold bg-gradient-to-r from-white/50 via-white to-white/70 inline-block text-transparent bg-clip-text"
+    >
+      JSConf España 2025
+    </h1>
+    <div class="text-3xl md:text-5xl lg:text-7xl font-light space-y-2">
       <p>
         Una experiencia <span
-          class="bg-gradient-to-r from-[#FFFE65] to-[#F7DF1F] text-black relative">exclusiva</span
-        > de
+          class="text-black relative before:content-[''] overflow-hidden before:absolute before:w-full before:h-full before:bg-gradient-to-r before:from-[#FFFE65] before:to-[#F7DF1F] before:rotate-2 mix-blend-lighten before:-z-30 before:-left-2 before:top-0"
+        >
+          exclusiva
+        </span> de
       </p>
       <p>JavaScript</p>
     </div>
 
     <div class="flex items-center justify-center gap-2">
       <span>Powered by</span>
-      <!-- <KeepCodingLogo class="h-8" /> -->
+      <img src="/sponsors/keepcoding_small.webp" alt="KeepCoding logo" class="h-11" />
     </div>
 
     <div class="flex flex-col md:flex-row gap-4 justify-center mt-12">
       <Button href="#" style="yellow">
         <span> ¡Consigue tu entrada! </span>
+        <Ticket slot="icon-left" />
       </Button>
-      <Button href="#" style="black">
+      <Button href="#" style="transparent">
         <span> ¡Quiero patrocinar! </span>
+        <ArrowUp slot="icon-right" />
       </Button>
     </div>
 
     <div
-      class="inline-flex items-center justify-center gap-2.5 bg-white/5 px-4 py-2.5 rounded-full"
+      class="inline-flex items-center justify-center gap-2.5 bg-white/5 px-4 py-2.5 rounded-full font-clash"
     >
       <span>🔥</span>
       <p
         class="bg-gradient-to-bl from-[#F7DF1F] to-[#FF5011] text-transparent bg-clip-text leading-normal"
       >
-        ¡Ya se ha vendido el 50% de las entradas!
+        ¡Vendidas el 60% de las entradas!
       </p>
-      <span class="text-white ml-2">Asegura tu lugar en el evento</span>
+      <span class="text-white">¡Consigue la tuya antes de que se agoten!</span>
     </div>
   </div>
+
+  <div class="max-sm:hidden flex flex-col items-center justify-center mt-24 space-y-2">
+    <Mouse class="size-8" />
+    <ArrowDown class="size-6 animate-bounce" />
+  </div>
+
 </div>

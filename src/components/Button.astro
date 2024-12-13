@@ -1,11 +1,11 @@
 ---
-const { href, style } = Astro.props
+const { href, style, class: className } = Astro.props
 const Component = href ? 'a' : 'button'
 
 const STYLES: Record<string, string> = {
   white: 'text-black hover:bg-black hover:text-white',
-  black: 'text-white bg-black border-white hover:bg-white hover:text-black',
-  yellow: 'text-black bg-javascript border-javascript hover:bg-white',
+  black: 'text-white bg-black border-black hover:bg-white hover:border-black hover:text-black',
+  yellow: 'text-black bg-javascript border-javascript hover:bg-white hover:border-black',
   transparent: 'text-white bg-transparent border-white hover:bg-black hover:text-white',
 }
 
@@ -14,8 +14,9 @@ const currentStyle = STYLES[style] ?? STYLES.white
 
 <Component
   class:list={[
-    'px-12 py-4 border flex justify-center w-full md:w-auto gap-2 transition items-center',
+    'px-5 py-3 font-clash font-[450] border flex justify-center w-full md:w-auto gap-2 transition items-center',
     currentStyle,
+    className,
   ]}
   href="#"
 >

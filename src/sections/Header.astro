@@ -13,10 +13,10 @@ const sections = [
 ]
 ---
 
-<header class="py-4 z-[999] fixed top-0 left-0 right-0 bg-black">
-  <div
-    class="flex lg:justify-around justify-between items-center border-b border-white/10 pb-2 max-lg:pt-2 max-lg:px-6"
-  >
+<header
+  class="py-6 z-[999] fixed top-0 left-0 right-0 bg-transparent transition-colors duration-300 px-section"
+>
+  <div class="flex justify-between items-center max-w-[90rem] mx-auto">
     <div class="flex flex-row gap-x-3 md:items-center items-start justify-center">
       <LogoIcon class="md:size-16 size-9" />
       <div>
@@ -29,17 +29,21 @@ const sections = [
             >2025
           </span>
         </h5>
-        <span class="uppercase font-light text-white max-md:text-xs">1 MARZO 2025</span>
+        <span class="uppercase font-light opacity-80 text-sm text-white max-md:text-xs"
+          >1 MARZO 2025</span
+        >
       </div>
     </div>
     <div class="text-white">
-      <nav class="hidden md:flex gap-8 text-sm underline underline-offset-4">
+      <nav class="hidden md:flex gap-8 text-sm">
         {
           sections.slice(1).map(({ name, href }, key) => (
             <a
               href={href}
-              class:list={['hover:text-gray-300 transition']}
-              id={`navmob-link-${key}`}
+              class:list={[
+                'hover:text-gray-300 py-1 border-b border-b-transparent transition hover:border-b-white font-clash text-lg',
+              ]}
+              id={`navdesk-link-${key}`}
             >
               {name}
             </a>
@@ -53,10 +57,10 @@ const sections = [
     </div>
     <HamburgerButton class:list="block lg:hidden" id="menuButton" />
     <div
-      class="fixed inset-0 z-[888] flex w-screen flex-col items-center overflow-x-auto px-3 lg:hidden backdrop-blur-lg bg-black/85"
+      class="fixed inset-0 z-[888] flex w-screen h-screen flex-col items-center overflow-x-auto lg:hidden backdrop-blur-lg bg-black/85"
       id={MOBILE_MENU_CONTENT_ID}
     >
-      <aside class="flex min-h-16 w-full items-center justify-end px-3 pt-4">
+      <aside class="flex min-h-16 w-full items-center justify-end pt-4">
         <HamburgerButton id="innerMenuButton" />
       </aside>
       <nav class="navContent flex w-full flex-col items-start justify-end px-6 gap-5 mt-auto mb-8">
@@ -80,20 +84,6 @@ const sections = [
   </div>
 </header>
 <style>
-  .nav-item .background {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  .nav-item:hover .background,
-  .nav-item:focus .background {
-    opacity: 1;
-  }
-
   #menuMobileContent {
     opacity: 0;
     pointer-events: none;
@@ -107,17 +97,11 @@ const sections = [
   }
 
   @media (prefers-reduced-motion) {
-    .nav-item .background {
-      transition: opacity 0s;
-    }
-
-    .nav-item:hover .background,
-    .nav-item:focus .background {
-      opacity: 1;
-    }
-
     #menuMobileContent {
       transition: opacity 0s;
+    }
+    header {
+      transition: none;
     }
   }
 </style>
@@ -134,21 +118,49 @@ const sections = [
     document.body.classList.toggle('lg:overflow-auto')
   }
 
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('header') as HTMLElement
+
+    if (window.scrollY > 10) {
+      header.classList.add('bg-black/50', 'backdrop-blur')
+      header.classList.remove('bg-transparent')
+    } else {
+      header.classList.add('bg-transparent')
+      header.classList.remove('bg-black/50', 'backdrop-blur')
+    }
+  })
+
   window.onload = () => {
     const nav = document.querySelector('nav') as HTMLElement
     const menuButton = document.querySelector('#menuButton') as HTMLElement
     const innerMenuButton = document.querySelector('#innerMenuButton') as HTMLElement
     const menuMobileContext = document.getElementById('menuMobileContent') as HTMLElement
 
-    const links = document.querySelectorAll('a[id^="navmob-link-"]')
-    links.forEach((link) => {
-      link.addEventListener('click', (event) => {
-        event.preventDefault()
-        const id = link.getAttribute('href')?.slice(1)
-        document.getElementById(id as string)?.scrollIntoView({ behavior: 'smooth' })
+    const linksMobile = document.querySelectorAll('a[id^="navmob-link-"]')
+    const linksDesktop = document.querySelectorAll('a[id^="navdesk-link-"]')
+
+    function scrollSmoothlyToLink(link: Element) {
+      const id = link.getAttribute('href')?.slice(1)
+      if (id) {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+
+    function handleLinkClick(event: Event, link: Element, isMobile: boolean) {
+      event.preventDefault()
+      scrollSmoothlyToLink(link)
+      if (isMobile) {
         toggleMenu(nav, menuMobileContext, innerMenuButton)
         menuButton.classList.toggle('hidden')
-      })
+      }
+    }
+
+    linksMobile.forEach((link) => {
+      link.addEventListener('click', (event) => handleLinkClick(event, link, true))
+    })
+
+    linksDesktop.forEach((link) => {
+      link.addEventListener('click', (event) => handleLinkClick(event, link, false))
     })
 
     menuButton?.addEventListener('click', () => {

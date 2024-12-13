@@ -1,31 +1,11 @@
 ---
 import ArrowUp from '@/icons/ArrowUp.svg'
+import Button from './Button.astro'
 
-const { theme } = Astro.props
-const STYLES = {
-  light: 'bg-white text-black hover:bg-black hover:text-white',
-  dark: 'bg-black text-white hover:bg-white hover:text-black',
-}
-const currentStyle = STYLES[theme] ?? STYLES.light
+const { style = 'black' } = Astro.props
 ---
 
-<a
-  class:list={[
-    'font-clash',
-    'px-12',
-    'py-4',
-    'border',
-    'border-black',
-    'flex',
-    'justify-center',
-    'w-full',
-    'md:w-auto',
-    'gap-2',
-    currentStyle,
-  ]}
-  href="#"
-  style="black"
->
+<Button href="mailto:miduga@gmail.com" style={style}>
   <span>¡Quiero patrocinar!</span>
-  <ArrowUp class="size-4" />
-</a>
+  <ArrowUp slot="iron-right" class="size-4" />
+</Button>

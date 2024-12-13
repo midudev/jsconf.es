@@ -4,7 +4,49 @@ import Mouse from '@/icons/Mouse.svg'
 import ArrowDown from '@/icons/ArrowDown.svg'
 ---
 
-<div class="relative min-h-screen flex flex-col items-center justify-center px-4 text-center">
+<div
+  class="relative min-h-screen flex flex-col items-center justify-center px-4 text-center isolate"
+>
+  <svg
+    aria-hidden="true"
+    class="absolute inset-0 -z-10 h-full w-full stroke-slate-100/10 [mask-image:radial-gradient(100%_100%_at_top_center,white,transparent)] top-2"
+  >
+    <defs>
+      <pattern
+        x="50%"
+        y={-1}
+        id="983e3e4c-de6d-4c3f-8d64-b9761d1534cc"
+        width={90}
+        height={90}
+        patternUnits="userSpaceOnUse"
+      >
+        <path d="M.5 200V.5H200" fill="none"></path>
+      </pattern>
+    </defs>
+    <svg x="50%" y={-1} class="overflow-visible fill-gray-900/20">
+      <path
+        d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
+        stroke-width={0}></path>
+    </svg>
+    <rect
+      fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)"
+      width="100%"
+      height="100%"
+      stroke-width={0}></rect>
+  </svg>
+  <div
+    aria-hidden="true"
+    class="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-16 lg:-top-52 xl:left-[calc(50%-24rem)]"
+  >
+    <div
+      style={{
+        clipPath:
+          'polygon(61.77% 0%, 49.32% 40.36%, 45.67% 52.2%, 45% 62.9%, 23.76% 98.75%, 15.38% 98.75%, 6.34% 98.75%, 3.47% 95.22%, 32.95% 0%, 48.65% 0%)',
+      }}
+      class="aspect-[1108/632] w-[69.25rem] bg-gradient-to-b from-slate-400 via-slate-300 to-slate-500 opacity-20"
+    >
+    </div>
+  </div>
   <div class="space-y-8">
     <h1
       class="text-6xl md:text-8xl font-clash font-semibold bg-gradient-to-r from-white/50 via-white to-white/70 inline-block text-transparent bg-clip-text"
@@ -14,10 +56,9 @@ import ArrowDown from '@/icons/ArrowDown.svg'
     <div class="text-3xl md:text-5xl lg:text-7xl font-light space-y-2">
       <p>
         Una experiencia <span
-          class="text-black relative before:content-[''] overflow-hidden before:absolute before:w-full before:h-full before:bg-gradient-to-r before:from-[#FFFE65] before:to-[#F7DF1F] before:rotate-2 mix-blend-lighten before:-z-30 before:-left-2 before:top-0"
-        >
-          exclusiva
-        </span> de
+          class="text-black relative before:content-[''] overflow-hidden before:absolute before:w-full before:h-full before:bg-gradient-to-r before:from-[#FFFE65] before:to-[#F7DF1F] before:rotate-2 mix-blend-lighten before:-z-30"
+          >exclusiva</span
+        > de
       </p>
       <p>JavaScript</p>
     </div>

@@ -11,8 +11,12 @@ import UnderlineWord from '@/components/UnderlineWord.astro'
 <section class="bg-black text-white mx-auto px-4 py-12">
   <Container class="lg:p-24">
     <div class="flex md:flex-row flex-col-reverse lg:gap-x-20 gap-x-10">
-      <img src="/img/midu-presenter.webp" alt="Miguel Ángel Durán" class="md:w-5/12 max-md:mt-8 object-scale-down" />
-      <div class="md:w-7/12 flex flex-col md:p-10 md:gap-y-12 gap-y-8">
+      <img
+        src="/img/midu-presenter.webp"
+        alt="Miguel Ángel Durán"
+        class="md:w-5/12 max-md:mt-8 object-scale-down"
+      />
+      <div class="md:w-7/12 flex flex-col md:p-10 md:gap-y-10 gap-y-8">
         <h2 class="md:text-5xl text-[34px] font-clash font-medium">
           Presentado por <UnderlineWord class="text-white -translate-x-1"
             ><span class="text-javascript">midudev</span></UnderlineWord
@@ -29,10 +33,10 @@ import UnderlineWord from '@/components/UnderlineWord.astro'
             <XLogo class="size-8" />
           </a>
           <a href="https://www.twitch.tv/midudev" target="_blank">
-            <TwitchLogo class="" />
+            <TwitchLogo class="size-8" />
           </a>
         </div>
-        <Button class="py-6 px-12 w-fit md:w-fit" style="black" href="#">
+        <Button class="py-6 lg:px-24 w-fit md:w-fit" style="black" href="#">
           <ArrowUp slot="icon-right" />
           ¿Quién es midudev?
         </Button>

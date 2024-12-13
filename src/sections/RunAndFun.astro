@@ -1,14 +1,14 @@
 ---
 import Container from '@/components/Container.astro'
 import InfoTag from '@/components/InfoTag.astro'
-import { Image } from 'astro:assets';
+import { Image } from 'astro:assets'
 ---
 
-<section class="bg-white text-black md:max-w-5/6 mx-auto">
+<section class="bg-white text-black mx-auto">
   <img src="/img/run-gym.png" alt="Pesa de fondo" class="absolute mt-72 max-md:-left-32" />
   <img src="/img/run-lightning.png" alt="Pesa de fondo" class="absolute right-0 max-md:hidden" />
-  <Container>
-    <div class="flex flex-col px-8 xl:py-20 items-center text-center gap-y-14">
+  <Container class="px-section">
+    <div class="flex flex-col xl:py-20 items-center text-center gap-y-14">
       <div class="flex flex-col items-center md:px-12">
         <span class="text-2xl font-clash font-medium flex items-center mb-4 gap-x-2 text-blue-500"
           ><svg width="24" height="25" viewBox="0 0 24 25" fill="none">
@@ -51,8 +51,7 @@ import { Image } from 'astro:assets';
           <div>
             <h3 class="lg:text-4xl text-2xl font-medium font-clash mb-4">¿Por qué participar?</h3>
             <ul
-              class="list-disc lg:text-2xl leading-loose lg:pl-8 pl-6 list-image-[url(/img/checkmark.svg)]"
-            >
+              class="list-disc lg:text-2xl leading-loose lg:pl-8 pl-6 list-image-[url(/img/checkmark.svg)]">
               <li class="pl-2">
                 Descubre la belleza del Parque del Retiro en una experiencia única.
               </li>
@@ -87,8 +86,12 @@ import { Image } from 'astro:assets';
             </InfoTag>
           </div>
         </div>
-        <img src="/img/midu-run.webp" alt="Midu corriendo" class="max-lg:hidden" />
-        <img src="/img/midu-run-mobile.webp" alt="Midu corriendo" class="lg:hidden" />
+        <img src="/img/midu-run.webp" alt="Midu corriendo" class="max-lg:hidden object-contain" />
+        <img
+          src="/img/midu-run-mobile.webp"
+          alt="Midu corriendo"
+          class="lg:hidden object-contain"
+        />
       </div>
     </div>
   </Container>

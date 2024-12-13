@@ -12,16 +12,16 @@ const sections = [
 ]
 ---
 
-<header class="py-4 z-[999] fixed top-0 left-0 right-0 bg-black">
+<header class="py-4 z-[999] fixed top-0 left-0 right-0 bg-black px-section">
   <div
-    class="flex lg:justify-around justify-between items-center border-b border-white/10 pb-2 max-lg:pt-2 max-lg:px-6"
-  >
+    class="flex justify-between items-center border-b border-white/10 pb-2 max-lg:pt-2 max-w-[90rem] mx-auto"
+    >
     <div class="flex flex-row gap-x-3 md:items-center items-start justify-center">
       <LogoIcon class="md:size-16 size-9" />
       <div>
         <h5
           class="font-clash font-semibold max-md:h-4 md:text-2xl text-lg flex flex-row items-center gap-x-2 text-white"
-        >
+          >
           JSConf España
           <span
             class="rounded-full bg-javascript text-black font-semibold md:text-lg text-xs md:px-3 px-2 leading-none flex justify-center items-center"
@@ -39,7 +39,7 @@ const sections = [
               href={href}
               class:list={['hover:text-gray-300 transition']}
               id={`navmob-link-${key}`}
-            >
+              >
               {name}
             </a>
           ))
@@ -50,17 +50,17 @@ const sections = [
       <Button
         href="#"
         style="black"
-      >
+        >
         <span>¡Quiero patrocinar!</span>
         <ArrowUp slot="icon-right" />
       </Button>
       <Button class="flex items-center" style="yellow" href="#"> ¡Consigue tu entrada! </Button>
     </div>
-    <HamburgerButton class:list={'block lg:hidden'} id="menuButton" />
+    <HamburgerButton class:list="block lg:hidden" id="menuButton" />
     <div
       class="fixed inset-0 z-[888] flex w-screen flex-col items-center overflow-x-auto px-3 lg:hidden backdrop-blur-lg bg-black/85"
       id={MOBILE_MENU_CONTENT_ID}
-    >
+      >
       <aside class="flex min-h-16 w-full items-center justify-end px-3 pt-4">
         <HamburgerButton id="innerMenuButton" />
       </aside>
@@ -72,7 +72,7 @@ const sections = [
                 href={href}
                 class:list={['text-white font-clash text-5xl font-medium']}
                 id={`navmob-link-${key}`}
-              >
+                >
                 {name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()}
               </a>
             </>
@@ -82,7 +82,7 @@ const sections = [
           class="px-12 py-4 border border-black flex justify-center hover:bg-black hover:text-white w-full md:w-auto gap-2"
           href="#"
           style="transparent"
-        >
+          >
           <span>¡Quiero patrocinar!</span>
           <ArrowUp slot="icon-right" />
         </Button>

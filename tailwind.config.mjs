@@ -12,6 +12,9 @@ export default {
       },
       backgroundImage: {
         'javascript-radial': 'radial-gradient(ellipse farthest-corner at 0% 0%, #FFFE65, #F7DF1F)',
+      },
+      padding: {
+        section: '1.5rem',
       }
     },
   },

@@ -95,7 +95,7 @@ Ejemplo: `feat: add newsletter subscription component`
 - No dejes console.logs en el código
 - No añadas dependencias sin discutirlo primero
 - No modifiques la configuración del proyecto sin consenso
-- Evita ser groser o imponerte en las discusiones
+- Evita ser grosero o imponerte en las discusiones
 
 ### 👥 Proceso de Review
 

@@ -12,6 +12,7 @@ export default [
     rules: {
       '@stylistic/jsx-quotes': ['error', 'prefer-double'],
       '@stylistic/jsx-indent': 'off',
+      '@stylistic/space-before-function-paren': 'off',
       // override/add rules settings here, such as:
       // "astro/no-set-html-directive": "error"
     },

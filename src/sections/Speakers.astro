@@ -2,6 +2,8 @@
 import Container from '@/components/Container.astro'
 import CrossContainerTitle from '@/components/CrossContainerTitle.astro'
 import Card from '@/components/SpeakerCard.astro'
+import GoogleLogo from '@/icons/GoogleSmallLogo.svg'
+import VercelLogo from '@/icons/VercelLogo.svg'
 
 const speakers = [
   {
@@ -10,7 +12,7 @@ const speakers = [
     company: 'Vercel',
     description: 'EDT designer que ganó varios premios.',
     imageUrl: '/img/Speaker1.webp',
-    badge: true,
+    companyLogo: VercelLogo,
   },
   {
     name: 'Fernando Herrera',
@@ -18,7 +20,7 @@ const speakers = [
     company: 'Google',
     description: 'Experto en React y Vue.',
     imageUrl: '/img/Speaker2.webp',
-    badge: false,
+    companyLogo: GoogleLogo,
   },
   {
     name: 'Eduardo San Martín',
@@ -26,7 +28,7 @@ const speakers = [
     company: 'Vue.js',
     description: 'Ayuda con proyectos de Vue.',
     imageUrl: '/img/Speaker2.webp',
-    badge: false,
+    companyLogo: VercelLogo,
   },
   {
     name: 'Eduardo San Martín',
@@ -34,7 +36,7 @@ const speakers = [
     company: 'Vue.js',
     description: 'Ayuda con proyectos de Vue.',
     imageUrl: '/img/Speaker2.webp',
-    badge: false,
+    companyLogo: GoogleLogo,
   },
 ]
 ---
@@ -53,7 +55,7 @@ const speakers = [
         speakers
           .concat(speakers)
           .concat(speakers)
-          .map((speaker, index) => <Card {...speaker} marginTop={`${(index % 4) * 20}px`} />)
+          .map((speaker, index) => <Card {...speaker} companyLogo={speaker.companyLogo} marginTop={`${(index % 4) * 20}px`} />)
       }
     </div>
   </Container>

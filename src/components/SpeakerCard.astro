@@ -5,12 +5,11 @@ export interface CardProps {
   company: string
   description: string
   imageUrl: string
-  badge?: boolean
-  class?: string
+  companyLogo: any
   marginTop?: string
 }
 
-const { name, role, company, description, imageUrl, badge, marginTop } = Astro.props as CardProps
+const { name, role, company, description, imageUrl, companyLogo: Logo, marginTop } = Astro.props as CardProps
 ---
 
 <div class="card font-clash bg-black text-white" ]>
@@ -18,8 +17,8 @@ const { name, role, company, description, imageUrl, badge, marginTop } = Astro.p
   <div class="flex flex-col md:gap-y-[14px] gap-y-[6px] border border-white/10 md:p-6 p-3">
     <div>
       <div class="flex flex-row items-center justify-between">
-        <h3 class="md:text-2xl text-sm font-medium">{name}</h3>
-        {badge && <span class="badge bg-green-500 text-xs px-2 py-1 rounded">✔</span>}
+        <h3 class="md:text-2xl text-[12px] font-medium">{name}</h3>
+        <Logo class="md:size-6 size-3"/>
       </div>
       <div class="flex flex-row gap-x-1 md:text-base text-[10px] text-yellow-400 font-medium">
         <p>{role}</p>

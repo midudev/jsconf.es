@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         javascript: '#f7df1e',
+        'javascript-dark': '#998c06',
       },
       fontFamily: {
         clash: ['Clash', 'system-ui', 'sans-serif'],

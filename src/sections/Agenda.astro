@@ -3,6 +3,7 @@ import Container from '@/components/Container.astro'
 import agendaData from '@/data/agenda.json'
 import Talk from '@/components/Talk.astro'
 import Break from '@/components/Break.astro'
+import Calendar from '@/icons/Calendar.svg'
 ---
 
 <section id="agenda" class="bg-black flex flex-col px-section text-white font-clash">
@@ -12,7 +13,16 @@ import Break from '@/components/Break.astro'
       <div class="flex items-center">
         {
           agendaData.map((day) => (
-            <p class="text-center text-2xl font-light">{day.date}</p>
+            <div class="flex flex-col">
+              <p class="text-center text-2xl font-light">{day.date}</p>
+              <button
+                class="text-javascript hover:text-javascript-dark font-medium flex items-center gap-x-2"
+                id="add-to-calendar"
+              >
+                <Calendar class="size-6" />
+                Agregalo a tu calendario
+              </button>
+            </div>
           ))
         }
       </div>
@@ -34,3 +44,15 @@ import Break from '@/components/Break.astro'
     </div>
   </Container>
 </section>
+
+<script>
+document.getElementById('add-to-calendar').addEventListener('click', () => {
+  const eventTitle = encodeURIComponent('JSConf España 2025')
+  const eventStart = encodeURIComponent('20250301T1000')
+  const eventEnd = encodeURIComponent('20250301T1900')
+  const eventDetails = encodeURIComponent('Una experiencia exclusiva de JavaScript')
+  const eventLocation = encodeURIComponent('La Nave, Madrid')
+  const googleCalendarUrl = `https://calendar.google.com/calendar/r/eventedit?text=${eventTitle}&dates=${eventStart}/${eventEnd}&details=${eventDetails}&location=${eventLocation}`
+  window.open(googleCalendarUrl, '_blank')
+})
+</script>

@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+BEGIN:DAYLIGHT
+TZNAME:CEST
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZNAME:CET
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20241214T173526Z
+UID:1734197641130-77568
+DTSTART;VALUE=DATE:20250301
+DTEND;VALUE=DATE:20250302
+SUMMARY:JSConf España 2025
+URL:https://www.jsconf.es/
+DESCRIPTION:¡Únete a JSConf España 2025!\n📅 Fecha: 1 de marzo de 2025\n📍 Lugar: La Nave\, C. Cifuentes\, 5\, Villaverde\, 28021 Madrid\, España\n\n¿Listo para sumergirte en el futuro de JavaScript? 🚀 JSConf España es el evento imperdible para desarrolladores\, entusiastas y profesionales que viven y respiran JavaScript.\n\n✨ ¿Qué te espera?\n\n    🌐 Charlas inspiradoras: Aprende de los líderes de la industria y de las mentes más brillantes del ecosistema JavaScript.\n    🤝 Networking: Conecta con una comunidad vibrante de desarrolladores\, comparte ideas y encuentra nuevas oportunidades.\n    🎉 Actividades especiales: Talleres\, paneles y\, por supuesto\, ¡momentos para divertirse!\n\nYa seas un principiante o un experto\, JSConf España tiene algo para ti. No te pierdas la oportunidad de expandir tus habilidades\, descubrir las últimas tendencias y ser parte de una comunidad que está transformando la web.\n\n🔗 Reserva tu entrada ahora: https://www.jsconf.es/\n¡Nos vemos allí!
+LOCATION:La Nave\, Madrid
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:JSConf España 2025
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

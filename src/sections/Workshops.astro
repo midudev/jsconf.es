@@ -1,11 +1,12 @@
 ---
+import { COMPRAR_ENTRADA } from '@/consts/links'
 import Container from '@/components/Container.astro'
-import Button from '@/components/Button.astro'
 import CrossContainerTitle from '@/components/CrossContainerTitle.astro'
 import WorkshopCard from '@/components/WorkshopCard.astro'
-import Ticket from '@/icons/Ticket.svg'
+import ArrowRight from '@/icons/ArrowRight.svg'
 import type { TypeTag } from '@/components/WorkshopSkillTag.astro'
 import { TAGS } from '@/components/WorkshopSkillTag.astro'
+import LinkEntrada from '@/components/LinkEntrada.astro'
 
 type Workshop = {
   hour: string
@@ -48,8 +49,16 @@ const workshops: Workshop[] = [
 ---
 
 <section id="whorkshop" class="px-section mt-14 relative">
-  <img src="/img/workshops-ms.webp" alt="" class="absolute top-20 left-24 max-xl:hidden w-40 max-2xl:w-24 max-2xl:top-32 max-2xl:left-10" />
-  <img src="/img/workshops-cubes.webp" alt="" class="absolute right-28 max-xl:hidden w-36 grayscale -rotate-12 top-28 max-2xl:w-24 max-2xl:top-36 max-2xl:right-10" />
+  <img
+    src="/img/workshops-ms.webp"
+    alt=""
+    class="absolute top-20 left-24 max-xl:hidden w-40 max-2xl:w-24 max-2xl:top-32 max-2xl:left-10"
+  />
+  <img
+    src="/img/workshops-cubes.webp"
+    alt=""
+    class="absolute right-28 max-xl:hidden w-36 grayscale -rotate-12 top-28 max-2xl:w-24 max-2xl:top-36 max-2xl:right-10"
+  />
   <Container>
     <div class="flex justify-center flex-wrap">
       <h1 class="font-clash text-white text-[clamp(2rem,5vw,4.5rem)] text-center leading-tight">
@@ -67,25 +76,13 @@ const workshops: Workshop[] = [
         Talleres prácticos destacados
       </h5>
       <a
-        href="#"
+        href={COMPRAR_ENTRADA}
         target="_blank"
         rel="noopener noreferrer"
-        class="font-clash group flex gap-x-1 items-center font-medium hover:opacity-70"
-        >
-        <span class="text-javascript">Consigue tu entrada</span>
-        <svg
-          class="group-hover:translate-x-1 transition"
-          width="12"
-          height="13"
-          viewBox="0 0 12 13"
-          fill="none"
-          >
-          <path
-            d="M9.1287 5.74992L5.1057 1.72692L6.16635 0.66626L12 6.49992L6.16635 12.3335L5.1057 11.2729L9.1287 7.24992H0V5.74992H9.1287Z"
-            fill="#f7df1e"
-            >
-          </path>
-        </svg>
+        class="font-clash text-javascript group flex gap-x-1 items-center font-medium hover:opacity-70"
+      >
+        <span>Consigue tu entrada</span>
+        <ArrowRight class="group-hover:translate-x-1 transition" />
       </a>
     </div>
     <div class="flex lg:flex-row flex-col lg:gap-x-6 gap-y-6">
@@ -103,10 +100,7 @@ const workshops: Workshop[] = [
       }
     </div>
     <div class="flex justify-center max-sm:mx-12 mt-14">
-      <Button href="#" style="yellow">
-        ¡Consigue tu entrada!
-        <Ticket slot="icon-left" />
-      </Button>
+      <LinkEntrada style="yellow" />
     </div>
   </Container>
 </section>

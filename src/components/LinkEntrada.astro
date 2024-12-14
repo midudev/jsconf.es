@@ -1,0 +1,11 @@
+---
+import Ticket from '@/icons/Ticket.svg'
+import Button from '@/components/Button.astro'
+import { COMPRAR_ENTRADA } from '@/consts/links'
+const { style = 'black' } = Astro.props
+---
+
+<Button href={COMPRAR_ENTRADA} style={style}>
+  <span> ¡Consigue tu entrada! </span>
+  <Ticket slot="icon-left" />
+</Button>

@@ -1,11 +1,11 @@
 ---
 import ArrowUp from '@/icons/ArrowUp.svg'
-import Button from './Button.astro'
-
+import Button from '@/components/Button.astro'
+import { QUIERO_PATROCINAR } from '@/consts/links'
 const { style = 'black' } = Astro.props
 ---
 
-<Button href="mailto:miduga@gmail.com" style={style}>
+<Button href={QUIERO_PATROCINAR} style={style}>
   <span>¡Quiero patrocinar!</span>
-  <ArrowUp slot="iron-right" class="size-4" />
+  <ArrowUp slot="icon-right" class="size-6" />
 </Button>

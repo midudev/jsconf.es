@@ -1,9 +1,9 @@
 ---
-import Button from '@/components/Button.astro'
+import { COMPRAR_ENTRADA } from '@/consts/links'
 import Container from '@/components/Container.astro'
 import WhyCard from '@/components/WhyCard.astro'
 import ArrowRight from '@/icons/ArrowRight.svg'
-import Ticket from '@/icons/Ticket.svg'
+import LinkEntrada from '@/components/LinkEntrada.astro'
 ---
 
 <section class="bg-black text-white md:max-w-5/6 mx-auto px-section py-12">
@@ -92,7 +92,7 @@ import Ticket from '@/icons/Ticket.svg'
 
           <a
             target="_blank"
-            href="#"
+            href={COMPRAR_ENTRADA}
             class="group py-2 font-clash text-javascript flex flex-row items-center gap-x-2"
           >
             Aprovecha la oportunidad <span
@@ -104,10 +104,7 @@ import Ticket from '@/icons/Ticket.svg'
     </div>
 
     <div class="flex justify-center max-md:mx-9">
-      <Button href="#" style="yellow">
-        ¡Consigue tu entrada!
-        <Ticket slot="icon-left" />
-      </Button>
+      <LinkEntrada style="yellow" />
     </div>
   </Container>
 </section>

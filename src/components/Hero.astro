@@ -1,11 +1,10 @@
 ---
-import Button from '@/components/Button.astro'
 import Mouse from '@/icons/Mouse.svg'
 import ArrowDown from '@/icons/ArrowDown.svg'
-import ArrowUp from '@/icons/ArrowUp.svg'
-import Ticket from '@/icons/Ticket.svg'
 import UnderlineWord from '@/components/UnderlineWord.astro'
 import CodeBrace from '@/icons/CodeBrace.svg'
+import LinkSponsor from '@/components/LinkSponsor.astro'
+import LinkEntrada from '@/components/LinkEntrada.astro'
 ---
 
 <div class="relative min-h-screen flex flex-col items-center justify-center px-4 text-center">
@@ -32,14 +31,8 @@ import CodeBrace from '@/icons/CodeBrace.svg'
     </div>
 
     <div class="flex flex-col md:flex-row gap-4 justify-center mt-12">
-      <Button href="#" style="yellow">
-        <span> ¡Consigue tu entrada! </span>
-        <Ticket slot="icon-left" />
-      </Button>
-      <Button href="#" style="transparent">
-        <span> ¡Quiero patrocinar! </span>
-        <ArrowUp slot="icon-right" />
-      </Button>
+      <LinkEntrada style="yellow" />
+      <LinkSponsor style="transparent" />
     </div>
 
     <div

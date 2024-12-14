@@ -1,11 +1,11 @@
 ---
-import Button from '@/components/Button.astro'
+import { LUGAR_MAPA } from '@/consts/links'
 import Container from '@/components/Container.astro'
 import UnderlineWord from '@/components/UnderlineWord.astro'
-import Ticket from '@/icons/Ticket.svg'
 import Agenda from '@/icons/Agenda.svg'
 import Pin from '@/icons/Pin.svg'
 import ArrowRight from '@/icons/ArrowRight.svg'
+import LinkEntrada from '@/components/LinkEntrada.astro'
 ---
 
 <section class="bg-javascript text-black pb-8 py-12 px-6">
@@ -34,7 +34,7 @@ import ArrowRight from '@/icons/ArrowRight.svg'
         <h4 class="text-6xl font-clash font-medium">La Nave, Madrid</h4>
         <h5 class="text-xl font-light">
           <a
-            href="#"
+            href={LUGAR_MAPA}
             target="_blank"
             rel="noopener noreferrer"
             class="font-clash group flex gap-x-1 items-center font-medium hover:opacity-70"
@@ -47,10 +47,7 @@ import ArrowRight from '@/icons/ArrowRight.svg'
     </div>
 
     <div class="flex justify-center">
-      <Button href="#" style="black">
-        ¡Consigue tu entrada!
-        <Ticket slot="icon-left" />
-      </Button>
+      <LinkEntrada style="black"/>
     </div>
   </Container>
 </section>

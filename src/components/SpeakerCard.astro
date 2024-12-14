@@ -1,27 +1,41 @@
 ---
 export interface CardProps {
-  name: string;
-  role: string;
-  company: string;
-  description: string;
-  imageUrl: string;
-  badge?: boolean;
+  name: string
+  role: string
+  company: string
+  description: string
+  imageUrl: string
+  badge?: boolean
+  class?: string
+  marginTop?: string
 }
 
-const { name, role, company, description, imageUrl, badge } = Astro.props as CardProps;
+const { name, role, company, description, imageUrl, badge, marginTop } = Astro.props as CardProps
 ---
 
-<div class="card bg-black text-white p-10">
-  <img
-    src={imageUrl}
-    alt={name}
-    class="w-[331px] h-[308px] object-contain"
-  />
-  <div class="card-content border border-white pt-9 pb-9 pl-6 pr-6">
-    <h3 class="text-lg font-clash">{name}</h3>
-    <p class="text-sm text-yellow-400">{role}</p>
-    <p class="text-sm text-gray-400">{company}</p>
-    <p class="text-sm mt-2">{description}</p>
-    {badge && <span class="badge bg-green-500 text-xs mt-2 px-2 py-1 rounded">✔</span>}
+<div class="card font-clash bg-black text-white" ]>
+  <img src={imageUrl} alt={name} class="w-full object-scale-down" />
+  <div class="flex flex-col gap-y-[14px] border border-white/10 p-6">
+    <div>
+      <div class="flex flex-row items-center justify-between">
+        <h3 class="text-2xl font-medium">{name}</h3>
+        {badge && <span class="badge bg-green-500 text-xs px-2 py-1 rounded">✔</span>}
+      </div>
+      <div class="flex flex-row gap-x-1 text-yellow-400 font-medium">
+        <p>{role}</p>
+        <p>@{company}</p>
+      </div>
+    </div>
+    <p class="text-sm text-neutral-400">{description}</p>
   </div>
 </div>
+<style define:vars={{ marginTop }}>
+  .card {
+    margin-top: var(--marginTop);
+  }
+  @media (max-width: 1024px) {
+    .card {
+      margin-top: 0;
+    }
+  }
+</style>

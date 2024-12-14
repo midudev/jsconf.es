@@ -6,7 +6,7 @@ import Card from '@/components/SpeakerCard.astro'
 const speakers = [
   {
     name: 'Javier Velasco',
-    role: 'Tech Lead @vercel',
+    role: 'Tech Lead',
     company: 'Vercel',
     description: 'EDT designer que ganó varios premios.',
     imageUrl: '/img/Speaker1.webp',
@@ -14,7 +14,7 @@ const speakers = [
   },
   {
     name: 'Fernando Herrera',
-    role: 'Tech Lead @Google',
+    role: 'Tech Lead',
     company: 'Google',
     description: 'Experto en React y Vue.',
     imageUrl: '/img/Speaker2.webp',
@@ -22,7 +22,7 @@ const speakers = [
   },
   {
     name: 'Eduardo San Martín',
-    role: 'Core Contributor @Vue.js',
+    role: 'Core Contributor',
     company: 'Vue.js',
     description: 'Ayuda con proyectos de Vue.',
     imageUrl: '/img/Speaker2.webp',
@@ -30,36 +30,31 @@ const speakers = [
   },
   {
     name: 'Eduardo San Martín',
-    role: 'Core Contributor @Vue.js',
+    role: 'Core Contributor',
     company: 'Vue.js',
     description: 'Ayuda con proyectos de Vue.',
     imageUrl: '/img/Speaker2.webp',
     badge: false,
-  }
-];
+  },
+]
 ---
 
-<section id="whorkshop" class="px-section">
-    <Container>
-      <div class="flex justify-center flex-wrap">
-        <h1 class="font-clash text-white lg:text-7xl sm:text-5xl text-3xl text-center leading-tight">
-          ¡Nuestros
-          <CrossContainerTitle>speakers</CrossContainerTitle> son auténticas estrellas de JavaScript de la comunidad hispana!
-        </h1>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-20">
-        {speakers.map((speaker) => (
-          <Card {...speaker} />
-        ))}
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-20">
-        {speakers.map((speaker) => (
-          <Card {...speaker} />
-        ))}
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-20">
-        {speakers.map((speaker) => (
-          <Card {...speaker} />
-        ))}
-      </div>
-    </Container>
+<section id="speakers" class="px-section">
+  <Container class="items-center">
+    <div class="flex justify-center flex-wrap">
+      <h1 class="font-clash text-white lg:text-7xl sm:text-5xl text-3xl text-center leading-tight">
+        ¡Nuestros
+        <CrossContainerTitle>speakers</CrossContainerTitle> son auténticas estrellas de JavaScript de
+        la comunidad hispana!
+      </h1>
+    </div>
+    <div class="grid lg:grid-cols-4 grid-cols-2 gap-x-6 gap-y-10 pt-20">
+      {
+        speakers
+          .concat(speakers)
+          .concat(speakers)
+          .map((speaker, index) => <Card {...speaker} marginTop={`${(index % 4) * 20}px`} />)
+      }
+    </div>
+  </Container>
+</section>

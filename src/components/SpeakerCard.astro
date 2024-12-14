@@ -12,13 +12,13 @@ export interface CardProps {
 const { name, role, company, description, imageUrl, companyLogo: Logo, marginTop } = Astro.props as CardProps
 ---
 
-<div class="card font-clash bg-black text-white" ]>
+<div class="card font-clash bg-black text-white">
   <img src={imageUrl} alt={name} class="w-full object-scale-down" />
   <div class="flex flex-col md:gap-y-[14px] gap-y-[6px] border border-white/10 md:p-6 p-3">
     <div>
       <div class="flex flex-row items-center justify-between">
         <h3 class="md:text-2xl text-[12px] font-medium">{name}</h3>
-        <Logo class="md:size-6 size-3"/>
+        <Logo class="md:size-6 size-3" />
       </div>
       <div class="flex flex-row gap-x-1 md:text-base text-[10px] text-yellow-400 font-medium">
         <p>{role}</p>

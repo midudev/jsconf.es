@@ -118,9 +118,8 @@ const sections = [
     document.body.classList.toggle('lg:overflow-auto')
   }
 
-  window.addEventListener('scroll', () => {
+  function headerBgTransition() {
     const header = document.querySelector('header') as HTMLElement
-
     if (window.scrollY > 10) {
       header.classList.add('bg-black/50', 'backdrop-blur')
       header.classList.remove('bg-transparent')
@@ -128,9 +127,15 @@ const sections = [
       header.classList.add('bg-transparent')
       header.classList.remove('bg-black/50', 'backdrop-blur')
     }
+  }
+
+  window.addEventListener('scroll', () => {
+    headerBgTransition()
   })
 
   window.onload = () => {
+    headerBgTransition() // if the user relaods the page, to check if the header should be transparent or not
+
     const nav = document.querySelector('nav') as HTMLElement
     const menuButton = document.querySelector('#menuButton') as HTMLElement
     const innerMenuButton = document.querySelector('#innerMenuButton') as HTMLElement

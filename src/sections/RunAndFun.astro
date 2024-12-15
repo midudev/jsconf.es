@@ -1,7 +1,7 @@
 ---
 import Container from '@/components/Container.astro'
 import InfoTag from '@/components/InfoTag.astro'
-import RaceToCalendar from '@/components/RaceToCalendar.astro'
+import LinkButtonRace from '@/components/LinkButtonRace.astro'
 ---
 
 <section class="bg-white text-black md:max-w-5/6 mx-auto">
@@ -62,7 +62,7 @@ import RaceToCalendar from '@/components/RaceToCalendar.astro'
             </ul>
           </div>
           <div class="flex flex-wrap gap-x-3 gap-y-3">
-            <RaceToCalendar>
+            <LinkButtonRace url="/jsrace.ics">
               <InfoTag text="2 de marzo de 2025"
                 ><svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                   <path
@@ -70,7 +70,7 @@ import RaceToCalendar from '@/components/RaceToCalendar.astro'
                     fill="currentColor"></path>
                 </svg>
               </InfoTag>
-            </RaceToCalendar>
+            </LinkButtonRace>
             <InfoTag text="10:00 H"
               ><svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
@@ -78,12 +78,7 @@ import RaceToCalendar from '@/components/RaceToCalendar.astro'
                   fill="currentColor"></path>
               </svg>
             </InfoTag>
-            <a
-              href="https://maps.app.goo.gl/PYvuti2SYu3b1cYz6"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="block hover:invert transition"
-            >
+            <LinkButtonRace url="https://maps.app.goo.gl/PYvuti2SYu3b1cYz6">
               <InfoTag text="C/ de Alfonso XII con Puerta del Angel Caído">
                 <svg width="16" height="21" viewBox="0 0 16 21" fill="none">
                   <path
@@ -91,7 +86,7 @@ import RaceToCalendar from '@/components/RaceToCalendar.astro'
                     fill="currentColor"></path>
                 </svg>
               </InfoTag>
-            </a>
+            </LinkButtonRace>
           </div>
         </div>
         <img src="/img/midu-run.webp" alt="Midu corriendo" class="max-lg:hidden object-contain" />

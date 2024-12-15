@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+BEGIN:DAYLIGHT
+TZNAME:CEST
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZNAME:CET
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20241214T173526Z
+UID:1734197641130-77568
+DTSTART;VALUE=DATE:20250302T100000
+DTEND;VALUE=DATE:20250302T110000
+SUMMARY:JSConf España 2025
+URL:https://www.jsconf.es/
+DESCRIPTION:Has recibido una invitación 📲\n\n¡Muévete con la comunidad JS!\n📅 Fecha: 2 de marzo de 2025\n📍 Lugar: C/ de Alfonso XII con Puerta del Ángel Caído\n\n¿Quién puede participar? 🚀 Todos los asistentes a la JSConf están invitados a este evento. No importa si eres corredor habitual o es tu primera vez: el objetivo es disfrutar, compartir y moverse a un ritmo relajado. 🤝\n¡Nos vemos allí! 🏃‍➡️
+LOCATION:C/ de Alfonso XII con Puerta del Angel Caído 
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Carrera JSConf España 2025
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

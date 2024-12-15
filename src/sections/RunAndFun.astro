@@ -1,6 +1,7 @@
 ---
 import Container from '@/components/Container.astro'
 import InfoTag from '@/components/InfoTag.astro'
+import LinkButtonRace from '@/components/LinkButtonRace.astro'
 ---
 
 <section class="bg-white text-black md:max-w-5/6 mx-auto">
@@ -61,13 +62,15 @@ import InfoTag from '@/components/InfoTag.astro'
             </ul>
           </div>
           <div class="flex flex-wrap gap-x-3 gap-y-3">
-            <InfoTag text="2 de marzo de 2025"
-              ><svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path
-                  d="M15 2H19C19.5523 2 20 2.44772 20 3V19C20 19.5523 19.5523 20 19 20H1C0.44772 20 0 19.5523 0 19V3C0 2.44772 0.44772 2 1 2H5V0H7V2H13V0H15V2ZM2 8V18H18V8H2ZM4 12H9V16H4V12Z"
-                  fill="currentColor"></path>
-              </svg>
-            </InfoTag>
+            <LinkButtonRace url="/jsrace.ics">
+              <InfoTag text="2 de marzo de 2025"
+                ><svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path
+                    d="M15 2H19C19.5523 2 20 2.44772 20 3V19C20 19.5523 19.5523 20 19 20H1C0.44772 20 0 19.5523 0 19V3C0 2.44772 0.44772 2 1 2H5V0H7V2H13V0H15V2ZM2 8V18H18V8H2ZM4 12H9V16H4V12Z"
+                    fill="currentColor"></path>
+                </svg>
+              </InfoTag>
+            </LinkButtonRace>
             <InfoTag text="10:00 H"
               ><svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
@@ -75,12 +78,7 @@ import InfoTag from '@/components/InfoTag.astro'
                   fill="currentColor"></path>
               </svg>
             </InfoTag>
-            <a
-              href="https://maps.app.goo.gl/PYvuti2SYu3b1cYz6"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="block hover:invert transition"
-            >
+            <LinkButtonRace url="https://maps.app.goo.gl/PYvuti2SYu3b1cYz6">
               <InfoTag text="C/ de Alfonso XII con Puerta del Angel Caído">
                 <svg width="16" height="21" viewBox="0 0 16 21" fill="none">
                   <path
@@ -88,7 +86,7 @@ import InfoTag from '@/components/InfoTag.astro'
                     fill="currentColor"></path>
                 </svg>
               </InfoTag>
-            </a>
+            </LinkButtonRace>
           </div>
         </div>
         <img src="/img/midu-run.webp" alt="Midu corriendo" class="max-lg:hidden object-contain" />

@@ -1,0 +1,15 @@
+---
+interface Props {
+  url: string
+}
+const { url } = Astro.props
+---
+<a
+  class="block hover:invert transition"
+  rel="noreferrer noopener"
+  id="add-to-calendar"
+  target="_blank"
+  href={url}
+>
+  <slot />
+</a>

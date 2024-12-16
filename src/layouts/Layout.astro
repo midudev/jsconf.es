@@ -10,15 +10,80 @@ import Footer from '@/sections/Footer.astro'
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>JSConf - Conferencia de JavaScript en España (1 de marzo 2025)</title>
+    <meta
+      name="description"
+      content="Únete a JSConf España 2025, la conferencia más importante sobre JavaScript en España, del 12 al 14 de junio en La Nave de Madrid. ¡Reserva tu entrada ahora!"
+    />
+    <meta
+      name="keywords"
+      content="JSConf, JavaScript, España, Conferencias, Programación, La Nave Madrid"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href="https://jsconf.es" />
+
+    <!-- OG Meta Tags -->
+    <meta property="og:image" content="https://jsconf.es/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:title" content="JSConf España 2025" />
+    <meta
+      property="og:description"
+      content="Conferencia de Programación de JavaScript en España en La Nave de Madrid"
+    />
+    <meta property="og:url" content="https://jsconf.es" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@midudev" />
+    <meta name="twitter:creator" content="@midudev" />
+    <meta name="twitter:title" content="JSConf España 2025" />
+    <meta
+      name="twitter:description"
+      content="Conferencia de Programación de JavaScript en España en La Nave de Madrid"
+    />
+    <meta name="twitter:image" content="https://jsconf.es/og.jpg" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "JSConf España 2025",
+        "startDate": "2025-06-12",
+        "endDate": "2025-06-14",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+          "@type": "Place",
+          "name": "La Nave Madrid",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Calle Cifuentes, 5",
+            "addressLocality": "Madrid",
+            "postalCode": "28021",
+            "addressCountry": "ES"
+          }
+        },
+        "image": "https://jsconf.es/og.jpg",
+        "description": "Conferencia de Programación de JavaScript en España en La Nave de Madrid",
+        "organizer": {
+          "@type": "Organization",
+          "name": "JSConf España",
+          "url": "https://jsconf.es"
+        }
+      }
+    </script>
   </head>
   <body class="relative">
     <div
       class="absolute h-full w-full bg-[url(/img/spotlight.webp)] bg-cover bg-no-repeat bottom-0 left-0 right-0 top-0 opacity-30 bg-top bg-blend-multiply"
-      >
+    >
     </div>
     <div
       class="absolute h-full w-full bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:58px_58px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"
-      >
+    >
     </div>
     <Header />
     <slot />

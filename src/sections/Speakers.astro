@@ -4,39 +4,45 @@ import CrossContainerTitle from '@/components/CrossContainerTitle.astro'
 import Card from '@/components/SpeakerCard.astro'
 import GoogleLogo from '@/icons/GoogleSmallLogo.svg'
 import VercelLogo from '@/icons/VercelLogo.svg'
+import LottieLogo from '@/icons/LottieLogo.svg'
+import VueLogo from '@/icons/VueLogo.svg'
 
 const speakers = [
+  {
+    name: 'Carmen Ansio',
+    role: 'Designer Engineer',
+    company: 'LottieFiles',
+    description:
+      'La maga del CSS, la que lleva las animaciones al próximo nivel. Verás lo que sabe de JavaScript.',
+    imageUrl: '/img/Speaker1.webp',
+    companyLogo: LottieLogo,
+  },
   {
     name: 'Javier Velasco',
     role: 'Tech Lead',
     company: 'Vercel',
-    description: 'EDT designer que ganó varios premios.',
-    imageUrl: '/img/Speaker1.webp',
+    description:
+      'El 7º programador de Vercel. Muchas cosas buenas de Next.js son por su mano y gracia.',
+    imageUrl: '/img/Speaker2.webp',
     companyLogo: VercelLogo,
   },
   {
     name: 'Fernando Herrera',
-    role: 'Tech Lead',
-    company: 'Google',
-    description: 'Experto en React y Vue.',
-    imageUrl: '/img/Speaker2.webp',
+    role: 'Profesor en Línea',
+    company: 'DevTalles',
+    description:
+      'El Profesor en línea de Programación Web más visto. Seguro viste un curso suyo alguna vez.',
+    imageUrl: '/img/fernando-herrera.webp',
     companyLogo: GoogleLogo,
   },
   {
     name: 'Eduardo San Martín',
     role: 'Core Contributor',
     company: 'Vue.js',
-    description: 'Ayuda con proyectos de Vue.',
-    imageUrl: '/img/Speaker2.webp',
-    companyLogo: VercelLogo,
-  },
-  {
-    name: 'Eduardo San Martín',
-    role: 'Core Contributor',
-    company: 'Google',
-    description: 'Ayuda con proyectos de Vue.',
-    imageUrl: '/img/Speaker2.webp',
-    companyLogo: GoogleLogo,
+    description:
+      'Creador de Vue Router, Pinia y Vue Fire. ¿Y qué más? Contribuye al core de Vue.js',
+    imageUrl: '/img/eduardo-vue.webp',
+    companyLogo: VueLogo,
   },
 ]
 ---
@@ -52,10 +58,13 @@ const speakers = [
     </div>
     <div class="grid lg:grid-cols-4 grid-cols-2 md:gap-x-6 gap-x-3 md:gap-y-10 gap-y-6 pt-20">
       {
-        speakers
-          .concat(speakers)
-          .concat(speakers)
-          .map((speaker, index) => <Card {...speaker} companyLogo={speaker.companyLogo} marginTop={`${(index % 4) * 20}px`} />)
+        speakers.map((speaker, index) => (
+          <Card
+            {...speaker}
+            companyLogo={speaker.companyLogo}
+            marginTop={`${(index % 4) * 20}px`}
+          />
+        ))
       }
     </div>
   </Container>

@@ -1,0 +1,22 @@
+<button id="theme-toggle" class="text-white">
+  <span id="theme-icon">🌙</span>
+</button>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const themeToggle = document.getElementById('theme-toggle')
+  const themeIcon = document.getElementById('theme-icon')
+
+  themeToggle.addEventListener('click', () => {
+    const darkTheme = document.querySelector('html').classList.contains('dark')
+
+    if (!darkTheme) {
+      document.querySelector('html').classList.remove('dark')
+      themeIcon.textContent = '☀️'
+    } else {
+      document.querySelector('html').classList.add('dark')
+      themeIcon.textContent = '🌙'
+    }
+  })
+})
+</script>

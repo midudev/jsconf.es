@@ -6,10 +6,10 @@ import LinkSponsor from '@/components/LinkSponsor.astro'
 import LinkEntrada from '@/components/LinkEntrada.astro'
 
 const sections = [
-  { name: 'HOME', href: '#home' },
-  { name: 'AGENDA', href: '#agenda' },
-  { name: 'SPEAKERS', href: '#speakers' },
-  { name: 'SPONSORS', href: '#sponsors' },
+  { name: 'HOME', href: '/#home' },
+  { name: 'AGENDA', href: '/#agenda' },
+  { name: 'SPEAKERS', href: '/#speakers' },
+  { name: 'SPONSORS', href: '/#sponsors' },
 ]
 ---
 
@@ -142,7 +142,6 @@ const sections = [
     const menuMobileContext = document.getElementById('menuMobileContent') as HTMLElement
 
     const linksMobile = document.querySelectorAll('a[id^="navmob-link-"]')
-    const linksDesktop = document.querySelectorAll('a[id^="navdesk-link-"]')
 
     function scrollSmoothlyToLink(link: Element) {
       const id = link.getAttribute('href')?.slice(1)
@@ -162,10 +161,6 @@ const sections = [
 
     linksMobile.forEach((link) => {
       link.addEventListener('click', (event) => handleLinkClick(event, link, true))
-    })
-
-    linksDesktop.forEach((link) => {
-      link.addEventListener('click', (event) => handleLinkClick(event, link, false))
     })
 
     menuButton?.addEventListener('click', () => {

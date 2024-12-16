@@ -119,5 +119,13 @@ import Footer from '@/sections/Footer.astro'
     margin: 0;
     width: 100%;
     height: 100%;
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion) {
+    html,
+    body {
+      scroll-behavior: auto;
+    }
   }
 </style>

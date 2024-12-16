@@ -8,7 +8,7 @@ import Button from '@/components/Button.astro'
 import UnderlineWord from '@/components/UnderlineWord.astro'
 ---
 
-<section class="bg-black text-white mx-auto px-4 py-12">
+<section class="mx-auto px-4 py-12 dark:bg-black dark:text-white bg-white text-black">
   <Container class="lg:p-24">
     <div class="flex md:flex-row flex-col-reverse lg:gap-x-20 gap-x-10">
       <img
@@ -19,19 +19,19 @@ import UnderlineWord from '@/components/UnderlineWord.astro'
       <div class="md:w-7/12 flex flex-col md:p-10 md:gap-y-10 gap-y-8">
         <h2 class="md:text-5xl text-[34px] font-clash font-medium">
           Presentado por <UnderlineWord
-            class="text-white !-translate-x-5 !-translate-y-2 md:!translate-x-0 md:!translate-y-0"
-            ><span class="text-javascript">midudev</span></UnderlineWord
+            class="dark:text-white text-black !-translate-x-5 !-translate-y-2 md:!translate-x-0 md:!translate-y-0"
+            ><span class="dark:text-javascript text-javascript-dark">midudev</span></UnderlineWord
           >
         </h2>
         <h3 class="md:text-2xl text-lg font-clash text-pretty">
           Uno de los mayores divulgadores de Programación de habla hispana. Más de 15 años de
-          experiencia en <span class="text-javascript">JavaScript</span>.
+          experiencia en <span class="dark:text-javascript text-javascript-dark">JavaScript</span>.
         </h3>
         <div class="flex flex-row gap-x-4 items-center mb-8">
           <a
             href="https://www.linkedin.com/in/midudev/"
             target="_blank"
-            class="text-white hover:scale-150 transition-transform"
+            class="hover:scale-150 transition-transform text-black dark:text-gray-200"
             rel="noreferrer"
           >
             <LinkedInSmallLogo class="size-8" />
@@ -39,13 +39,13 @@ import UnderlineWord from '@/components/UnderlineWord.astro'
           <a
             href="https://x.com/midudev"
             target="_blank"
-            class="text-white hover:scale-150 transition-transform"
+            class="hover:scale-150 transition-transform text-black dark:text-gray-200"
             rel="noreferrer"
           >
             <XLogo class="size-8" />
           </a>
           <a
-            class="text-white hover:scale-150 transition-transform"
+            class="hover:scale-150 transition-transform text-black dark:text-gray-200"
             href="https://www.twitch.tv/midudev"
             target="_blank"
             rel="noreferrer"
@@ -53,7 +53,11 @@ import UnderlineWord from '@/components/UnderlineWord.astro'
             <TwitchLogo class="size-8" />
           </a>
         </div>
-        <Button class="lg:px-10 max-w-fit" style="transparent" href="https://twitch.tv/midudev">
+        <Button
+          class="lg:px-10 max-w-fit bg-white !text-black dark:!text-white dark:bg-black dark:!border-white !border-black"
+          style="transparent"
+          href="https://twitch.tv/midudev"
+        >
           <ArrowUp slot="icon-right" />
           ¿Quién es midudev?
         </Button>

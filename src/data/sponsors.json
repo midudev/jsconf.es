@@ -5,23 +5,18 @@
     "companies": [
       {
         "name": "Google",
-        "image": "/sponsors/google.webp"
+        "image": "/sponsors/google.webp",
+        "url": "https://idx.dev/"
       },
       {
         "name": "Infojobs",
-        "image": "/sponsors/infojobs.webp"
+        "image": "/sponsors/infojobs.webp",
+        "url": "https://infojobs.net/"
       },
       {
-        "name": "Google",
-        "image": "/sponsors/google.webp"
-      },
-      {
-        "name": "Infojobs",
-        "image": "/sponsors/infojobs.webp"
-      },
-      {
-        "name": "Google",
-        "image": "/sponsors/google.webp"
+        "name": "Edpuzzle",
+        "image": "/sponsors/edpuzzle.svg",
+        "url": "https://edpuzzle.com/"
       }
     ]
   },
@@ -31,19 +26,13 @@
     "companies": [
       {
         "name": "Don Dominio",
-        "image": "/sponsors/dondominio.webp"
+        "image": "/sponsors/dondominio.webp",
+        "url": "https://midu.link/dondominio"
       },
       {
         "name": "Codely",
-        "image": "/sponsors/codely.webp"
-      },
-      {
-        "name": "Don Dominio",
-        "image": "/sponsors/dondominio.webp"
-      },
-      {
-        "name": "Codely",
-        "image": "/sponsors/codely.webp"
+        "image": "/sponsors/codely.webp",
+        "url": "https://midu.link/codely"
       }
     ]
   }

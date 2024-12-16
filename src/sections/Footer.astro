@@ -4,33 +4,33 @@ import LogoIcon from '@/icons/Logo.svg'
 import MiduLogoIcon from '@/icons/MiduLogo.svg'
 ---
 
-<footer>
+<footer class="bg-gray-100 dark:bg-black text-black dark:text-white">
   <Container class="pb-0 pt-12 px-section">
     <div
-      class="flex md:flex-row flex-col max-md:gap-y-4 justify-between items-center border-b border-white/10 pb-2"
+      class="flex md:flex-row flex-col max-md:gap-y-4 justify-between items-center border-b border-black/10 dark:border-white/10 pb-2"
     >
       <div class="flex flex-row gap-x-3 md:items-center items-start justify-center">
         <LogoIcon class="md:size-16 size-9" />
         <div>
           <h5
-            class="font-clash font-semibold max-md:h-4 md:text-2xl text-lg flex flex-row items-center gap-x-2 text-white"
+            class="font-clash font-semibold max-md:h-4 md:text-2xl text-lg flex flex-row items-center gap-x-2"
           >
             JSConf España
             <span
-              class="rounded-full bg-javascript text-black font-semibold md:text-lg text-xs md:px-3 px-2 leading-none flex justify-center items-center"
+              class="rounded-full bg-javascript font-semibold md:text-lg text-xs md:px-3 px-2 leading-none flex justify-center items-center"
               >2025
             </span>
           </h5>
-          <span class="uppercase font-light text-white max-md:text-xs">1 MARZO 2025</span>
+          <span class="uppercase font-light max-md:text-xs">1 MARZO 2025</span>
         </div>
       </div>
 
-      <h5 class="font-clash text-center text-white flex justify-center items-center gap-x-2">
+      <h5 class="font-clash text-center flex justify-center items-center gap-x-2">
         Una iniciativa de
         <a
           class="flex flex-row gap-x-2 justify-center items-center transition-transform hover:scale-110"
           href="https://midu.dev/"
-          rel="noopener"
+          rel="noopener noreferrer"
           target="_blank"
         >
           <MiduLogoIcon /><strong class="font-semibold">midudev</strong>
@@ -38,7 +38,7 @@ import MiduLogoIcon from '@/icons/MiduLogo.svg'
       </h5>
     </div>
     <div
-      class="flex flex-row text-white/70 md:gap-x-6 gap-x-3 py-6 md:justify-between items-center justify-center flex-wrap"
+      class="flex flex-row text-black/70 dark:text-white/70 md:gap-x-6 gap-x-3 py-6 md:justify-between items-center justify-center flex-wrap"
     >
       <div class="flex items-center gap-2">
         <a href="/legal" target="_self" class="hover:text-javascript">Legal</a>
@@ -48,7 +48,7 @@ import MiduLogoIcon from '@/icons/MiduLogo.svg'
 
         <a href="/privacidad" target="_self" class="hover:text-javascript">Política de privacidad</a>
       </div>
-      <div class="text-white text-sm opacity-75">
+      <div class="text-sm opacity-75">
         <p>Diseñado con ❤️ by <a href="#" class="underline underline-offset-4">Vladyslav</a></p>
       </div>
     </div>

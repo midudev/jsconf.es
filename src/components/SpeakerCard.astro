@@ -5,7 +5,7 @@ export interface CardProps {
   company: string
   description: string
   imageUrl: string
-  companyLogo: any
+  companyLogo: string | any
   marginTop?: string
 }
 
@@ -18,7 +18,13 @@ const { name, role, company, description, imageUrl, companyLogo: Logo, marginTop
     <div>
       <div class="flex flex-row items-center justify-between">
         <h3 class="md:text-2xl text-[12px] font-medium">{name}</h3>
-        <Logo class="md:size-6 size-3" />
+        {
+          typeof Logo === 'string' ? (
+            <img src={Logo} alt={company} class="md:size-6 size-3" />
+          ) : (
+            <Logo class="md:size-6 size-3" />
+          )
+        }
       </div>
       <div class="flex flex-row gap-x-1 md:text-base text-[10px] text-yellow-400 font-medium">
         <p>{role}</p>

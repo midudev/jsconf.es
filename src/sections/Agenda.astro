@@ -21,7 +21,7 @@ import AddToCalendarDialog from '@/components/AddToCalendarDialog.astro'
         }
       </div>
     </div>
-    <div class="space-y-4 blur-lg">
+    <div class="space-y-4 blur-sm">
       {
         agendaData[0].agenda.map((item) => {
           return item.type === 'talk' ? <Talk item={item} /> : <Break item={item} />

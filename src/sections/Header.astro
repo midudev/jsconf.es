@@ -4,6 +4,7 @@ import HamburgerButton from '@/components/HamburgerButton.astro'
 import LogoIcon from '@/icons/Logo.svg'
 import LinkSponsor from '@/components/LinkSponsor.astro'
 import LinkEntrada from '@/components/LinkEntrada.astro'
+import ThemeToggle from '@/components/ThemeToggle.astro'
 
 const sections = [
   { name: 'HOME', href: '/#home' },
@@ -54,6 +55,7 @@ const sections = [
     <div class="hidden lg:flex items-center gap-4">
       <LinkSponsor style="transparent" />
       <LinkEntrada style="yellow" />
+      <ThemeToggle />
     </div>
     <HamburgerButton class:list="block lg:hidden" id="menuButton" />
     <div
@@ -106,67 +108,72 @@ const sections = [
   }
 </style>
 <script>
-  function toggleMenu(
-    nav: HTMLElement | null,
-    menuMobileContent: HTMLElement | null,
-    innerMenuButton: HTMLElement | null
-  ) {
-    menuMobileContent?.classList.toggle('open')
-    nav?.classList.toggle('open')
-    innerMenuButton?.classList.toggle('open')
-    document.body.classList.toggle('overflow-hidden')
-    document.body.classList.toggle('lg:overflow-auto')
+function toggleMenu(
+  nav: HTMLElement | null,
+  menuMobileContent: HTMLElement | null,
+  innerMenuButton: HTMLElement | null
+) {
+  menuMobileContent?.classList.toggle('open')
+  nav?.classList.toggle('open')
+  innerMenuButton?.classList.toggle('open')
+  document.body.classList.toggle('overflow-hidden')
+  document.body.classList.toggle('lg:overflow-auto')
+}
+
+function headerBgTransition() {
+  const header = document.querySelector('header') as HTMLElement
+  if (window.scrollY > 10) {
+    header.classList.add('bg-black/50', 'backdrop-blur')
+    header.classList.remove('bg-transparent')
+  } else {
+    header.classList.add('bg-transparent')
+    header.classList.remove('bg-black/50', 'backdrop-blur')
   }
+}
 
-  function headerBgTransition() {
-    const header = document.querySelector('header') as HTMLElement
-    if (window.scrollY > 10) {
-      header.classList.add('bg-black/50', 'backdrop-blur')
-      header.classList.remove('bg-transparent')
-    } else {
-      header.classList.add('bg-transparent')
-      header.classList.remove('bg-black/50', 'backdrop-blur')
-    }
-  }
+window.addEventListener('scroll', () => {
+  headerBgTransition()
+})
 
-  window.addEventListener('scroll', () => {
-    headerBgTransition()
-  })
+window.onload = () => {
+  headerBgTransition()
 
-  window.onload = () => {
-    headerBgTransition() // if the user relaods the page, to check if the header should be transparent or not
+  const nav = document.querySelector('nav') as HTMLElement
+  const menuButton = document.querySelector('#menuButton') as HTMLElement
+  const innerMenuButton = document.querySelector('#innerMenuButton') as HTMLElement
+  const menuMobileContext = document.getElementById('menuMobileContent') as HTMLElement
 
-    const nav = document.querySelector('nav') as HTMLElement
-    const menuButton = document.querySelector('#menuButton') as HTMLElement
-    const innerMenuButton = document.querySelector('#innerMenuButton') as HTMLElement
-    const menuMobileContext = document.getElementById('menuMobileContent') as HTMLElement
-
-    const linksMobile: NodeListOf<HTMLAnchorElement> =
+  const linksMobile: NodeListOf<HTMLAnchorElement> =
       document.querySelectorAll('a[id^="navmob-link-"]')
 
-    function handleLinkClick(event: Event, isMobile: boolean) {
-      event.preventDefault()
-      if (isMobile) {
-        toggleMenu(nav, menuMobileContext, innerMenuButton)
-        menuButton.classList.toggle('hidden')
-      }
-    }
-
-    linksMobile.forEach((link) => {
-      link.addEventListener('click', (event) => handleLinkClick(event, true))
-    })
-
-    menuButton?.addEventListener('click', () => {
-      menuButton?.classList.toggle('hidden')
+  function handleLinkClick(event: Event, isMobile: boolean) {
+    event.preventDefault()
+    if (isMobile) {
       toggleMenu(nav, menuMobileContext, innerMenuButton)
-    })
-    innerMenuButton?.addEventListener('click', () => {
-      menuButton?.classList.toggle('hidden')
-      toggleMenu(nav, menuMobileContext, innerMenuButton)
-    })
-
-    if (menuMobileContext?.classList.contains('open')) {
-      toggleMenu(nav, menuMobileContext, innerMenuButton)
+      menuButton.classList.toggle('hidden')
     }
   }
+
+  linksMobile.forEach((link) => {
+    link.addEventListener('click', (event) => handleLinkClick(event, true))
+  })
+
+  menuButton?.addEventListener('click', () => {
+    menuButton?.classList.toggle('hidden')
+    toggleMenu(nav, menuMobileContext, innerMenuButton)
+  })
+  innerMenuButton?.addEventListener('click', () => {
+    menuButton?.classList.toggle('hidden')
+    toggleMenu(nav, menuMobileContext, innerMenuButton)
+  })
+
+  if (menuMobileContext?.classList.contains('open')) {
+    toggleMenu(nav, menuMobileContext, innerMenuButton)
+  }
+}
+
+const themeToggle = document.getElementById('theme-toggle')
+themeToggle.addEventListener('click', () => {
+  document.documentElement.classList.toggle('dark')
+})
 </script>

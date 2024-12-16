@@ -1,6 +1,10 @@
 ---
 import Header from '@/sections/Header.astro'
 import Footer from '@/sections/Footer.astro'
+interface Props {
+  title?: string
+}
+const title = Astro.props.title
 ---
 
 <!doctype html>
@@ -9,7 +13,13 @@ import Footer from '@/sections/Footer.astro'
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>JSConf - Conferencia de JavaScript en España (1 de marzo 2025)</title>
+    <title>
+      {
+        title
+          ? title + ' | JSConf España 2025'
+          : 'JSConf - Conferencia de JavaScript en España (1 de marzo 2025)'
+      }
+    </title>
     <meta
       name="description"
       content="Únete a JSConf España 2025, la conferencia más importante sobre JavaScript en España, del 12 al 14 de junio en La Nave de Madrid. ¡Reserva tu entrada ahora!"

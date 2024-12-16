@@ -141,18 +141,11 @@ const sections = [
     const innerMenuButton = document.querySelector('#innerMenuButton') as HTMLElement
     const menuMobileContext = document.getElementById('menuMobileContent') as HTMLElement
 
-    const linksMobile = document.querySelectorAll('a[id^="navmob-link-"]')
+    const linksMobile: NodeListOf<HTMLAnchorElement> =
+      document.querySelectorAll('a[id^="navmob-link-"]')
 
-    function scrollSmoothlyToLink(link: Element) {
-      const id = link.getAttribute('href')?.slice(1)
-      if (id) {
-        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-      }
-    }
-
-    function handleLinkClick(event: Event, link: Element, isMobile: boolean) {
+    function handleLinkClick(event: Event, isMobile: boolean) {
       event.preventDefault()
-      scrollSmoothlyToLink(link)
       if (isMobile) {
         toggleMenu(nav, menuMobileContext, innerMenuButton)
         menuButton.classList.toggle('hidden')
@@ -160,7 +153,7 @@ const sections = [
     }
 
     linksMobile.forEach((link) => {
-      link.addEventListener('click', (event) => handleLinkClick(event, link, true))
+      link.addEventListener('click', (event) => handleLinkClick(event, true))
     })
 
     menuButton?.addEventListener('click', () => {

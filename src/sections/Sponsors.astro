@@ -62,13 +62,18 @@ const icons: Record<string, any> = {
             </div>
             <div class="flex flex-wrap">
               {sponsor.companies.map((company, index) => (
-                <div class="flex items-center justify-center p-2 w-full md:w-1/2 lg:w-1/4">
+                <a
+                  class="flex items-center justify-center p-2 w-full md:w-1/2 lg:w-1/4 hover:scale-110 transition-transform"
+                  href={company.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img
                     src={company.image}
                     alt={company.name}
                     class="h-24 max-w-48 object-contain"
                   />
-                </div>
+                </a>
               ))}
             </div>
           </div>

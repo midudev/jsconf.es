@@ -4,6 +4,7 @@ import HamburgerButton from '@/components/HamburgerButton.astro'
 import LogoIcon from '@/icons/Logo.svg'
 import LinkSponsor from '@/components/LinkSponsor.astro'
 import LinkEntrada from '@/components/LinkEntrada.astro'
+import Menu from '@/components/Menu.astro'
 
 const sections = [
   { name: 'HOME', href: '/#home' },
@@ -35,21 +36,7 @@ const sections = [
       </div>
     </div>
     <div class="text-white">
-      <nav class="hidden md:flex gap-8 text-sm">
-        {
-          sections.slice(1).map(({ name, href }, key) => (
-            <a
-              href={href}
-              class:list={[
-                'hover:text-gray-300 py-1 border-b border-b-transparent transition hover:border-b-white font-clash text-lg',
-              ]}
-              id={`navdesk-link-${key}`}
-            >
-              {name}
-            </a>
-          ))
-        }
-      </nav>
+      <Menu />
     </div>
     <div class="hidden lg:flex items-center gap-4">
       <LinkSponsor style="transparent" />

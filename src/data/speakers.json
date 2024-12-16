@@ -5,7 +5,14 @@
     "company": "LottieFiles",
     "description": "La maga del CSS, la que lleva las animaciones al próximo nivel. Verás lo que sabe de JavaScript.",
     "imageUrl": "/img/Speaker1.webp",
-    "companyLogo": "LottieLogo"
+    "companyLogo": "LottieLogo",
+    "social": {
+      "website": "https://jsconf.es",
+      "twitter": "https://jsconf.es",
+      "linkedin": "https://jsconf.es",
+      "github": "https://jsconf.es",
+      "youtube": "https://jsconf.es"
+    }
   },
   {
     "name": "Javier Velasco",
@@ -13,7 +20,11 @@
     "company": "Vercel",
     "description": "El 7º programador de Vercel. Muchas cosas buenas de Next.js son por su mano y gracia.",
     "imageUrl": "/img/Speaker2.webp",
-    "companyLogo": "VercelLogo"
+    "companyLogo": "VercelLogo",
+    "social": {
+      "linkedin": "https://jsconf.es",
+      "github": "https://jsconf.es"
+    }
   },
   {
     "name": "Fernando Herrera",
@@ -21,7 +32,14 @@
     "company": "DevTalles",
     "description": "El Profesor en línea de Programación Web más visto. Seguro viste un curso suyo alguna vez.",
     "imageUrl": "/img/fernando-herrera.webp",
-    "companyLogo": "GoogleLogo"
+    "companyLogo": "GoogleLogo",
+    "social": {
+      "website": "https://jsconf.es",
+      "twitter": "https://jsconf.es",
+      "linkedin": "https://jsconf.es",
+      "github": "https://jsconf.es",
+      "youtube": "https://jsconf.es"
+    }
   },
   {
     "name": "Eduardo San Martín",
@@ -29,6 +47,9 @@
     "company": "Vue.js",
     "description": "Creador de Vue Router, Pinia y Vue Fire. ¿Y qué más? Contribuye al core de Vue.js",
     "imageUrl": "/img/eduardo-vue.webp",
-    "companyLogo": "VueLogo"
+    "companyLogo": "VueLogo",
+    "social": {
+      "github": "https://jsconf.es"
+    }
   }
 ]

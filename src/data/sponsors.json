@@ -17,6 +17,11 @@
         "name": "Edpuzzle",
         "image": "/sponsors/edpuzzle.svg",
         "url": "https://edpuzzle.com/"
+      },
+      {
+        "name": "TimeTime",
+        "image": "/sponsors/timetime.svg",
+        "url": "https://www.timetime.in/"
       }
     ]
   },

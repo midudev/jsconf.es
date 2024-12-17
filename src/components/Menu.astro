@@ -1,0 +1,43 @@
+---
+const sections = [
+  { name: 'HOME', href: '/#home' },
+  { name: 'AGENDA', href: '/#agenda' },
+  { name: 'SPEAKERS', href: '/#speakers' },
+  { name: 'SPONSORS', href: '/#sponsors' },
+]
+---
+
+<nav class="hidden md:flex gap-8 text-sm">
+  {
+    sections.slice(1).map(({ name, href }, key) => (
+      <a
+        href={href}
+        class:list={[
+          'hover:text-gray-300 py-1 border-b-2 border-b-transparent transition hover:border-b-white font-clash text-lg',
+          'active:border-b-javascript',
+        ]}
+        id={`navdesk-link-${key}`}
+      >
+        {name}
+      </a>
+    ))
+  }
+</nav>
+
+<style>
+  .active {
+    border-bottom-color: #f7df1e; /* JavaScript yellow */
+  }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll('a[id^="navdesk-link-"]')
+  links.forEach(link => {
+    link.addEventListener('click', function() {
+      links.forEach(l => l.classList.remove('active'))
+      this.classList.add('active')
+    })
+  })
+})
+</script>

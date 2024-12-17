@@ -4,12 +4,13 @@ import HamburgerButton from '@/components/HamburgerButton.astro'
 import LogoIcon from '@/icons/Logo.svg'
 import LinkSponsor from '@/components/LinkSponsor.astro'
 import LinkEntrada from '@/components/LinkEntrada.astro'
+import Menu from '@/components/Menu.astro'
 
 const sections = [
-  { name: 'HOME', href: '#home' },
-  { name: 'AGENDA', href: '#agenda' },
-  { name: 'SPEAKERS', href: '#speakers' },
-  { name: 'SPONSORS', href: '#sponsors' },
+  { name: 'HOME', href: '/#home' },
+  { name: 'AGENDA', href: '/#agenda' },
+  { name: 'SPEAKERS', href: '/#speakers' },
+  { name: 'SPONSORS', href: '/#sponsors' },
 ]
 ---
 
@@ -35,21 +36,7 @@ const sections = [
       </div>
     </div>
     <div class="text-white">
-      <nav class="hidden md:flex gap-8 text-sm">
-        {
-          sections.slice(1).map(({ name, href }, key) => (
-            <a
-              href={href}
-              class:list={[
-                'hover:text-gray-300 py-1 border-b border-b-transparent transition hover:border-b-white font-clash text-lg',
-              ]}
-              id={`navdesk-link-${key}`}
-            >
-              {name}
-            </a>
-          ))
-        }
-      </nav>
+      <Menu />
     </div>
     <div class="hidden lg:flex items-center gap-4">
       <LinkSponsor style="transparent" />
@@ -141,19 +128,10 @@ const sections = [
     const innerMenuButton = document.querySelector('#innerMenuButton') as HTMLElement
     const menuMobileContext = document.getElementById('menuMobileContent') as HTMLElement
 
-    const linksMobile = document.querySelectorAll('a[id^="navmob-link-"]')
-    const linksDesktop = document.querySelectorAll('a[id^="navdesk-link-"]')
+    const linksMobile: NodeListOf<HTMLAnchorElement> =
+      document.querySelectorAll('a[id^="navmob-link-"]')
 
-    function scrollSmoothlyToLink(link: Element) {
-      const id = link.getAttribute('href')?.slice(1)
-      if (id) {
-        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-      }
-    }
-
-    function handleLinkClick(event: Event, link: Element, isMobile: boolean) {
-      event.preventDefault()
-      scrollSmoothlyToLink(link)
+    function handleLinkClick(isMobile: boolean) {
       if (isMobile) {
         toggleMenu(nav, menuMobileContext, innerMenuButton)
         menuButton.classList.toggle('hidden')
@@ -161,11 +139,7 @@ const sections = [
     }
 
     linksMobile.forEach((link) => {
-      link.addEventListener('click', (event) => handleLinkClick(event, link, true))
-    })
-
-    linksDesktop.forEach((link) => {
-      link.addEventListener('click', (event) => handleLinkClick(event, link, false))
+      link.addEventListener('click', () => handleLinkClick(true))
     })
 
     menuButton?.addEventListener('click', () => {

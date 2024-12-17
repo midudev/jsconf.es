@@ -3,9 +3,8 @@ import Container from '@/components/Container.astro'
 import CrossContainerTitle from '@/components/CrossContainerTitle.astro'
 import Card from '@/components/SpeakerCard.astro'
 import speakersData from '@/data/speakers.json'
----
 
-<section id="speakers" class="px-section">
+<section id="speakers" class="px-section scroll-mt-28">
   <Container class="items-center">
     <div class="flex justify-center flex-wrap">
       <h1 class="font-clash text-white lg:text-7xl sm:text-5xl text-3xl text-center leading-tight">
@@ -19,7 +18,6 @@ import speakersData from '@/data/speakers.json'
         speakersData.map((speaker, index) => (
           <Card
             {...speaker}
-            companyLogo={speaker.companyLogo}
             marginTop={`${(index % 4) * 20}px`}
           />
         ))

@@ -11,7 +11,7 @@ const icons: Record<string, any> = {
 }
 ---
 
-<section id="sponsors" class="bg-white text-black flex flex-col font-clash">
+<section id="sponsors" class="bg-white text-black flex flex-col font-clash scroll-mt-28">
   <Container>
     <div class="flex items-center justify-between gap-12 mb-12 flex-col md:flex-row px-section">
       <div class="flex-1">
@@ -23,12 +23,26 @@ const icons: Record<string, any> = {
       <LinkSponsor style="light" />
     </div>
 
-    <div class="flex items-center justify-between bg-black py-6 px-12 mb-12 flex-col md:flex-row">
-      <img src="/sponsors/keepcoding.webp" alt="sponsor top" class="h-24 object-contain" />
-      <p class="text-white text-xl text-balance">
-        Quienes hacen que nuestro evento sea una realidad
-      </p>
-    </div>
+    <a
+      class="group bg-black border border-black hover:bg-white transition py-6 px-12 mb-12 flex items-center justify-between flex-col md:flex-row w-full"
+      href="https://midu.link/keepcoding"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        src="/sponsors/keepcoding.webp"
+        alt="sponsor top"
+        class="h-24 object-contain group-hover:scale-105 transition"
+      />
+      <div>
+        <p class="absolute group-hover:opacity-0 text-white text-xl text-balance">
+          ¡Los mejores bootcamp online!
+        </p>
+        <p class="group-hover:opacity-1 text-black text-xl text-balance">
+          ¡Entra y mira lo que ofrecen!
+        </p>
+      </div>
+    </a>
 
     {
       sponsorsData &&
@@ -48,13 +62,18 @@ const icons: Record<string, any> = {
             </div>
             <div class="flex flex-wrap">
               {sponsor.companies.map((company, index) => (
-                <div class="flex items-center justify-center p-2 w-full md:w-1/2 lg:w-1/4">
+                <a
+                  class="flex items-center justify-center p-2 w-full md:w-1/2 lg:w-1/4 hover:scale-110 transition-transform"
+                  href={company.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img
                     src={company.image}
                     alt={company.name}
                     class="h-24 max-w-48 object-contain"
                   />
-                </div>
+                </a>
               ))}
             </div>
           </div>

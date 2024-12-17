@@ -17,6 +17,11 @@
         "name": "Edpuzzle",
         "image": "/sponsors/edpuzzle.svg",
         "url": "https://edpuzzle.com/"
+      },
+      {
+        "name": "TimeTime",
+        "image": "/sponsors/timetime.svg",
+        "url": "https://www.timetime.in/"
       }
     ]
   },
@@ -31,7 +36,7 @@
       },
       {
         "name": "Codely",
-        "image": "/sponsors/codely.webp",
+        "image": "/sponsors/codely.svg",
         "url": "https://midu.link/codely"
       }
     ]

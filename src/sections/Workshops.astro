@@ -19,7 +19,7 @@ type Workshop = {
 
 const workshops: Workshop[] = [
   {
-    hour: '16:00',
+    hour: '10:00',
     title: 'Introducción a Firebase Genkit y Inteligencia Artificial',
     author: 'Xavier Portilla',
     authorDesc: 'Software Engineer en Google',
@@ -28,10 +28,10 @@ const workshops: Workshop[] = [
     tags: [TAGS.FIREBASE, TAGS.IA],
   },
   {
-    hour: '16:00',
+    hour: '13:00',
     title: 'Cómo mantener un desarrollo con TDD rápido y eficaz',
-    author: 'Xavier Portilla',
-    authorDesc: 'Software Engineer en Google',
+    author: 'Mario Sebastián',
+    authorDesc: 'FullStack Developer en LeanMind',
     workshopDesc:
       'Descubre Firebase Genkit en este taller introductorio en el DevFest Madrid. Exploraremos cómo este versátil framework permite a los desarrolladores crear aplicaciones impulsadas por inteligencia artificial con facilidad. Aprende a implementar las bibliotecas de código abierto de Genkit para Node.js y Go, integrarte con modelos de IA generativa y ejecutarlo de manera independiente de los servicios de Google. Perfecto para quienes buscan optimizar su proceso de desarrollo de IA.',
     tags: [TAGS.NODEJS, TAGS.OPTIMIZATION],
@@ -85,7 +85,7 @@ const workshops: Workshop[] = [
         <ArrowRight class="group-hover:translate-x-1 transition" />
       </a>
     </div>
-    <div class="flex lg:flex-row flex-col lg:gap-x-6 gap-y-6">
+    <div class="flex lg:flex-row flex-col lg:gap-x-6 gap-y-6 blur-sm">
       {
         workshops.map(({ hour, title, author, authorDesc, workshopDesc, tags }) => (
           <WorkshopCard

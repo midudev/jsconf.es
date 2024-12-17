@@ -1,6 +1,38 @@
 .tito-form input[type='text'],
-.tito-form input[type='email'] {
+.tito-form input[type='email'],
+.tito-share input[type='text'],
+.tito-ticket-show input {
   background-color: white;
+}
+
+.tito-overlay .tito-registration .tito-continue-button,
+.tito-overlay .tito-ticket-show .tito-choose-me,
+.tito-overlay .tito-ticket-show .tito-choose-somebody,
+.tito-overlay .tito-ticket-show .tito-ticket-show--footer .tito-ticket-show--submit,
+.tito-overlay .tito-upgrade-choose-button {
+  background-color: #f7df1e;
+  border-color: #f7df1e !important;
+  color: black;
+}
+
+.tito-overlay .tito-registration .tito-continue-button:active,
+.tito-overlay .tito-registration .tito-continue-button:hover,
+.tito-overlay .tito-registration .tito-continue-button:visited,
+.tito-overlay .tito-ticket-show .tito-choose-me:active,
+.tito-overlay .tito-ticket-show .tito-choose-me:hover,
+.tito-overlay .tito-ticket-show .tito-choose-me:visited,
+.tito-overlay .tito-ticket-show .tito-choose-somebody:active,
+.tito-overlay .tito-ticket-show .tito-choose-somebody:hover,
+.tito-overlay .tito-ticket-show .tito-choose-somebody:visited,
+.tito-overlay .tito-ticket-show .tito-ticket-show--footer .tito-ticket-show--submit:active,
+.tito-overlay .tito-ticket-show .tito-ticket-show--footer .tito-ticket-show--submit:hover,
+.tito-overlay .tito-ticket-show .tito-ticket-show--footer .tito-ticket-show--submit:visited,
+.tito-overlay .tito-upgrade-choose-button:active,
+.tito-overlay .tito-upgrade-choose-button:hover,
+.tito-overlay .tito-upgrade-choose-button:visited {
+  background: #ebd41d;
+  border-color: #ebd41d !important;
+  color: black;
 }
 
 .tito-overlay .tito-registration .tito-registration-header h1 {

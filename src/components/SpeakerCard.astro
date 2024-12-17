@@ -9,7 +9,15 @@ export interface CardProps {
   marginTop?: string
 }
 
-const { name, role, company, description, imageUrl, companyLogo: Logo, marginTop } = Astro.props as CardProps
+const {
+  name,
+  role,
+  company,
+  description,
+  imageUrl,
+  companyLogo: Logo,
+  marginTop,
+} = Astro.props as CardProps
 ---
 
 <div class="card font-clash bg-black text-white">

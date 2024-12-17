@@ -5,6 +5,7 @@ import UnderlineWord from '@/components/UnderlineWord.astro'
 import CodeBrace from '@/icons/CodeBrace.svg'
 import LinkSponsor from '@/components/LinkSponsor.astro'
 import LinkEntrada from '@/components/LinkEntrada.astro'
+import TicketsAvailable from './TicketsAvailable.astro'
 ---
 
 <div class="relative min-h-screen flex flex-col items-center justify-center px-4 text-center">
@@ -25,10 +26,15 @@ import LinkEntrada from '@/components/LinkEntrada.astro'
       <p>JavaScript</p>
     </div>
 
-    <div class="flex items-center justify-center gap-2">
+    <a
+      class="flex items-center justify-center gap-2 hover:scale-110 transition-transform duration-300 ease-in-out hover:text-javascript w-fit mx-auto"
+      href="https://midu.link/keepcoding"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <span>Powered by</span>
       <img src="/sponsors/keepcoding_small.webp" alt="KeepCoding logo" class="h-11" />
-    </div>
+    </a>
 
     <div class="flex flex-col md:flex-row gap-4 justify-center mt-12">
       <LinkEntrada style="yellow" />
@@ -40,28 +46,37 @@ import LinkEntrada from '@/components/LinkEntrada.astro'
     >
       <span>🔥</span>
       <p
-        class="bg-gradient-to-bl from-[#F7DF1F] to-[#FF5011] text-transparent bg-clip-text leading-normal"
+        class="bg-gradient-to-bl from-[#F7DF1F] to-[#FF5011] text-transparent bg-clip-text leading-normal flex flex-row gap-x-2"
       >
-        ¡Vendidas el 60% de las entradas!
+        <TicketsAvailable server:defer>
+          <span slot="fallback">¡Sólo quedan 197 entradas!</span>
+        </TicketsAvailable>
+        <span class="text-white">¡Consigue la tuya antes de que se agoten!</span>
       </p>
-      <span class="text-white">¡Consigue la tuya antes de que se agoten!</span>
     </div>
-  </div>
 
-  <div class="max-sm:hidden flex flex-col items-center justify-center mt-24 space-y-2">
-    <Mouse class="size-8" />
-    <ArrowDown class="size-6 animate-bounce" />
-  </div>
+    <div class="max-sm:hidden flex flex-col items-center justify-center mt-24 space-y-2">
+      <Mouse class="size-8" />
+      <ArrowDown class="size-6 animate-bounce" />
+    </div>
 
-  <div class="relative w-4/6 pt-20 sm:pt-[105px] pb-20 sm:pb-[218px] text-center leading-tight font-clash">
-    <h2 class="lg:text-[64px] text-[34px]">
-      No es solo una conferencia más. <br />
-      <span class="font-medium">
-        Es un evento <UnderlineWord class="text-white -translate-y-2 lg:-translate-y-4 -translate-x-10 lg:-translate-x-0"
-          ><span class="text-white">único</span></UnderlineWord
-        >
-      </span> donde figuras clave del desarrollo web comparten sus secretos
-    </h2>
-    <CodeBrace class="max-sm:hidden absolute right-0" />
+    <div
+      class="relative max-sm:w-5/6 w-4/6 pt-20 sm:pt-[105px] pb-20 sm:pb-[218px] text-center leading-tight font-clash mx-auto lg:w-full lg:px-24 lg:max-w-[90rem] text-balance"
+    >
+      <h2 class="lg:text-[64px] md:text-5xl text-[34px]">
+        No es solo una conferencia más.<br />
+        <span class="text-white/80">
+          <span>
+            Es un <span class="text-javascript"
+              >evento <UnderlineWord
+                class="text-javascript -translate-y-2 lg:-translate-y-4 -translate-x-10 lg:-translate-x-0"
+                ><span class="text-javascript">único</span></UnderlineWord
+              ></span
+            >
+          </span> donde figuras clave del desarrollo web comparten sus secretos
+        </span>
+      </h2>
+      <CodeBrace class="max-sm:hidden absolute right-0" />
+    </div>
   </div>
 </div>

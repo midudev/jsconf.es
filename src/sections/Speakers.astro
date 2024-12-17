@@ -2,7 +2,6 @@
 import Container from '@/components/Container.astro'
 import CrossContainerTitle from '@/components/CrossContainerTitle.astro'
 import Card from '@/components/SpeakerCard.astro'
-import GoogleLogo from '@/icons/GoogleSmallLogo.svg'
 import VercelLogo from '@/icons/VercelLogo.svg'
 import LottieLogo from '@/icons/LottieLogo.svg'
 import VueLogo from '@/icons/VueLogo.svg'
@@ -44,10 +43,36 @@ const speakers = [
     imageUrl: '/img/eduardo-vue.webp',
     companyLogo: VueLogo,
   },
+  {
+    name: 'Ilda Neta',
+    role: 'Mobile Software Eng.',
+    company: 'RockTheSport',
+    description:
+      'Ve belleza en cada detalle y convierte el minimalismo en experiencias móviles que gustan.',
+    imageUrl: '/img/ildaneta.webp',
+    companyLogo: '/img/rockthesport.webp',
+  },
+  {
+    name: 'Jaione Arnaez-Telleria',
+    role: 'Desarrolladora Front-End',
+    company: 'IronTec',
+    description:
+      'Maneja datos como nadie y tiene pasión por el universo… ¡y también por JavaScript!',
+    imageUrl: '/img/jaione.webp',
+    companyLogo: '/img/irontec.webp',
+  },
+  {
+    name: 'Erick Wendel',
+    role: 'Creador de Contenido y Emprendedor',
+    company: '',
+    description:
+      'El ninja brasileño de Node.js. Habla tan bien Español como JavaScript, incluso mejor.',
+    imageUrl: '/img/erick-wendel.webp',
+  },
 ]
 ---
 
-<section id="speakers" class="px-section">
+<section id="speakers" class="px-section scroll-mt-28">
   <Container class="items-center">
     <div class="flex justify-center flex-wrap">
       <h1 class="font-clash text-white lg:text-7xl sm:text-5xl text-3xl text-center leading-tight">

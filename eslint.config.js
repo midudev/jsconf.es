@@ -24,6 +24,7 @@ export default [
       'react/jsx-key': 'off',
       '@stylistic/jsx-closing-tag-location': 'off',
       '@stylistic/jsx-closing-bracket-location': 'off',
+      '@stylistic/multiline-ternary': 'off',
     },
   },
 ]

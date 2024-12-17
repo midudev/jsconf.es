@@ -144,8 +144,7 @@ const sections = [
     const linksMobile: NodeListOf<HTMLAnchorElement> =
       document.querySelectorAll('a[id^="navmob-link-"]')
 
-    function handleLinkClick(event: Event, isMobile: boolean) {
-      event.preventDefault()
+    function handleLinkClick(isMobile: boolean) {
       if (isMobile) {
         toggleMenu(nav, menuMobileContext, innerMenuButton)
         menuButton.classList.toggle('hidden')
@@ -153,7 +152,7 @@ const sections = [
     }
 
     linksMobile.forEach((link) => {
-      link.addEventListener('click', (event) => handleLinkClick(event, true))
+      link.addEventListener('click', () => handleLinkClick(true))
     })
 
     menuButton?.addEventListener('click', () => {

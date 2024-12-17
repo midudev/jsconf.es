@@ -29,14 +29,14 @@ const {
         {
           typeof Logo === 'string' ? (
             <img src={Logo} alt={company} class="md:size-6 size-3" />
-          ) : (
+          ) : typeof Logo !== 'undefined' ? (
             <Logo class="md:size-6 size-3" />
-          )
+          ) : null
         }
       </div>
       <div class="flex flex-row gap-x-1 md:text-base text-[10px] text-yellow-400 font-medium">
         <p>{role}</p>
-        <p>@{company}</p>
+        {company && <p>@{company}</p>}
       </div>
     </div>
     <p class="md:text-sm text-xs leading-none text-neutral-400">{description}</p>

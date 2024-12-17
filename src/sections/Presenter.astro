@@ -6,6 +6,24 @@ import TwitchLogo from '@/icons/TwitchLogo.svg'
 import LinkedInSmallLogo from '@/icons/LinkedInSmallLogo.svg'
 import Button from '@/components/Button.astro'
 import UnderlineWord from '@/components/UnderlineWord.astro'
+
+const socialNetworks = [
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/midudev/',
+    icon: LinkedInSmallLogo,
+  },
+  {
+    name: 'X',
+    url: 'https://x.com/midudev',
+    icon: XLogo,
+  },
+  {
+    name: 'Twitch',
+    url: 'https://www.twitch.tv/midudev',
+    icon: TwitchLogo,
+  },
+]
 ---
 
 <section class="bg-black text-white mx-auto px-4 py-12">
@@ -28,30 +46,18 @@ import UnderlineWord from '@/components/UnderlineWord.astro'
           experiencia en <span class="text-javascript">JavaScript</span>.
         </h3>
         <div class="flex flex-row gap-x-4 items-center mb-8">
-          <a
-            href="https://www.linkedin.com/in/midudev/"
-            target="_blank"
-            class="text-white hover:scale-150 transition-transform"
-            rel="noreferrer"
-          >
-            <LinkedInSmallLogo class="size-8" />
-          </a>
-          <a
-            href="https://x.com/midudev"
-            target="_blank"
-            class="text-white hover:scale-150 transition-transform"
-            rel="noreferrer"
-          >
-            <XLogo class="size-8" />
-          </a>
-          <a
-            class="text-white hover:scale-150 transition-transform"
-            href="https://www.twitch.tv/midudev"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <TwitchLogo class="size-8" />
-          </a>
+          {
+            socialNetworks.map(({ name, url, icon: Icon }) => (
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-white hover:scale-150 transition-transform"
+              >
+                <Icon class="size-8" />
+              </a>
+            ))
+          }
         </div>
         <Button class="lg:px-10 max-w-fit" style="transparent" href="https://twitch.tv/midudev">
           <ArrowUp slot="icon-right" />

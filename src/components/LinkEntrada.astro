@@ -1,11 +1,17 @@
 ---
 import Ticket from '@/icons/Ticket.svg'
 import Button from '@/components/Button.astro'
-import { COMPRAR_ENTRADA } from '@/consts/links'
 const { style = 'black' } = Astro.props
 ---
 
-<Button href={COMPRAR_ENTRADA} style={style}>
-  <span> ¡Consigue tu entrada! </span>
-  <Ticket slot="icon-left" />
-</Button>
+<tito-button class="w-full md:w-auto" event="js-conf/js-conf-2025" discount-code="EARLY">
+  <Button style={style}>
+    <span> ¡Consigue tu entrada! </span>
+    <Ticket slot="icon-left" />
+  </Button>
+</tito-button>
+<style is:inline>
+  .tito-widget-button {
+    width: 100%;
+  }
+</style>

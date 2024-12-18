@@ -12,7 +12,6 @@ export default defineConfig({
       mode: 'sprite',
     },
   },
-
   output: 'server',
   integrations: [tailwind()],
   adapter: vercel(),

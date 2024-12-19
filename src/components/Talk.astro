@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets'
+
 const { item } = Astro.props
 const { time, topic, speaker, role } = item
 ---
@@ -11,7 +13,9 @@ const { time, topic, speaker, role } = item
     <p class="text-xl text-balance">{topic}</p>
   </div>
   <div class="flex items-center w-full md:w-[30%] mt-4 md:mt-0">
-    <img
+    <Image
+      width={48}
+      height={48}
       src="https://i.pravatar.cc/300"
       alt={`Imagen de avatar de ${speaker} - ${role}`}
       class="size-12 rounded-full mr-4"

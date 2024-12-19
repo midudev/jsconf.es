@@ -7,6 +7,7 @@ import ArrowRight from '@/icons/ArrowRight.svg'
 import type { TypeTag } from '@/components/WorkshopSkillTag.astro'
 import { TAGS } from '@/components/WorkshopSkillTag.astro'
 import LinkEntrada from '@/components/LinkEntrada.astro'
+import { Image } from 'astro:assets'
 
 type Workshop = {
   hour: string
@@ -15,6 +16,7 @@ type Workshop = {
   authorDesc: string
   workshopDesc: string
   tags: Array<TypeTag>
+  blur?: boolean
 }
 
 const workshops: Workshop[] = [
@@ -26,6 +28,7 @@ const workshops: Workshop[] = [
     workshopDesc:
       'Descubre Firebase Genkit en este taller introductorio en el DevFest Madrid. Exploraremos cómo este versátil framework permite a los desarrolladores crear aplicaciones impulsadas por inteligencia artificial con facilidad. Aprende a implementar las bibliotecas de código abierto de Genkit para Node.js y Go, integrarte con modelos de IA generativa y ejecutarlo de manera independiente de los servicios de Google. Perfecto para quienes buscan optimizar su proceso de desarrollo de IA.',
     tags: [TAGS.FIREBASE, TAGS.IA],
+    blur: false,
   },
   {
     hour: '13:00',
@@ -49,32 +52,36 @@ const workshops: Workshop[] = [
 ---
 
 <section id="whorkshop" class="px-section mt-14 relative">
-  <img
+  <Image
+    width={160}
+    height={160}
     src="/img/workshops-ms.webp"
-    alt=""
+    alt="Icono de mensajes"
     class="absolute top-20 left-24 max-xl:hidden w-40 max-2xl:w-24 max-2xl:top-32 max-2xl:left-10"
   />
-  <img
+  <Image
+    width={172}
+    height={176}
     src="/img/workshops-cubes.webp"
-    alt=""
+    alt="Icono de cubos"
     class="absolute right-28 max-xl:hidden w-36 grayscale -rotate-12 top-28 max-2xl:w-24 max-2xl:top-36 max-2xl:right-10"
   />
   <Container>
     <div class="flex justify-center flex-wrap">
-      <h1 class="font-clash text-white text-[clamp(2rem,5vw,4.5rem)] text-center leading-tight">
+      <h2 class="font-clash text-white text-[clamp(2rem,5vw,4.5rem)] text-center leading-tight">
         No solo aprendizaje, también conexión,
         <CrossContainerTitle>workshops del evento</CrossContainerTitle>
-      </h1>
-      <p class="text-zinc-500 max-lg:text-center max-lg:mt-8 max-lg:w-5/6">
+      </h2>
+      <p class="text-light-gray max-lg:text-center max-lg:mt-8 max-lg:w-5/6">
         Aprende, conecta y colabora en sesiones prácticas diseñadas para inspirar y potenciar tus
         habilidades.
       </p>
     </div>
     <div></div>
     <div class="flex sm:flex-row flex-col justify-between mb-6 lg:mt-24 mt-12">
-      <h5 class="text-white font-clash font-medium md:text-[34px] text-2xl">
+      <h3 class="text-white font-clash font-medium md:text-[34px] text-2xl">
         Talleres prácticos destacados
-      </h5>
+      </h3>
       <a
         href={COMPRAR_ENTRADA}
         target="_blank"
@@ -85,10 +92,11 @@ const workshops: Workshop[] = [
         <ArrowRight class="group-hover:translate-x-1 transition" />
       </a>
     </div>
-    <div class="flex lg:flex-row flex-col lg:gap-x-6 gap-y-6 blur-sm">
+    <div class="flex lg:flex-row flex-col lg:gap-x-6 gap-y-6">
       {
-        workshops.map(({ hour, title, author, authorDesc, workshopDesc, tags }) => (
+        workshops.map(({ hour, title, author, authorDesc, workshopDesc, tags, blur }) => (
           <WorkshopCard
+            blur={blur}
             hour={hour}
             title={title}
             author={author}

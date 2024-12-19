@@ -4,6 +4,7 @@ import SponsorPro from '@/icons/SponsorPro.svg'
 import sponsorsData from '@/data/sponsors.json'
 import Container from '@/components/Container.astro'
 import LinkSponsor from '@/components/LinkSponsor.astro'
+import { Image } from 'astro:assets'
 
 const icons: Record<string, any> = {
   platinum: SponsorPlatinum,
@@ -29,7 +30,9 @@ const icons: Record<string, any> = {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img
+      <Image
+        width={428.12}
+        height={96}
         src="/sponsors/keepcoding.webp"
         alt="sponsor top"
         class="h-24 object-contain group-hover:scale-105 transition"
@@ -68,7 +71,9 @@ const icons: Record<string, any> = {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img
+                  <Image
+                    width={192}
+                    height={96}
                     src={company.image}
                     alt={company.name}
                     class="h-24 max-w-48 object-contain"

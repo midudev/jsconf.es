@@ -15,6 +15,7 @@ type Workshop = {
   authorDesc: string
   workshopDesc: string
   tags: Array<TypeTag>
+  blur?: boolean
 }
 
 const workshops: Workshop[] = [
@@ -26,6 +27,7 @@ const workshops: Workshop[] = [
     workshopDesc:
       'Descubre Firebase Genkit en este taller introductorio en el DevFest Madrid. Exploraremos cómo este versátil framework permite a los desarrolladores crear aplicaciones impulsadas por inteligencia artificial con facilidad. Aprende a implementar las bibliotecas de código abierto de Genkit para Node.js y Go, integrarte con modelos de IA generativa y ejecutarlo de manera independiente de los servicios de Google. Perfecto para quienes buscan optimizar su proceso de desarrollo de IA.',
     tags: [TAGS.FIREBASE, TAGS.IA],
+    blur: false,
   },
   {
     hour: '13:00',
@@ -85,10 +87,11 @@ const workshops: Workshop[] = [
         <ArrowRight class="group-hover:translate-x-1 transition" />
       </a>
     </div>
-    <div class="flex lg:flex-row flex-col lg:gap-x-6 gap-y-6 blur-sm">
+    <div class="flex lg:flex-row flex-col lg:gap-x-6 gap-y-6">
       {
-        workshops.map(({ hour, title, author, authorDesc, workshopDesc, tags }) => (
+        workshops.map(({ hour, title, author, authorDesc, workshopDesc, tags, blur }) => (
           <WorkshopCard
+            blur={blur}
             hour={hour}
             title={title}
             author={author}

@@ -4,6 +4,7 @@ import Agenda from '@/icons/Agenda.svg'
 import PointerMap from '@/icons/PointerMap.svg'
 import Ticket from '@/icons/Ticket.svg'
 import InfojobsLogo from '@/icons/InfojobsLogo.svg'
+import { Image } from 'astro:assets'
 ---
 
 <section class="bg-javascript-radial text-black flex flex-col px-0">
@@ -33,7 +34,7 @@ import InfojobsLogo from '@/icons/InfojobsLogo.svg'
             </p>
             <p class="xl:text-lg flex items-center">
               <Ticket class="w-6 h-6 inline-block mr-2" />
-              <span class="text-gray-500 flex flex-col xl:flex-row xl:gap-1">
+              <span class="text-light-gray flex flex-col xl:flex-row xl:gap-1">
                 <strong class="font-medium text-white">¡Es Gratis!</strong>
                 Prioridad para asistentes confirmados de la JSConf.
               </span>
@@ -41,7 +42,9 @@ import InfojobsLogo from '@/icons/InfojobsLogo.svg'
           </div>
         </div>
         <div class="w-full xl:w-[43%] flex items-end justify-end xl:px-0">
-          <img
+          <Image
+            width={512}
+            height={484}
             src="/preevent.webp"
             alt="Foto de un Speaker del evento dando una charla en un escenario"
             class="w-full object-cover xl:max-w-lg h-full"

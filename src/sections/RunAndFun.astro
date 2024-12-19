@@ -2,11 +2,24 @@
 import Container from '@/components/Container.astro'
 import InfoTag from '@/components/InfoTag.astro'
 import LinkButtonRace from '@/components/LinkButtonRace.astro'
+import { Image } from 'astro:assets'
 ---
 
 <section class="bg-white text-black md:max-w-5/6 mx-auto">
-  <img src="/img/run-gym.webp" alt="" class="absolute mt-72 max-md:-left-32" />
-  <img src="/img/run-lightning.webp" alt="" class="absolute right-0 max-md:hidden" />
+  <Image
+    width={295}
+    height={409}
+    src="/img/run-gym.webp"
+    alt="Mancuerna"
+    class="absolute mt-72 max-md:-left-32"
+  />
+  <Image
+    width={398}
+    height={565}
+    src="/img/run-lightning.webp"
+    alt="Rayo"
+    class="absolute right-0 max-md:hidden"
+  />
   <Container class="px-section">
     <div class="flex flex-col px-8 xl:py-20 items-center text-center gap-y-14">
       <div class="flex flex-col items-center md:px-12">
@@ -18,16 +31,16 @@ import LinkButtonRace from '@/components/LinkButtonRace.astro'
           </svg>
           Has recibido una invitación</span
         >
-        <h2 class="md:text-[76px] text-5xl font-medium font-clash">Muévete con la comunidad JS</h2>
+        <h3 class="md:text-[76px] text-5xl font-medium font-clash">Muévete con la comunidad JS</h3>
         <h4 class="text-xl text-zinc-500 lg:py-8 py-4 lg:mb-8 mb-4">
           JSConf España 2025 no es solo código, charlas y networking, <strong class="text-black"
             >¡también es movimiento!</strong
           >
         </h4>
-        <h3 class="md:text-4xl text-lg max-md:text-center">
+        <p class="md:text-4xl text-lg max-md:text-center">
           Una carrera de 8KM en el icónico Parque del Retiro de Madrid, un espacio único para
           compartir con otros desarrolladores en un ambiente relajado y divertido.
-        </h3>
+        </p>
       </div>
       <div class="flex items-center w-full">
         <hr class="flex-grow border-t border-black/10" />
@@ -89,8 +102,16 @@ import LinkButtonRace from '@/components/LinkButtonRace.astro'
             </LinkButtonRace>
           </div>
         </div>
-        <img src="/img/midu-run.webp" alt="Midu corriendo" class="max-lg:hidden object-contain lg:max-w-[50%]" />
-        <img
+        <Image
+          width={579}
+          height={641}
+          src="/img/midu-run.webp"
+          alt="Midu corriendo"
+          class="max-lg:hidden object-contain lg:max-w-[50%]"
+        />
+        <Image
+          width={579}
+          height={386}
           src="/img/midu-run-mobile.webp"
           alt="Midu corriendo"
           class="lg:hidden object-contain"

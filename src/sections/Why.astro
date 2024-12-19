@@ -47,11 +47,11 @@ import LinkEntrada from '@/components/LinkEntrada.astro'
 
     <div class="flex pt-6 pb-12 gap-x-6 justify-around flex-col md:flex-row gap-y-8">
       <WhyCard>
-        <h4 slot="title" class="font-clash md:text-4xl text-2xl font-[450]">
+        <h3 slot="title" class="font-clash md:text-4xl text-2xl font-[450]">
           Contacto directo con los <strong class="text-javascript font-[450]"
             >expertos del sector</strong
           >
-        </h4>
+        </h3>
         <div slot="description" class="flex flex-col gap-y-4 opacity-90">
           <p>Entre nuestros speakers:</p>
           <ul class="flex flex-col gap-y-4 list-disc pl-5">
@@ -68,9 +68,9 @@ import LinkEntrada from '@/components/LinkEntrada.astro'
         </div>
       </WhyCard>
       <WhyCard>
-        <h4 slot="title" class="font-clash md:text-4xl text-2xl font-[450]">
+        <h3 slot="title" class="font-clash md:text-4xl text-2xl font-[450]">
           <strong class="text-javascript font-[450]">Nuevas herramientas</strong> y enfoques
-        </h4>
+        </h3>
         <div slot="description" class="flex flex-col gap-y-4 opacity-90">
           <p>
             Cada charla ofrece profundidad y practicidad. Nuestros ponentes no solo muestran "cómo",
@@ -81,9 +81,9 @@ import LinkEntrada from '@/components/LinkEntrada.astro'
         </div>
       </WhyCard>
       <WhyCard>
-        <h4 slot="title" class="font-clash md:text-4xl text-2xl font-[450]">
+        <h3 slot="title" class="font-clash md:text-4xl text-2xl font-[450]">
           <strong class="text-javascript font-[450]">Nuevos contactos</strong> que cambian carreras
-        </h4>
+        </h3>
         <div slot="description" class="flex flex-col gap-y-4">
           <p class="opacity-90">
             JSConf no es sólo un evento, es una comunidad. Conecta con otros apasionados del
@@ -92,6 +92,7 @@ import LinkEntrada from '@/components/LinkEntrada.astro'
 
           <a
             target="_blank"
+            rel="noreferrer noopener"
             href={COMPRAR_ENTRADA}
             class="group py-2 font-clash text-javascript flex flex-row items-center gap-x-2"
           >

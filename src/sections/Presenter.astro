@@ -6,22 +6,26 @@ import TwitchLogo from '@/icons/TwitchLogo.svg'
 import LinkedInSmallLogo from '@/icons/LinkedInSmallLogo.svg'
 import Button from '@/components/Button.astro'
 import UnderlineWord from '@/components/UnderlineWord.astro'
+import { Image } from 'astro:assets'
 
 const socialNetworks = [
   {
     name: 'LinkedIn',
     url: 'https://www.linkedin.com/in/midudev/',
     icon: LinkedInSmallLogo,
+    aria: 'Sigueme en LinkedIn',
   },
   {
     name: 'X',
     url: 'https://x.com/midudev',
     icon: XLogo,
+    aria: 'Sigueme en X',
   },
   {
     name: 'Twitch',
     url: 'https://www.twitch.tv/midudev',
     icon: TwitchLogo,
+    aria: 'Sigueme en Twitch',
   },
 ]
 ---
@@ -29,7 +33,9 @@ const socialNetworks = [
 <section class="bg-black text-white mx-auto px-4 py-12">
   <Container class="lg:p-24">
     <div class="flex md:flex-row flex-col-reverse lg:gap-x-20 gap-x-10">
-      <img
+      <Image
+        width={520}
+        height={520}
         src="/img/midu-presenter.webp"
         alt="Miguel Ángel Durán"
         class="md:w-5/12 max-md:mt-8 object-scale-down"
@@ -47,8 +53,9 @@ const socialNetworks = [
         </h3>
         <div class="flex flex-row gap-x-4 items-center mb-8">
           {
-            socialNetworks.map(({ name, url, icon: Icon }) => (
+            socialNetworks.map(({ name, url, aria, icon: Icon }) => (
               <a
+                aria-label={aria}
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -59,7 +66,11 @@ const socialNetworks = [
             ))
           }
         </div>
-        <Button class="lg:px-10 text-lg py-6 px-12 w-full md:w-fit" style="transparent" href="https://twitch.tv/midudev">
+        <Button
+          class="lg:px-10 text-lg py-6 px-12 w-full md:w-fit"
+          style="transparent"
+          href="https://twitch.tv/midudev"
+        >
           <ArrowUp slot="icon-right" />
           ¿Quién es midudev?
         </Button>

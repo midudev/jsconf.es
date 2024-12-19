@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets'
+
 export interface CardProps {
   name: string
   role: string
@@ -21,14 +23,21 @@ const {
 ---
 
 <div class="card font-clash bg-black text-white">
-  <img src={imageUrl} alt={name} class="w-full aspect-square object-cover" />
+  <Image
+    inferSize
+    src={imageUrl}
+    width={342}
+    height={342}
+    alt={name}
+    class="w-full aspect-square object-cover"
+  />
   <div class="flex flex-col md:gap-y-[14px] gap-y-[6px] border border-white/10 md:p-6 p-3">
     <div>
       <div class="flex flex-row items-center justify-between">
-        <h3 class="md:text-2xl text-[12px] font-medium">{name}</h3>
+        <h3 class="md:text-2xl text-xs font-medium">{name}</h3>
         {
           typeof Logo === 'string' ? (
-            <img src={Logo} alt={company} class="md:size-6 size-3" />
+            <Image width={24} height={24} src={Logo} alt={company} class="md:size-6 size-3" />
           ) : typeof Logo !== 'undefined' ? (
             <Logo class="md:size-6 size-3" />
           ) : null

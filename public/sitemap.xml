@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+  <loc>https://www.jsconf.es/</loc>
+  <lastmod>2024-12-18T13:50:57+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.jsconf.es/legal</loc>
+  <lastmod>2024-12-19T00:36:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.jsconf.es/privacidad</loc>
+  <lastmod>2024-12-19T00:36:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>

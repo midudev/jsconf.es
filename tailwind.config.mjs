@@ -8,6 +8,7 @@ export default {
       colors: {
         javascript: '#f7df1e',
         'javascript-dark': '#998c06',
+        'light-gray': '#7F7F7F',
       },
       fontFamily: {
         clash: ['Clash', 'system-ui', 'sans-serif'],
@@ -18,10 +19,8 @@ export default {
       },
       padding: {
         section: '1.5rem',
-      }
+      },
     },
   },
-  plugins: [
-    prose
-  ],
+  plugins: [prose],
 }

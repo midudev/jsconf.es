@@ -31,13 +31,13 @@ const sections = [
 </style>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const links = document.querySelectorAll('a[id^="navdesk-link-"]')
-  links.forEach(link => {
-    link.addEventListener('click', function() {
-      links.forEach(l => l.classList.remove('active'))
-      this.classList.add('active')
+  document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('a[id^="navdesk-link-"]')
+    links.forEach((link) => {
+      link.addEventListener('click', function () {
+        links.forEach((l) => l.classList.remove('active'))
+        this.classList.add('active')
+      })
     })
   })
-})
 </script>

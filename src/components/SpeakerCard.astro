@@ -23,14 +23,21 @@ const {
 ---
 
 <div class="card font-clash bg-black text-white">
-  <Image
-    inferSize
-    src={imageUrl}
-    width={342}
-    height={342}
-    alt={name}
-    class="w-full aspect-square object-cover"
-  />
+  <figure class="effect bg-black dark:bg-white relative overflow-hidden">
+    <Image
+      inferSize
+      src={imageUrl}
+      width={342}
+      height={342}
+      alt={name}
+      class="w-full aspect-square object-cover"
+    />
+    <figcaption>
+      <p class="gap-x-1 md:text-base text-[10px] text-yellow-400 font-medium">
+        {role}
+      </p>
+    </figcaption>
+  </figure>
   <div class="flex flex-col md:gap-y-[14px] gap-y-[6px] border border-white/10 md:p-6 p-3">
     <div>
       <div class="flex flex-row items-center justify-between">
@@ -55,6 +62,85 @@ const {
   .card {
     margin-top: var(--marginTop);
   }
+  figure.effect {
+    background: #000;
+  }
+
+  figure.effect img {
+    opacity: 0.95;
+    -webkit-transition:
+      opacity 0.35s,
+      -webkit-transform 0.35s;
+    transition:
+      opacity 0.35s,
+      transform 0.35s;
+    -webkit-transform: scale3d(1.05, 1.05, 1);
+    transform: scale3d(1.05, 1.05, 1);
+  }
+
+  figure.effect figcaption::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    content: '';
+    -webkit-transition: -webkit-transform 0.6s;
+    transition: transform 0.6s;
+    -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -100%, 0);
+    transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -100%, 0);
+  }
+
+  figure.effect figcaption::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f7de1f93;
+    content: '';
+    -webkit-transition: -webkit-transform 0.6s;
+    transition: transform 0.6s;
+    -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -100%, 0);
+    transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -100%, 0);
+  }
+
+  figure.effect p {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 3em;
+    padding: 0 1em;
+    max-width: 150px;
+    border-right: 4px solid #f7df1f;
+    text-align: right;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s;
+    transition: opacity 0.35s;
+  }
+
+  figure.effect h3 {
+    text-align: left;
+  }
+
+  .card:hover img {
+    opacity: 0.6;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  .card:hover figcaption::before {
+    -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
+    transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
+  }
+
+  .card:hover p {
+    opacity: 1;
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+  }
+
   @media (max-width: 1024px) {
     .card {
       margin-top: 0;

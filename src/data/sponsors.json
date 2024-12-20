@@ -38,6 +38,11 @@
         "name": "Codely",
         "image": "/sponsors/codely.svg",
         "url": "https://midu.link/codely"
+      },
+      {
+        "name": "DevTalles",
+        "image": "/sponsors/devtalles.webp",
+        "url": "https://cursos.devtalles.com/"
       }
     ]
   }

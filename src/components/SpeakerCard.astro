@@ -22,7 +22,7 @@ const {
 } = Astro.props as CardProps
 ---
 
-<div class="card font-clash bg-black text-white">
+<article class="card font-clash bg-black text-white">
   <figure class="effect bg-black dark:bg-white relative overflow-hidden">
     <Image
       inferSize
@@ -55,9 +55,10 @@ const {
         {company && <p>@{company}</p>}
       </div>
     </div>
-    <p class="md:text-sm text-xs leading-none text-neutral-400">{description}</p>
+    <p class="md:text-base text-sm leading-none text-neutral-300">{description}</p>
   </div>
-</div>
+</article>
+  
 <style define:vars={{ marginTop }}>
   .card {
     margin-top: var(--marginTop);

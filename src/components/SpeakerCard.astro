@@ -22,7 +22,7 @@ const {
 } = Astro.props as CardProps
 ---
 
-<div class="card font-clash bg-black text-white">
+<article class="card font-clash text-white">
   <Image
     inferSize
     src={imageUrl}
@@ -31,7 +31,9 @@ const {
     alt={name}
     class="w-full aspect-square object-cover"
   />
-  <div class="flex flex-col md:gap-y-[14px] gap-y-[6px] border border-white/10 md:p-6 p-3">
+  <div
+    class="flex flex-col md:gap-y-[14px] gap-y-[6px] bg-white/5 border border-white/10 md:p-6 p-3"
+  >
     <div>
       <div class="flex flex-row items-center justify-between">
         <h3 class="md:text-2xl text-xs font-medium">{name}</h3>
@@ -48,9 +50,9 @@ const {
         {company && <p>@{company}</p>}
       </div>
     </div>
-    <p class="md:text-sm text-xs leading-none text-neutral-400">{description}</p>
+    <p class="md:text-base text-sm leading-none text-neutral-300">{description}</p>
   </div>
-</div>
+</article>
 <style define:vars={{ marginTop }}>
   .card {
     margin-top: var(--marginTop);

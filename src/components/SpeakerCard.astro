@@ -22,8 +22,8 @@ const {
 } = Astro.props as CardProps
 ---
 
-<article class="card font-clash bg-black text-white">
-  <figure class="effect bg-black dark:bg-white relative overflow-hidden">
+<article class="card font-clash text-white select-none cursor-crosshair">
+  <figure class="effect relative overflow-hidden">
     <Image
       inferSize
       src={imageUrl}
@@ -38,7 +38,9 @@ const {
       </p>
     </figcaption>
   </figure>
-  <div class="flex flex-col md:gap-y-[14px] gap-y-[6px] border border-white/10 md:p-6 p-3">
+  <div
+    class="flex flex-col md:gap-y-[14px] gap-y-[6px] bg-white/5 border border-white/10 md:p-6 p-3"
+  >
     <div>
       <div class="flex flex-row items-center justify-between">
         <h3 class="md:text-2xl text-xs font-medium">{name}</h3>
@@ -55,10 +57,10 @@ const {
         {company && <p>@{company}</p>}
       </div>
     </div>
-    <p class="md:text-base text-sm leading-none text-neutral-300">{description}</p>
+    <p class="md:text-base text-xs sm:text-sm text-neutral-300 md:min-h-16">{description}</p>
   </div>
 </article>
-  
+
 <style define:vars={{ marginTop }}>
   .card {
     margin-top: var(--marginTop);
@@ -127,18 +129,15 @@ const {
 
   .card:hover img {
     opacity: 0.6;
-    -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
 
   .card:hover figcaption::before {
-    -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
     transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
   }
 
   .card:hover p {
     opacity: 1;
-    -webkit-transition-delay: 0.1s;
     transition-delay: 0.1s;
   }
 

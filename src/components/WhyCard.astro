@@ -3,7 +3,7 @@ import Cross from '@/assets/cross.svg'
 ---
 
 <article
-  class="relative bg-gradient-to-b from-white/5 border border-dotted border-neutral-700/80 w-full md:p-9 p-6 gap-y-6 flex flex-col"
+  class="relative bg-gradient-to-b from-white/5 border border-dotted border-neutral-700/80 w-full md:p-9 p-6 gap-y-6 flex flex-col card"
 >
   <Cross size={14} class="absolute -top-2 -left-2" />
   <Cross size={14} class="absolute -top-2 -right-2" />
@@ -16,3 +16,44 @@ import Cross from '@/assets/cross.svg'
     <slot name="description" />
   </div>
 </article>
+
+<style is:inline>
+  .card {
+    cursor: crosshair;
+  }
+
+  .card:hover::before {
+    opacity: 1;
+  }
+
+  .card::before,
+  .card::after {
+    border-radius: inherit;
+    content: '';
+    height: 100%;
+    left: 0px;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    transition: opacity 500ms;
+    width: 100%;
+  }
+
+  .card::before {
+    background: radial-gradient(
+      800px circle at var(--mouse-x) var(--mouse-y),
+      #f7de1f36,
+      transparent 40%
+    );
+    z-index: 3;
+  }
+
+  .card::after {
+    background: radial-gradient(
+      600px circle at var(--mouse-x) var(--mouse-y),
+      #f7de1f93,
+      transparent 40%
+    );
+    z-index: 1;
+  }
+</style>

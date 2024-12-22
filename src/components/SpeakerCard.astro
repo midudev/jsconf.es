@@ -1,5 +1,11 @@
 ---
 import { Image } from 'astro:assets'
+import Website from '@/icons/Website.svg'
+import XLogo from '@/icons/XLogo.svg'
+import Linkedin from '@/icons/LinkedInSmallLogo.svg'
+import Github from '@/icons/GitHub.svg'
+import Twitch from '@/icons/TwitchLogoWhite.svg'
+import Youtube from '@/icons/YoutubeLogo.svg'
 
 export interface CardProps {
   name: string
@@ -12,6 +18,7 @@ export interface CardProps {
     xl?: string
     lg?: string
   }
+  social?: string
 }
 
 const {
@@ -22,47 +29,52 @@ const {
   imageUrl,
   companyLogo: Logo,
   marginTop = {},
+  social,
 } = Astro.props as CardProps
+
+const Tag = social ? 'a' : 'div'
 ---
 
-<article class="card flex flex-col h-full font-clash text-white select-none cursor-crosshair">
-  <figure class="effect relative overflow-hidden">
-    <Image
-      inferSize
-      src={imageUrl}
-      width={342}
-      height={342}
-      alt={name}
-      class="w-full aspect-square object-cover"
-    />
-    <figcaption>
-      <p class="gap-x-1 md:text-base text-[10px] text-yellow-400 font-medium">
-        {role}
-      </p>
-    </figcaption>
-  </figure>
-  <div
-    class="flex flex-col flex-1 md:gap-y-[14px] gap-y-[6px] bg-white/5 border border-white/10 md:p-6 p-3"
-  >
-    <div>
-      <div class="flex flex-row items-center justify-between">
-        <h3 class="md:text-2xl text-xs font-medium">{name}</h3>
-        {
-          typeof Logo === 'string' ? (
-            <Image width={24} height={24} src={Logo} alt={company} class="md:size-6 size-3" />
-          ) : typeof Logo !== 'undefined' ? (
-            <Logo class="md:size-6 size-3" />
-          ) : null
-        }
+<Tag href={social} target="_blank" rel="noreferrer noopener">
+  <article class="card flex flex-col h-full font-clash text-white select-none">
+    <figure class="effect relative overflow-hidden">
+      <Image
+        inferSize
+        src={imageUrl}
+        width={342}
+        height={342}
+        alt={name}
+        class="w-full aspect-square object-cover"
+      />
+      <figcaption>
+        <p class="gap-x-1 md:text-base text-[10px] text-yellow-400 font-medium">
+          {role}
+        </p>
+      </figcaption>
+    </figure>
+    <div
+      class="flex flex-col flex-1 md:gap-y-[14px] gap-y-[6px] bg-white/5 border border-white/10 md:p-6 p-3"
+    >
+      <div>
+        <div class="flex flex-row items-center justify-between">
+          <h3 class="md:text-2xl text-xs font-medium">{name}</h3>
+          {
+            typeof Logo === 'string' ? (
+              <Image width={24} height={24} src={Logo} alt={company} class="md:size-6 size-3" />
+            ) : typeof Logo !== 'undefined' ? (
+              <Logo class="md:size-6 size-3" />
+            ) : null
+          }
+        </div>
+        <div class="flex flex-row gap-x-1 md:text-base text-[10px] text-yellow-400 font-medium">
+          <p>{role}</p>
+          {company && <p>@{company}</p>}
+        </div>
       </div>
-      <div class="flex flex-row gap-x-1 md:text-base text-[10px] text-yellow-400 font-medium">
-        <p>{role}</p>
-        {company && <p>@{company}</p>}
-      </div>
+      <p class="md:text-base text-xs sm:text-sm text-neutral-300 md:min-h-16">{description}</p>
     </div>
-    <p class="md:text-base text-xs sm:text-sm text-neutral-300 md:min-h-16">{description}</p>
-  </div>
-</article>
+  </article>
+</Tag>
 
 <style define:vars={{ marginTopXl: marginTop.xl, marginTopLg: marginTop.lg }}>
   .card {

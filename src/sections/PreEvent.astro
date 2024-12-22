@@ -7,12 +7,12 @@ import InfojobsLogo from '@/icons/InfojobsLogo.svg'
 import { Image } from 'astro:assets'
 ---
 
-<section class="bg-javascript-radial text-black flex flex-col px-0">
-  <Container class="py-0 xl:py-12">
-    <div class="pt-6 xl:pt-12 pb-4 px-6">
-      <div class="flex flex-col xl:flex-row gap-6 xl:gap-0">
-        <div class="flex flex-col flex-1 gap-4 font-clash pt-6">
-          <h3 class="text-4xl xl:text-7xl font-medium text-balance">
+<Container class="xl:py-12 xl:pb-40">
+<section class="bg-javascript-radial text-black flex flex-col">
+    <div class="py-6 px-6">
+      <div class="flex flex-col xl:flex-row gap-6 xl:gap-6">
+        <div class="flex flex-col flex-1 gap-4 xl:px-[18px] font-clash pt-6">
+          <h3 class="text-4xl sm:text-5xl 2xl:text-6xl font-medium text-pretty sm:max-w-[480px] 2xl:max-w-[600px]">
             Únete al Pre-Evento en Barcelona
           </h3>
           <p class="text-lg xl:text-2xl font-medium">
@@ -32,16 +32,16 @@ import { Image } from 'astro:assets'
               <PointerMap class="w-6 h-6 inline-block mr-2" />
               Oficinas de InfoJobs, Barcelona.
             </p>
-            <p class="xl:text-lg flex items-center">
+            <p class="xl:text-base 2xl:text-lg flex items-center">
               <Ticket class="w-6 h-6 inline-block mr-2" />
-              <span class="text-light-gray flex flex-col xl:flex-row xl:gap-1">
-                <strong class="font-medium text-white">¡Es Gratis!</strong>
+              <span class="text-light-gray flex flex-col sm:flex-row sm:gap-1">
+                <strong class="font-medium text-white min-w-fit">¡Es Gratis!</strong>
                 Prioridad para asistentes confirmados de la JSConf.
               </span>
             </p>
           </div>
         </div>
-        <div class="w-full xl:w-[43%] flex items-end justify-end xl:px-0">
+        <div class="w-full xl:w-[43%] flex items-end justify-end ">
           <Image
             width={512}
             height={484}
@@ -51,12 +51,12 @@ import { Image } from 'astro:assets'
           />
         </div>
       </div>
-      <div class="w-full justify-center flex xl:justify-start pt-4 px-6">
-        <p class="text-sm xl:p-0 font-medium">
-          <InfojobsLogo class="h-10 inline-block" />
+      <div class="w-full justify-center flex xl:justify-start pt-4 xl:px-4 xl:pt-6">
+        <p class="text-sm sm:text-base font-medium text-center">
+          <InfojobsLogo class="inline-block" />
           ¡Patrocinador oficial del Pre-Evento!
         </p>
       </div>
     </div>
+  </section>
   </Container>
-</section>

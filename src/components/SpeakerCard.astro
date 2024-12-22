@@ -8,7 +8,10 @@ export interface CardProps {
   description: string
   imageUrl: string
   companyLogo: string | any
-  marginTop?: string
+  marginTop?: {
+    xl?: string
+    lg?: string
+  }
 }
 
 const {
@@ -18,7 +21,7 @@ const {
   description,
   imageUrl,
   companyLogo: Logo,
-  marginTop,
+  marginTop = {},
 } = Astro.props as CardProps
 ---
 
@@ -61,9 +64,9 @@ const {
   </div>
 </article>
 
-<style define:vars={{ marginTop }}>
+<style define:vars={{ marginTopXl: marginTop.xl, marginTopLg: marginTop.lg }}>
   .card {
-    margin-top: var(--marginTop);
+    margin-top: var(--marginTopXl);
   }
   figure.effect {
     background: #000;
@@ -144,6 +147,12 @@ const {
   @media (max-width: 1024px) {
     .card {
       margin-top: 0;
+    }
+  }
+
+  @media (min-width: 1024px) and (max-width: 1280px) {
+    .card {
+      margin-top: var(--marginTopLg);
     }
   }
 </style>

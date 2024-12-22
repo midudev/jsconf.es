@@ -12,23 +12,26 @@ import { Image } from 'astro:assets'
 <div class="relative min-h-screen flex flex-col items-center justify-center px-4 text-center">
   <div class="space-y-8 pt-24">
     <h1
-      class="text-6xl md:text-8xl font-clash font-[550] bg-gradient-to-r from-white/40  via-white  to-white/25  inline-block text-transparent bg-clip-text"
+      class="text-6xl md:text-8xl font-clash font-[550] bg-gradient-to-r from-white/50 via-white to-white/70 inline-block text-transparent bg-clip-text title"
     >
       JSConf España 2025
     </h1>
     <div class="text-[clamp(1.8rem,5vw,4.5rem)] leading-[100%] font-light space-y-2">
-      <p>
-        Una experiencia <span
-          class="text-black relative before:content-[''] overflow-hidden before:absolute before:w-full before:h-full before:bg-gradient-to-r before:from-[#FFFE65] before:to-[#F7DF1F] before:rotate-2 mix-blend-lighten before:-z-30 before:-left-2 before:top-0"
+      <p class="h2ref">
+        <span>Una</span>
+        <span>experiencia</span>
+        <span
+          class="text-black relative before:content-[''] overflow-hidden before:absolute before:w-full before:h-full before:bg-gradient-to-r before:from-[#FFFE65] before:to-[#F7DF1F] before:rotate-2 mix-blend-lighten before:-z-30 before:-left-2 before:top-0 exlusiva"
         >
           exclusiva
-        </span> de
+        </span>
+        <span>de</span>
       </p>
-      <p>JavaScript</p>
+      <p class="js">JavaScript</p>
     </div>
 
     <a
-      class="flex items-center justify-center gap-2 hover:scale-110 transition-transform duration-300 ease-in-out hover:text-javascript w-fit mx-auto"
+      class="flex items-center justify-center gap-2 hover:scale-105 transition-transform duration-500 ease-in-out hover:text-javascript w-fit mx-auto delay-75"
       href="https://midu.link/keepcoding"
       target="_blank"
       rel="noopener noreferrer"
@@ -87,3 +90,303 @@ import { Image } from 'astro:assets'
     </div>
   </div>
 </div>
+
+<style>
+  .title {
+    /* Adds animation that runs on load */
+    animation-name: reveal;
+    animation-duration: 1s;
+    /* Adds transition */
+    transition: 1s;
+    /* Safari versions 8 and older */
+    -webkit-animation-name: reveal;
+    -webkit-animation-duration: 1s;
+    -webkit-transition: 1s;
+  }
+
+  .exlusiva::before {
+    animation-name: bounceInTop;
+    animation-duration: 1s;
+  }
+
+  .h2ref {
+    animation-name: revealtextBlur;
+    animation-duration: 1s;
+    transition: 1s;
+  }
+
+  .js {
+    animation-name: textFlickerInGlow;
+    animation-duration: 1.3s;
+    /* animation-iteration-count: infinite; */
+    color: #f7df1f;
+    text-shadow:
+      0 0 30px rgba(255, 255, 255, 0.6),
+      0 0 60px rgba(255, 255, 255, 0.45),
+      0 0 110px rgba(255, 255, 255, 0.25),
+      0 0 100px rgba(255, 255, 255, 0.1);
+  }
+
+  .h2ref span {
+    opacity: 0;
+    filter: blur(15px);
+    animation: revealtextBlur 0.5s ease forwards;
+  }
+
+  .h2ref span:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .h2ref span:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+
+  /* .h2ref span:nth-child(3) {
+    animation-delay: 0.6s;
+  } */
+
+  .h2ref span:nth-child(4) {
+    animation-delay: 0.6s;
+  }
+
+  @keyframes reveal {
+    0% {
+      transform: translate(0, 100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes textFlickerInGlow {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    10.1% {
+      opacity: 1;
+      text-shadow: none;
+    }
+    10.2% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    20% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    20.1% {
+      opacity: 1;
+      text-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+    }
+    20.6% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    30% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    30.1% {
+      opacity: 1;
+      text-shadow:
+        0 0 30px rgba(255, 255, 255, 0.45),
+        0 0 60px rgba(255, 255, 255, 0.25);
+    }
+    30.5% {
+      opacity: 1;
+      text-shadow:
+        0 0 30px rgba(255, 255, 255, 0.45),
+        0 0 60px rgba(255, 255, 255, 0.25);
+    }
+    30.6% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    45% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    45.1% {
+      opacity: 1;
+      text-shadow:
+        0 0 30px rgba(255, 255, 255, 0.45),
+        0 0 60px rgba(255, 255, 255, 0.25);
+    }
+    50% {
+      opacity: 1;
+      text-shadow:
+        0 0 30px rgba(255, 255, 255, 0.45),
+        0 0 60px rgba(255, 255, 255, 0.25);
+    }
+    55% {
+      opacity: 1;
+      text-shadow:
+        0 0 30px rgba(255, 255, 255, 0.45),
+        0 0 60px rgba(255, 255, 255, 0.25);
+    }
+    55.1% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    57% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    57.1% {
+      opacity: 1;
+      text-shadow:
+        0 0 30px rgba(255, 255, 255, 0.55),
+        0 0 60px rgba(255, 255, 255, 0.35);
+    }
+    60% {
+      opacity: 1;
+      text-shadow:
+        0 0 30px rgba(255, 255, 255, 0.55),
+        0 0 60px rgba(255, 255, 255, 0.35);
+    }
+    60.1% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    65% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    65.1% {
+      opacity: 1;
+      text-shadow:
+        0 0 30px rgba(255, 255, 255, 0.55),
+        0 0 60px rgba(255, 255, 255, 0.35),
+        0 0 100px rgba(255, 255, 255, 0.1);
+    }
+    75% {
+      opacity: 1;
+      text-shadow:
+        0 0 30px rgba(255, 255, 255, 0.55),
+        0 0 60px rgba(255, 255, 255, 0.35),
+        0 0 100px rgba(255, 255, 255, 0.1);
+    }
+    75.1% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    77% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    77.1% {
+      opacity: 1;
+      text-shadow:
+        0 0 30px rgba(255, 255, 255, 0.55),
+        0 0 60px rgba(255, 255, 255, 0.4),
+        0 0 110px rgba(255, 255, 255, 0.2),
+        0 0 100px rgba(255, 255, 255, 0.1);
+    }
+    85% {
+      opacity: 1;
+      text-shadow:
+        0 0 30px rgba(255, 255, 255, 0.55),
+        0 0 60px rgba(255, 255, 255, 0.4),
+        0 0 110px rgba(255, 255, 255, 0.2),
+        0 0 100px rgba(255, 255, 255, 0.1);
+    }
+    85.1% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    86% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    86.1% {
+      opacity: 1;
+      text-shadow:
+        0 0 30px rgba(255, 255, 255, 0.6),
+        0 0 60px rgba(255, 255, 255, 0.45),
+        0 0 110px rgba(255, 255, 255, 0.25),
+        0 0 100px rgba(255, 255, 255, 0.1);
+    }
+    100% {
+      opacity: 1;
+      text-shadow:
+        0 0 30px rgba(255, 255, 255, 0.6),
+        0 0 60px rgba(255, 255, 255, 0.45),
+        0 0 110px rgba(255, 255, 255, 0.25),
+        0 0 100px rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  @keyframes revealtextBlur {
+    0% {
+      filter: blur(14px);
+      /* transform: translate(0, -100%); */
+      opacity: 0;
+      animation-timing-function: ease-in-out;
+    }
+    100% {
+      filter: blur(0);
+      /* transform: translate(0, 0); */
+      opacity: 1;
+      animation-timing-function: ease-in-out;
+    }
+  }
+
+  @keyframes bounceInTop {
+    0% {
+      -webkit-transform: translateY(-500px);
+      transform: translateY(-500px);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+      opacity: 0;
+    }
+    38% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+      opacity: 1;
+    }
+    55% {
+      -webkit-transform: translateY(-65px);
+      transform: translateY(-65px);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+    72% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+    }
+    81% {
+      -webkit-transform: translateY(-28px);
+      transform: translateY(-28px);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+    90% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+    }
+    95% {
+      -webkit-transform: translateY(-8px);
+      transform: translateY(-8px);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+    }
+  }
+</style>

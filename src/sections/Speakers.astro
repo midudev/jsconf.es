@@ -15,6 +15,7 @@ const speakers = [
       'La maga del CSS, la que lleva las animaciones al próximo nivel. Verás lo que sabe de JavaScript.',
     imageUrl: '/img/carmen-ansio.webp',
     companyLogo: LottieLogo,
+    social: 'https://www.carmenansio.dev/',
   },
   {
     name: 'Javier Velasco',
@@ -24,6 +25,7 @@ const speakers = [
       'El 7º programador de Vercel. Muchas cosas buenas de Next.js son por su mano y gracia.',
     imageUrl: '/img/javier-velasco.webp',
     companyLogo: VercelLogo,
+    social: 'https://javivelasco.com/',
   },
   {
     name: 'Fernando Herrera',
@@ -33,6 +35,7 @@ const speakers = [
       'El Profesor en línea de Programación Web más visto. Seguro viste un curso suyo alguna vez.',
     imageUrl: '/img/fernando-herrera.webp',
     companyLogo: '/img/devtalles-logo.webp',
+    social: 'https://fernando-herrera.com/',
   },
   {
     name: 'Eduardo San Martín',
@@ -42,6 +45,7 @@ const speakers = [
       'Creador de Vue Router, Pinia y Vue Fire. ¿Y qué más? Contribuye al core de Vue.js',
     imageUrl: '/img/eduardo-vue.webp',
     companyLogo: VueLogo,
+    social: 'https://x.com/posva',
   },
   {
     name: 'Ilda Neta',
@@ -51,6 +55,7 @@ const speakers = [
       'Ve belleza en cada detalle y convierte el minimalismo en experiencias móviles que gustan.',
     imageUrl: '/img/ildaneta.webp',
     companyLogo: '/img/rockthesport.webp',
+    social: 'https://www.ildaneta.dev/',
   },
   {
     name: 'Jaione Arnaez-Telleria',
@@ -60,6 +65,7 @@ const speakers = [
       'Maneja datos como nadie y tiene pasión por el universo… ¡y también por JavaScript!',
     imageUrl: '/img/jaione.webp',
     companyLogo: '/img/irontec.webp',
+    social: 'https://www.linkedin.com/in/jaione-arnaez-telleria',
   },
   {
     name: 'Erick Wendel',
@@ -68,6 +74,7 @@ const speakers = [
     description:
       'El ninja brasileño de Node.js. Habla tan bien Español como JavaScript, incluso mejor.',
     imageUrl: '/img/erick-wendel.webp',
+    social: 'https://x.com/erickwendel_/',
   },
   {
     name: 'Vanessa Medina',
@@ -76,6 +83,7 @@ const speakers = [
     description:
       'Le gusta viajar, la tecnología, los videojuegos, la fotografía, la música... y JavaScript',
     imageUrl: '/img/vanessa.webp',
+    social: 'https://www.linkedin.com/in/vanessams/',
   },
   {
     name: 'Henar Mendiola',
@@ -92,6 +100,7 @@ const speakers = [
     description:
       'Investigador, ingeniero, director e instructor. 20 años de experiencia en tecnología.',
     imageUrl: '/img/alberto-casero.webp',
+    social: 'https://x.com/kasappeal',
   },
 ]
 ---
@@ -105,7 +114,9 @@ const speakers = [
         la comunidad hispana!
       </h2>
     </div>
-    <div class="grid xl:grid-cols-4 lg:grid-cols-3 grid-cols-2 md:gap-x-6 gap-x-3 md:gap-y-10 gap-y-6 pt-20">
+    <div
+      class="grid xl:grid-cols-4 lg:grid-cols-3 grid-cols-2 md:gap-x-6 gap-x-3 md:gap-y-10 gap-y-6 pt-20"
+    >
       {
         speakers.map((speaker, index) => (
           <Card

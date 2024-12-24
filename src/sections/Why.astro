@@ -45,7 +45,7 @@ import LinkEntrada from '@/components/LinkEntrada.astro'
       ¿Por qué no debes perderte la JSConf?
     </h2>
 
-    <div class="flex pt-6 pb-12 gap-x-6 justify-around flex-col xl:flex-row gap-y-8">
+    <div id="cards" class="flex pt-6 pb-12 gap-x-6 justify-around flex-col xl:flex-row gap-y-8">
       <WhyCard>
         <h3 slot="title" class="font-clash md:text-4xl text-2xl font-[450]">
           Contacto directo con los <strong class="text-javascript font-[450]"
@@ -109,3 +109,19 @@ import LinkEntrada from '@/components/LinkEntrada.astro'
     </div>
   </Container>
 </section>
+
+<script>
+  const cards = document.getElementById('cards')?.children as HTMLCollectionOf<HTMLElement>
+
+  if (cards) {
+    document.getElementById('cards')!.onmousemove = (e) => {
+      for (const card of cards) {
+        const rect = card.getBoundingClientRect()
+        const x = e.clientX - rect.left
+        const y = e.clientY - rect.top
+        card.style.setProperty('--mouse-x', `${x}px`)
+        card.style.setProperty('--mouse-y', `${y}px`)
+      }
+    }
+  }
+</script>

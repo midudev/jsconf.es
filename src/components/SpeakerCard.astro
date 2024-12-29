@@ -47,7 +47,7 @@ const Tag = social ? 'a' : 'div'
         class="w-full aspect-square object-cover"
       />
       <figcaption>
-        <p class="gap-x-1 md:text-base text-[10px] text-yellow-400 font-medium">
+        <p class="gap-x-1 text-yellow-400 font-medium">
           {role}
         </p>
       </figcaption>
@@ -57,21 +57,21 @@ const Tag = social ? 'a' : 'div'
     >
       <div>
         <div class="flex flex-row items-center justify-between">
-          <h3 class="md:text-2xl text-xs font-medium">{name}</h3>
+          <h3 class="text-2xl font-medium">{name}</h3>
           {
             typeof Logo === 'string' ? (
-              <Image width={24} height={24} src={Logo} alt={company} class="md:size-6 size-3" />
+              <Image width={24} height={24} src={Logo} alt={company} class="size-6" />
             ) : typeof Logo !== 'undefined' ? (
-              <Logo class="md:size-6 size-3" />
+              <Logo class="size-6" />
             ) : null
           }
         </div>
-        <div class="flex flex-row gap-x-1 md:text-base text-[10px] text-yellow-400 font-medium">
+        <div class="flex flex-row gap-x-1 text-yellow-400 font-medium">
           <p>{role}</p>
           {company && <p>@{company}</p>}
         </div>
       </div>
-      <p class="md:text-base text-xs sm:text-sm text-neutral-300 md:min-h-16">{description}</p>
+      <p class="text-neutral-300 md:min-h-16">{description}</p>
     </div>
   </article>
 </Tag>

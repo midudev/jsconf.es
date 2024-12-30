@@ -17,6 +17,7 @@ const currentStyle = STYLES[style] ?? STYLES.white
     'px-5 py-3 font-clash font-[450] border flex justify-center w-full md:w-auto gap-2 transition items-center',
     currentStyle,
     className,
+    style !== 'yellow' ? 'effect01' : '',
   ]}
   href={href}
 >
@@ -24,3 +25,53 @@ const currentStyle = STYLES[style] ?? STYLES.white
   <span><slot /></span>
   <slot name="icon-right" />
 </Component>
+
+<style>
+  .effect01 {
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .effect01:hover {
+    background-color: #fff;
+    & svg {
+      color: #000;
+    }
+  }
+
+  /*btn_text*/
+  .effect01 span {
+    transition: all 0.2s ease-out;
+    z-index: 2;
+  }
+
+  .effect01:hover span {
+    color: #333;
+  }
+
+  .effect01:after {
+    background: #fff;
+    border: 0px solid #000;
+    content: '';
+    height: 155px;
+    left: -75px;
+    opacity: 0.8;
+    position: absolute;
+    top: -50px;
+    -webkit-transform: rotate(35deg);
+    transform: rotate(35deg);
+    width: 50px;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    z-index: 1;
+  }
+
+  .effect01:hover:after {
+    background: #fff;
+    border: 20px solid #000;
+    opacity: 0;
+    left: 120%;
+    -webkit-transform: rotate(40deg);
+    transform: rotate(40deg);
+  }
+</style>

@@ -25,7 +25,7 @@ const icons: Record<string, any> = {
     </div>
 
     <a
-      class="group bg-black border border-black hover:bg-white transition py-6 px-12 mb-12 flex items-center justify-between flex-col md:flex-row w-full"
+      class="group bg-black border border-black hover:bg-white transition py-6 px-12 mb-12 flex items-center justify-between flex-col lg:flex-row w-full gap-6 lg:gap-12"
       href="https://midu.link/keepcoding"
       target="_blank"
       rel="noopener noreferrer"
@@ -35,10 +35,11 @@ const icons: Record<string, any> = {
         height={96}
         src="/sponsors/keepcoding.webp"
         alt="sponsor top"
-        class="h-24 object-contain group-hover:scale-105 transition"
+        class="h-24 object-contain group-hover:scale-105 transitiona-all duration-300"
+        aria-label="Visita KeepCoding para ver los mejores bootcamps online"
       />
-      <div>
-        <p class="absolute group-hover:opacity-0 text-white text-xl text-balance">
+      <div class="text-center lg:text-left">
+        <p class="absolute group-hover:opacity-0 text-white text-xl text-balance whitespace-nowrap">
           ¡Los mejores bootcamp online!
         </p>
         <p class="group-hover:opacity-1 text-black text-xl text-balance">

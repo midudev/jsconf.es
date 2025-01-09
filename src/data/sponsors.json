@@ -43,6 +43,11 @@
         "name": "DevTalles",
         "image": "/sponsors/devtalles.webp",
         "url": "https://cursos.devtalles.com/"
+      },
+      {
+        "name": "LeanMind",
+        "image": "/sponsors/lean-mind.webp",
+        "url": "https://leanmind.es/es/"
       }
     ]
   }

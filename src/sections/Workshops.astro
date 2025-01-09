@@ -12,6 +12,7 @@ import { Image } from 'astro:assets'
 type Workshop = {
   hour: string
   title: string
+  image?: string
   author: string
   authorDesc: string
   workshopDesc: string
@@ -24,7 +25,8 @@ const workshops: Workshop[] = [
     hour: '10:00',
     title: 'Introducción a Firebase Genkit y Inteligencia Artificial',
     author: 'Xavier Portilla',
-    authorDesc: 'Software Engineer en Google',
+    authorDesc: 'Software Engineer en Voice Flow',
+    image: 'xavi-portilla.webp',
     workshopDesc:
       'Descubre Firebase Genkit en este taller introductorio en el DevFest Madrid. Exploraremos cómo este versátil framework permite a los desarrolladores crear aplicaciones impulsadas por inteligencia artificial con facilidad. Aprende a implementar las bibliotecas de código abierto de Genkit para Node.js y Go, integrarte con modelos de IA generativa y ejecutarlo de manera independiente de los servicios de Google. Perfecto para quienes buscan optimizar su proceso de desarrollo de IA.',
     tags: [TAGS.FIREBASE, TAGS.IA],
@@ -32,12 +34,14 @@ const workshops: Workshop[] = [
   },
   {
     hour: '13:00',
-    title: 'Cómo mantener un desarrollo con TDD rápido y eficaz',
-    author: 'Mario Sebastián',
+    title: 'Introducción a Test-Driven Development con JS y TS',
+    author: 'Carlos Blé',
     authorDesc: 'FullStack Developer en LeanMind',
+    image: 'carlos-ble.webp',
     workshopDesc:
-      'Descubre Firebase Genkit en este taller introductorio en el DevFest Madrid. Exploraremos cómo este versátil framework permite a los desarrolladores crear aplicaciones impulsadas por inteligencia artificial con facilidad. Aprende a implementar las bibliotecas de código abierto de Genkit para Node.js y Go, integrarte con modelos de IA generativa y ejecutarlo de manera independiente de los servicios de Google. Perfecto para quienes buscan optimizar su proceso de desarrollo de IA.',
-    tags: [TAGS.NODEJS, TAGS.OPTIMIZATION],
+      'TDD es una práctica que ha demostrado funcionar en el mundo real para quienes han adquirido el suficiente criterio y dominio de la técnica. Permite escribir código más simple, con muchos menos fallos, y dejando excelentes baterias de test para cubrir de forma segura la evolución funcional del producto. Es cierto que tiene una curva de aprendizaje importante y que a menudo se abandona la técnica antes de subir esa cuesta, por falta de acompañamiento o por malentendidos. Carlos Blé lleva 15 años practicando TDD, ha escrito varios libros sobre ello y acompañado a multitud de equipos en la adopción de TDD, así como en otras practicas del método eXtreme Programming. Se divierte enseñando TDD y hará que este taller sea entretenido, interesante y educativo.',
+    tags: [TAGS.TESTING_AVANZADO, TAGS.JAVASCRIPT, TAGS.TYPESCRIPT],
+    blur: false,
   },
   {
     hour: '16:00',
@@ -68,7 +72,9 @@ const workshops: Workshop[] = [
   />
   <Container>
     <div class="flex justify-center flex-wrap">
-      <h2 class="font-clash text-white text-[clamp(2rem,5vw,4.5rem)] text-center leading-tight text-balance">
+      <h2
+        class="font-clash text-white text-[clamp(2rem,5vw,4.5rem)] text-center leading-tight text-balance"
+      >
         No solo aprendizaje, también conexión,
         <CrossContainerTitle>workshops del evento</CrossContainerTitle>
       </h2>
@@ -92,7 +98,7 @@ const workshops: Workshop[] = [
         <ArrowRight class="group-hover:translate-x-1 transition" />
       </a>
     </div>
-    <div class="flex lg:flex-row flex-col lg:gap-x-6 gap-y-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 flex-col lg:gap-x-6 gap-y-6">
       {
         workshops.map(({ hour, title, author, authorDesc, workshopDesc, tags, blur }) => (
           <WorkshopCard

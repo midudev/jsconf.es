@@ -1,5 +1,5 @@
 ---
-const { href, style, class: className } = Astro.props
+const { href, style, class: className, ...restOfProps } = Astro.props
 const Component = href ? 'a' : 'button'
 
 const STYLES: Record<string, string> = {
@@ -20,6 +20,7 @@ const currentStyle = STYLES[style] ?? STYLES.white
     style !== 'yellow' ? 'effect01' : '',
   ]}
   href={href}
+  {...restOfProps}
 >
   <slot name="icon-left" />
   <span><slot /></span>

@@ -102,3 +102,22 @@ Ejemplo: `feat: add newsletter subscription component`
 1. Los PR necesitan al menos una aprobación
 2. Atiende los comentarios del review
 3. Asegúrate de que el CI/CD pase
+
+### Colaboradores
+
+- [midudev](https://github.com/midudev)
+- [gomezbc](https://github.com/gomezbc)
+- [geekhadev](https://github.com/geekhadev)
+- [diego-dev018](https://github.com/diego-dev018)
+- [ivanmayta](https://github.com/ivanmayta)
+- [estebancastano](https://github.com/estebancastano)
+- [lucaslopezdev](https://github.com/lucaslopezdev)
+- [restoker](https://github.com/restoker)
+- [vladiantio](https://github.com/vladiantio)
+- [cosmoart](https://github.com/cosmoart)
+- [jaresdev](https://github.com/jaresdev)
+- [sdilonedev](https://github.com/sdilonedev)
+- [mctilde](https://github.com/mctilde)
+- [zegie](https://github.com/zegie)
+- [educlopez](https://github.com/educlopez)
+- [henryckg](https://github.com/henryckg)

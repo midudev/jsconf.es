@@ -12,6 +12,12 @@ const icons: Record<string, any> = {
   platinum: SponsorPlatinum,
   pro: SponsorPro,
 }
+
+const classes: Record<string, string> = {
+  max: 'grid-cols-1 md:grid-cols-2',
+  platinum: 'grid-cols-1 md:grid-cols-2',
+  pro: 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4',
+}
 ---
 
 <section id="sponsors" class="bg-white text-black flex flex-col font-clash scroll-mt-28">
@@ -57,7 +63,7 @@ const icons: Record<string, any> = {
             <div class="flex items-center justify-end gap-1">
               <div class="flex items-center w-full">
                 <div class="flex-grow border-t border-gray-300 w-auto flex-1" />
-                <div class="ml-4 flex items-center w-100 gap-2">
+                <div class="ml-4 flex items-center w-100 gap-2" style={{ color: sponsor.color }}>
                   <span>{sponsor.category}</span>
                   {(() => {
                     const IconComponent = icons[sponsor.icon]
@@ -66,10 +72,15 @@ const icons: Record<string, any> = {
                 </div>
               </div>
             </div>
-            <div class="flex flex-wrap">
+            <div
+              class:list={['grid justify-center gap-4 items-center pb-4', classes[sponsor.icon]]}
+            >
               {sponsor.companies.map((company, index) => (
                 <a
-                  class="flex items-center justify-center p-2 w-full md:w-1/2 lg:w-1/4 hover:scale-110 transition-transform"
+                  class:list={[
+                    'flex items-center justify-center mx-auto p-2 w-full hover:scale-110 transition-transform',
+                    sponsor.icon === 'pro' ? 'max-w-48' : 'max-w-80',
+                  ]}
                   href={company.url}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -79,7 +90,7 @@ const icons: Record<string, any> = {
                     height={96}
                     src={company.image}
                     alt={company.name}
-                    class="h-24 max-w-48 object-contain"
+                    class="h-auto w-full object-contain"
                   />
                 </a>
               ))}

@@ -26,6 +26,17 @@
     ]
   },
   {
+    "category": "Sponsors max",
+    "icon": "max",
+    "companies": [
+      {
+        "name": "Nerdearla",
+        "image": "/sponsors/neradearla.webp",
+        "url": "https://nerdear.la/es/"
+      }
+    ]
+  },
+  {
     "category": "Sponsors pro",
     "icon": "pro",
     "companies": [

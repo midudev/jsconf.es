@@ -1,6 +1,7 @@
 [
   {
-    "category": "Sponsors platinum",
+    "category": "Sponsors Platinum",
+    "color": "#09f",
     "icon": "platinum",
     "companies": [
       {
@@ -26,18 +27,19 @@
     ]
   },
   {
-    "category": "Sponsors max",
+    "category": "Sponsors Max",
+    "color": "#8e0000",
     "icon": "max",
     "companies": [
       {
         "name": "Nerdearla",
-        "image": "/sponsors/neradearla.webp",
+        "image": "/sponsors/nerdearla.webp",
         "url": "https://nerdear.la/es/"
       }
     ]
   },
   {
-    "category": "Sponsors pro",
+    "category": "Sponsors Pro",
     "icon": "pro",
     "companies": [
       {

@@ -1,5 +1,6 @@
 ---
 import SponsorPlatinum from '@/icons/SponsorPlatinum.svg'
+import SponsorMax from '@/icons/SponsorMax.svg'
 import SponsorPro from '@/icons/SponsorPro.svg'
 import sponsorsData from '@/data/sponsors.json'
 import Container from '@/components/Container.astro'
@@ -7,6 +8,7 @@ import LinkSponsor from '@/components/LinkSponsor.astro'
 import { Image } from 'astro:assets'
 
 const icons: Record<string, any> = {
+  max: SponsorMax,
   platinum: SponsorPlatinum,
   pro: SponsorPro,
 }
@@ -33,7 +35,7 @@ const icons: Record<string, any> = {
       <Image
         width={428.12}
         height={96}
-        src="/sponsors/keepcoding.webp"
+        src="/sponsors/keepcoding.svg"
         alt="sponsor top"
         class="h-24 object-contain group-hover:scale-105 transitiona-all duration-300"
         aria-label="Visita KeepCoding para ver los mejores bootcamps online"

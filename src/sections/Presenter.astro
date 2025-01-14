@@ -32,14 +32,29 @@ const socialNetworks = [
 
 <section class="bg-black text-white mx-auto py-12">
   <Container>
-    <div class="flex md:flex-row flex-col-reverse lg:gap-x-20 gap-x-10">
-      <Image
-        width={520}
-        height={520}
-        src="/img/midu-presenter.webp"
-        alt="Miguel Ángel Durán"
-        class="md:w-5/12 max-md:mt-8 object-scale-down"
-      />
+    <div class="flex md:flex-row flex-col-reverse lg:gap-x-20 gap-x-10 items-center">
+      <div class="card card0 md:w-5/12 max-md:mt-8 object-scale-down">
+        <div class="conteinerRef">
+          <div
+            class="bg-gradient-to-b from-neutral-600/5 to-[#F7DF1F]/10 h-full w-full absolute top-8"
+          >
+          </div>
+          <h2 class="m-4 font-extrabold opacity-0 text-2xl text-[#F7DF1F] mix-blend-difference">
+            Miguel Ángel Durán
+          </h2>
+          <div
+            class="flex flex-col gap-x-4 justify-evenly ml-4 items-start opacity-0 parrafo leading-7 mix-blend-luminosity"
+          >
+            <p>
+              Software Engineer and Web Developer.
+              <br />
+              Awarded as GitHub Star, Microsoft MVP,
+              <br />
+              and Google Developer Expert.
+            </p>
+          </div>
+        </div>
+      </div>
       <div class="md:w-7/12 flex flex-col md:p-10 md:gap-y-10 gap-y-8">
         <h2 class="md:text-5xl text-[34px] font-clash font-medium">
           Presentado por <UnderlineWord
@@ -51,7 +66,7 @@ const socialNetworks = [
           Uno de los mayores divulgadores de Programación de habla hispana. Más de 15 años de
           experiencia en <span class="text-javascript">JavaScript</span>.
         </h3>
-        <div class="flex flex-row gap-x-4 items-center mb-8">
+        <div class="flex flex-row gap-x-4 items-center mb-8 ocultar">
           {
             socialNetworks.map(({ name, url, aria, icon: Icon }) => (
               <a
@@ -78,3 +93,69 @@ const socialNetworks = [
     </div>
   </Container>
 </section>
+
+<style>
+  .card {
+    height: 520px;
+    width: 520px;
+    transition: all 0.8s;
+    overflow: hidden;
+    background: black;
+    box-shadow: 0 70px 63px -60px #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .card0 {
+    background: url('/img/midu-presenter.webp') center center no-repeat;
+    background-size: 520px;
+    filter: brightness(75%);
+
+    &:hover {
+      background: url('/img/midu-presenter.webp') left center no-repeat;
+      background-size: 950px;
+      filter: brightness(80%);
+      border-radius: 5px;
+    }
+  }
+
+  .conteinerRef {
+    height: 520px;
+    width: 520px;
+    background: transparent;
+    position: relative;
+    opacity: 0;
+
+    &:hover {
+      opacity: 1;
+      h2 {
+        opacity: 1;
+      }
+      .parrafo {
+        opacity: 1;
+      }
+    }
+  }
+
+  h2,
+  .parrafo {
+    transition: opacity 1s;
+  }
+
+  @media (767px <= width <= 1023px) {
+    .card0 {
+      &:hover {
+        background-size: 700px;
+      }
+    }
+  }
+  @media (1024px <= width <= 1423px) {
+    .card0 {
+      &:hover {
+        background-size: 880px;
+      }
+    }
+  }
+</style>

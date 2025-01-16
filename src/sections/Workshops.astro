@@ -17,7 +17,6 @@ type Workshop = {
   authorDesc: string
   workshopDesc: string
   tags: Array<TypeTag>
-  blur?: boolean
 }
 
 const workshops: Workshop[] = [
@@ -30,7 +29,6 @@ const workshops: Workshop[] = [
     workshopDesc:
       'Descubre Firebase Genkit en este taller introductorio en el DevFest Madrid. Exploraremos cómo este versátil framework permite a los desarrolladores crear aplicaciones impulsadas por inteligencia artificial con facilidad. Aprende a implementar las bibliotecas de código abierto de Genkit para Node.js y Go, integrarte con modelos de IA generativa y ejecutarlo de manera independiente de los servicios de Google. Perfecto para quienes buscan optimizar su proceso de desarrollo de IA.',
     tags: [TAGS.FIREBASE, TAGS.IA],
-    blur: false,
   },
   {
     hour: '13:00',
@@ -41,16 +39,15 @@ const workshops: Workshop[] = [
     workshopDesc:
       'TDD es una práctica que ha demostrado funcionar en el mundo real para quienes han adquirido el suficiente criterio y dominio de la técnica. Permite escribir código más simple, con muchos menos fallos, y dejando excelentes baterias de test para cubrir de forma segura la evolución funcional del producto. Es cierto que tiene una curva de aprendizaje importante y que a menudo se abandona la técnica antes de subir esa cuesta, por falta de acompañamiento o por malentendidos. Carlos Blé lleva 15 años practicando TDD, ha escrito varios libros sobre ello y acompañado a multitud de equipos en la adopción de TDD, así como en otras practicas del método eXtreme Programming. Se divierte enseñando TDD y hará que este taller sea entretenido, interesante y educativo.',
     tags: [TAGS.TESTING_AVANZADO, TAGS.JAVASCRIPT, TAGS.TYPESCRIPT],
-    blur: false,
   },
   {
-    hour: '16:00',
-    title: 'Aprende a desarrollar skills de Alexa con NodeJS',
-    author: 'Xavier Portilla',
-    authorDesc: 'Software Engineer en Google',
+    hour: '15:00',
+    title: 'Creación de agentes de IA con Langchain.js',
+    author: 'Eric Risco',
+    authorDesc: 'AI Tech Lead en Andorra Telecom',
     workshopDesc:
-      'Descubre Firebase Genkit en este taller introductorio en el DevFest Madrid. Exploraremos cómo este versátil framework permite a los desarrolladores crear aplicaciones impulsadas por inteligencia artificial con facilidad. Aprende a implementar las bibliotecas de código abierto de Genkit para Node.js y Go, integrarte con modelos de IA generativa y ejecutarlo de manera independiente de los servicios de Google. Perfecto para quienes buscan optimizar su proceso de desarrollo de IA.',
-    tags: [TAGS.TESTING_AVANZADO, TAGS.OPTIMIZATION],
+      'Langchain.js es una librería de JavaScript que permite a los desarrolladores crear agentes de IA con facilidad. Aprende a implementar las bibliotecas de código abierto de Langchain.js para Node.js, integrarte con modelos de IA generativa y ejecutarlo de manera independiente. Perfecto para quienes buscan optimizar su proceso de desarrollo de IA.',
+    tags: [TAGS.IA, TAGS.NODEJS],
   },
 ]
 ---
@@ -100,9 +97,8 @@ const workshops: Workshop[] = [
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 flex-col lg:gap-x-6 gap-y-6">
       {
-        workshops.map(({ hour, title, author, authorDesc, workshopDesc, tags, blur }) => (
+        workshops.map(({ hour, title, author, authorDesc, workshopDesc, tags }) => (
           <WorkshopCard
-            blur={blur}
             hour={hour}
             title={title}
             author={author}

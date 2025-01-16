@@ -9,15 +9,13 @@ export interface Props {
   authorDesc: string
   workshopDesc: string
   tags?: Array<TypeTag>
-  blur?: boolean
 }
-const { blur = true, hour, title, author, authorDesc, workshopDesc, tags } = Astro.props
+const { hour, title, author, authorDesc, workshopDesc, tags } = Astro.props
 ---
 
 <article
   class:list={[
     'bg-gradient-to-b from-white/5 shadow-md p-6 text-white border border-zinc-900 font-clash flex flex-col',
-    blur && 'blur',
   ]}
 >
   <span class="flex flex-row items-center gap-x-2 text-white text-[16px] mb-4"><Clock />{hour}</span

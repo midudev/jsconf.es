@@ -1,5 +1,5 @@
 ---
-const { href, style, class: className, ...restOfProps } = Astro.props
+const { href, style, class: className, disabled, ...restOfProps } = Astro.props
 const Component = href ? 'a' : 'button'
 
 const STYLES: Record<string, string> = {
@@ -18,7 +18,9 @@ const currentStyle = STYLES[style] ?? STYLES.white
     currentStyle,
     className,
     style !== 'yellow' ? 'effect01' : '',
+    disabled ? 'cursor-not-allowed pointer-events-none' : '',
   ]}
+  disabled={disabled}
   href={href}
   {...restOfProps}
 >

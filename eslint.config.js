@@ -22,6 +22,7 @@ export default [
     rules: {
       'react/self-closing-comp': 'off',
       'react/jsx-key': 'off',
+      '@stylistic/jsx-first-prop-new-line': 'off',
       '@stylistic/jsx-closing-tag-location': 'off',
       '@stylistic/jsx-closing-bracket-location': 'off',
       '@stylistic/multiline-ternary': 'off',

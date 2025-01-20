@@ -35,6 +35,11 @@
         "name": "Nerdearla",
         "image": "/sponsors/nerdearla.webp",
         "url": "https://nerdear.la/es/"
+      },
+      {
+        "name": "Malt",
+        "image": "/sponsors/malt.svg",
+        "url": "https://malt.es"
       }
     ]
   },

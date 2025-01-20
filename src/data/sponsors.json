@@ -58,14 +58,19 @@
         "url": "https://midu.link/codely"
       },
       {
+        "name": "LeanMind",
+        "image": "/sponsors/lean-mind.webp",
+        "url": "https://leanmind.es/es/"
+      },
+      {
         "name": "DevTalles",
         "image": "/sponsors/devtalles.webp",
         "url": "https://cursos.devtalles.com/"
       },
       {
-        "name": "LeanMind",
-        "image": "/sponsors/lean-mind.webp",
-        "url": "https://leanmind.es/es/"
+        "name": "Sirviendo Código",
+        "image": "/sponsors/sirviendo.svg",
+        "url": "https://sirviendocodigo.com/"
       }
     ]
   }

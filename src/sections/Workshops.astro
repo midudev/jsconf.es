@@ -49,6 +49,15 @@ const workshops: Workshop[] = [
       'Langchain.js es una librería de JavaScript que permite a los desarrolladores crear agentes de IA con facilidad. Aprende a implementar las bibliotecas de código abierto de Langchain.js para Node.js, integrarte con modelos de IA generativa y ejecutarlo de manera independiente. Perfecto para quienes buscan optimizar su proceso de desarrollo de IA.',
     tags: [TAGS.IA, TAGS.NODEJS],
   },
+  {
+    hour: '16:30',
+    title: 'Desarrolla skills de Alexa con NodeJS',
+    author: 'Pedro Plasencia',
+    authorDesc: 'Fundador de "Programación en Español"',
+    workshopDesc:
+      'En este taller aprenderás a crear un bot de Alexa con Node, a usar la Alexa Developer Console y conocerás la teoría necesaria y veremos la práctica desde cero para que puedas desarrollar tus skills y llevarlas al máximo y lograr publicarlas en la tienda de skills de Alexa.',
+    tags: [TAGS.NODEJS],
+  },
 ]
 ---
 
@@ -95,7 +104,7 @@ const workshops: Workshop[] = [
         <ArrowRight class="group-hover:translate-x-1 transition" />
       </a>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 flex-col lg:gap-x-6 gap-y-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 flex-col lg:gap-x-6 gap-y-6">
       {
         workshops.map(({ hour, title, author, authorDesc, workshopDesc, tags }) => (
           <WorkshopCard

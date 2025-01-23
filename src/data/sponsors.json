@@ -23,6 +23,11 @@
         "name": "TimeTime",
         "image": "/sponsors/timetime.svg",
         "url": "https://www.timetime.in/"
+      },
+      {
+        "name": "NTT Data",
+        "image": "/sponsors/ntt.webp",
+        "url": "https://es.nttdata.com/"
       }
     ]
   },

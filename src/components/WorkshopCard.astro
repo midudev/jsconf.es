@@ -6,11 +6,12 @@ export interface Props {
   hour: string
   title: string
   author: string
+  image: string
   authorDesc: string
   workshopDesc: string
   tags?: Array<TypeTag>
 }
-const { hour, title, author, authorDesc, workshopDesc, tags } = Astro.props
+const { hour, title, author, authorDesc, workshopDesc, tags, image } = Astro.props
 ---
 
 <article
@@ -24,9 +25,10 @@ const { hour, title, author, authorDesc, workshopDesc, tags } = Astro.props
   <h4 class="text-[28px] font-clash leading-none mb-2 font-medium text-balance">
     {title}
   </h4>
-  <p class="text-light font-medium text-javascript">
-    {author}
-    <span class="text-white/80 font-clash font-medium ml-6">{authorDesc}</span>
+  <p class="font-medium text-javascript inline-flex gap-x-2 items-center">
+    <img src={`/img/${image}`} alt={`Foto de ${author}`} class="w-12 h-12 rounded-full" />
+    <span>{author}</span>
+    <span class="text-white/60 font-clash font-medium">{authorDesc}</span>
   </p>
   <p class="text-white/90 text-[16px] font-normal mt-4 mb-6 text-left">
     {workshopDesc}

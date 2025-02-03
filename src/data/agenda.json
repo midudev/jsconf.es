@@ -4,6 +4,11 @@
     "date": "1 de marzo de 2025",
     "agenda": [
       {
+        "type": "break",
+        "time": "08:45 - 09:30",
+        "topic": "Registro + Café de Bienvenida"
+      },
+      {
         "type": "talk",
         "time": "09:30 - 09:40",
         "topic": "Bienvenida e introducción",

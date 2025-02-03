@@ -61,7 +61,8 @@
         "time": "12:00 - 12:05",
         "topic": "¿Componentes propios o bibliotecas externas? Decisiones clave y implementación",
         "speaker": "Giulia Girardi",
-        "role": ""
+        "role": "Software Developer @Datamaran",
+        "image": "giulia.webp"
       },
       {
         "type": "talk",
@@ -96,7 +97,8 @@
         "time": "14:15 - 14:30",
         "topic": "Sorteos y sorpresas",
         "speaker": "Miguel Ángel Durán",
-        "role": "Presentador"
+        "role": "Presentador",
+        "image": "midudev.webp"
       },
       {
         "type": "break",
@@ -108,13 +110,15 @@
         "time": "16:00 - 16:30",
         "topic": "SonJs of Anarchy",
         "speaker": "Vanessa Medina & Henar Hernández",
+        "image": ["vanessa.webp", "henar.webp"],
         "role": "Charla conjunta"
       },
       {
         "type": "talk",
         "time": "16:30 - 17:00",
-        "topic": "El futuro del FrontEnd",
-        "speaker": "Panel de expertos",
+        "topic": "Jav",
+        "speaker": "midudev & Fernando Herrera",
+        "image": ["midudev.webp", "fernando-herrera.webp"],
         "role": "Panel"
       },
       {

@@ -1,22 +1,24 @@
 ---
-import { Image } from 'astro:assets'
-
 const { item } = Astro.props
-const { time, topic, speaker, role } = item
+const { time, topic, speaker, role, image } = item
 ---
 
 <div
-  class="flex justify-between items-center bg-[#191919] p-4 px-12 border border-white border-opacity-5 flex-col md:flex-row"
+  class="flex justify-between items-center bg-[#191919] p-4 px-4 border border-white border-opacity-5 flex-col md:flex-row"
 >
   <div class="flex gap-4 flex-1 flex-col md:flex-row">
-    <h4 class="border-0 md:border-r border-white border-opacity-5 pr-4 text-xl">{time}</h4>
+    <h4
+      class="border-0 md:border-r border-white border-opacity-5 pr-4 text-javascript min-w-32 tabular-nums font-mono justify-center items-center flex tracking-tight"
+    >
+      {time}
+    </h4>
     <p class="text-xl text-balance">{topic}</p>
   </div>
   <div class="flex items-center w-full md:w-[30%] mt-4 md:mt-0">
-    <Image
+    <img
       width={48}
       height={48}
-      src="https://i.pravatar.cc/300"
+      src={`/img/${image}`}
       alt={`Imagen de avatar de ${speaker} - ${role}`}
       class="size-12 rounded-full mr-4"
     />

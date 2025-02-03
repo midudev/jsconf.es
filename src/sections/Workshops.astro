@@ -12,7 +12,7 @@ import { Image } from 'astro:assets'
 type Workshop = {
   hour: string
   title: string
-  image?: string
+  image: string
   author: string
   authorDesc: string
   workshopDesc: string
@@ -45,6 +45,7 @@ const workshops: Workshop[] = [
     title: 'Creación de agentes de IA con Langchain.js',
     author: 'Eric Risco',
     authorDesc: 'AI Tech Lead en Andorra Telecom',
+    image: 'eric-risco.webp',
     workshopDesc:
       'Langchain.js es una librería de JavaScript que permite a los desarrolladores crear agentes de IA con facilidad. Aprende a implementar las bibliotecas de código abierto de Langchain.js para Node.js, integrarte con modelos de IA generativa y ejecutarlo de manera independiente. Perfecto para quienes buscan optimizar su proceso de desarrollo de IA.',
     tags: [TAGS.IA, TAGS.NODEJS],
@@ -54,6 +55,7 @@ const workshops: Workshop[] = [
     title: 'Desarrolla skills de Alexa con NodeJS',
     author: 'Pedro Plasencia',
     authorDesc: 'Fundador de "Programación en Español"',
+    image: 'pedro-plasencia.webp',
     workshopDesc:
       'En este taller aprenderás a crear un bot de Alexa con Node, a usar la Alexa Developer Console y conocerás la teoría necesaria y veremos la práctica desde cero para que puedas desarrollar tus skills y llevarlas al máximo y lograr publicarlas en la tienda de skills de Alexa.',
     tags: [TAGS.NODEJS],
@@ -61,7 +63,7 @@ const workshops: Workshop[] = [
 ]
 ---
 
-<section id="workshop" class="px-section mt-14 relative">
+<section id="workshops" class="px-section mt-14 relative">
   <Image
     width={160}
     height={160}
@@ -106,9 +108,10 @@ const workshops: Workshop[] = [
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 flex-col lg:gap-x-6 gap-y-6">
       {
-        workshops.map(({ hour, title, author, authorDesc, workshopDesc, tags }) => (
+        workshops.map(({ hour, title, author, authorDesc, workshopDesc, tags, image }) => (
           <WorkshopCard
             hour={hour}
+            image={image}
             title={title}
             author={author}
             authorDesc={authorDesc}

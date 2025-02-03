@@ -2,7 +2,6 @@
 import { MOBILE_MENU_CONTENT_ID } from '@/consts/mobile-menu'
 import HamburgerButton from '@/components/HamburgerButton.astro'
 import LogoIcon from '@/icons/Logo.svg'
-import LinkSponsor from '@/components/LinkSponsor.astro'
 import LinkEntrada from '@/components/LinkEntrada.astro'
 import Menu from '@/components/Menu.astro'
 
@@ -40,7 +39,6 @@ const sections = [
       <Menu />
     </div>
     <div class="hidden lg:flex items-center gap-4">
-      <LinkSponsor style="transparent" />
       <LinkEntrada style="yellow" />
     </div>
     <HamburgerButton class:list="block lg:hidden" id="menuButton" />
@@ -65,7 +63,6 @@ const sections = [
             </>
           ))
         }
-        <LinkSponsor style="transparent" />
         <LinkEntrada style="yellow" />
       </nav>
     </div>

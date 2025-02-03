@@ -15,13 +15,30 @@ const { time, topic, speaker, role, image } = item
     <p class="text-xl text-balance">{topic}</p>
   </div>
   <div class="flex items-center w-full md:w-[30%] mt-4 md:mt-0">
-    <img
-      width={48}
-      height={48}
-      src={`/img/${image}`}
-      alt={`Imagen de avatar de ${speaker} - ${role}`}
-      class="size-12 rounded-full mr-4"
-    />
+    {
+      // Si 'image' existe, revisamos si es un array o un string
+      image && Array.isArray(image) ? (
+        <div class="flex relative mr-2">
+          {image.map((img, index) => (
+            <img
+              width={48}
+              height={48}
+              src={`/img/${img}`}
+              alt={`Imagen de avatar ${index + 1} de ${speaker} - ${role}`}
+              class="size-12 rounded-full -ml-4 border-2 border-[#191919]"
+            />
+          ))}
+        </div>
+      ) : image ? (
+        <img
+          width={48}
+          height={48}
+          src={`/img/${image}`}
+          alt={`Imagen de avatar de ${speaker} - ${role}`}
+          class="size-12 rounded-full mr-4"
+        />
+      ) : null
+    }
     <div class="flex flex-col">
       <p>{speaker}</p>
       <p class="text-javascript text-balance">{role}</p>

@@ -5,7 +5,7 @@
     "agenda": [
       {
         "type": "break",
-        "time": "08:45 - 09:30",
+        "time": "08:30 - 09:30",
         "topic": "Registro + Café de Bienvenida"
       },
       {
@@ -72,7 +72,7 @@
       {
         "type": "talk",
         "time": "12:05 - 12:45",
-        "topic": "Charla a definir...",
+        "topic": "React Reinventado: IA, Next.js, Server Components y Vercel",
         "speaker": "Javier Velasco",
         "image": "javier-velasco.webp",
         "role": "Tech Lead @Vercel"

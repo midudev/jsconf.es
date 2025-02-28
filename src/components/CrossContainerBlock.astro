@@ -1,0 +1,25 @@
+---
+import Cross from '@/assets/cross.svg'
+
+interface Props {
+  class?: string
+  titleSROnly?: string
+}
+
+const { class: className, titleSROnly } = Astro.props
+---
+
+<section
+  class:list={[
+    'relative inline-block align-baseline m-0 pl-4 pr-4 border border-dotted border-neutral-700/80 text-javascript',
+    className,
+  ]}
+>
+  {titleSROnly && <h2 class="sr-only">{titleSROnly}</h2>}
+  <Cross class="absolute -top-2 -left-2 w-4 h-4" />
+  <Cross class="absolute -top-2 -right-2 w-4 h-4" />
+  <Cross class="absolute -bottom-2 -left-2 w-4 h-4" />
+  <Cross class="absolute -bottom-2 -right-2 w-4 h-4" />
+
+  <div class="relative z-10 w-full"><slot /></div>
+</section>

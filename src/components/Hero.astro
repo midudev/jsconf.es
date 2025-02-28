@@ -6,6 +6,16 @@ import CodeBrace from '@/icons/CodeBrace.svg'
 import LinkEntrada from '@/components/LinkEntrada.astro'
 import TicketsAvailable from './TicketsAvailable.astro'
 import { Image } from 'astro:assets'
+import CrossContainerBlock from './CrossContainerBlock.astro'
+
+interface Props {
+  isOnline: boolean
+}
+
+const { isOnline } = Astro.props
+
+const twitchParentUrl = import.meta.env.PROD ? 'www.jsconf.es' : 'localhost'
+const twitchUrl = `https://player.twitch.tv/?channel=midudev&parent=${twitchParentUrl}`
 ---
 
 <div class="relative min-h-screen flex flex-col items-center justify-center px-4 text-center">
@@ -24,7 +34,6 @@ import { Image } from 'astro:assets'
       </p>
       <p>JavaScript</p>
     </div>
-
     <a
       class="flex items-center justify-center gap-0 hover:scale-110 transition-transform duration-300 ease-in-out hover:text-javascript w-fit mx-auto"
       href="https://midu.link/keepcoding"
@@ -41,10 +50,27 @@ import { Image } from 'astro:assets'
       />
     </a>
 
-    <div class="flex flex-col md:flex-row gap-4 justify-center mt-12">
-      <LinkEntrada style="yellow" />
-    </div>
-
+    {
+      !isOnline && (
+        <div class="flex flex-col md:flex-row gap-4 justify-center mt-12">
+          <LinkEntrada style="yellow" />
+        </div>
+      )
+    }
+    {
+      isOnline && (
+        <CrossContainerBlock class="flex mx-auto w-full h-max max-w-5xl p-4">
+          <iframe
+            src={twitchUrl}
+            frameborder="0"
+            allowfullscreen="true"
+            height="778"
+            width="1020"
+            class="w-full"
+          />
+        </CrossContainerBlock>
+      )
+    }
     <div
       class="inline-flex items-center justify-center gap-2.5 bg-white/5 px-4 py-2.5 rounded-full font-clash"
     >
@@ -59,10 +85,14 @@ import { Image } from 'astro:assets'
       </p>
     </div>
 
-    <div class="max-sm:hidden flex flex-col items-center justify-center mt-24 space-y-2">
-      <Mouse class="size-8" />
-      <ArrowDown class="size-6 animate-bounce" />
-    </div>
+    {
+      !isOnline && (
+        <div class="max-sm:hidden flex flex-col items-center justify-center mt-24 space-y-2">
+          <Mouse class="size-8" />
+          <ArrowDown class="size-6 animate-bounce" />
+        </div>
+      )
+    }
 
     <div
       class="relative max-sm:w-5/6 w-4/6 pt-20 sm:pt-[105px] pb-20 sm:pb-[218px] text-center leading-tight font-clash mx-auto lg:w-full lg:px-24 lg:max-w-[90rem] text-balance"

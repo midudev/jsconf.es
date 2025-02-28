@@ -9,6 +9,10 @@ import { TAGS } from '@/components/WorkshopSkillTag.astro'
 import LinkEntrada from '@/components/LinkEntrada.astro'
 import { Image } from 'astro:assets'
 
+interface Props {
+  isOnline: boolean
+}
+
 type Workshop = {
   hour: string
   title: string
@@ -18,6 +22,8 @@ type Workshop = {
   workshopDesc: string
   tags: Array<TypeTag>
 }
+
+const { isOnline } = Astro.props
 
 const workshops: Workshop[] = [
   {
@@ -96,15 +102,19 @@ const workshops: Workshop[] = [
       <h3 class="text-white font-clash font-medium md:text-[34px] text-2xl">
         Talleres prácticos destacados
       </h3>
-      <a
-        href={COMPRAR_ENTRADA}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="font-clash text-javascript group flex gap-x-1 items-center font-medium hover:opacity-70"
-      >
-        <span>Apuntarme a la lista de espera</span>
-        <ArrowRight class="group-hover:translate-x-1 transition" />
-      </a>
+      {
+        !isOnline && (
+          <a
+            href={COMPRAR_ENTRADA}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-clash text-javascript group flex gap-x-1 items-center font-medium hover:opacity-70"
+          >
+            <span>Apuntarme a la lista de espera</span>
+            <ArrowRight class="group-hover:translate-x-1 transition" />
+          </a>
+        )
+      }
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 flex-col lg:gap-x-6 gap-y-6">
       {

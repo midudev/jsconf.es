@@ -3,8 +3,9 @@ import Header from '@/sections/Header.astro'
 import Footer from '@/sections/Footer.astro'
 interface Props {
   title?: string
+  isOnline?: boolean
 }
-const title = Astro.props.title
+const { isOnline = false, title } = Astro.props
 ---
 
 <!doctype html>
@@ -97,7 +98,7 @@ const title = Astro.props.title
       class="absolute h-full w-full bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:58px_58px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"
     >
     </div>
-    <Header />
+    <Header isOnline={isOnline} />
     <slot />
     <Footer />
   </body>

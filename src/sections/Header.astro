@@ -2,15 +2,7 @@
 import { MOBILE_MENU_CONTENT_ID } from '@/consts/mobile-menu'
 import HamburgerButton from '@/components/HamburgerButton.astro'
 import LogoIcon from '@/icons/Logo.svg'
-import TwitchLogo from '@/icons/TwitchLogo.svg'
-import LinkEntrada from '@/components/LinkEntrada.astro'
 import Menu from '@/components/Menu.astro'
-
-interface Props {
-  isOnline: boolean
-}
-
-const { isOnline } = Astro.props
 
 const sections = [
   { name: 'HOME', href: '/#home' },
@@ -46,20 +38,8 @@ const sections = [
       <Menu />
     </div>
     <div class="hidden lg:flex items-center gap-4">
-      {
-        !isOnline ? (
-          <LinkEntrada style="yellow" />
-        ) : (
-          <a
-            href="https://www.twitch.tv/midudev"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-lg inline-flex items-center gap-2 px-5 py-3 bg-violet-600 text-violet-100 hover:bg-violet-500 hover:text-white font-medium transition"
-          >
-            <span>Ver Evento Online</span>
-          </a>
-        )
-      }
+      <!-- <LinkEntrada style="yellow" /> -->
+      <p class="text-xl text-white/60">¡Gracias por participar!</p>
     </div>
     <HamburgerButton class:list="block lg:hidden" id="menuButton" />
     <div
@@ -83,7 +63,7 @@ const sections = [
             </>
           ))
         }
-        {!isOnline && <LinkEntrada style="yellow" />}
+        <!-- <LinkEntrada style="yellow" /> -->
       </nav>
     </div>
   </div>

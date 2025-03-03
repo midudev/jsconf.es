@@ -10,19 +10,15 @@ import WorkshopsSection from '@/sections/Workshops.astro'
 import AgendaSection from '@/sections/Agenda.astro'
 import PresenterSection from '@/sections/Presenter.astro'
 import RunAndFunSection from '@/sections/RunAndFun.astro'
-
-import { checkIsChannelOnlineInTwitch } from '@/utils/check-is-channel-online-in-twitch'
-
-const isOnline = await checkIsChannelOnlineInTwitch('midudev')
 ---
 
-<Layout isOnline={isOnline}>
-  <LandingSection isOnline={isOnline} />
+<Layout>
+  <LandingSection />
   <WhenAndWhereSection />
   <WhySection />
   <SpeakersSection />
   <SponsorsSection />
-  <WorkshopsSection isOnline={isOnline} />
+  <WorkshopsSection />
   <AgendaSection />
   <PresenterSection />
   <RunAndFunSection />

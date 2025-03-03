@@ -1,17 +1,11 @@
 ---
-import { COMPRAR_ENTRADA } from '@/consts/links'
 import Container from '@/components/Container.astro'
 import CrossContainerTitle from '@/components/CrossContainerTitle.astro'
 import WorkshopCard from '@/components/WorkshopCard.astro'
-import ArrowRight from '@/icons/ArrowRight.svg'
 import type { TypeTag } from '@/components/WorkshopSkillTag.astro'
 import { TAGS } from '@/components/WorkshopSkillTag.astro'
 import LinkEntrada from '@/components/LinkEntrada.astro'
 import { Image } from 'astro:assets'
-
-interface Props {
-  isOnline: boolean
-}
 
 type Workshop = {
   hour: string
@@ -22,8 +16,6 @@ type Workshop = {
   workshopDesc: string
   tags: Array<TypeTag>
 }
-
-const { isOnline } = Astro.props
 
 const workshops: Workshop[] = [
   {
@@ -102,19 +94,15 @@ const workshops: Workshop[] = [
       <h3 class="text-white font-clash font-medium md:text-[34px] text-2xl">
         Talleres prácticos destacados
       </h3>
-      {
-        !isOnline && (
-          <a
-            href={COMPRAR_ENTRADA}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="font-clash text-javascript group flex gap-x-1 items-center font-medium hover:opacity-70"
-          >
-            <span>Apuntarme a la lista de espera</span>
-            <ArrowRight class="group-hover:translate-x-1 transition" />
-          </a>
-        )
-      }
+      <!-- <a
+        href={COMPRAR_ENTRADA}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-clash text-javascript group flex gap-x-1 items-center font-medium hover:opacity-70"
+      >
+        <span>Apuntarme a la lista de espera</span>
+        <ArrowRight class="group-hover:translate-x-1 transition" />
+      </a> -->
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 flex-col lg:gap-x-6 gap-y-6">
       {
@@ -131,8 +119,8 @@ const workshops: Workshop[] = [
         ))
       }
     </div>
-    <div class="flex justify-center max-sm:mx-12 mt-14">
+    <!-- <div class="flex justify-center max-sm:mx-12 mt-14">
       <LinkEntrada style="yellow" />
-    </div>
+    </div> -->
   </Container>
 </section>

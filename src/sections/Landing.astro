@@ -1,15 +1,9 @@
 ---
 import Hero from '@/components/Hero.astro'
-
-interface Props {
-  isOnline: boolean
-}
-
-const { isOnline } = Astro.props
 ---
 
 <section id="home" class="pt-24">
   <div class="min-h-screen bg-gradient-to-b from-black to-[#0B0B0B] text-white">
-    <Hero isOnline={isOnline} />
+    <Hero />
   </div>
 </section>

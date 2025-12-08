@@ -103,7 +103,31 @@ const { title } = Astro.props
   </body>
 </html>
 
-<style>
+<style is:global>
+  @import 'tailwindcss';
+  @plugin "@tailwindcss/typography";
+
+  @theme {
+    /* Colors */
+    --color-javascript: #f7df1e;
+    --color-javascript-dark: #998c06;
+    --color-light-gray: #7f7f7f;
+
+    /* Font families */
+    --font-clash: 'Clash', system-ui, sans-serif;
+    --font-inter: 'Inter', system-ui, sans-serif;
+
+    /* Background images */
+    --background-image-javascript-radial: radial-gradient(
+      ellipse farthest-corner at 0% 0%,
+      #fffe65,
+      #f7df1f
+    );
+
+    /* Spacing */
+    --spacing-section: 1.5rem;
+  }
+
   :root {
     color-scheme: light dark;
   }
@@ -140,4 +164,36 @@ const { title } = Astro.props
       scroll-behavior: auto;
     }
   }
+
+  /* Scroll Reveal Animation */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity 0.8s ease-out,
+      transform 0.8s ease-out;
+  }
+
+  .animate-on-scroll.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
 </style>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show')
+        }
+      })
+    },
+    {
+      threshold: 0.1,
+    }
+  )
+
+  const hiddenElements = document.querySelectorAll('.animate-on-scroll')
+  hiddenElements.forEach((el) => observer.observe(el))
+</script>

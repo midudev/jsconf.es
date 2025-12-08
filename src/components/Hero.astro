@@ -4,87 +4,82 @@ import ArrowDown from '@/icons/ArrowDown.svg'
 import UnderlineWord from '@/components/UnderlineWord.astro'
 import CodeBrace from '@/icons/CodeBrace.svg'
 import { Image } from 'astro:assets'
+import HeroBackground from '@/components/HeroBackground.astro'
 ---
 
-<div class="relative min-h-screen flex flex-col items-center justify-center px-4 text-center">
-  <div class="space-y-8 pt-24 flex flex-col">
+<div
+  class="relative min-h-screen flex flex-col items-center justify-center px-4 text-center overflow-hidden"
+>
+  <HeroBackground />
+  <div class="space-y-8 pt-24 flex flex-col items-center relative z-10">
     <p
-      class="text-4xl text-balance md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-[#F7DF1F]/40 via-[#FFFE65] to-[#F7DF1F]/25 font-clash font-[550] inline-block"
+      class="animate-on-scroll text-2xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-[#F7DF1F]/80 via-[#FFFE65] to-[#F7DF1F]/80 font-clash font-[550] inline-block mb-4"
     >
-      Gracias por disfrutar de la
+      14 de marzo del 2026
     </p>
     <h1
-      class="text-6xl md:text-8xl font-clash font-[550] bg-gradient-to-r from-white/40 via-white to-white/25 inline-block text-transparent bg-clip-text"
+      class="animate-on-scroll text-6xl md:text-[10rem] leading-none font-clash font-[550] bg-gradient-to-b from-white via-white to-white/50 inline-block text-transparent bg-clip-text"
     >
-      JSConf España 2025
+      JSConf<br />España 2026
     </h1>
-    <div class="text-[clamp(1.8rem,5vw,4.5rem)] leading-[100%] font-light space-y-2">
+    <div
+      class="text-[clamp(1.5rem,4vw,2.5rem)] leading-[120%] font-light space-y-4 max-w-4xl mx-auto text-white/80 text-balance"
+    >
       <p>
-        Una experiencia <span
-          class="text-black relative before:content-[''] overflow-hidden before:absolute before:w-[calc(100%_+_0.25em)] before:h-full before:bg-gradient-to-r before:from-[#FFFE65] before:to-[#F7DF1F] before:rotate-2 mix-blend-lighten before:-z-30 before:-left-[0.125em] before:top-0"
-          >exclusiva</span
-        > de
+        La conferencia de <span class="text-javascript font-medium">JavaScript</span> más importante de
+        España
       </p>
-      <p>JavaScript</p>
     </div>
-    <a
-      class="flex items-center justify-center gap-0 hover:scale-110 transition-transform duration-300 ease-in-out hover:text-javascript w-fit mx-auto"
+
+    <!-- <a
+      class="flex items-center justify-center gap-0 hover:scale-110 transition-transform duration-300 ease-in-out hover:text-javascript w-fit mx-auto mt-8 opacity-80 hover:opacity-100"
       href="https://midu.link/keepcoding"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <span>Powered by</span>
+      <span class="text-sm mr-2">Powered by</span>
       <Image
         width="508"
         height="108"
         src="/sponsors/keepcoding.webp"
         alt="KeepCoding logo"
-        class="h-11 w-auto"
+        class="h-8 w-auto"
       />
-    </a>
-    <p class="text-[#FFFE65] text-center text-2xl text-balance md:text-3xl">
-      ¡No te pierdas la próxima edición!
-    </p>
+    </a> -->
 
-    <!-- <div class="flex flex-col md:flex-row gap-4 justify-center mt-12">
-      <LinkEntrada style="yellow" />
-    </div>
-    <div
-      class="inline-flex items-center justify-center gap-2.5 bg-white/5 px-4 py-2.5 rounded-full font-clash"
-    >
-      <span>🔥</span>
-      <p
-        class="bg-gradient-to-bl from-[#F7DF1F] to-[#FF5011] text-transparent bg-clip-text leading-normal flex flex-row gap-x-2"
+    <div class="mt-12 flex flex-col items-center gap-4 animate-on-scroll">
+      <div
+        class="inline-flex items-center justify-center gap-2.5 bg-white/5 border border-white/10 px-6 py-3 rounded-full font-clash backdrop-blur-sm"
       >
-        <TicketsAvailable server:defer>
-          <span slot="fallback">¡ENTRADAS AGOTADAS!</span>
-        </TicketsAvailable>
-        <span class="text-white">¡Consigue la tuya antes de que se agoten!</span>
-      </p>
-    </div> -->
+        <span class="animate-pulse">🎟️</span>
+        <p class="text-white text-lg">
+          Entradas disponibles <span class="text-javascript font-bold">próximamente</span>
+        </p>
+      </div>
+    </div>
 
-    <div class="max-sm:hidden flex flex-col items-center justify-center mt-24 space-y-2">
+    <div class="max-sm:hidden flex flex-col items-center justify-center mt-24 space-y-2 opacity-60">
       <Mouse class="size-8" />
       <ArrowDown class="size-6 animate-bounce" />
     </div>
 
     <div
-      class="relative max-sm:w-5/6 w-4/6 pt-20 sm:pt-[105px] pb-20 sm:pb-[218px] text-center leading-tight font-clash mx-auto lg:w-full lg:px-24 lg:max-w-[90rem] text-balance"
+      class="animate-on-scroll relative max-sm:w-5/6 w-4/6 pt-20 sm:pt-[105px] pb-20 sm:pb-[218px] text-center leading-tight font-clash mx-auto lg:w-full lg:px-24 lg:max-w-[90rem] text-balance"
     >
       <h2 class="lg:text-[64px] md:text-5xl text-[34px]">
-        No es solo una conferencia más.<br />
+        Vuelve el evento que<br />
         <span class="text-white/80">
           <span>
-            Es un <span class="text-javascript"
-              >evento <UnderlineWord
+            une a la <span class="text-javascript"
+              >comunidad <UnderlineWord
                 class="text-javascript -translate-y-2 lg:-translate-y-4 -translate-x-10 lg:-translate-x-0"
-                ><span class="text-javascript">único</span></UnderlineWord
+                ><span class="text-javascript">JavaScript</span></UnderlineWord
               ></span
             >
-          </span> donde figuras clave del desarrollo web comparten sus secretos
+          </span>
         </span>
       </h2>
-      <CodeBrace class="max-sm:hidden absolute right-0" />
+      <CodeBrace class="max-sm:hidden absolute right-0 top-1/2 -translate-y-1/2 opacity-20" />
     </div>
   </div>
 </div>

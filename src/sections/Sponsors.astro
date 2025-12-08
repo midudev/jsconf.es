@@ -1,106 +1,32 @@
 ---
-import SponsorPlatinum from '@/icons/SponsorPlatinum.svg'
-import SponsorMax from '@/icons/SponsorMax.svg'
-import SponsorPro from '@/icons/SponsorPro.svg'
-import sponsorsData from '@/data/sponsors.json'
 import Container from '@/components/Container.astro'
-import LinkSponsor from '@/components/LinkSponsor.astro'
-import { Image } from 'astro:assets'
-
-const icons: Record<string, any> = {
-  max: SponsorMax,
-  platinum: SponsorPlatinum,
-  pro: SponsorPro,
-}
-
-const classes: Record<string, string> = {
-  max: 'grid-cols-1 md:grid-cols-2',
-  platinum: 'grid-cols-1 md:grid-cols-2',
-  pro: 'grid-cols-2 md:grid-cols-3',
-}
 ---
 
 <section id="sponsors" class="bg-white text-black flex flex-col font-clash scroll-mt-28">
   <Container>
-    <div class="flex items-center justify-between gap-12 mb-12 flex-col md:flex-row px-section">
+    <div
+      class="animate-on-scroll flex items-center justify-between gap-12 mb-12 flex-col md:flex-row px-section"
+    >
       <div class="flex-1">
-        <p class="text-gray-500 uppercase">Nuestros Sponsors</p>
+        <p class="text-gray-500 uppercase">Sponsors</p>
         <h3 class="text-5xl xs:text-6xl font-medium text-balance">
-          Agradecemos la confianza de los que están ayudando a que este proyecto se lleve a cabo
+          Estamos buscando Sponsors para la edición de 2026
         </h3>
       </div>
-      <LinkSponsor />
     </div>
 
     <a
-      class="group bg-black border border-black hover:bg-white transition py-6 px-12 mb-12 flex items-center justify-between flex-col lg:flex-row w-full gap-6 lg:gap-12"
-      href="https://midu.link/keepcoding"
-      target="_blank"
-      rel="noopener noreferrer"
+      class="animate-on-scroll group bg-black border border-black hover:bg-white transition py-12 px-12 mb-12 flex items-center justify-center flex-col w-full gap-6 lg:gap-12"
+      href="mailto:hi@midu.dev"
     >
-      <Image
-        width={428.12}
-        height={96}
-        src="/sponsors/keepcoding.svg"
-        alt="sponsor top"
-        class="h-24 object-contain group-hover:scale-105 transitiona-all duration-300"
-        aria-label="Visita KeepCoding para ver los mejores bootcamps online"
-      />
-      <div class="text-center lg:text-left">
-        <p class="absolute group-hover:opacity-0 text-white text-xl text-balance whitespace-nowrap">
-          ¡Los mejores bootcamp online!
+      <div class="text-center">
+        <p
+          class="group-hover:text-black text-white text-3xl md:text-5xl text-balance font-medium mb-4"
+        >
+          ¿Quieres patrocinar el evento?
         </p>
-        <p class="group-hover:opacity-1 text-black text-xl text-balance">
-          ¡Entra y mira lo que ofrecen!
-        </p>
+        <p class="text-javascript text-4xl md:text-6xl text-balance">hi@midu.dev</p>
       </div>
     </a>
-
-    {
-      sponsorsData &&
-        sponsorsData.map((sponsor) => (
-          <div class="flex flex-col gap-4 text-gray-700 col-span-1 px-section">
-            <div class="flex items-center justify-end gap-1">
-              <div class="flex items-center w-full">
-                <div class="flex-grow border-t border-gray-300 w-auto flex-1" />
-                <div class="ml-4 flex items-center w-100 gap-2" style={{ color: sponsor.color }}>
-                  <span>{sponsor.category}</span>
-                  {(() => {
-                    const IconComponent = icons[sponsor.icon]
-                    return IconComponent ? <IconComponent className="size-4" /> : null
-                  })()}
-                </div>
-              </div>
-            </div>
-            <div
-              class:list={['grid justify-center gap-4 items-center pb-4', classes[sponsor.icon]]}
-            >
-              {sponsor.companies.map((company) => (
-                <a
-                  class:list={[
-                    'flex items-center justify-center mx-auto p-2 w-full hover:scale-110 transition-transform',
-                    sponsor.icon === 'pro'
-                      ? 'max-w-48'
-                      : sponsor.icon === 'max'
-                        ? 'max-w-80'
-                        : 'max-w-96',
-                  ]}
-                  href={company.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Image
-                    width={192}
-                    height={96}
-                    src={company.image}
-                    alt={company.name}
-                    class="h-auto w-full object-contain"
-                  />
-                </a>
-              ))}
-            </div>
-          </div>
-        ))
-    }
   </Container>
 </section>

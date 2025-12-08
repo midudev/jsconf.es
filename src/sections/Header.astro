@@ -2,7 +2,10 @@
 import { MOBILE_MENU_CONTENT_ID } from '@/consts/mobile-menu'
 import HamburgerButton from '@/components/HamburgerButton.astro'
 import LogoIcon from '@/icons/Logo.svg'
+import TicketIcon from '@/icons/Ticket.svg'
 import Menu from '@/components/Menu.astro'
+
+import Button from '@/components/Button.astro'
 
 const sections = [
   { name: 'HOME', href: '/#home' },
@@ -26,20 +29,22 @@ const sections = [
           JSConf España
           <span
             class="rounded-full bg-javascript text-black font-semibold md:text-lg text-xs md:px-3 md:py-1 px-2 py-0.5 !leading-none flex justify-center items-center"
-            >2025</span
+            >2026</span
           >
         </h3>
         <span class="uppercase font-light opacity-80 text-sm text-white max-md:text-xs"
-          >1 MARZO 2025</span
+          >14 MARZO 2026</span
         >
       </div>
-    </a>    
+    </a>
     <div class="text-white">
       <Menu />
     </div>
-    <div class="hidden lg:flex items-center gap-4">
-      <!-- <LinkEntrada style="yellow" /> -->
-      <p class="text-xl text-white/60">¡Gracias por participar!</p>
+    <div class="flex items-center gap-4">
+      <Button style="yellow" class="opacity-70 max-lg:hidden" disabled>
+        <TicketIcon slot="icon-left" class="size-5" />
+        Entradas próximamente
+      </Button>
     </div>
     <HamburgerButton class:list="block lg:hidden" id="menuButton" />
     <div

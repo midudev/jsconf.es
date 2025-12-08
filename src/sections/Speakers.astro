@@ -124,10 +124,11 @@ const speakers = [
         la comunidad hispana!
       </h2>
     </div>
-    <div
-      class="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-x-6 gap-x-3 md:gap-y-10 gap-y-6 pt-20"
-    >
-      {
+      <div class="flex flex-col items-center justify-center pt-24 pb-12 w-full col-span-full">
+        <p class="text-3xl text-white/50 font-clash">Próximamente</p>
+        <p class="text-xl text-white/30 mt-4">Estamos seleccionando a los mejores speakers para ti.</p>
+      </div>
+      <!-- {
         speakers.map((speaker, index) => (
           <Card
             {...speaker}
@@ -138,7 +139,7 @@ const speakers = [
             }}
           />
         ))
-      }
+      } -->
     </div>
   </Container>
 </section>

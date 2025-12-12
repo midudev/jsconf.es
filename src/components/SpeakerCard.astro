@@ -14,10 +14,6 @@ export interface CardProps {
   description: string
   imageUrl: string
   companyLogo: string | any
-  marginTop?: {
-    xl?: string
-    lg?: string
-  }
   social?: string
 }
 
@@ -28,14 +24,13 @@ const {
   description,
   imageUrl,
   companyLogo: Logo,
-  marginTop = {},
   social,
 } = Astro.props as CardProps
 
 const Tag = social ? 'a' : 'div'
 ---
 
-<Tag href={social} target="_blank" rel="noreferrer noopener">
+<Tag href={social} target="_blank" rel="noreferrer noopener" class="block h-full">
   <article class="card flex flex-col h-full font-clash text-white select-none">
     <figure class="effect relative overflow-hidden">
       <Image
@@ -76,10 +71,7 @@ const Tag = social ? 'a' : 'div'
   </article>
 </Tag>
 
-<style define:vars={{ marginTopXl: marginTop.xl, marginTopLg: marginTop.lg }}>
-  .card {
-    margin-top: var(--marginTopXl);
-  }
+<style>
   figure.effect {
     background: #000;
   }
@@ -154,17 +146,5 @@ const Tag = social ? 'a' : 'div'
   .card:hover p {
     opacity: 1;
     transition-delay: 0.1s;
-  }
-
-  @media (max-width: 1024px) {
-    .card {
-      margin-top: 0;
-    }
-  }
-
-  @media (min-width: 1024px) and (max-width: 1280px) {
-    .card {
-      margin-top: var(--marginTopLg);
-    }
   }
 </style>

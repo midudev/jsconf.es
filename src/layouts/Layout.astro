@@ -3,8 +3,24 @@ import Header from '@/sections/Header.astro'
 import Footer from '@/sections/Footer.astro'
 interface Props {
   title?: string
+  description?: string
+  canonical?: string
+  ogImage?: string
+  noindex?: boolean
 }
-const { title } = Astro.props
+const {
+  title,
+  description = 'La conferencia de JavaScript más importante de España. Madrid, 14 de marzo de 2026 en La Nave. Charlas, workshops, speakers y comunidad.',
+  canonical,
+  ogImage = 'https://jsconf.es/og.jpg',
+  noindex = false,
+} = Astro.props
+
+const baseTitle = 'JSConf España 2026'
+const pageTitle = title
+  ? `${title} | ${baseTitle}`
+  : `${baseTitle} — Conferencia de JavaScript en Madrid (14 de marzo)`
+const pageUrl = canonical ?? Astro.url.href
 ---
 
 <!doctype html>
@@ -13,56 +29,43 @@ const { title } = Astro.props
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>
-      {
-        title
-          ? title + ' | JSConf España 2025'
-          : 'JSConf - Conferencia de JavaScript en España (1 de marzo 2025)'
-      }
-    </title>
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
     <meta
-      name="description"
-      content="Únete a JSConf España 2025, la conferencia más importante sobre JavaScript en España, el 1 de marzo en La Nave de Madrid. ¡Reserva tu entrada ahora!"
+      name="robots"
+      content={noindex
+        ? 'noindex, nofollow'
+        : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'}
     />
-    <meta
-      name="keywords"
-      content="JSConf, JavaScript, España, Conferencias, Programación, La Nave Madrid"
-    />
-    <meta name="robots" content="index, follow" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="canonical" href="https://jsconf.es" />
+    <link rel="alternate" hreflang="es" href="https://jsconf.es" />
+    <link rel="canonical" href={pageUrl} />
 
     <!-- OG Meta Tags -->
-    <meta property="og:image" content="https://jsconf.es/og.jpg" />
+    <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:title" content="JSConf España 2025" />
-    <meta
-      property="og:description"
-      content="Conferencia de Programación de JavaScript en España en La Nave de Madrid"
-    />
-    <meta property="og:url" content="https://jsconf.es" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={pageUrl} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@midudev" />
     <meta name="twitter:creator" content="@midudev" />
-    <meta name="twitter:title" content="JSConf España 2025" />
-    <meta
-      name="twitter:description"
-      content="Conferencia de Programación de JavaScript en España en La Nave de Madrid"
-    />
-    <meta name="twitter:image" content="https://jsconf.es/og.jpg" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
 
     <!-- Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Event",
-        "name": "JSConf España 2025",
-        "startDate": "2025-06-12",
-        "endDate": "2025-06-14",
+        "name": "JSConf España 2026",
+        "startDate": "2026-03-14",
+        "endDate": "2026-03-14",
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
         "eventStatus": "https://schema.org/EventScheduled",
         "location": {
@@ -77,7 +80,27 @@ const { title } = Astro.props
           }
         },
         "image": "https://jsconf.es/og.jpg",
-        "description": "Conferencia de Programación de JavaScript en España en La Nave de Madrid",
+        "description": "Conferencia de JavaScript en Madrid (España) con charlas, workshops y comunidad.",
+        "keywords": [
+          "JSConf España",
+          "conferencia JavaScript",
+          "JavaScript Madrid",
+          "frontend",
+          "Node.js",
+          "TypeScript",
+          "React",
+          "Vue",
+          "Angular",
+          "rendimiento web",
+          "testing",
+          "talleres JavaScript",
+          "charlas JavaScript",
+          "comunidad JS",
+          "desarrolladores",
+          "La Nave Madrid",
+          "speakers JavaScript",
+          "sponsors tecnología"
+        ],
         "organizer": {
           "@type": "Organization",
           "name": "JSConf España",

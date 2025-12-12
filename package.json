@@ -11,8 +11,9 @@
     "format": "prettier -w --cache --plugin prettier-plugin-astro ."
   },
   "dependencies": {
+    "@astrojs/sitemap": "3.6.0",
     "@astrojs/vercel": "9.0.2",
-    "@tailwindcss/vite": "^4.1.17",
+    "@tailwindcss/vite": "4.1.17",
     "astro": "5.16.4",
     "tailwindcss": "4.1.17"
   },

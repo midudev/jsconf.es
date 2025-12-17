@@ -1,0 +1,49 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Container from '@/components/Container.astro'
+import CrossContainerTitle from '@/components/CrossContainerTitle.astro'
+---
+
+<Layout
+  title="¡Gracias por tu compra!"
+  description="Gracias por comprar tus entradas para la JSConf España 2026."
+  noindex={true}
+>
+  <main class="flex-1 flex flex-col justify-center min-h-[calc(100vh-200px)]">
+    <Container class="items-center text-center">
+      <h1
+        class="font-clash text-white lg:text-7xl sm:text-5xl text-3xl text-center leading-tight mb-8"
+      >
+        ¡Gracias por <CrossContainerTitle>comprar</CrossContainerTitle> tus entradas!
+      </h1>
+
+      <div class="space-y-6 max-w-2xl mx-auto text-xl text-neutral-300">
+        <p>
+          Estamos emocionados de que formes parte de la comunidad.
+          <br />
+          <span class="text-javascript font-bold">¡Nos vemos en la JSConf 2026!</span>
+        </p>
+
+        <p class="text-lg text-white/80">
+          Nos ayuda muchísimo si compartes que vienes con tus amigos y colegas:
+        </p>
+
+        <div class="pt-4 flex justify-center gap-4">
+          <a
+            href="https://twitter.com/intent/tweet?text=%C2%A1Ya%20tengo%20mi%20entrada%20para%20la%20%40JSConfES!%20%F0%9F%8E%89%20%0A%0ANos%20vemos%20el%2014%20de%20marzo%20en%20Madrid.%20%F0%9F%87%EA%F0%9F%87%B8%20%0A%0A%23JSConfES%20%23JavaScript&url=https%3A%2F%2Fjsconf.es"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-white text-black font-medium px-6 py-3 rounded-full hover:bg-javascript hover:text-black transition-colors flex items-center gap-2"
+          >
+            <svg class="size-5" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+              ></path>
+            </svg>
+            Compartir en X
+          </a>
+        </div>
+      </div>
+    </Container>
+  </main>
+</Layout>

@@ -1,5 +1,6 @@
 ---
 import Container from '@/components/Container.astro'
+import InfoJobs from '@/icons/InfojobsLogo.svg'
 ---
 
 <section id="sponsors" class="bg-white text-black flex flex-col font-clash scroll-mt-28">
@@ -9,10 +10,27 @@ import Container from '@/components/Container.astro'
     >
       <div class="flex-1">
         <p class="text-gray-500 uppercase">Sponsors</p>
-        <h3 class="text-5xl xs:text-6xl font-medium text-balance">
-          Estamos buscando Sponsors para la edición de 2026
-        </h3>
+        <h3 class="text-5xl xs:text-6xl font-medium text-balance">Patrocinadores</h3>
       </div>
+    </div>
+
+    <div class="flex flex-col items-center justify-center mb-20 gap-8">
+      <p class="text-2xl text-gray-500 uppercase tracking-widest">Sponsor Principal</p>
+      <a
+        href="https://infojobs.net"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:scale-105 transition-transform duration-300"
+        title="Ir a InfoJobs"
+      >
+        <InfoJobs class="w-full max-w-[400px] h-auto text-[#00A550]" />
+      </a>
+    </div>
+
+    <div class="mb-12">
+      <h3 class="text-3xl md:text-4xl text-center text-balance mb-8 text-neutral-600">
+        ¡Y muchos más por confirmar!
+      </h3>
     </div>
 
     <a

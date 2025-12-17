@@ -3,69 +3,30 @@ import Container from '@/components/Container.astro'
 import CrossContainerTitle from '@/components/CrossContainerTitle.astro'
 import Card from '@/components/SpeakerCard.astro'
 import VercelLogo from '@/icons/VercelLogo.svg'
-import LottieLogo from '@/icons/LottieLogo.svg'
+import StripeLogo from '@/icons/StripeLogo.svg'
 import VueLogo from '@/icons/VueLogo.svg'
+import MicrosoftLogo from '@/icons/MicrosoftLogo.svg'
 
 const speakers = [
   {
     name: 'Carmen Ansio',
     role: 'Designer Engineer',
-    company: 'LottieFiles',
+    company: 'Stripe',
     description:
       'La maga del CSS, la que lleva las animaciones al próximo nivel. Verás lo que sabe de JavaScript.',
     imageUrl: '/img/carmen-ansio.webp',
-    companyLogo: LottieLogo,
+    companyLogo: StripeLogo,
     social: 'https://www.carmenansio.dev/',
   },
   {
-    name: 'Javier Velasco',
-    role: 'Tech Lead',
-    company: 'Vercel',
+    name: 'Gisela Torres',
+    role: 'Sr. Global Blackbelt',
+    company: 'Microsoft',
     description:
-      'El 7º programador de Vercel. Muchas cosas buenas de Next.js son por su mano y gracia.',
-    imageUrl: '/img/javier-velasco.webp',
-    companyLogo: VercelLogo,
-    social: 'https://javivelasco.com/',
-  },
-  {
-    name: 'Fernando Herrera',
-    role: 'Profesor en Línea',
-    company: 'DevTalles',
-    description:
-      'El Profesor en línea de Programación Web más visto. Seguro viste un curso suyo alguna vez.',
-    imageUrl: '/img/fernando-herrera.webp',
-    companyLogo: '/img/devtalles-logo.webp',
-    social: 'https://fernando-herrera.com/',
-  },
-  {
-    name: 'Eduardo San Martín',
-    role: 'Core Contributor',
-    company: 'Vue.js',
-    description:
-      'Creador de Vue Router, Pinia y Vue Fire. ¿Y qué más? Contribuye al core de Vue.js',
-    imageUrl: '/img/eduardo-vue.webp',
-    companyLogo: VueLogo,
-    social: 'https://x.com/posva',
-  },
-  {
-    name: 'Ilda Neta',
-    role: 'Mobile Software Eng.',
-    company: 'RockTheSport',
-    description:
-      'Ve belleza en cada detalle y convierte el minimalismo en experiencias móviles que gustan.',
-    imageUrl: '/img/ildaneta.webp',
-    companyLogo: '/img/rockthesport.webp',
-    social: 'https://www.ildaneta.dev/',
-  },
-  {
-    name: 'Jaione Arnaez-Telleria',
-    role: 'Desarrolladora Front-End',
-    company: 'IronTec',
-    description:
-      'Maneja datos como nadie y tiene pasión por el universo… ¡y también por JavaScript!',
-    imageUrl: '/img/jaione.webp',
-    companyLogo: '/img/irontec.webp',
-    social: 'https://www.linkedin.com/in/jaione-arnaez-telleria',
+      'Blackbelt en Microsoft y Capitana en Docker. Doma la nube y los contenedores mientras ayuda a los devs a ser más felices.',
+    imageUrl: '/img/gisela-torres.webp',
+    companyLogo: MicrosoftLogo,
+    social: 'https://x.com/0GiS0',
   },
   {
     name: 'Erick Wendel',
@@ -75,42 +36,6 @@ const speakers = [
       'El ninja brasileño de Node.js. Habla tan bien Español como JavaScript, incluso mejor.',
     imageUrl: '/img/erick-wendel.webp',
     social: 'https://x.com/erickwendel_/',
-  },
-  {
-    name: 'Vanessa Medina',
-    role: 'Senior Software Engineer',
-    company: 'IFCO',
-    description:
-      'Le gusta viajar, la tecnología, los videojuegos, la fotografía, la música... y JavaScript',
-    imageUrl: '/img/vanessa.webp',
-    social: 'https://www.linkedin.com/in/vanessams/',
-  },
-  {
-    name: 'Henar Mendiola',
-    role: 'Senior Software Engineer',
-    company: 'OpenBank',
-    description:
-      'De estudiar sistemas moleculares caóticos a trabajar con JS. 8 años convirtiendo el caos en su aliado.',
-    imageUrl: '/img/henar.webp',
-    social: 'https://www.linkedin.com/in/vanessams/',
-  },
-  {
-    name: 'Fernando Rodriguez',
-    role: 'CEO y Fundador',
-    company: 'KeepCoding',
-    description:
-      ' Con más de 20 años de experiencia en programación, formador experto en desarrollo iOS y otros lenguajes y herramientas.',
-    imageUrl: '/img/fernando-rodriguez.webp',
-    social: 'https://www.linkedin.com/in/frr149/',
-  },
-  {
-    name: 'Giulia Girardi',
-    role: 'Software Developer',
-    company: 'Datamaran',
-    description:
-      'Con energía a tope, pasión por cambiar el mundo de las startups y lista para resolver retos',
-    imageUrl: '/img/giulia.webp',
-    social: 'https://www.linkedin.com/in/giuliagirardi',
   },
 ]
 ---
@@ -124,22 +49,12 @@ const speakers = [
         la comunidad hispana!
       </h2>
     </div>
-      <div class="flex flex-col items-center justify-center pt-24 pb-12 w-full col-span-full">
+    <!-- <div class="flex flex-col items-center justify-center pt-24 pb-12 w-full col-span-full">
         <p class="text-3xl text-white/50 font-clash">Próximamente</p>
         <p class="text-xl text-white/30 mt-4">Estamos seleccionando a los mejores speakers para ti.</p>
-      </div>
-      <!-- {
-        speakers.map((speaker, index) => (
-          <Card
-            {...speaker}
-            companyLogo={speaker.companyLogo}
-            marginTop={{
-              xl: `${(index % 4) * 20}px`,
-              lg: `${(index % 3) * 20}px`,
-            }}
-          />
-        ))
-      } -->
+      </div> -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pt-10">
+      {speakers.map((speaker) => <Card {...speaker} companyLogo={speaker.companyLogo} />)}
     </div>
   </Container>
 </section>

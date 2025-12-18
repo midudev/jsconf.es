@@ -1,8 +1,8 @@
-# JSConf España 2025 - Sitio Web Oficial
+# JSConf España 2026 - Sitio Web Oficial
 
 ![CleanShot 2024-12-06 at 11 08 41@2x](https://github.com/user-attachments/assets/04fac705-fc4b-40ba-9d6f-133bcefcb8d7)
 
-Este es el repositorio oficial del sitio web de JSConf España 2025, la conferencia internacional de JavaScript más importante de España que se celebrará el 1 de Marzo de 2025 en La Nave, Madrid.
+Este es el repositorio oficial del sitio web de JSConf España 2026, la conferencia internacional de JavaScript más importante de España que se celebrará el 14 de Marzo de 2026 en La Nave, Madrid.
 
 [🖼️ Diseño en Figma](https://www.figma.com/design/cLUljIwWWJil5ESwyWJrbH/JSConf-%7C-2025?node-id=0-1&node-type=canvas&t=aMr2371pM1bFreOo-0)
 

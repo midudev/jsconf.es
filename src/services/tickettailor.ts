@@ -1,5 +1,6 @@
+const API_KEY = import.meta.env.TICKET_TAILOR_API_KEY
+
 export const getAvailableTickets = async () => {
-  const API_KEY = import.meta.env.TICKET_TAILOR_API_KEY
   if (!API_KEY) return null
 
   const auth = btoa(`${API_KEY}:`)

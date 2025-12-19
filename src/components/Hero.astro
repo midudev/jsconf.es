@@ -6,6 +6,7 @@ import UnderlineWord from '@/components/UnderlineWord.astro'
 import CodeBrace from '@/icons/CodeBrace.svg'
 import { Image } from 'astro:assets'
 import HeroBackground from '@/components/HeroBackground.astro'
+import Button from '@/components/Button.astro'
 ---
 
 <div
@@ -19,18 +20,18 @@ import HeroBackground from '@/components/HeroBackground.astro'
       14 de marzo del 2026
     </p>
     <h1
-      class="animate-on-scroll text-6xl md:text-[10rem] leading-none font-clash font-[550] bg-gradient-to-b from-white via-white to-white/50 inline-block text-transparent bg-clip-text"
+      class="animate-on-scroll text-6xl md:text-[7rem] leading-none font-clash font-[550] bg-gradient-to-b from-white via-white to-white/50 inline-block text-transparent bg-clip-text"
     >
-      JSConf<br />España 2026
+      JSConf España 2026
     </h1>
 
     <div
-      class="flex items-center justify-center gap-3 animate-on-scroll mt-2 mb-6 opacity-90 hover:opacity-100 transition-opacity duration-300"
+      class="flex items-center justify-center gap-4 animate-on-scroll mt-2 mb-6 opacity-90 hover:opacity-100 transition-all duration-300 border border-white/10 bg-white/5 backdrop-blur-sm px-6 py-2 rounded-full hover:border-white/20 hover:bg-white/10"
     >
-      <span class="text-white/80 text-xs md:text-sm font-medium tracking-[0.2em] uppercase pt-0.5">
+      <span class="text-white/60 text-xs md:text-sm font-medium tracking-[0.2em] uppercase pt-0.5">
         Powered by
       </span>
-      <InfoJobsLogo class="h-9 md:h-12 w-auto invert" />
+      <InfoJobsLogo class="h-6 md:h-8 w-auto text-[#0b4dd0] -mb-0.5" />
     </div>
     <div
       class="text-[clamp(1.5rem,4vw,2.5rem)] leading-[120%] font-light space-y-4 max-w-4xl mx-auto text-white/80 text-balance"
@@ -41,15 +42,25 @@ import HeroBackground from '@/components/HeroBackground.astro'
       </p>
     </div>
 
-    <div class="mt-12 flex flex-col items-center gap-4 animate-on-scroll">
+    <div class="mt-12 flex flex-col sm:flex-row items-center gap-4 animate-on-scroll">
       <div
         class="inline-flex items-center justify-center gap-2.5 bg-white/5 border border-white/10 px-6 py-3 rounded-full font-clash backdrop-blur-sm"
       >
         <span class="animate-pulse">🎟️</span>
         <p class="text-white text-lg">
-          Entradas disponibles <span class="text-javascript font-bold">próximamente</span>
+          Entradas disponibles <span class="text-javascript font-semibold">próximamente</span>
         </p>
       </div>
+
+      <Button
+        href="https://forms.gle/wXRn7M6gAHEFkFe38"
+        target="_blank"
+        rel="noopener noreferrer"
+        style="yellow"
+        class="rounded-full"
+      >
+        Envía tu charla (CFP abierto)
+      </Button>
     </div>
 
     <div class="max-sm:hidden flex flex-col items-center justify-center mt-24 space-y-2 opacity-60">

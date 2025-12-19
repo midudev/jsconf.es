@@ -10,7 +10,7 @@ import ArrowUp from '@/icons/ArrowUp.svg'
 ---
 
 <Container class="xl:py-12 xl:pb-40">
-  <section class="bg-javascript-radial text-black flex flex-col">
+  <section class="text-white flex flex-col bg-[#0b4dd0]">
     <div class="py-6 px-6">
       <div class="flex flex-col xl:flex-row gap-6 xl:gap-6">
         <div class="flex flex-col flex-1 gap-4 xl:px-[18px] font-clash pt-6">
@@ -19,18 +19,18 @@ import ArrowUp from '@/icons/ArrowUp.svg'
           >
             Únete al Pre-Evento en Barcelona
           </h3>
-          <p class="text-lg xl:text-2xl font-medium">
+          <p class="text-lg xl:text-2xl font-medium text-white/90">
             ¡Porque la JSConf no empieza en marzo, empieza antes!
           </p>
-          <p class="text-base xl:text-xl">
+          <p class="text-base xl:text-xl text-white/80">
             Te invitamos a un Pre-Evento exclusivo en Barcelona, donde podrás disfrutar de charlas
-            inspiradoras, sorteos y un adelanto de lo que te espera en la JSConf España 2025.
+            inspiradoras, sorteos y un adelanto de lo que te espera en la JSConf España 2026.
           </p>
 
           <div class="bg-black w-full lg:text-lg text-base text-white gap-6 flex flex-col p-6">
             <p>
               <Agenda class="w-6 h-6 inline-block mr-2" />
-              31 de enero
+              13 de febrero
             </p>
             <p class="xl:text-lg">
               <PointerMap class="w-6 h-6 inline-block mr-2" />
@@ -40,15 +40,8 @@ import ArrowUp from '@/icons/ArrowUp.svg'
               <Ticket class="w-6 h-6 inline-block mr-2" />
               ¡Es gratis!
             </p>
-            <Button
-              disabled
-              href="#"
-              style="white"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-white"
-            >
-              <span>¡Entradas agotadas!</span>
+            <Button disabled href="#" style="transparent" target="_blank" rel="noopener noreferrer">
+              <span>Apúntate próximamente</span>
               <ArrowUp slot="icon-right" class="size-6" />
             </Button>
           </div>
@@ -64,9 +57,11 @@ import ArrowUp from '@/icons/ArrowUp.svg'
         </div>
       </div>
       <div class="w-full justify-center flex xl:justify-start pt-4 xl:px-4 xl:pt-6">
-        <p class="text-sm sm:text-base font-medium text-center">
+        <p
+          class="text-sm sm:text-base font-medium text-center text-white/90 flex items-center gap-2"
+        >
           <InfojobsLogo class="inline-block" />
-          ¡Patrocinador oficial del Pre-Evento!
+          <span>¡Patrocinador oficial del Pre-Evento!</span>
         </p>
       </div>
     </div>

@@ -6,6 +6,7 @@ import VercelLogo from '@/icons/VercelLogo.svg'
 import StripeLogo from '@/icons/StripeLogo.svg'
 import VueLogo from '@/icons/VueLogo.svg'
 import MicrosoftLogo from '@/icons/MicrosoftLogo.svg'
+import Button from '@/components/Button.astro'
 
 const speakers = [
   {
@@ -37,6 +38,15 @@ const speakers = [
     imageUrl: '/img/erick-wendel.webp',
     social: 'https://x.com/erickwendel_/',
   },
+  {
+    name: '¿Eres tú?',
+    role: 'Ponente',
+    company: 'Envía tu propuesta',
+    description:
+      '¡Estamos buscando a los mejores ponentes para la JSConf España 2026! ¿Tienes algo interesante que contar? ¡Te esperamos!',
+    imageUrl: '/img/jsconf.png',
+    social: 'https://forms.gle/wXRn7M6gAHEFkFe38',
+  },
 ]
 ---
 
@@ -55,6 +65,18 @@ const speakers = [
       </div> -->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pt-10">
       {speakers.map((speaker) => <Card {...speaker} companyLogo={speaker.companyLogo} />)}
+    </div>
+
+    <div class="flex justify-center mt-12">
+      <Button
+        href="https://forms.gle/wXRn7M6gAHEFkFe38"
+        target="_blank"
+        rel="noopener noreferrer"
+        style="yellow"
+        class="rounded-full text-lg px-8 py-4"
+      >
+        Envía tu charla (CFP abierto)
+      </Button>
     </div>
   </Container>
 </section>

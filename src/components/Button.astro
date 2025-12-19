@@ -3,7 +3,7 @@ const { href, style, class: className, disabled, ...restOfProps } = Astro.props
 const Component = href ? 'a' : 'button'
 
 const STYLES: Record<string, string> = {
-  white: 'text-black hover:bg-black hover:text-white',
+  white: 'text-black bg-white border-white hover:bg-black hover:text-white',
   black: 'text-white bg-black border-black hover:bg-white hover:border-black hover:text-black',
   yellow: 'text-black bg-javascript border-javascript hover:bg-white hover:border-black',
   transparent: 'text-white bg-transparent border-white hover:bg-white hover:text-black',

@@ -1,0 +1,52 @@
+export const getAvailableTickets = async () => {
+  const API_KEY = import.meta.env.TICKET_TAILOR_API_KEY
+  if (!API_KEY) return null
+
+  const auth = btoa(`${API_KEY}:`)
+
+  try {
+    const response = await fetch('https://api.tickettailor.com/v1/events', {
+      headers: {
+        Authorization: `Basic ${auth}`,
+        Accept: 'application/json',
+      },
+    })
+
+    if (!response.ok) return null
+
+    const { data: events } = await response.json()
+    if (!events || events.length === 0) return null
+
+    // Buscamos el evento de la JSConf 2026 o el primero que esté publicado
+    const event = events.find((e: any) => e.name.includes('2026')) || events[0]
+
+    // Obtenemos los detalles para tener los ticket_types con su disponibilidad
+    const eventDetailRes = await fetch(`https://api.tickettailor.com/v1/events/${event.id}`, {
+      headers: {
+        Authorization: `Basic ${auth}`,
+        Accept: 'application/json',
+      },
+    })
+
+    if (!eventDetailRes.ok) return null
+
+    const eventDetail = await eventDetailRes.json()
+    let available = 0
+
+    const ticketTypes = eventDetail.ticket_types || []
+
+    ticketTypes.forEach((tt: any) => {
+      // Calculamos las entradas disponibles: Total - (Emitidas + En espera + En cestas)
+      const remaining =
+        tt.quantity_total - (tt.quantity_issued + tt.quantity_held + tt.quantity_in_baskets)
+      if (remaining > 0) {
+        available += remaining
+      }
+    })
+
+    return available
+  } catch (error) {
+    console.error('Error fetching Ticket Tailor tickets:', error)
+    return null
+  }
+}

@@ -7,6 +7,11 @@ import CodeBrace from '@/icons/CodeBrace.svg'
 import { Image } from 'astro:assets'
 import HeroBackground from '@/components/HeroBackground.astro'
 import Button from '@/components/Button.astro'
+import { getAvailableTickets } from '@/services/tickettailor'
+import TicketIcon from '@/icons/Ticket.svg'
+
+const availableTickets = await getAvailableTickets()
+const hasTickets = availableTickets !== null && availableTickets > 0
 ---
 
 <div
@@ -47,27 +52,50 @@ import Button from '@/components/Button.astro'
     </div>
 
     <div
-      class="mt-12 flex flex-col sm:flex-row items-center gap-4 animate-on-scroll"
+      class="mt-12 flex flex-col items-center gap-4 animate-on-scroll"
       style="transition-delay: 500ms;"
     >
-      <div
-        class="inline-flex items-center justify-center gap-2.5 bg-white/5 border border-white/10 px-6 py-3 rounded-full font-clash backdrop-blur-sm"
-      >
-        <span class="animate-pulse">🎟️</span>
-        <p class="text-white text-lg">
-          Entradas disponibles <span class="text-javascript font-semibold">próximamente</span>
-        </p>
-      </div>
+      {
+        hasTickets && (
+          <p class="text-white/80 text-lg font-clash flex items-center gap-2">
+            <span class="animate-pulse">🎟️</span>
+            ¡Quedan <span class="text-javascript font-bold">{availableTickets}</span> entradas!
+          </p>
+        )
+      }
 
-      <Button
-        href="https://forms.gle/wXRn7M6gAHEFkFe38"
-        target="_blank"
-        rel="noopener noreferrer"
-        style="yellow"
-        class="rounded-full"
-      >
-        Envía tu charla (CFP abierto)
-      </Button>
+      <div class="flex flex-col sm:flex-row items-center gap-4">
+        {
+          !hasTickets ? (
+            <div class="inline-flex items-center justify-center gap-2.5 bg-white/5 border border-white/10 px-6 py-3 rounded-full font-clash backdrop-blur-sm">
+              <span class="animate-pulse">🎟️</span>
+              <p class="text-white text-lg">
+                Entradas disponibles <span class="text-javascript font-semibold">próximamente</span>
+              </p>
+            </div>
+          ) : (
+            <Button
+              href="https://jsconf.es/tickets"
+              style="transparent"
+              class="rounded-full opacity-70"
+              disabled
+            >
+              <TicketIcon slot="icon-left" class="size-5" />
+              Comprar entradas (próximamente)
+            </Button>
+          )
+        }
+
+        <Button
+          href="https://forms.gle/wXRn7M6gAHEFkFe38"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="yellow"
+          class="rounded-full"
+        >
+          Envía tu charla (CFP abierto)
+        </Button>
+      </div>
     </div>
 
     <div

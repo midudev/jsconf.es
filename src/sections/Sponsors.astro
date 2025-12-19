@@ -1,40 +1,84 @@
 ---
 import Container from '@/components/Container.astro'
 import InfoJobs from '@/icons/InfojobsLogo.svg'
+import LemonCode from '@/icons/LemonCode.svg'
 ---
 
 <section id="sponsors" class="bg-white text-black flex flex-col font-clash scroll-mt-28">
   <Container>
     <div
-      class="animate-on-scroll flex items-center justify-between gap-12 mb-12 flex-col md:flex-row px-section"
+      class="animate-on-scroll flex items-center justify-between gap-12 mb-20 flex-col md:flex-row px-section"
     >
       <div class="flex-1">
-        <p class="text-gray-500 uppercase">Sponsors</p>
-        <h3 class="text-5xl xs:text-6xl font-medium text-balance">Patrocinadores</h3>
+        <p class="text-gray-500 uppercase tracking-widest text-sm font-semibold">Sponsors</p>
+        <h3 class="text-5xl xs:text-7xl font-medium text-balance">Patrocinadores</h3>
       </div>
     </div>
 
-    <div class="flex flex-col items-center justify-center mb-20 gap-8">
-      <p class="text-2xl md:text-4xl text-gray-500 uppercase tracking-widest">Sponsor Principal</p>
+    <!-- Tier: Sponsor Principal -->
+    <div class="flex flex-col items-center justify-center mb-40 gap-12 animate-on-scroll">
+      <p class="text-2xl md:text-3xl text-neutral-400 uppercase tracking-[0.4em] font-medium">
+        Sponsor Principal
+      </p>
       <a
         href="https://infojobs.net"
         target="_blank"
         rel="noopener noreferrer"
-        class="hover:scale-105 transition-transform duration-300"
+        class="hover:scale-105 transition-transform duration-300 px-4"
         title="Ir a InfoJobs"
       >
-        <InfoJobs class="w-full max-w-[1000px] h-auto text-[#0b4dd0]" />
+        <InfoJobs class="w-full max-w-[900px] h-auto text-[#0b4dd0]" />
       </a>
     </div>
 
-    <div class="mb-12">
-      <h3 class="text-3xl md:text-4xl text-center text-balance mb-8 text-neutral-600">
+    <div class="grid gap-40 mb-32">
+      <!-- Tier: Premium -->
+      <div class="flex flex-col items-center gap-12 animate-on-scroll">
+        <h4 class="text-xl md:text-2xl text-neutral-400 uppercase tracking-[0.4em] font-medium">
+          Premium
+        </h4>
+        <div class="flex flex-wrap justify-center gap-16 px-4">
+          <a
+            href="https://lemoncode.net"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:scale-110 transition-all duration-300"
+            title="Ir a LemonCode"
+          >
+            <LemonCode
+              class="h-20 md:h-28 w-auto grayscale hover:grayscale-0 transition-all opacity-80 hover:opacity-100"
+            />
+          </a>
+        </div>
+      </div>
+
+      <!-- Tier: Max -->
+      <div class="flex flex-col items-center gap-10 animate-on-scroll">
+        <h4 class="text-lg md:text-xl text-neutral-400 uppercase tracking-[0.4em] font-medium">
+          Max
+        </h4>
+        <p class="text-neutral-400 italic font-light text-xl">Próximamente...</p>
+      </div>
+
+      <!-- Tier: Pro -->
+      <div class="flex flex-col items-center gap-10 animate-on-scroll">
+        <h4 class="text-base md:text-lg text-neutral-400 uppercase tracking-[0.4em] font-medium">
+          Pro
+        </h4>
+        <p class="text-neutral-400 italic font-light text-lg">Próximamente...</p>
+      </div>
+    </div>
+
+    <div class="mb-24 animate-on-scroll">
+      <h3
+        class="text-3xl md:text-4xl text-center text-balance mb-8 text-neutral-500 font-light italic"
+      >
         ¡Y muchos más por confirmar!
       </h3>
     </div>
 
     <a
-      class="animate-on-scroll group bg-black border border-black hover:bg-white transition py-12 px-12 mb-12 flex items-center justify-center flex-col w-full gap-6 lg:gap-12"
+      class="animate-on-scroll group bg-black border border-black hover:bg-white transition py-16 px-12 mb-12 flex items-center justify-center flex-col w-full gap-6 lg:gap-12 rounded-3xl"
       href="mailto:hi@midu.dev"
     >
       <div class="text-center">
@@ -43,7 +87,7 @@ import InfoJobs from '@/icons/InfojobsLogo.svg'
         >
           ¿Quieres patrocinar el evento?
         </p>
-        <p class="text-javascript text-4xl md:text-6xl text-balance">hi@midu.dev</p>
+        <p class="text-javascript text-4xl md:text-6xl text-balance font-bold">hi@midu.dev</p>
       </div>
     </a>
   </Container>

@@ -9,61 +9,69 @@ import Button from '@/components/Button.astro'
 import ArrowUp from '@/icons/ArrowUp.svg'
 ---
 
-<Container class="xl:py-12 xl:pb-40">
-  <section class="text-white flex flex-col bg-[#0b4dd0]">
-    <div class="py-6 px-6">
-      <div class="flex flex-col xl:flex-row gap-6 xl:gap-6">
-        <div class="flex flex-col flex-1 gap-4 xl:px-[18px] font-clash pt-6">
-          <h3
-            class="text-4xl sm:text-5xl 2xl:text-6xl font-medium text-pretty sm:max-w-[480px] 2xl:max-w-[600px]"
-          >
-            Únete al Pre-Evento en Barcelona
-          </h3>
-          <p class="text-lg xl:text-2xl font-medium text-white/90">
-            ¡Porque la JSConf no empieza en marzo, empieza antes!
-          </p>
-          <p class="text-base xl:text-xl text-white/80">
-            Te invitamos a un Pre-Evento exclusivo en Barcelona, donde podrás disfrutar de charlas
-            inspiradoras, sorteos y un adelanto de lo que te espera en la JSConf España 2026.
-          </p>
+<section class="bg-[#0b4dd0]">
+  <Container class="xl:py-12 xl:pb-40">
+    <section class="text-white flex flex-col">
+      <div class="py-6 px-6">
+        <div class="flex flex-col xl:flex-row gap-6 xl:gap-6">
+          <div class="flex flex-col flex-1 gap-4 xl:px-[18px] font-clash pt-6">
+            <h3
+              class="text-4xl sm:text-5xl 2xl:text-6xl font-medium text-pretty sm:max-w-[480px] 2xl:max-w-[600px]"
+            >
+              Únete al Pre-Evento en Barcelona
+            </h3>
+            <p class="text-lg xl:text-2xl font-medium text-white/90">
+              ¡Porque la JSConf no empieza en marzo, empieza antes!
+            </p>
+            <p class="text-base xl:text-xl text-white/80">
+              Te invitamos a un Pre-Evento exclusivo en Barcelona, donde podrás disfrutar de charlas
+              inspiradoras, sorteos y un adelanto de lo que te espera en la JSConf España 2026.
+            </p>
 
-          <div class="bg-black w-full lg:text-lg text-base text-white gap-6 flex flex-col p-6">
-            <p>
-              <Agenda class="w-6 h-6 inline-block mr-2" />
-              13 de febrero
-            </p>
-            <p class="xl:text-lg">
-              <PointerMap class="w-6 h-6 inline-block mr-2" />
-              Oficinas de InfoJobs, Barcelona.
-            </p>
-            <p class="xl:text-base 2xl:text-lg flex items-center">
-              <Ticket class="w-6 h-6 inline-block mr-2" />
-              ¡Es gratis!
-            </p>
-            <Button disabled href="#" style="transparent" target="_blank" rel="noopener noreferrer">
-              <span>Apúntate próximamente</span>
-              <ArrowUp slot="icon-right" class="size-6" />
-            </Button>
+            <div class="bg-black w-full lg:text-lg text-base text-white gap-6 flex flex-col p-6">
+              <p>
+                <Agenda class="w-6 h-6 inline-block mr-2" />
+                13 de febrero
+              </p>
+              <p class="xl:text-lg">
+                <PointerMap class="w-6 h-6 inline-block mr-2" />
+                Oficinas de InfoJobs, Barcelona.
+              </p>
+              <p class="xl:text-base 2xl:text-lg flex items-center">
+                <Ticket class="w-6 h-6 inline-block mr-2" />
+                ¡Es gratis!
+              </p>
+              <Button
+                disabled
+                href="#"
+                style="transparent"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Apúntate próximamente</span>
+                <ArrowUp slot="icon-right" class="size-6" />
+              </Button>
+            </div>
+          </div>
+          <div class="w-full xl:w-[43%] flex items-end justify-end">
+            <Image
+              width={512}
+              height={484}
+              src="/preevent.webp"
+              alt="Foto de un Speaker del evento dando una charla en un escenario"
+              class="w-full object-cover xl:max-w-lg h-full"
+            />
           </div>
         </div>
-        <div class="w-full xl:w-[43%] flex items-end justify-end">
-          <Image
-            width={512}
-            height={484}
-            src="/preevent.webp"
-            alt="Foto de un Speaker del evento dando una charla en un escenario"
-            class="w-full object-cover xl:max-w-lg h-full"
-          />
+        <div class="w-full justify-center flex xl:justify-start pt-4 xl:px-4 xl:pt-6">
+          <p
+            class="text-sm sm:text-base font-medium text-center text-white/90 flex items-center gap-2"
+          >
+            <InfojobsLogo class="inline-block h-8 text-white" />
+            <span>¡Patrocinador oficial del Evento!</span>
+          </p>
         </div>
       </div>
-      <div class="w-full justify-center flex xl:justify-start pt-4 xl:px-4 xl:pt-6">
-        <p
-          class="text-sm sm:text-base font-medium text-center text-white/90 flex items-center gap-2"
-        >
-          <InfojobsLogo class="inline-block" />
-          <span>¡Patrocinador oficial del Pre-Evento!</span>
-        </p>
-      </div>
-    </div>
-  </section>
-</Container>
+    </section>
+  </Container>
+</section>

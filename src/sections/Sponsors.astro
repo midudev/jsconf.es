@@ -1,12 +1,22 @@
 ---
 import Container from '@/components/Container.astro'
 import InfoJobs from '@/icons/InfojobsLogo.svg'
+import sponsors from '@/data/sponsors.json'
+import SponsorPro from '@/icons/SponsorPro.svg'
+import SponsorMax from '@/icons/SponsorMax.svg'
+import SponsorPlatinum from '@/icons/SponsorPlatinum.svg'
+
+const CATEGORY_ICONS: Record<string, any> = {
+  pro: SponsorPro,
+  max: SponsorMax,
+  platinum: SponsorPlatinum,
+}
 ---
 
 <section id="sponsors" class="bg-white text-black flex flex-col font-clash scroll-mt-28">
   <Container>
     <div
-      class="animate-on-scroll flex items-center justify-between gap-12 mb-12 flex-col md:flex-row px-section"
+      class="animate-on-scroll flex items-center justify-between gap-12 mb-12 flex-col md:flex-row px-section pt-12 md:pt-24"
     >
       <div class="flex-1">
         <p class="text-gray-500 uppercase">Sponsors</p>
@@ -14,21 +24,67 @@ import InfoJobs from '@/icons/InfojobsLogo.svg'
       </div>
     </div>
 
-    <div class="flex flex-col items-center justify-center mb-20 gap-8">
-      <p class="text-2xl text-gray-500 uppercase tracking-widest">Sponsor Principal</p>
-      <a
-        href="https://infojobs.net"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="hover:scale-105 transition-transform duration-300"
-        title="Ir a InfoJobs"
-      >
-        <InfoJobs class="w-full max-w-[600px] h-auto text-[#0b4dd0]" />
-      </a>
+    <div class="space-y-24 mb-24">
+      <div class="flex flex-col items-center justify-center gap-12 px-4">
+        <p class="text-2xl md:text-3xl text-gray-500 uppercase tracking-widest text-center">
+          Sponsor Principal
+        </p>
+        <a
+          href="https://infojobs.net"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:scale-105 transition-transform duration-300"
+          title="Ir a InfoJobs"
+        >
+          <InfoJobs class="w-full max-w-[500px] h-auto text-[#0b4dd0]" />
+        </a>
+      </div>
+
+      {
+        sponsors.map((category) => {
+          const Icon = CATEGORY_ICONS[category.icon]
+          return (
+            <div class="flex flex-col items-center gap-12 px-4">
+              <div class="flex flex-col items-center gap-4">
+                <div class="flex items-center gap-3">
+                  {Icon && <Icon class="size-8" style={{ color: category.color }} />}
+                  <h4 class="text-2xl md:text-3xl text-gray-500 uppercase tracking-widest text-center">
+                    {category.category}
+                  </h4>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-12 md:gap-x-20 md:gap-y-16 max-w-6xl mx-auto">
+                {category.companies.map((company) => (
+                  <a
+                    href={company.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="group relative flex items-center justify-center transition-all duration-300 hover:scale-110"
+                    title={company.name}
+                  >
+                    <img
+                      src={company.image}
+                      alt={company.name}
+                      class:list={[
+                        'object-contain w-auto grayscale transition-all duration-300 group-hover:grayscale-0',
+                        category.icon === 'platinum' ? 'h-16 md:h-24' : '',
+                        category.icon === 'max' ? 'h-12 md:h-16' : '',
+                        category.icon === 'pro' ? 'h-8 md:h-12' : '',
+                      ]}
+                      loading="lazy"
+                    />
+                  </a>
+                ))}
+              </div>
+            </div>
+          )
+        })
+      }
     </div>
 
     <div class="mb-12">
-      <h3 class="text-3xl md:text-4xl text-center text-balance mb-8 text-neutral-600">
+      <h3 class="text-3xl md:text-4xl text-center text-balance mb-8 text-neutral-600 px-4">
         ¡Y muchos más por confirmar!
       </h3>
     </div>

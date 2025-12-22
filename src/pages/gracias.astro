@@ -2,12 +2,20 @@
 import Layout from '@/layouts/Layout.astro'
 import Container from '@/components/Container.astro'
 import CrossContainerTitle from '@/components/CrossContainerTitle.astro'
+import Button from '@/components/Button.astro'
+import XLogo from '@/icons/XLogo.svg'
+
+const TEXT =
+  '¡Ya tengo mi entrada para la @JSConfES! 🎉\n\nNos vemos el 14 de marzo del 2026 en Madrid. 🇪🇸\n\n#JSConfES #JavaScript'
+const URL = 'https://jsconf.es'
+
+const shareUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(TEXT)}&url=${encodeURIComponent(URL)}`
 ---
 
 <Layout
   title="¡Gracias por tu compra!"
   description="Gracias por comprar tus entradas para la JSConf España 2026."
-  noindex={true}
+  noindex
 >
   <main class="flex-1 flex flex-col justify-center min-h-[calc(100vh-200px)]">
     <Container class="items-center text-center">
@@ -29,21 +37,27 @@ import CrossContainerTitle from '@/components/CrossContainerTitle.astro'
         </p>
 
         <div class="pt-4 flex justify-center gap-4">
-          <a
-            href="https://twitter.com/intent/tweet?text=%C2%A1Ya%20tengo%20mi%20entrada%20para%20la%20%40JSConfES!%20%F0%9F%8E%89%20%0A%0ANos%20vemos%20el%2014%20de%20marzo%20en%20Madrid.%20%F0%9F%87%EA%F0%9F%87%B8%20%0A%0A%23JSConfES%20%23JavaScript&url=https%3A%2F%2Fjsconf.es"
+          <Button
+            href={shareUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="bg-white text-black font-medium px-6 py-3 rounded-full hover:bg-javascript hover:text-black transition-colors flex items-center gap-2"
+            style="transparent"
+            class="rounded-full share-button group"
           >
-            <svg class="size-5" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-              ></path>
-            </svg>
+            <XLogo slot="icon-left" class="size-5 group-hover:invert" />
             Compartir en X
-          </a>
+          </Button>
         </div>
       </div>
     </Container>
   </main>
 </Layout>
+
+<script>
+  const shareButton = document.querySelector('.share-button')
+  shareButton?.addEventListener('click', (e) => {
+    e.preventDefault()
+    const href = (e.currentTarget as HTMLAnchorElement).href
+    window.open(href, 'share-x', 'width=600,height=400,resizable=yes,scrollbars=yes')
+  })
+</script>

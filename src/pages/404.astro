@@ -1,0 +1,45 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Container from '@/components/Container.astro'
+import Button from '@/components/Button.astro'
+import JSIcon from '@/icons/JavaScript.svg'
+---
+
+<Layout title="404 - Página no encontrada" noindex>
+  <section class="flex flex-col items-center justify-center min-h-[70vh] text-center pt-24 pb-12">
+    <Container class="items-center">
+      <div class="flex items-center justify-center mb-4">
+        <h1
+          class="text-8xl md:text-[12rem] font-clash font-bold text-white leading-none tracking-tighter flex items-center"
+        >
+          4
+          <div class="relative size-16 md:size-24 ml-2 pl-2">
+            <div class="absolute inset-0 blur-2xl opacity-40 bg-javascript rounded-full"></div>
+            <div class="relative animate-bounce [&>svg]:w-full [&>svg]:h-full">
+              <JSIcon class="rounded-full" />
+            </div>
+          </div>
+          4
+        </h1>
+      </div>
+
+      <h2 class="text-xl md:text-3xl font-clash text-javascript mb-8">
+        ReferenceError: Page is not defined
+      </h2>
+
+      <p class="text-light-gray text-lg md:text-xl max-w-lg mb-12">
+        Lo sentimos, la página que buscas no existe. Parece que se ha quedado perdida en el <span
+          class="text-white font-mono">event loop</span
+        > o ha sido recolectada por el <span class="text-white font-mono">garbage collector</span>.
+      </p>
+
+      <Button href="/" style="yellow"> Volver al inicio </Button>
+    </Container>
+  </section>
+</Layout>
+
+<style>
+  h1 {
+    text-shadow: 0 0 20px rgba(247, 223, 30, 0.2);
+  }
+</style>

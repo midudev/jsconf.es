@@ -1,6 +1,7 @@
 ---
 import Header from '@/sections/Header.astro'
 import Footer from '@/sections/Footer.astro'
+import TicketTailorPopup from '@/components/TicketTailorPopup.astro'
 interface Props {
   title?: string
   description?: string
@@ -108,8 +109,7 @@ const pageUrl = canonical ?? Astro.url.href
         }
       }
     </script>
-    <script src="https://js.tito.io/v2/with/inline/without/widget-css" async></script>
-    <link rel="stylesheet" href="/css/tito-widget.css" />
+    <TicketTailorPopup />
   </head>
   <body class="relative">
     <div

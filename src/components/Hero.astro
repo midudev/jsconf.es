@@ -62,32 +62,16 @@ const hasTickets = availableTickets !== null && availableTickets > 0
       }
 
       <div class="flex flex-col sm:flex-row items-center gap-4">
-        {
-          !hasTickets ? (
-            <div class="inline-flex items-center justify-center gap-2.5 bg-white/5 border border-white/10 px-6 py-3 rounded-full font-clash backdrop-blur-sm">
-              <span class="animate-pulse">🎟️</span>
-              <p class="text-white text-lg">
-                Entradas disponibles <span class="text-javascript font-semibold">próximamente</span>
-              </p>
-            </div>
-          ) : (
-            <Button
-              href="https://jsconf.es/tickets"
-              style="transparent"
-              class="rounded-full opacity-70"
-              disabled
-            >
-              <TicketIcon slot="icon-left" class="size-5" />
-              Comprar entradas (próximamente)
-            </Button>
-          )
-        }
+        <Button style="yellow" class="rounded-full hover:cursor-pointer" id="buy-tickets-hero">
+          <TicketIcon slot="icon-left" class="size-5" />
+          Comprar entradas
+        </Button>
 
         <Button
           href="https://forms.gle/wXRn7M6gAHEFkFe38"
           target="_blank"
+          style="transparent"
           rel="noopener noreferrer"
-          style="yellow"
           class="rounded-full"
         >
           Envía tu charla (CFP abierto)
@@ -124,3 +108,10 @@ const hasTickets = availableTickets !== null && availableTickets > 0
     </div>
   </div>
 </div>
+
+<script>
+  const buyTicketsHero = document.getElementById('buy-tickets-hero')
+  buyTicketsHero?.addEventListener('click', () => {
+    window.dispatchEvent(new CustomEvent('open-ticket-tailor'))
+  })
+</script>

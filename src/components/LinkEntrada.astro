@@ -4,14 +4,16 @@ import Button from '@/components/Button.astro'
 const { style = 'black' } = Astro.props
 ---
 
-<tito-button class="w-full md:w-auto" event="js-conf/js-conf-2025">
-  <Button style={style}>
-    <span> Apuntarme a la lista de espera </span>
-    <Ticket slot="icon-left" />
-  </Button>
-</tito-button>
-<style is:inline>
-  .tito-widget-button {
-    width: 100%;
-  }
-</style>
+<Button style={style} class="buy-tickets-button">
+  <span> Comprar Entradas </span>
+  <Ticket slot="icon-left" />
+</Button>
+
+<script>
+  const buyTicketsButtons = document.querySelectorAll('.buy-tickets-button')
+  buyTicketsButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      window.dispatchEvent(new CustomEvent('open-ticket-tailor'))
+    })
+  })
+</script>

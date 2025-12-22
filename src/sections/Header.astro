@@ -4,6 +4,7 @@ import HamburgerButton from '@/components/HamburgerButton.astro'
 import LogoIcon from '@/icons/Logo.svg'
 import TicketIcon from '@/icons/Ticket.svg'
 import Menu from '@/components/Menu.astro'
+import LinkEntrada from '@/components/LinkEntrada.astro'
 
 import Button from '@/components/Button.astro'
 
@@ -41,9 +42,9 @@ const sections = [
       <Menu />
     </div>
     <div class="flex items-center gap-4">
-      <Button style="yellow" class="opacity-70 max-lg:hidden" disabled>
+      <Button style="yellow" class="max-lg:hidden" id="buy-tickets-header">
         <TicketIcon slot="icon-left" class="size-5" />
-        Entradas próximamente
+        Comprar Entradas
       </Button>
     </div>
     <HamburgerButton class:list="block lg:hidden" id="menuButton" />
@@ -69,7 +70,7 @@ const sections = [
             </>
           ))
         }
-        <!-- <LinkEntrada style="yellow" /> -->
+        <LinkEntrada style="yellow" />
       </nav>
     </div>
   </div>
@@ -157,6 +158,11 @@ const sections = [
     innerMenuButton?.addEventListener('click', () => {
       menuButton?.classList.toggle('hidden')
       toggleMenu(nav, menuMobileContext, innerMenuButton)
+    })
+
+    const buyTicketsHeader = document.getElementById('buy-tickets-header')
+    buyTicketsHeader?.addEventListener('click', () => {
+      window.dispatchEvent(new CustomEvent('open-ticket-tailor'))
     })
 
     if (menuMobileContext?.classList.contains('open')) {

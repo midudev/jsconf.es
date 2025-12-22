@@ -5,77 +5,9 @@
     "icon": "platinum",
     "companies": [
       {
-        "name": "Google",
-        "image": "/sponsors/google.webp",
-        "url": "https://idx.dev/"
-      },
-      {
-        "name": "Infojobs",
-        "image": "/sponsors/infojobs.webp",
-        "url": "https://infojobs.net/"
-      },
-      {
-        "name": "Edpuzzle",
-        "image": "/sponsors/edpuzzle.webp",
-        "url": "https://edpuzzle.com/"
-      },
-      {
-        "name": "TimeTime",
-        "image": "/sponsors/timetime.svg",
-        "url": "https://www.timetime.in/"
-      },
-      {
-        "name": "NTT Data",
-        "image": "/sponsors/ntt.webp",
-        "url": "https://es.nttdata.com/"
-      }
-    ]
-  },
-  {
-    "category": "Sponsors Max",
-    "color": "#8e0000",
-    "icon": "max",
-    "companies": [
-      {
-        "name": "Nerdearla",
-        "image": "/sponsors/nerdearla.webp",
-        "url": "https://nerdear.la/es/"
-      },
-      {
-        "name": "Malt",
-        "image": "/sponsors/malt.svg",
-        "url": "https://malt.es"
-      }
-    ]
-  },
-  {
-    "category": "Sponsors Pro",
-    "icon": "pro",
-    "companies": [
-      {
-        "name": "Don Dominio",
-        "image": "/sponsors/dondominio.webp",
-        "url": "https://midu.link/dondominio"
-      },
-      {
-        "name": "Codely",
-        "image": "/sponsors/codely.svg",
-        "url": "https://midu.link/codely"
-      },
-      {
-        "name": "LeanMind",
-        "image": "/sponsors/lean-mind.webp",
-        "url": "https://leanmind.es/es/"
-      },
-      {
-        "name": "DevTalles",
-        "image": "/sponsors/devtalles.webp",
-        "url": "https://cursos.devtalles.com/"
-      },
-      {
-        "name": "Sirviendo Código",
-        "image": "/sponsors/sirviendo.svg",
-        "url": "https://sirviendocodigo.com/"
+        "name": "LemonCode",
+        "image": "/sponsors/lemoncode.svg",
+        "url": "https://lemoncode.net/"
       }
     ]
   }

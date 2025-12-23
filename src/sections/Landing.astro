@@ -50,12 +50,12 @@ const backgroundIcons = generateRandomIcons(techIcons.length * 5)
 >
   <!-- Background Pattern of Tech Logos -->
   <div
-    class="absolute inset-0 flex flex-wrap justify-center content-center gap-[4vw] p-[2%] z-10 pointer-events-none mask-radial-faded"
+    class="absolute inset-0 hidden min-[600px]:flex flex-wrap justify-center content-center gap-4 md:gap-[4vw] p-[2%] z-10 pointer-events-none mask-radial-faded"
   >
     {
       backgroundIcons.map((icon) => (
         <div
-          class={`bg-icon ${icon} tech-icon w-10 h-10 bg-contain bg-no-repeat bg-center opacity-[0.04] grayscale transition-all duration-300 ease-out pointer-events-auto`}
+          class={`bg-icon ${icon} tech-icon w-6 h-6 md:w-10 md:h-10 bg-contain bg-no-repeat bg-center opacity-[0.04] grayscale transition-all duration-300 ease-out pointer-events-auto`}
         />
       ))
     }
@@ -122,9 +122,12 @@ const backgroundIcons = generateRandomIcons(techIcons.length * 5)
   // Efecto de proximidad para los iconos
   const icons = document.querySelectorAll('.tech-icon')
   const section = document.getElementById('home')
+  const isDesktop = window.matchMedia('(min-width: 600px)')
 
-  if (section) {
+  if (section && icons.length > 0) {
     section.addEventListener('mousemove', (e) => {
+      if (!isDesktop.matches) return
+
       const rect = section.getBoundingClientRect()
       const mouseX = e.clientX - rect.left
       const mouseY = e.clientY - rect.top
@@ -169,6 +172,8 @@ const backgroundIcons = generateRandomIcons(techIcons.length * 5)
 
     // Resetear al salir el ratón
     section.addEventListener('mouseleave', () => {
+      if (!isDesktop.matches) return
+
       icons.forEach((icon) => {
         const htmlIcon = icon as HTMLElement
         htmlIcon.style.opacity = '0.04'

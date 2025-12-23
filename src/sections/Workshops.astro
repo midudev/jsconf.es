@@ -1,139 +1,77 @@
 ---
-import Container from '@/components/Container.astro'
-import CrossContainerTitle from '@/components/CrossContainerTitle.astro'
-import WorkshopCard from '@/components/WorkshopCard.astro'
-import type { TypeTag } from '@/components/WorkshopSkillTag.astro'
-import { TAGS } from '@/components/WorkshopSkillTag.astro'
-import LinkEntrada from '@/components/LinkEntrada.astro'
-import Button from '@/components/Button.astro'
 import { Image } from 'astro:assets'
 
-type Workshop = {
-  hour: string
-  title: string
-  image: string
-  author: string
-  authorDesc: string
-  workshopDesc: string
-  tags: Array<TypeTag>
-}
-
-const workshops: Workshop[] = [
+const workshops = [
   {
-    hour: '11:30',
-    title: 'Introducción a Test-Driven Development con JS y TS',
-    author: 'Carlos Blé',
-    authorDesc: 'FullStack Developer en LeanMind',
-    image: 'carlos-ble.webp',
-    workshopDesc:
-      'TDD es una práctica que ha demostrado funcionar en el mundo real para quienes han adquirido el suficiente criterio y dominio de la técnica. Permite escribir código más simple, con muchos menos fallos, y dejando excelentes baterias de test para cubrir de forma segura la evolución funcional del producto. Carlos Blé lleva 15 años practicando TDD, ha escrito varios libros sobre ello y acompañado a multitud de equipos en la adopción de TDD, así como en otras practicas del método eXtreme Programming.',
-    tags: [TAGS.TESTING_AVANZADO, TAGS.JAVASCRIPT, TAGS.TYPESCRIPT],
-  },
-  {
-    hour: '13:00',
-    title: 'Creación de agentes de IA con Langchain.js',
-    author: 'Eric Risco',
-    authorDesc: 'AI Tech Lead en Andorra Telecom',
-    image: 'eric-risco.webp',
-    workshopDesc:
-      'Langchain.js es una librería de JavaScript que permite a los desarrolladores crear agentes de IA con facilidad. Aprende a implementar las bibliotecas de código abierto de Langchain.js para Node.js, integrarte con modelos de IA generativa y ejecutarlo de manera independiente. Perfecto para quienes buscan optimizar su proceso de desarrollo de IA.',
-    tags: [TAGS.IA, TAGS.NODEJS],
-  },
-  {
-    hour: '16:00',
-    title: 'Introducción a Firebase Genkit y Inteligencia Artificial',
-    author: 'Xavier Portilla',
-    authorDesc: 'Software Engineer en Voice Flow',
-    image: 'xavi-portilla.webp',
-    workshopDesc:
-      'Descubre Firebase Genkit en este taller introductorio en el DevFest Madrid. Exploraremos cómo este versátil framework permite a los desarrolladores crear aplicaciones impulsadas por inteligencia artificial con facilidad. Aprende a implementar las bibliotecas de código abierto de Genkit para Node.js y Go, integrarte con modelos de IA generativa y ejecutarlo de manera independiente de los servicios de Google. Perfecto para quienes buscan optimizar su proceso de desarrollo de IA.',
-    tags: [TAGS.FIREBASE, TAGS.IA],
-  },
-  {
-    hour: '17:20',
-    title: 'Desarrolla skills de Alexa con NodeJS',
-    author: 'Pedro Plasencia',
-    authorDesc: 'Fundador de "Programación en Español"',
-    image: 'pedro-plasencia.webp',
-    workshopDesc:
-      'En este taller aprenderás a crear un bot de Alexa con Node, a usar la Alexa Developer Console y conocerás la teoría necesaria y veremos la práctica desde cero para que puedas desarrollar tus skills y llevarlas al máximo y lograr publicarlas en la tienda de skills de Alexa.',
-    tags: [TAGS.NODEJS],
+    title: 'Astro y Headless CMS: La combinación perfecta',
+    description:
+      'Astro ha traído un soplo de aire fresco al desarrollo web. Es rápido, sencillo y está pensado para hacer sitios de contenido sin peleas con el rendimiento ni con el mantenimiento. Los Headless CMS, por su parte, nos dan una forma limpia de gestionar el contenido sin casarnos con ningún framework de UI ni tener que montar una "intranet" a mano. Juntos hacen muy buen equipo: tú te centras en la parte pública de tu sitio —que vaya como un cohete— y del resto se encargan Astro y tu Headless CMS favorito. En este curso empezamos desde cero con Astro y luego pasamos a un caso práctico: un sitio personal conectado a un Headless CMS.',
+    image: '/img/braulio-diez.webp',
+    author: 'Braulio Díez',
+    role: 'Technical Lead at Lemoncode',
   },
 ]
 ---
 
-<section id="workshops" class="px-section mt-14 relative">
-  <Image
-    width={160}
-    height={160}
-    src="/img/workshops-ms.webp"
-    alt="Icono de mensajes"
-    class="absolute top-20 left-24 max-xl:hidden w-40 max-2xl:w-24 max-2xl:top-32 max-2xl:left-10"
-  />
-  <Image
-    width={172}
-    height={176}
-    src="/img/workshops-cubes.webp"
-    alt="Icono de cubos"
-    class="absolute right-28 max-xl:hidden w-36 grayscale -rotate-12 top-28 max-2xl:w-24 max-2xl:top-36 max-2xl:right-10"
-  />
-  <Container>
-    <div class="flex justify-center flex-wrap">
-      <h2
-        class="font-clash text-white text-[clamp(2rem,5vw,4.5rem)] text-center leading-tight text-balance"
-      >
-        No solo aprendizaje, también conexión,
-        <CrossContainerTitle>workshops del evento</CrossContainerTitle>
+<section id="workshops" class="py-20 bg-dark-bg">
+  <div class="container mx-auto px-5">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold font-display mb-5 text-white tracking-tighter">
+        Workshops Prácticos
       </h2>
-      <p class="text-light-gray max-lg:text-center max-lg:mt-8 max-lg:w-5/6">
-        Aprende, conecta y colabora en sesiones prácticas diseñadas para inspirar y potenciar tus
-        habilidades.
+      <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+        Aprende de forma intensiva con sesiones prácticas diseñadas para potenciar tus habilidades.
       </p>
     </div>
-    <div></div>
-    <div class="flex sm:flex-row flex-col justify-between mb-6 lg:mt-24 mt-12">
-      <h3 class="text-white font-clash font-medium md:text-[34px] text-2xl">
-        Talleres prácticos destacados
-      </h3>
-      <!-- <a
-        href={COMPRAR_ENTRADA}
+
+    <div class="grid grid-cols-1 gap-12 max-w-4xl mx-auto">
+      {
+        workshops.map((workshop) => (
+          <div class="bg-dark-surface rounded-2xl p-8 lg:p-12 border border-white/5 group hover:border-js-yellow/50 transition-all duration-500 shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-8 opacity-5">
+              <i class="fas fa-code text-8xl text-white" />
+            </div>
+
+            <div class="relative z-10">
+              <div class="inline-block bg-js-yellow text-js-black text-xs font-bold px-3 py-1 rounded-full mb-6 uppercase tracking-wider">
+                Workshop Destacado
+              </div>
+
+              <h3 class="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight group-hover:text-js-yellow transition-colors">
+                {workshop.title}
+              </h3>
+
+              <p class="text-gray-300 text-lg leading-relaxed mb-10">{workshop.description}</p>
+
+              <div class="flex items-center gap-5 pt-8 border-t border-white/10">
+                <img
+                  src={workshop.image}
+                  alt={workshop.author}
+                  class="w-16 h-16 rounded-full object-cover border-2 border-js-yellow shadow-lg"
+                />
+                <div class="flex flex-col">
+                  <span class="text-white font-bold text-xl">{workshop.author}</span>
+                  <span class="text-js-yellow/80 text-sm font-medium uppercase tracking-wide">
+                    {workshop.role}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-16 text-center">
+      <p class="text-gray-400 mb-6">¿Quieres impartir tu propio taller?</p>
+      <a
+        href="https://forms.gle/wXRn7M6gAHEFkFe38"
         target="_blank"
         rel="noopener noreferrer"
-        class="font-clash text-javascript group flex gap-x-1 items-center font-medium hover:opacity-70"
+        class="inline-flex items-center justify-center px-8 py-3.5 font-bold uppercase tracking-wide text-sm bg-transparent border-2 border-white text-white rounded hover:bg-white hover:text-js-black transition-all"
       >
-        <span>Apuntarme a la lista de espera</span>
-        <ArrowRight class="group-hover:translate-x-1 transition" />
-      </a> -->
+        Enviar Propuesta de Workshop
+      </a>
     </div>
-      <div class="flex flex-col items-center justify-center pt-24 pb-12 w-full col-span-full">
-        <p class="text-3xl text-white/50 font-clash">Próximamente</p>
-        <p class="text-xl text-white/30 mt-4 mb-8">Estamos preparando los mejores workshops.</p>
-        <Button
-          href="https://forms.gle/wXRn7M6gAHEFkFe38"
-          target="_blank"
-          rel="noopener noreferrer"
-          style="yellow"
-          class="rounded-full"
-        >
-          Envía tu charla (CFP abierto)
-        </Button>
-      </div>
-      <!-- {
-        workshops.map(({ hour, title, author, authorDesc, workshopDesc, tags, image }) => (
-          <WorkshopCard
-            hour={hour}
-            image={image}
-            title={title}
-            author={author}
-            authorDesc={authorDesc}
-            workshopDesc={workshopDesc}
-            tags={tags}
-          />
-        ))
-      } -->
-    </div>
-    <!-- <div class="flex justify-center max-sm:mx-12 mt-14">
-      <LinkEntrada style="yellow" />
-    </div> -->
-  </Container>
+  </div>
 </section>

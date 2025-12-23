@@ -1,106 +1,64 @@
 ---
-import Container from '@/components/Container.astro'
-import InfoJobs from '@/icons/InfojobsLogo.svg'
 import sponsors from '@/data/sponsors.json'
-import SponsorPro from '@/icons/SponsorPro.svg'
-import SponsorMax from '@/icons/SponsorMax.svg'
-import SponsorPlatinum from '@/icons/SponsorPlatinum.svg'
-
-const CATEGORY_ICONS: Record<string, any> = {
-  pro: SponsorPro,
-  max: SponsorMax,
-  platinum: SponsorPlatinum,
-}
+import infojobsLogo from '@/icons/InfojobsLogo.svg?raw'
 ---
 
-<section id="sponsors" class="bg-white text-black flex flex-col font-clash scroll-mt-28">
-  <Container>
-    <div
-      class="animate-on-scroll flex items-center justify-between gap-12 mb-12 flex-col md:flex-row px-section pt-12 md:pt-24"
-    >
-      <div class="flex-1">
-        <p class="text-gray-500 uppercase">Sponsors</p>
-        <h3 class="text-5xl xs:text-6xl font-medium text-balance">Patrocinadores</h3>
-      </div>
-    </div>
+<section id="sponsors" class="py-20 bg-black relative overflow-hidden">
+  <div class="container mx-auto px-5 text-center relative z-10">
+    <h2 class="text-4xl md:text-5xl font-bold font-display mb-16 text-white">Nuestros Patrocinadores</h2>
 
-    <div class="space-y-24 mb-24">
-      <div class="flex flex-col items-center justify-center gap-12 px-4">
-        <p class="text-2xl md:text-3xl text-gray-500 uppercase tracking-widest text-center">
-          Sponsor Principal
-        </p>
-        <a
-          href="https://infojobs.net"
-          target="_blank"
+    <!-- Principal Sponsor -->
+    <div class="mb-16">
+      <span class="text-sm uppercase tracking-[2px] text-js-yellow mb-5 block border-b border-white/10 pb-2.5 inline-block">
+        <i class="fas fa-crown text-xl mr-2"></i> Principal Sponsor
+      </span>
+      <div class="flex flex-wrap justify-center items-center gap-10">
+        <a 
+          href="https://www.infojobs.net" 
+          target="_blank" 
           rel="noopener noreferrer"
-          class="hover:scale-105 transition-transform duration-300"
-          title="Ir a InfoJobs"
+          class="bg-dark-surface rounded-lg flex items-center justify-center transition-all duration-300 p-8 w-[350px] h-[180px] border-2 border-js-yellow grayscale-0 opacity-100 hover:scale-105 hover:bg-[#252525] group text-white"
         >
-          <InfoJobs class="w-full max-w-[500px] h-auto text-[#0b4dd0]" />
+          <div class="w-full h-auto px-4">
+            <Fragment set:html={infojobsLogo} />
+          </div>
         </a>
       </div>
-
-      {
-        sponsors.map((category) => {
-          const Icon = CATEGORY_ICONS[category.icon]
-          return (
-            <div class="flex flex-col items-center gap-12 px-4">
-              <div class="flex flex-col items-center gap-4">
-                <div class="flex items-center gap-3">
-                  {Icon && <Icon class="size-8" style={{ color: category.color }} />}
-                  <h4 class="text-2xl md:text-3xl text-gray-500 uppercase tracking-widest text-center">
-                    {category.category}
-                  </h4>
-                </div>
-              </div>
-
-              <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-12 md:gap-x-20 md:gap-y-16 max-w-6xl mx-auto">
-                {category.companies.map((company) => (
-                  <a
-                    href={company.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="group relative flex items-center justify-center transition-all duration-300 hover:scale-110"
-                    title={company.name}
-                  >
-                    <img
-                      src={company.image}
-                      alt={company.name}
-                      class:list={[
-                        'object-contain w-auto grayscale transition-all duration-300 group-hover:grayscale-0',
-                        category.icon === 'platinum' ? 'h-16 md:h-24' : '',
-                        category.icon === 'max' ? 'h-12 md:h-16' : '',
-                        category.icon === 'pro' ? 'h-8 md:h-12' : '',
-                      ]}
-                      loading="lazy"
-                    />
-                  </a>
-                ))}
-              </div>
-            </div>
-          )
-        })
-      }
     </div>
 
-    <div class="mb-12">
-      <h3 class="text-3xl md:text-4xl text-center text-balance mb-8 text-neutral-600 px-4">
-        ¡Y muchos más por confirmar!
-      </h3>
-    </div>
-
-    <a
-      class="animate-on-scroll group bg-black border border-black hover:bg-white transition py-12 px-12 mb-12 flex items-center justify-center flex-col w-full gap-6 lg:gap-12"
-      href="mailto:hi@midu.dev"
-    >
-      <div class="text-center">
-        <p
-          class="group-hover:text-black text-white text-3xl md:text-5xl text-balance font-medium mb-4"
-        >
-          ¿Quieres patrocinar el evento?
-        </p>
-        <p class="text-javascript text-4xl md:text-6xl text-balance">hi@midu.dev</p>
+    <!-- Tiers from JSON -->
+    {sponsors.map((tier) => (
+      <div class="mb-16">
+        <span class="text-sm uppercase tracking-[2px] text-gray-400 mb-5 block border-b border-white/10 pb-2.5 inline-block">
+          <i class={`fas ${tier.icon === 'platinum' ? 'fa-gem' : 'fa-star'} text-xl mr-2`}></i> {tier.category.replace('Sponsors ', '')}
+        </span>
+        <div class="flex flex-wrap justify-center items-center gap-10">
+          {tier.companies.map((company) => (
+            <a 
+              href={company.url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="bg-dark-surface rounded-lg flex items-center justify-center transition-all duration-300 p-4 w-[280px] h-[140px] hover:scale-105 hover:bg-[#252525]"
+            >
+              {company.image ? (
+                <img src={company.image} alt={company.name} class="max-w-[80%] max-h-[70%] object-contain" />
+              ) : (
+                <span class="text-white font-bold font-display text-2xl">{company.name}</span>
+              )}
+            </a>
+          ))}
+        </div>
       </div>
-    </a>
-  </Container>
+    ))}
+    
+    <div class="mt-12">
+      <p class="text-gray-400 mb-5">¿Quieres apoyar la comunidad JavaScript en España?</p>
+      <a 
+        href="mailto:miduga@gmail.com" 
+        class="inline-flex items-center justify-center px-8 py-3.5 font-bold uppercase tracking-wide text-sm bg-transparent border-2 border-white text-white rounded hover:bg-white hover:text-js-black transition-all"
+      >
+        Ponerse en contacto
+      </a>
+    </div>
+  </div>
 </section>

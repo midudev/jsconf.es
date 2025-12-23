@@ -2,15 +2,18 @@
 import Layout from '@/layouts/Layout.astro'
 
 import LandingSection from '@/sections/Landing.astro'
-import WhenAndWhereSection from '@/sections/WhenAndWhere.astro'
-import PreEventSection from '@/sections/PreEvent.astro'
-import WhySection from '@/sections/Why.astro'
+import MarqueeSection from '@/sections/Marquee.astro'
 import SpeakersSection from '@/sections/Speakers.astro'
-import SponsorsSection from '@/sections/Sponsors.astro'
 import WorkshopsSection from '@/sections/Workshops.astro'
-import AgendaSection from '@/sections/Agenda.astro'
+import SponsorsSection from '@/sections/Sponsors.astro'
 import PresenterSection from '@/sections/Presenter.astro'
-import RunAndFunSection from '@/sections/RunAndFun.astro'
+import ActivitiesSection from '@/sections/Activities.astro'
+import IncludedSection from '@/sections/Included.astro'
+import WhenAndWhereSection from '@/sections/WhenAndWhere.astro'
+
+// Existing sections that were not in the template but might still be useful
+// Keeping them for now, but commented out if you want to follow the template strictly
+// import AgendaSection from '@/sections/Agenda.astro'
 ---
 
 <Layout
@@ -18,13 +21,12 @@ import RunAndFunSection from '@/sections/RunAndFun.astro'
   description="La conferencia de JavaScript más importante de España. Madrid, 14 de marzo de 2026 en La Nave. Charlas, workshops, speakers y comunidad."
 >
   <LandingSection />
-  <WhenAndWhereSection />
-  <PreEventSection />
-  <WhySection />
+  <MarqueeSection />
   <SpeakersSection />
-  <SponsorsSection />
   <WorkshopsSection />
-  <AgendaSection />
+  <SponsorsSection />
   <PresenterSection />
-  <RunAndFunSection />
+  <ActivitiesSection />
+  <IncludedSection />
+  <WhenAndWhereSection />
 </Layout>

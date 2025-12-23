@@ -1,9 +1,181 @@
 ---
-import Hero from '@/components/Hero.astro'
+import { getAvailableTickets } from '@/services/tickettailor'
+import InfoJobsLogo from '@/icons/InfojobsLogo.svg'
+
+const availableTickets = await getAvailableTickets()
+
+const techIcons = [
+  'icon-angular',
+  'icon-react',
+  'icon-js',
+  'icon-ts',
+  'icon-vue',
+  'icon-deno',
+  'icon-bun',
+  'icon-npm',
+  'icon-pnpm',
+  'icon-github',
+  'icon-vscode',
+  'icon-cursor',
+  'icon-astro',
+  'icon-next',
+  'icon-svelte',
+  'icon-vite',
+  'icon-playwright',
+]
+
+// Create a randomized list of icons ensuring no two consecutive icons are the same
+const generateRandomIcons = (count: number) => {
+  const result: string[] = []
+  let lastIcon = ''
+
+  for (let i = 0; i < count; i++) {
+    let randomIcon = ''
+    do {
+      randomIcon = techIcons[Math.floor(Math.random() * techIcons.length)]
+    } while (randomIcon === lastIcon)
+
+    result.push(randomIcon)
+    lastIcon = randomIcon
+  }
+  return result
+}
+
+const backgroundIcons = generateRandomIcons(techIcons.length * 5)
 ---
 
-<section id="home" class="pt-24">
-  <div class="min-h-screen bg-gradient-to-b from-black to-[#0B0B0B] text-white">
-    <Hero />
+<section
+  id="home"
+  class="min-h-[90vh] flex items-center justify-center relative bg-hero-radial pt-10 pb-16 overflow-hidden"
+>
+  <!-- Background Pattern of Tech Logos -->
+  <div
+    class="absolute inset-0 flex flex-wrap justify-center content-center gap-[4vw] p-[2%] z-10 pointer-events-none mask-radial-faded"
+  >
+    {
+      backgroundIcons.map((icon) => (
+        <div
+          class={`bg-icon ${icon} tech-icon w-10 h-10 bg-contain bg-no-repeat bg-center opacity-[0.04] grayscale transition-all duration-300 ease-out pointer-events-auto`}
+        />
+      ))
+    }
+  </div>
+
+  <div class="container mx-auto px-5 relative z-20 text-center max-w-[900px] pointer-events-none">
+    <div
+      class="inline-flex items-center bg-white/10 px-6 py-3 rounded-full mb-8 border border-white/20 text-sm tracking-wide backdrop-blur-sm pointer-events-auto"
+    >
+      <span class="mr-2 opacity-70 font-bold">POWERED BY</span>
+
+      <InfoJobsLogo class="h-6 w-auto -mb-1" />
+    </div>
+    <h1
+      class="text-5xl lg:text-7xl font-bold font-display mb-4 tracking-tighter drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)]"
+    >
+      JSCONF ESPAÑA 2026
+    </h1>
+    <div
+      class="text-2xl text-js-yellow font-display font-medium mb-12 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
+    >
+      <i class="far fa-calendar-alt mr-2"></i> 14 DE MARZO, 2026 &bull; MADRID &bull; LA NAVE
+    </div>
+
+    <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+      Únete a la comunidad de desarrolladores más vibrante en un día lleno de código, innovación y
+      networking de primer nivel.
+    </p>
+
+    <div class="flex flex-col items-center">
+      {
+        availableTickets !== null && availableTickets > 0 && (
+          <span class="text-js-yellow text-sm font-bold mb-2.5 uppercase tracking-wide animate-pulse-slow">
+            Quedan {availableTickets} entradas
+          </span>
+        )
+      }
+      <div class="flex flex-wrap gap-5 justify-center pointer-events-auto">
+        <button
+          id="buy-tickets-hero"
+          class="inline-flex items-center justify-center px-8 py-3.5 font-bold uppercase tracking-wide text-sm bg-js-yellow text-js-black border-2 border-js-yellow rounded hover:bg-transparent hover:text-js-yellow hover:shadow-[0_0_15px_rgba(247,223,30,0.4)] transition-all"
+        >
+          <i class="fas fa-ticket-alt mr-2.5"></i> Comprar Entradas
+        </button>
+        <a
+          href="https://forms.gle/wXRn7M6gAHEFkFe38"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center px-8 py-3.5 font-bold uppercase tracking-wide text-sm bg-transparent border-2 border-white text-white rounded hover:bg-white hover:text-js-black transition-all"
+        >
+          <i class="fas fa-microphone mr-2.5"></i> Enviar CFP
+        </a>
+      </div>
+    </div>
   </div>
 </section>
+
+<script>
+  const buyTicketsHero = document.getElementById('buy-tickets-hero')
+  buyTicketsHero?.addEventListener('click', () => {
+    window.dispatchEvent(new CustomEvent('open-ticket-tailor'))
+  })
+
+  // Efecto de proximidad para los iconos
+  const icons = document.querySelectorAll('.tech-icon')
+  const section = document.getElementById('home')
+
+  if (section) {
+    section.addEventListener('mousemove', (e) => {
+      const rect = section.getBoundingClientRect()
+      const mouseX = e.clientX - rect.left
+      const mouseY = e.clientY - rect.top
+
+      icons.forEach((icon) => {
+        const iconRect = icon.getBoundingClientRect()
+        const iconX = iconRect.left + iconRect.width / 2 - rect.left
+        const iconY = iconRect.top + iconRect.height / 2 - rect.top
+
+        const distance = Math.sqrt(Math.pow(mouseX - iconX, 2) + Math.pow(mouseY - iconY, 2))
+
+        // Radio de efecto aumentado y curva más pronunciada
+        const maxDistance = 300
+        let proximity = Math.max(0, 1 - distance / maxDistance)
+        // Hacer el efecto más evidente al acercarse (curva exponencial)
+        proximity = Math.pow(proximity, 2)
+
+        const htmlIcon = icon as HTMLElement
+
+        if (proximity > 0) {
+          // Opacidad: de 0.04 a 1 (máxima visibilidad al acercarse)
+          const opacity = 0.04 + proximity * 0.96
+          // Grayscale: de 100% a 0%
+          const grayscale = 100 - proximity * 100
+          // Escala: de 1 a 1.25
+          const scale = 1 + proximity * 0.25
+          // Brillo/Glow
+          const glow = proximity * 15
+
+          htmlIcon.style.opacity = opacity.toString()
+          htmlIcon.style.filter = `grayscale(${grayscale}%) drop-shadow(0 0 ${glow}px rgba(247, 223, 30, ${proximity * 0.6}))`
+          htmlIcon.style.transform = `scale(${scale})`
+          htmlIcon.style.zIndex = '30'
+        } else {
+          htmlIcon.style.opacity = '0.04'
+          htmlIcon.style.filter = 'grayscale(100%)'
+          htmlIcon.style.transform = 'scale(1)'
+          htmlIcon.style.zIndex = 'auto'
+        }
+      })
+    })
+
+    // Resetear al salir el ratón
+    section.addEventListener('mouseleave', () => {
+      icons.forEach((icon) => {
+        const htmlIcon = icon as HTMLElement
+        htmlIcon.style.opacity = '0.04'
+        htmlIcon.style.filter = 'grayscale(100%)'
+        htmlIcon.style.transform = 'scale(1)'
+        htmlIcon.style.zIndex = 'auto'
+      })
+    })
+  }
+</script>

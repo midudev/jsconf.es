@@ -1,0 +1,36 @@
+---
+import ActivityCard from '@/components/ActivityCard.astro'
+
+const activities = [
+  {
+    icon: 'fas fa-glass-cheers',
+    date: 'VIERNES 13 FEBRERO • 18:00H',
+    title: 'Pre-Evento Barcelona',
+    description:
+      'Comenzamos calentando motores en las oficinas de InfoJobs en Barcelona. Recoge tu acreditación, disfruta de catering y networking exclusivo un mes antes del evento principal.',
+    items: ['Oficinas InfoJobs BCN', 'Bebida y comida incluida'],
+    footerIcon: 'fas fa-cocktail',
+  },
+  {
+    icon: 'fas fa-running',
+    date: 'VIERNES 13 MARZO • 17:30H',
+    title: 'Social Run',
+    description:
+      'Despeja tu mente antes del código. Una carrera suave de 5km por los alrededores de La Nave. Apto para todos los ritmos. ¡Empezamos el día con energía!',
+    items: ['Ruta plana y accesible', 'Camiseta técnica para los primeros'],
+    footerIcon: 'fas fa-stopwatch',
+  },
+]
+---
+
+<section id="activities" class="py-20 bg-gradient-to-b from-dark-bg to-[#111]">
+  <div class="container mx-auto px-5">
+    <h2 class="text-center text-4xl md:text-5xl font-bold font-display mb-12 text-white">
+      Más que charlas
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      {activities.map((activity) => <ActivityCard {...activity} />)}
+    </div>
+  </div>
+</section>

@@ -1,172 +1,180 @@
 ---
-import { MOBILE_MENU_CONTENT_ID } from '@/consts/mobile-menu'
-import HamburgerButton from '@/components/HamburgerButton.astro'
-import LogoIcon from '@/icons/Logo.svg'
-import TicketIcon from '@/icons/Ticket.svg'
-import Menu from '@/components/Menu.astro'
-import LinkEntrada from '@/components/LinkEntrada.astro'
-
-import Button from '@/components/Button.astro'
-
-const sections = [
-  { name: 'HOME', href: '/#home' },
-  { name: 'AGENDA', href: '/#agenda' },
-  { name: 'CHARLAS', href: '/#speakers' },
-  { name: 'SPONSORS', href: '/#sponsors' },
-  { name: 'TALLERES', href: '/#workshops' },
-]
+import Logo from '@/icons/Logo.svg'
 ---
 
 <header
-  class="py-6 z-[999] fixed top-0 left-0 right-0 bg-transparent transition-colors duration-300 px-section"
+  class="fixed top-0 w-full bg-dark-bg/90 backdrop-blur-md z-50 border-b border-white/10 transition-all duration-300"
 >
-  <div class="flex gap-4 justify-between items-center max-w-[90rem] mx-auto">
-    <a href="#home" class="flex gap-x-3 items-center" aria-label="Ir al inicio">
-      <LogoIcon class="md:size-16 size-10" />
-      <div class="max-md:-mb-1">
-        <h3
-          class="font-clash font-semibold max-md:h-4 md:text-2xl text-lg flex flex-row items-center gap-x-2 text-white"
-        >
-          JSConf España
-          <span
-            class="rounded-full bg-javascript text-black font-semibold md:text-lg text-xs md:px-3 md:py-1 px-2 py-0.5 !leading-none flex justify-center items-center"
-            >2026</span
+  <div class="container mx-auto px-5">
+    <nav class="flex justify-between items-center h-20">
+      <a
+        href="/"
+        class="flex items-center gap-3 group transition-all duration-300"
+        aria-label="Ir al inicio"
+      >
+        <Logo class="h-10 md:h-12 w-auto transition-transform group-hover:scale-105" />
+        <div class="flex flex-col justify-center">
+          <div class="flex items-center gap-2">
+            <span
+              class="text-xl md:text-2xl font-bold font-clash text-white tracking-tighter leading-none uppercase"
+            >
+              JSConf <span class="text-js-yellow font-bold">España</span>
+            </span>
+            <span
+              class="hidden sm:block bg-js-yellow text-js-black text-[10px] md:text-xs px-1.5 py-0.5 rounded-sm font-black leading-none transform -rotate-2 shadow-[2px_2px_0px_rgba(255,255,255,0.2)]"
+            >
+              2026
+            </span>
+          </div>
+          <p
+            class="text-[9px] md:text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] mt-1 leading-none transition-colors group-hover:text-js-yellow/60"
           >
-        </h3>
-        <span class="uppercase font-light opacity-80 text-sm text-white max-md:text-xs"
-          >14 MARZO 2026</span
+            14 Mar · La Nave, Madrid
+          </p>
+        </div>
+      </a>
+      <div class="hidden md:flex gap-8">
+        <a
+          href="#speakers"
+          class="text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors"
+          >Speakers</a
+        >
+        <a
+          href="#workshops"
+          class="text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors"
+          >Workshops</a
+        >
+        <a
+          href="#sponsors"
+          class="text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors"
+          >Patrocinadores</a
+        >
+        <a
+          href="#activities"
+          class="text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors"
+          >Actividades</a
+        >
+        <a
+          href="#venue"
+          class="text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors">Sede</a
         >
       </div>
-    </a>
-    <div class="text-white">
-      <Menu />
-    </div>
-    <div class="flex items-center gap-4">
-      <Button style="yellow" class="max-lg:hidden" id="buy-tickets-header">
-        <TicketIcon slot="icon-left" class="size-5" />
-        Comprar Entradas
-      </Button>
-    </div>
-    <HamburgerButton class:list="block lg:hidden" id="menuButton" />
-    <div
-      class="fixed inset-0 z-[888] flex w-screen h-[100dvh] flex-col items-center overflow-x-auto lg:hidden backdrop-blur-lg bg-black/85"
-      id={MOBILE_MENU_CONTENT_ID}
-      aria-hidden="true"
-    >
-      <aside class="flex min-h-16 w-full items-center justify-end px-6 pt-6">
-        <HamburgerButton id="innerMenuButton" />
-      </aside>
-      <nav class="navContent flex w-full h-full flex-col items-start justify-end px-6 gap-5 mb-8" aria-label="Navegación principal">
-        {
-          sections.map(({ name, href }, key) => (
-            <>
-              <a
-                href={href}
-                class:list={['text-white font-clash text-5xl font-medium']}
-                id={`navmob-link-${key}`}
-              >
-                {name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()}
-              </a>
-            </>
-          ))
-        }
-        <LinkEntrada style="yellow" />
-      </nav>
-    </div>
+      <div class="flex gap-4 items-center">
+        <button
+          id="buy-tickets-header"
+          class="inline-flex items-center justify-center px-5 py-2.5 font-bold uppercase tracking-wide text-sm bg-js-yellow text-js-black border-2 border-js-yellow rounded hover:bg-transparent hover:text-js-yellow hover:shadow-[0_0_15px_rgba(247,223,30,0.4)] transition-all"
+          >Tickets</button
+        >
+        <button
+          id="menu-toggle"
+          class="md:hidden text-white text-2xl focus:outline-none cursor-pointer p-2 hover:text-js-yellow transition-colors"
+          aria-label="Abrir menú"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
   </div>
 </header>
-<style>
-  #menuMobileContent {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s;
-    scrollbar-gutter: stable;
-  }
 
-  #menuMobileContent.open {
-    opacity: 1;
-    pointer-events: all;
-  }
+<!-- Mobile Menu -->
+<div
+  id="mobile-menu"
+  class="fixed inset-0 w-screen h-dvh z-[100] bg-dark-bg/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 translate-x-full transition-transform duration-300 md:hidden"
+>
+  <button
+    id="menu-close"
+    class="absolute top-6 right-6 text-white text-3xl p-4 focus:outline-none hover:text-js-yellow transition-colors"
+    aria-label="Cerrar menú"
+  >
+    <i class="fas fa-times"></i>
+  </button>
 
-  @media (prefers-reduced-motion) {
-    #menuMobileContent {
-      transition: opacity 0s;
-    }
-    header {
-      transition: none;
-    }
-  }
-</style>
+  <nav class="flex flex-col items-center gap-8">
+    <a
+      href="#speakers"
+      class="text-4xl font-black font-clash text-white hover:text-js-yellow transition-colors mobile-link uppercase tracking-tighter"
+      >Speakers</a
+    >
+    <a
+      href="#workshops"
+      class="text-4xl font-black font-clash text-white hover:text-js-yellow transition-colors mobile-link uppercase tracking-tighter"
+      >Workshops</a
+    >
+    <a
+      href="#sponsors"
+      class="text-4xl font-black font-clash text-white hover:text-js-yellow transition-colors mobile-link uppercase tracking-tighter"
+      >Patrocinadores</a
+    >
+    <a
+      href="#activities"
+      class="text-4xl font-black font-clash text-white hover:text-js-yellow transition-colors mobile-link uppercase tracking-tighter"
+      >Actividades</a
+    >
+    <a
+      href="#venue"
+      class="text-4xl font-black font-clash text-white hover:text-js-yellow transition-colors mobile-link uppercase tracking-tighter"
+      >Sede</a
+    >
+  </nav>
+
+  <button
+    id="buy-tickets-mobile"
+    class="mt-12 inline-flex items-center justify-center px-12 py-5 font-black uppercase tracking-widest text-xl bg-js-yellow text-js-black border-2 border-js-yellow rounded-full hover:bg-white hover:text-js-black hover:border-white hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all active:scale-95 shadow-lg"
+  >
+    Tickets
+  </button>
+</div>
+
 <script>
-  function toggleMenu(
-    nav: HTMLElement | null,
-    menuMobileContent: HTMLElement | null,
-    innerMenuButton: HTMLElement | null
-  ) {
-    menuMobileContent?.classList.toggle('open')
-    nav?.classList.toggle('open')
-    innerMenuButton?.classList.toggle('open')
-    const isOpen = menuMobileContent?.classList.contains('open')
-    if (menuMobileContent) menuMobileContent.setAttribute('aria-hidden', String(!isOpen))
-    document.body.classList.toggle('overflow-hidden')
-    document.body.classList.toggle('lg:overflow-auto')
+  const menuToggle = document.getElementById('menu-toggle')
+  const menuClose = document.getElementById('menu-close')
+  const mobileMenu = document.getElementById('mobile-menu')
+  const mobileLinks = document.querySelectorAll('.mobile-link')
+  const buyTicketsHeader = document.getElementById('buy-tickets-header')
+  const buyTicketsMobile = document.getElementById('buy-tickets-mobile')
+
+  function openMenu() {
+    mobileMenu?.classList.remove('translate-x-full')
+    document.body.style.overflow = 'hidden'
   }
 
-  function headerBgTransition() {
-    const header = document.querySelector('header') as HTMLElement
-    if (window.scrollY > 10) {
-      header.classList.add('bg-black/50', 'backdrop-blur')
-      header.classList.remove('bg-transparent')
-    } else {
-      header.classList.add('bg-transparent')
-      header.classList.remove('bg-black/50', 'backdrop-blur')
-    }
+  function closeMenu() {
+    mobileMenu?.classList.add('translate-x-full')
+    document.body.style.overflow = ''
   }
+
+  menuToggle?.addEventListener('click', openMenu)
+  menuClose?.addEventListener('click', closeMenu)
+  mobileLinks.forEach((link) => link.addEventListener('click', closeMenu))
+
+  const handleBuyTickets = () => {
+    window.dispatchEvent(new CustomEvent('open-ticket-tailor'))
+    closeMenu()
+  }
+
+  buyTicketsHeader?.addEventListener('click', handleBuyTickets)
+  buyTicketsMobile?.addEventListener('click', handleBuyTickets)
+
+  // Scroll visibility
+  let lastScroll = 0
+  const header = document.querySelector('header')
 
   window.addEventListener('scroll', () => {
-    headerBgTransition()
+    const currentScroll = window.scrollY
+    if (currentScroll <= 0) {
+      header?.classList.remove('-translate-y-full')
+      return
+    }
+
+    if (currentScroll > lastScroll && !mobileMenu?.classList.contains('translate-x-full')) {
+      // scrolling down
+    } else if (currentScroll > lastScroll && currentScroll > 80) {
+      header?.classList.add('-translate-y-full')
+    } else {
+      // scrolling up
+      header?.classList.remove('-translate-y-full')
+    }
+    lastScroll = currentScroll
   })
-
-  window.onload = () => {
-    headerBgTransition() // if the user relaods the page, to check if the header should be transparent or not
-
-    const nav = document.querySelector('nav') as HTMLElement
-    const menuButton = document.querySelector('#menuButton') as HTMLElement
-    const innerMenuButton = document.querySelector('#innerMenuButton') as HTMLElement
-    const menuMobileContext = document.getElementById('menuMobileContent') as HTMLElement
-
-    const linksMobile: NodeListOf<HTMLAnchorElement> =
-      document.querySelectorAll('a[id^="navmob-link-"]')
-
-    function handleLinkClick(isMobile: boolean) {
-      if (isMobile) {
-        toggleMenu(nav, menuMobileContext, innerMenuButton)
-        menuButton.classList.toggle('hidden')
-      }
-    }
-
-    linksMobile.forEach((link) => {
-      link.addEventListener('click', () => handleLinkClick(true))
-    })
-
-    menuButton?.addEventListener('click', () => {
-      menuButton?.classList.toggle('hidden')
-      toggleMenu(nav, menuMobileContext, innerMenuButton)
-      const firstLink = document.querySelector('a[id^="navmob-link-"]') as HTMLAnchorElement | null
-      firstLink?.focus()
-    })
-    innerMenuButton?.addEventListener('click', () => {
-      menuButton?.classList.toggle('hidden')
-      toggleMenu(nav, menuMobileContext, innerMenuButton)
-    })
-
-    const buyTicketsHeader = document.getElementById('buy-tickets-header')
-    buyTicketsHeader?.addEventListener('click', () => {
-      window.dispatchEvent(new CustomEvent('open-ticket-tailor'))
-    })
-
-    if (menuMobileContext?.classList.contains('open')) {
-      toggleMenu(nav, menuMobileContext, innerMenuButton)
-    }
-  }
 </script>

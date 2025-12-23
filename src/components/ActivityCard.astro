@@ -1,0 +1,35 @@
+---
+interface Props {
+  icon: string
+  date: string
+  title: string
+  description: string
+  items: string[]
+  buttonText?: string
+  footerIcon: string
+}
+
+const { icon, date, title, description, items, buttonText = 'Apuntarse (Próximamente)', footerIcon } = Astro.props
+---
+
+<div class="bg-dark-surface rounded-[20px] p-10 relative overflow-hidden border border-white/5 group hover:border-white/10 transition-all">
+  <div class="font-display font-mono text-gray-400 mb-5 flex items-center gap-4">
+    <i class={icon}></i>
+    <span>{date}</span>
+  </div>
+  <h3 class="text-3xl text-js-yellow font-bold mb-2.5 uppercase tracking-tight">{title}</h3>
+  <p class="text-gray-300 mb-5 leading-relaxed">
+    {description}
+  </p>
+  <ul class="text-gray-400 mb-5 space-y-2">
+    {items.map((item) => (
+      <li class="flex items-center gap-2">
+        <i class="fas fa-check text-js-yellow"></i> {item}
+      </li>
+    ))}
+  </ul>
+  <span class="inline-block bg-white/10 text-[#777] cursor-not-allowed uppercase font-bold py-2.5 px-5 rounded">
+    {buttonText}
+  </span>
+  <i class={`${footerIcon} text-5xl absolute bottom-5 right-5 opacity-10 -rotate-[15deg] group-hover:opacity-20 group-hover:rotate-0 group-hover:scale-110 transition-all duration-500`}></i>
+</div>

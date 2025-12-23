@@ -1,19 +1,12 @@
 ---
 import { Image } from 'astro:assets'
-import Website from '@/icons/Website.svg'
-import XLogo from '@/icons/XLogo.svg'
-import Linkedin from '@/icons/LinkedInSmallLogo.svg'
-import Github from '@/icons/GitHub.svg'
-import Twitch from '@/icons/TwitchLogoWhite.svg'
-import Youtube from '@/icons/YoutubeLogo.svg'
 
-export interface CardProps {
+export interface Props {
   name: string
   role: string
   company: string
   description: string
   imageUrl: string
-  companyLogo: string | any
   social?: string
 }
 
@@ -23,128 +16,47 @@ const {
   company,
   description,
   imageUrl,
-  companyLogo: Logo,
   social,
-} = Astro.props as CardProps
-
-const Tag = social ? 'a' : 'div'
+} = Astro.props
 ---
 
-<Tag href={social} target="_blank" rel="noreferrer noopener" class="block h-full">
-  <article class="card flex flex-col h-full font-clash text-white select-none">
-    <figure class="effect relative overflow-hidden">
-      <Image
-        inferSize
-        src={imageUrl}
-        width={342}
-        height={342}
-        alt={name}
-        class="w-full aspect-square object-cover"
-      />
-      <figcaption>
-        <p class="gap-x-1 text-yellow-400 font-medium">
-          {role}
-        </p>
-      </figcaption>
-    </figure>
-    <div
-      class="flex flex-col flex-1 md:gap-y-[14px] gap-y-[6px] bg-white/5 border border-white/10 md:p-6 p-3 select-text"
-    >
-      <div>
-        <div class="flex flex-row items-center justify-between">
-          <h3 class="text-2xl font-medium">{name}</h3>
-          {
-            typeof Logo === 'string' ? (
-              <Image width={24} height={24} src={Logo} alt={company} class="size-6" />
-            ) : typeof Logo !== 'undefined' ? (
-              <Logo class="size-6" />
-            ) : null
-          }
-        </div>
-        <div class="flex flex-row gap-x-1 text-yellow-400 font-medium">
-          <p>{role}</p>
-          {company && <p>@{company}</p>}
-        </div>
-      </div>
-      <p class="text-neutral-300 md:min-h-16">{description}</p>
+<div class="bg-dark-surface rounded-xl overflow-hidden border border-white/5 relative hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:border-js-yellow transition-all duration-300 group">
+  <div class="relative h-[300px] overflow-hidden">
+    <Image
+      inferSize
+      src={imageUrl}
+      alt={name}
+      width={400}
+      height={300}
+      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+    />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl text-js-yellow font-bold mb-1">{name}</h3>
+    <div class="text-sm text-gray-400 mb-4 flex items-center gap-2">
+      <span>{role}</span>
+      {company && <span>@ {company}</span>}
     </div>
-  </article>
-</Tag>
-
-<style>
-  figure.effect {
-    background: #000;
-  }
-
-  figure.effect img {
-    opacity: 0.95;
-    -webkit-transition:
-      opacity 0.35s,
-      -webkit-transform 0.35s;
-    transition:
-      opacity 0.35s,
-      transform 0.35s;
-    -webkit-transform: scale3d(1.05, 1.05, 1);
-    transform: scale3d(1.05, 1.05, 1);
-  }
-
-  figure.effect figcaption::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.5);
-    content: '';
-    -webkit-transition: -webkit-transform 0.6s;
-    transition: transform 0.6s;
-    -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -100%, 0);
-    transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -100%, 0);
-  }
-
-  figure.effect figcaption::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #f7de1f93;
-    content: '';
-    -webkit-transition: -webkit-transform 0.6s;
-    transition: transform 0.6s;
-    -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -100%, 0);
-    transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -100%, 0);
-  }
-
-  figure.effect p {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    margin: 3em;
-    padding: 0 1em;
-    max-width: 150px;
-    border-right: 4px solid #f7df1f;
-    text-align: right;
-    opacity: 0;
-    -webkit-transition: opacity 0.35s;
-    transition: opacity 0.35s;
-  }
-
-  figure.effect h3 {
-    text-align: left;
-  }
-
-  .card:hover img {
-    opacity: 0.6;
-    transform: scale3d(1, 1, 1);
-  }
-
-  .card:hover figcaption::before {
-    transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
-  }
-
-  .card:hover p {
-    opacity: 1;
-    transition-delay: 0.1s;
-  }
-</style>
+    <p class="text-sm leading-relaxed text-[#aaa] mb-4">{description}</p>
+    {social && (
+      <div class="flex gap-4">
+        <a 
+          href={social} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="text-white text-lg hover:text-js-yellow transition-colors"
+        >
+          {social.includes('twitter') || social.includes('x.com') ? (
+            <i class="fab fa-twitter"></i>
+          ) : social.includes('github') ? (
+            <i class="fab fa-github"></i>
+          ) : social.includes('linkedin') ? (
+            <i class="fab fa-linkedin"></i>
+          ) : (
+            <i class="fas fa-link"></i>
+          )}
+        </a>
+      </div>
+    )}
+  </div>
+</div>

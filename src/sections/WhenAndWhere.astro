@@ -1,53 +1,56 @@
 ---
 import { LUGAR_MAPA } from '@/consts/links'
-import Container from '@/components/Container.astro'
-import UnderlineWord from '@/components/UnderlineWord.astro'
-import Agenda from '@/icons/Agenda.svg'
-import Pin from '@/icons/Pin.svg'
-import ArrowRight from '@/icons/ArrowRight.svg'
-import LinkEntrada from '@/components/LinkEntrada.astro'
 ---
 
-<section class="bg-[#f7df1e] text-black pb-8 py-12 px-6">
-  <Container>
-    <h2 class="text-6xl text-center font-clash max-w-5xl mx-auto">
-      El día que Madrid se convertirá en la <strong class="font-semibold"
-        >capital española de <UnderlineWord class="!left-20">JavaScript</UnderlineWord>
-      </strong>
-    </h2>
-
-    <div class="flex py-12 gap-x-10 justify-between flex-col md:flex-row gap-y-12">
-      <article class="md:p-12 border border-black w-full p-8">
-        <span class="flex justify-start gap-x-2 items-center text-xl opacity-70"
-          ><Agenda slot="icon-left" />
-          ¿Cuándo?
-        </span>
-        <h3 class="text-6xl font-clash font-medium">14 de marzo 2026</h3>
-        <h4 class="text-xl font-light">Sábado</h4>
-      </article>
-
-      <article class="md:p-12 border border-black w-full p-8">
-        <span class="flex justify-start gap-x-2 items-center text-xl opacity-70">
-          <Pin slot="icon-left" />
-          Estaremos en...
-        </span>
-        <h4 class="text-6xl font-clash font-medium">La Nave, Madrid</h4>
-        <h5 class="text-xl font-light">
-          <a
-            href={LUGAR_MAPA}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="font-clash group flex gap-x-1 items-center font-medium hover:opacity-70"
-          >
-            <span class="underline underline-offset-4">Mostrar en el mapa</span>
-            <ArrowRight slot="icon-right" class="group-hover:translate-x-1 transition" />
-          </a>
-        </h5>
-      </article>
+<section id="venue" class="py-20 bg-gradient-to-t from-dark-bg to-[#111]">
+  <div class="container mx-auto px-5">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <h4 class="text-js-yellow uppercase tracking-[2px] font-bold mb-2">LA SEDE</h4>
+        <h2 class="text-5xl font-bold font-display mb-5 text-white">La Nave, Madrid</h2>
+        <p class="text-lg text-gray-300 mb-5 leading-relaxed">
+          Un antiguo espacio industrial transformado en el centro de innovación más importante de la
+          ciudad. Techos altos, luz natural y una acústica increíble para una experiencia
+          inolvidable.
+        </p>
+        <div class="mb-8">
+          <div class="flex gap-4 mb-4">
+            <i class="fas fa-map-marker-alt text-js-yellow mt-1"></i>
+            <div>
+              <strong class="text-white block">Dirección</strong>
+              <span class="text-gray-400">C. Cifuentes, 5, Villaverde, 28021 Madrid</span>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <i class="fas fa-subway text-js-yellow mt-1"></i>
+            <div>
+              <strong class="text-white block">Metro</strong>
+              <span class="text-gray-400">Villaverde Bajo-Cruce (Línea 3)</span>
+            </div>
+          </div>
+        </div>
+        <a
+          href={LUGAR_MAPA}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center px-8 py-3.5 font-bold uppercase tracking-wide text-sm bg-transparent border-2 border-white text-white rounded hover:bg-white hover:text-js-black transition-all"
+        >
+          Ver en Google Maps
+        </a>
+      </div>
+      <div
+        class="rounded-[20px] overflow-hidden h-[300px] lg:h-[400px] border-2 border-white/10 shadow-2xl relative group"
+      >
+        <img
+          src="/la-nave.webp"
+          alt="La Nave Madrid"
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        >
+        </div>
+      </div>
     </div>
-
-    <!-- <div class="flex justify-center">
-      <LinkEntrada style="black" />
-    </div> -->
-  </Container>
+  </div>
 </section>

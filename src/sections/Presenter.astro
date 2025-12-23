@@ -1,80 +1,59 @@
 ---
-import Container from '@/components/Container.astro'
-import ArrowUp from '@/icons/ArrowUp.svg'
-import XLogo from '@/icons/XLogo.svg'
-import TwitchLogo from '@/icons/TwitchLogo.svg'
-import LinkedInSmallLogo from '@/icons/LinkedInSmallLogo.svg'
-import Button from '@/components/Button.astro'
-import UnderlineWord from '@/components/UnderlineWord.astro'
 import { Image } from 'astro:assets'
 
 const socialNetworks = [
   {
-    name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/midudev/',
-    icon: LinkedInSmallLogo,
-    aria: 'Sigueme en LinkedIn',
+    name: 'Twitch',
+    url: 'https://www.twitch.tv/midudev',
+    icon: 'fab fa-twitch',
+  },
+  {
+    name: 'YouTube',
+    url: 'https://www.youtube.com/midudev',
+    icon: 'fab fa-youtube',
   },
   {
     name: 'X',
     url: 'https://x.com/midudev',
-    icon: XLogo,
-    aria: 'Sigueme en X',
-  },
-  {
-    name: 'Twitch',
-    url: 'https://www.twitch.tv/midudev',
-    icon: TwitchLogo,
-    aria: 'Sigueme en Twitch',
+    icon: 'fab fa-twitter',
   },
 ]
 ---
 
-<section class="bg-black text-white mx-auto py-12">
-  <Container>
-    <div class="flex md:flex-row flex-col-reverse lg:gap-x-20 gap-x-10">
-      <Image
-        width={520}
-        height={520}
-        src="/img/midu-presenter.webp"
-        alt="Miguel Ángel Durán"
-        class="md:w-5/12 max-md:mt-8 object-scale-down"
-      />
-      <div class="md:w-7/12 flex flex-col md:p-10 md:gap-y-10 gap-y-8">
-        <h2 class="md:text-5xl text-[34px] font-clash font-medium">
-          Presentado por <UnderlineWord
-            class="text-white !-translate-x-5 !-translate-y-2 md:!translate-x-0 md:!translate-y-0"
-            ><span class="text-javascript">midudev</span></UnderlineWord
-          >
+<section class="py-20 bg-[#151515]">
+  <div class="container mx-auto px-5">
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 items-center">
+      <div class="rounded-xl border-2 border-js-yellow overflow-hidden shadow-[0_0_20px_rgba(247,223,30,0.2)]">
+        <Image 
+          src="https://unavatar.io/midudev" 
+          alt="Miguel Ángel Durán (midudev)" 
+          width={400} 
+          height={400}
+          class="w-full block transition-transform duration-500 hover:scale-105"
+        />
+      </div>
+      <div>
+        <h4 class="text-js-yellow tracking-[2px] uppercase font-bold mb-2">PRESENTADO POR</h4>
+        <h2 class="text-5xl font-bold font-display mb-5 text-white">
+          Miguel Ángel Durán <br /><span class="text-[#777] text-4xl">(midudev)</span>
         </h2>
-        <h3 class="md:text-2xl text-lg font-clash text-pretty">
-          Uno de los mayores divulgadores de Programación de habla hispana. Más de 15 años de
-          experiencia en <span class="text-javascript">JavaScript</span>.
-        </h3>
-        <div class="flex flex-row gap-x-4 items-center mb-8">
-          {
-            socialNetworks.map(({ name, url, aria, icon: Icon }) => (
-              <a
-                aria-label={aria}
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-white hover:scale-150 transition-transform"
-              >
-                <Icon class="size-8" />
-              </a>
-            ))
-          }
+        <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+          Reconocido Google Developer Expert, creador de contenido y divulgador de programación. Miguel Ángel será el maestro de ceremonias encargado de guiar la jornada, entrevistar a los ponentes y asegurar que la energía no decaiga ni un segundo durante toda la JSConf.
+        </p>
+        <div class="flex gap-6">
+          {socialNetworks.map(({ name, url, icon }) => (
+            <a 
+              href={url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label={`Sigue a midudev en ${name}`}
+              class="text-white text-3xl hover:text-js-yellow transition-all hover:-translate-y-1"
+            >
+              <i class={icon}></i>
+            </a>
+          ))}
         </div>
-        <Button
-          class="lg:px-10 text-lg py-6 px-12 w-full md:w-fit"
-          style="transparent"
-          href="https://twitch.tv/midudev"
-        >
-          <ArrowUp slot="icon-right" />
-          ¿Quién es midudev?
-        </Button>
       </div>
     </div>
-  </Container>
+  </div>
 </section>

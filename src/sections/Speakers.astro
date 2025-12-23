@@ -1,12 +1,5 @@
 ---
-import Container from '@/components/Container.astro'
-import CrossContainerTitle from '@/components/CrossContainerTitle.astro'
 import Card from '@/components/SpeakerCard.astro'
-import VercelLogo from '@/icons/VercelLogo.svg'
-import StripeLogo from '@/icons/StripeLogo.svg'
-import VueLogo from '@/icons/VueLogo.svg'
-import MicrosoftLogo from '@/icons/MicrosoftLogo.svg'
-import Button from '@/components/Button.astro'
 
 const speakers = [
   {
@@ -16,7 +9,6 @@ const speakers = [
     description:
       'La maga del CSS, la que lleva las animaciones al próximo nivel. Verás lo que sabe de JavaScript.',
     imageUrl: '/img/carmen-ansio.webp',
-    companyLogo: StripeLogo,
     social: 'https://www.carmenansio.dev/',
   },
   {
@@ -26,7 +18,6 @@ const speakers = [
     description:
       'Blackbelt en Microsoft y Capitana en Docker. Doma la nube y los contenedores mientras ayuda a los devs a ser más felices.',
     imageUrl: '/img/gisela-torres.webp',
-    companyLogo: MicrosoftLogo,
     social: 'https://x.com/0GiS0',
   },
   {
@@ -45,48 +36,39 @@ const speakers = [
     description:
       'Tech Lead en Vercel. Uno de los primeros ingenieros de la compañía y experto en React y el Edge.',
     imageUrl: '/img/javier-velasco.webp',
-    companyLogo: VercelLogo,
     social: 'https://x.com/javivelasco',
-  },
-  {
-    name: '¿Eres tú?',
-    role: 'Ponente',
-    company: 'Envía tu propuesta',
-    description:
-      '¡Estamos buscando a los mejores ponentes para la JSConf España 2026! ¿Tienes algo interesante que contar? ¡Te esperamos!',
-    imageUrl: '/img/jsconf.png',
-    social: 'https://forms.gle/wXRn7M6gAHEFkFe38',
   },
 ]
 ---
 
-<section id="speakers" class="px-section scroll-mt-28">
-  <Container class="items-center">
-    <div class="flex justify-center flex-wrap">
-      <h2 class="font-clash text-white lg:text-7xl sm:text-5xl text-3xl text-center leading-tight">
-        ¡Nuestros
-        <CrossContainerTitle>speakers</CrossContainerTitle>, estrellas de JavaScript de la comunidad
-        hispana!
-      </h2>
-    </div>
-    <!-- <div class="flex flex-col items-center justify-center pt-24 pb-12 w-full col-span-full">
-        <p class="text-3xl text-white/50 font-clash">Próximamente</p>
-        <p class="text-xl text-white/30 mt-4">Estamos seleccionando a los mejores speakers para ti.</p>
-      </div> -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pt-10">
-      {speakers.map((speaker) => <Card {...speaker} companyLogo={speaker.companyLogo} />)}
+<section id="speakers" class="py-20">
+  <div class="container mx-auto px-5">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-5xl font-bold font-display mb-5 text-white">Ponentes Destacados</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">Expertos internacionales y talento local compartiendo el futuro de la web.</p>
     </div>
 
-    <div class="flex justify-center mt-12">
-      <Button
-        href="https://forms.gle/wXRn7M6gAHEFkFe38"
-        target="_blank"
-        rel="noopener noreferrer"
-        style="yellow"
-        class="rounded-full text-lg px-8 py-4"
-      >
-        Envía tu charla (CFP abierto)
-      </Button>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+      {speakers.map((speaker) => <Card {...speaker} />)}
+
+      <!-- Call for Papers Card -->
+      <div class="bg-dark-surface/50 rounded-xl overflow-hidden border-2 border-dashed border-js-yellow relative hover:bg-js-yellow/10 transition-all duration-300 flex flex-col justify-center items-center text-center min-h-[400px] p-6 group">
+        <div class="text-5xl text-js-yellow mb-4 group-hover:scale-110 transition-transform">
+          <i class="fas fa-bullhorn"></i>
+        </div>
+        <h3 class="text-xl text-js-yellow font-bold mb-2.5 uppercase tracking-wider">¡TÚ!</h3>
+        <p class="text-gray-300 max-w-[80%] mb-6">
+          ¿Tienes una idea, experiencia o proyecto que compartir? Buscamos nuevas voces para la comunidad.
+        </p>
+        <a 
+          href="https://forms.gle/wXRn7M6gAHEFkFe38" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center px-8 py-3.5 font-bold uppercase tracking-wide text-sm bg-transparent border-2 border-js-yellow text-js-yellow rounded hover:bg-js-yellow hover:text-js-black transition-all"
+        >
+          Enviar Propuesta
+        </a>
+      </div>
     </div>
-  </Container>
+  </div>
 </section>

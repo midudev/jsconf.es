@@ -1,76 +1,105 @@
 ---
-import Container from '@/components/Container.astro'
-import LogoIcon from '@/icons/Logo.svg'
-import MiduLogoIcon from '@/icons/MiduLogo.svg'
+import Logo from '@/icons/Logo.svg'
 ---
 
-<footer>
-  <Container class="pb-0 pt-12">
-    <div
-      class="flex md:flex-row flex-col max-md:gap-y-4 justify-between items-center border-b border-white/10 pb-2"
-    >
-      <div class="flex gap-x-3 items-center justify-center">
-        <LogoIcon class="md:size-16 size-10" />
-        <div class="max-md:-mb-1">
-          <h4
-            class="font-clash font-semibold max-md:h-4 md:text-2xl text-lg flex flex-row items-center gap-x-2 text-white"
+<footer class="border-t border-white/10 pt-16 pb-10 bg-black">
+  <div class="container mx-auto px-5">
+    <div class="flex flex-wrap justify-between items-start gap-12 mb-16">
+      <div class="flex-[2] min-w-[300px]">
+        <div class="flex items-center gap-3 mb-6">
+          <Logo class="h-10 w-auto" />
+          <div class="text-3xl font-bold font-clash text-white uppercase tracking-tighter">
+            JSConf <span class="text-js-yellow font-bold">España</span>
+          </div>
+        </div>
+        <p class="text-gray-400 max-w-[450px] mb-8 leading-relaxed text-balance">
+          Organizado por y para la comunidad. JSConf España es un evento sin ánimo de lucro dedicado
+          a impulsar el desarrollo web y fortalecer la comunidad de JavaScript en nuestro país.
+        </p>
+        <div class="flex gap-6">
+          <a
+            href="https://x.com/midudev"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-2xl text-white hover:text-js-yellow transition-all hover:-translate-y-1"
           >
-            JSConf España
-            <span
-              class="rounded-full bg-javascript text-black font-semibold md:text-lg text-xs md:px-3 md:py-1 px-2 py-0.5 !leading-none flex justify-center items-center"
-              >2026</span
-            >
-          </h4>
-          <span class="uppercase font-light opacity-80 text-sm text-white max-md:text-xs"
-            >14 MARZO 2026</span
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a
+            href="https://youtube.com/midudev"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-2xl text-white hover:text-js-yellow transition-all hover:-translate-y-1"
           >
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a
+            href="https://twitch.tv/midudev"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-2xl text-white hover:text-js-yellow transition-all hover:-translate-y-1"
+          >
+            <i class="fab fa-twitch"></i>
+          </a>
         </div>
       </div>
 
-      <h4 class="font-clash text-center text-white flex justify-center items-center gap-x-2">
-        Una iniciativa de
-        <a
-          class="flex flex-row gap-x-2 justify-center items-center transition-transform hover:scale-110"
-          href="https://midu.dev/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <MiduLogoIcon /><strong class="font-semibold">midudev</strong>
-        </a>
-      </h4>
-    </div>
-    <div
-      class="flex flex-row text-white/70 md:gap-x-6 gap-x-3 py-6 md:justify-between items-center justify-center flex-wrap"
-    >
-      <div class="flex items-center gap-2">
-        <a href="/legal" target="_self" class="hover:text-javascript text-light-gray">Legal</a>
+      <div class="flex flex-wrap gap-12 sm:gap-20">
+        <div>
+          <h4 class="text-js-yellow font-bold mb-6 uppercase tracking-wider text-sm">Evento</h4>
+          <ul class="space-y-4">
+            <li>
+              <a
+                href="/codigo-de-conducta"
+                class="text-gray-400 hover:text-white hover:underline transition-colors"
+                >Código de Conducta</a>
+            </li>
+            <li>
+              <a
+                href="/privacidad"
+                class="text-gray-400 hover:text-white hover:underline transition-colors"
+                >Privacidad</a>
+            </li>
+            <li>
+              <a
+                href="/legal"
+                class="text-gray-400 hover:text-white hover:underline transition-colors"
+                >Aviso Legal</a>
+            </li>
+            <li>
+              <a
+                href="mailto:miduga@gmail.com"
+                class="text-gray-400 hover:text-white hover:underline transition-colors"
+                >Contacto</a>
+            </li>
+          </ul>
+        </div>
 
-        <svg width="4" height="4" viewBox="0 0 4 4" fill="none">
-          <circle cx="2" cy="2" r="2" fill="currentColor"></circle>
-        </svg>
-
-        <a href="/privacidad" target="_self" class="hover:text-javascript text-light-gray"
-          >Política de privacidad</a
-        >
-
-        <svg width="4" height="4" viewBox="0 0 4 4" fill="none">
-          <circle cx="2" cy="2" r="2" fill="currentColor"></circle>
-        </svg>
-
-        <a href="/codigo-de-conducta" target="_self" class="hover:text-javascript text-light-gray"
-          >Código de conducta</a
-        >
+        <div>
+          <h4 class="text-js-yellow font-bold mb-6 uppercase tracking-wider text-sm">Ediciones</h4>
+          <ul class="space-y-4">
+            <li>
+              <a href="#" class="text-gray-400 hover:text-white hover:underline transition-colors"
+                >2026 Madrid</a>
+            </li>
+            <li>
+              <a
+                href="https://2025.jsconf.es"
+                class="text-gray-400 hover:text-white hover:underline transition-colors opacity-50"
+                >2025 Madrid</a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="text-white text-sm opacity-75">
-        <p>
-          Diseñado con ❤️ by <a
-            href="https://zegieweb.com/"
-            target="_blank"
-            rel="noreferrer noopener"
-            class="underline underline-offset-4">Vladyslav</a
-          >
-        </p>
-      </div>
     </div>
-  </Container>
+
+    <div class="text-center pt-8 border-t border-white/5 text-[#555] text-sm">
+      <p>
+        &copy; 2026 JSConf España. Powered by InfoJobs. Una iniciativa de <a
+          href="https://midu.dev"
+          class="text-gray-500 hover:text-js-yellow">midudev</a
+        >.
+      </p>
+    </div>
+  </div>
 </footer>

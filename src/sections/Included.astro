@@ -1,0 +1,55 @@
+---
+import IncludedItem from '@/components/IncludedItem.astro'
+
+const items = [
+  {
+    icon: 'fas fa-mug-hot',
+    title: 'Desayuno Completo',
+    description: 'Café recién hecho y churros',
+  },
+  {
+    icon: 'fas fa-pizza-slice',
+    title: 'Comida Incluida',
+    description: 'Pizza caliente para recargar fuerzas',
+  },
+  {
+    icon: 'fas fa-glass-cheers',
+    title: 'Bebida Incluida',
+    description: 'Refrescos y agua',
+  },
+  {
+    icon: 'fas fa-tshirt',
+    title: 'Swag & Merch',
+    description: 'Camiseta y pegatinas exclusivas',
+  },
+  { icon: 'fas fa-id-badge', title: 'Acceso Total', description: 'Todas las charlas y workshops' },
+  {
+    icon: 'fas fa-pen-nib',
+    title: 'Firma de Libros',
+    description: 'Con autores técnicos destacados',
+  },
+  {
+    icon: 'fas fa-cocktail',
+    title: 'Cóctel Despedida',
+    description: 'Networking al final del día',
+  },
+  {
+    icon: 'fas fa-gift',
+    title: 'Sorteos y Regalos',
+    description: 'Premios de nuestros sponsors',
+  },
+]
+---
+
+<section id="included" class="py-20 bg-[#111]">
+  <div class="container mx-auto px-5">
+    <h2
+      class="text-center text-4xl md:text-5xl font-bold font-display mb-12 text-white tracking-tighter"
+    >
+      ¿Qué incluye la entrada?
+    </h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      {items.map((item) => <IncludedItem {...item} />)}
+    </div>
+  </div>
+</section>

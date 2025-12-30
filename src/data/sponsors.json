@@ -7,7 +7,21 @@
       {
         "name": "LemonCode",
         "image": "/sponsors/lemoncode.svg",
-        "url": "https://lemoncode.net/"
+        "url": "https://lemoncode.net/",
+        "description": "FORMACIÓN DE CALIDAD PARA DESARROLLADORES"
+      }
+    ]
+  },
+  {
+    "category": "Sponsors MAX",
+    "color": "#ff3e00",
+    "icon": "max",
+    "companies": [
+      {
+        "name": "DonDominio",
+        "image": "/sponsors/dondominio.webp",
+        "url": "https://www.dondominio.com/",
+        "description": "DOMINIOS, HOSTING Y CERTIFICADOS SSL"
       }
     ]
   }

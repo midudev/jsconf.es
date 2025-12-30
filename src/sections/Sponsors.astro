@@ -17,11 +17,14 @@ import infojobsLogo from '@/icons/InfojobsLogo.svg?raw'
           href="https://www.infojobs.net" 
           target="_blank" 
           rel="noopener noreferrer"
-          class="bg-dark-surface rounded-lg flex items-center justify-center transition-all duration-300 p-8 w-[350px] h-[180px] border-2 border-js-yellow grayscale-0 opacity-100 hover:scale-105 hover:bg-[#252525] group text-white"
+          class="bg-dark-surface rounded-lg flex flex-col items-center justify-center transition-all duration-300 px-8 py-4 w-[350px] h-[200px] border-2 border-js-yellow grayscale-0 opacity-100 hover:scale-105 hover:bg-[#252525] group text-white gap-4"
         >
-          <div class="w-full h-auto px-4">
+          <div class="w-full h-auto px-4 flex justify-center">
             <Fragment set:html={infojobsLogo} />
           </div>
+          <p class="text-[10px] md:text-xs uppercase font-light text-js-yellow/80 max-w-[300px] leading-tight tracking-wider">
+            Líder en oportunidades laborales para profesionales tecnológicos
+          </p>
         </a>
       </div>
     </div>
@@ -29,8 +32,11 @@ import infojobsLogo from '@/icons/InfojobsLogo.svg?raw'
     <!-- Tiers from JSON -->
     {sponsors.map((tier) => (
       <div class="mb-16">
-        <span class="text-sm uppercase tracking-[2px] text-gray-400 mb-5 block border-b border-white/10 pb-2.5 inline-block">
-          <i class={`fas ${tier.icon === 'platinum' ? 'fa-gem' : 'fa-star'} text-xl mr-2`}></i> {tier.category.replace('Sponsors ', '')}
+        <span class:list={[
+          "text-sm uppercase tracking-[2px] mb-5 block border-b border-white/10 pb-2.5 inline-block",
+          tier.icon === 'platinum' ? "text-[#09f]" : "text-gray-400"
+        ]}>
+          <i class={`fas ${tier.icon === 'platinum' ? 'fa-gem' : tier.icon === 'max' ? 'fa-trophy' : 'fa-star'} text-xl mr-2`}></i> {tier.category.replace('Sponsors ', '')}
         </span>
         <div class="flex flex-wrap justify-center items-center gap-10">
           {tier.companies.map((company) => (
@@ -38,12 +44,22 @@ import infojobsLogo from '@/icons/InfojobsLogo.svg?raw'
               href={company.url} 
               target="_blank" 
               rel="noopener noreferrer"
-              class="bg-dark-surface rounded-lg flex items-center justify-center transition-all duration-300 p-4 w-[280px] h-[140px] hover:scale-105 hover:bg-[#252525]"
+              class:list={[
+                "bg-dark-surface rounded-lg flex flex-col items-center justify-center transition-all duration-300 p-6 hover:scale-105 hover:bg-[#252525] gap-4",
+                tier.icon === 'platinum' ? 'w-[320px] h-[180px]' : 'w-[280px] h-[160px]'
+              ]}
             >
-              {company.image ? (
-                <img src={company.image} alt={company.name} class="max-w-[80%] max-h-[70%] object-contain" />
-              ) : (
-                <span class="text-white font-bold font-display text-2xl">{company.name}</span>
+              <div class="flex-1 flex items-center justify-center w-full">
+                {company.image ? (
+                  <img src={company.image} alt={company.name} class="max-w-[85%] max-h-[80%] object-contain" />
+                ) : (
+                  <span class="text-white font-bold font-display text-2xl">{company.name}</span>
+                )}
+              </div>
+              {company.description && (
+                <p class="text-[10px] uppercase font-light text-gray-400 max-w-[220px] leading-tight tracking-wider">
+                  {company.description}
+                </p>
               )}
             </a>
           ))}

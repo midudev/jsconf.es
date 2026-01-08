@@ -5,72 +5,94 @@ import infojobsLogo from '@/icons/InfojobsLogo.svg?raw'
 
 <section id="sponsors" class="py-20 bg-black relative overflow-hidden">
   <div class="container mx-auto px-5 text-center relative z-10">
-    <h2 class="text-4xl md:text-5xl font-bold font-display mb-16 text-white">Nuestros Patrocinadores</h2>
+    <h2 class="text-4xl md:text-5xl font-bold font-display mb-16 text-white">
+      Nuestros Patrocinadores
+    </h2>
 
-    <!-- Principal Sponsor -->
-    <div class="mb-16">
-      <span class="text-sm uppercase tracking-[2px] text-js-yellow mb-5 block border-b border-white/10 pb-2.5 inline-block">
-        <i class="fas fa-crown text-xl mr-2"></i> Principal Sponsor
-      </span>
-      <div class="flex flex-wrap justify-center items-center gap-10">
-        <a 
-          href="https://www.infojobs.net" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="bg-dark-surface rounded-lg flex flex-col items-center justify-center transition-all duration-300 px-8 py-4 w-[350px] h-[200px] border-2 border-js-yellow grayscale-0 opacity-100 hover:scale-105 hover:bg-[#252525] group text-white gap-4"
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-12">
+      <!-- Principal Sponsor -->
+      <a
+        href="https://www.infojobs.net"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="md:col-span-3 relative bg-gradient-to-br from-js-yellow/10 via-dark-surface to-dark-surface rounded-xl flex flex-col items-center justify-center p-8 md:p-12 border-2 border-js-yellow/50 hover:border-js-yellow transition-all duration-300 group overflow-hidden"
+      >
+        <span
+          class="absolute top-4 left-4 text-xs font-bold uppercase tracking-wider text-js-yellow bg-js-yeellow/10 px-3 py-1 rounded bg-white/5"
         >
-          <div class="w-full h-auto px-4 flex justify-center">
-            <Fragment set:html={infojobsLogo} />
-          </div>
-          <p class="text-[10px] md:text-xs uppercase font-light text-js-yellow/80 max-w-[300px] leading-tight tracking-wider">
-            Líder en oportunidades laborales para profesionales tecnológicos
-          </p>
-        </a>
-      </div>
-    </div>
-
-    <!-- Tiers from JSON -->
-    {sponsors.map((tier) => (
-      <div class="mb-16">
-        <span class:list={[
-          "text-sm uppercase tracking-[2px] mb-5 block border-b border-white/10 pb-2.5 inline-block",
-          tier.icon === 'platinum' ? "text-[#09f]" : "text-gray-400"
-        ]}>
-          <i class={`fas ${tier.icon === 'platinum' ? 'fa-gem' : tier.icon === 'max' ? 'fa-trophy' : 'fa-star'} text-xl mr-2`}></i> {tier.category.replace('Sponsors ', '')}
+          <i class="fas fa-crown text-js-yellow mr-1"></i> Principal Sponsor
         </span>
-        <div class="flex flex-wrap justify-center items-center gap-10">
-          {tier.companies.map((company) => (
-            <a 
-              href={company.url} 
-              target="_blank" 
+
+        <div class="w-full max-w-[400px] mb-4">
+          <Fragment set:html={infojobsLogo} />
+        </div>
+        <p class="text-xs md:text-sm uppercase font-light text-js-yellow/90 tracking-wider">
+          Líder en oportunidades laborales para profesionales tecnológicos
+        </p>
+      </a>
+
+      <!-- Other Sponsors -->
+      {
+        sponsors.map((tier) =>
+          tier.companies.map((company) => (
+            <a
+              href={company.url}
+              target="_blank"
               rel="noopener noreferrer"
               class:list={[
-                "bg-dark-surface rounded-lg flex flex-col items-center justify-center transition-all duration-300 p-6 hover:scale-105 hover:bg-[#252525] gap-4",
-                tier.icon === 'platinum' ? 'w-[320px] h-[180px]' : 'w-[280px] h-[160px]'
+                'relative rounded-xl flex flex-col items-center justify-center p-6 md:p-8 transition-all duration-300 hover:scale-[1.02] hover:bg-[#252525] group border border-white/5',
+                tier.icon === 'platinum'
+                  ? 'md:col-span-2 bg-gradient-to-br from-[#09f]/10 via-dark-surface to-dark-surface'
+                  : 'md:col-span-1 bg-dark-surface',
               ]}
             >
-              <div class="flex-1 flex items-center justify-center w-full">
+              <span
+                class:list={[
+                  'absolute top-4 left-4 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-white/5',
+                  tier.icon === 'platinum'
+                    ? 'text-[#09f]'
+                    : tier.icon === 'max'
+                      ? 'text-[#ff3e00]'
+                      : 'text-gray-400',
+                ]}
+              >
+                <i
+                  class={`fas ${tier.icon === 'platinum' ? 'fa-gem' : tier.icon === 'max' ? 'fa-trophy' : 'fa-star'} mr-1`}
+                />{' '}
+                {tier.category.replace('Sponsors ', '')}
+              </span>
+
+              <div class="flex-1 flex items-center justify-center w-full py-4">
                 {company.image ? (
-                  <img src={company.image} alt={company.name} class="max-w-[85%] max-h-[80%] object-contain" />
+                  <img
+                    src={company.image}
+                    alt={company.name}
+                    class:list={[
+                      'object-contain transition-all duration-300 group-hover:scale-110',
+                      tier.icon === 'star'
+                        ? 'max-w-[200px] md:max-w-[240px] max-h-[120px]'
+                        : 'max-w-[180px] md:max-w-[220px] max-h-[100px]',
+                    ]}
+                  />
                 ) : (
                   <span class="text-white font-bold font-display text-2xl">{company.name}</span>
                 )}
               </div>
               {company.description && (
-                <p class="text-[10px] uppercase font-light text-gray-400 max-w-[220px] leading-tight tracking-wider">
+                <p class="text-[10px] uppercase font-light text-gray-500 max-w-[220px] leading-tight tracking-wider">
                   {company.description}
                 </p>
               )}
             </a>
-          ))}
-        </div>
-      </div>
-    ))}
-    
+          ))
+        )
+      }
+    </div>
+
     <div class="mt-12">
       <p class="text-gray-400 mb-5">¿Quieres apoyar la comunidad JavaScript en España?</p>
-      <a 
-        href="mailto:miduga@gmail.com" 
+      <a
+        href="mailto:miduga@gmail.com"
         class="inline-flex items-center justify-center px-8 py-3.5 font-bold uppercase tracking-wide text-sm bg-transparent border-2 border-white text-white rounded hover:bg-white hover:text-js-black transition-all"
       >
         Ponerse en contacto

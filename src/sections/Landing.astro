@@ -94,17 +94,31 @@ const backgroundIcons = generateRandomIcons(techIcons.length * 5)
         )
       }
       <div class="flex flex-wrap gap-5 justify-center pointer-events-auto">
-        <button
-          id="buy-tickets-hero"
-          class="inline-flex items-center justify-center px-8 py-3.5 font-bold uppercase tracking-wide text-sm bg-js-yellow text-js-black border-2 border-js-yellow rounded hover:bg-transparent hover:text-js-yellow hover:shadow-[0_0_15px_rgba(247,223,30,0.4)] transition-all"
-        >
-          <i class="fas fa-ticket-alt mr-2.5"></i> Comprar Entradas
-        </button>
+        <div class="flex flex-col items-center gap-2">
+          <button
+            id="buy-tickets-hero"
+            class="inline-flex items-center justify-center px-6 py-3 font-bold uppercase tracking-wide text-sm bg-js-yellow text-js-black border-2 border-js-yellow rounded hover:bg-transparent hover:text-js-yellow hover:shadow-[0_0_15px_rgba(247,223,30,0.4)] transition-all"
+          >
+            <i class="fas fa-ticket-alt mr-2.5"></i> Comprar Entradas
+          </button>
+          <a
+            href="https://www.tickettailor.com/events/midudev/1981059"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group inline-flex items-center gap-1 text-[10px] text-white/50 hover:text-white transition-colors"
+            aria-label="Abrir preventa de entradas en otra ventana"
+          >
+            Abrir en otra ventana
+            <i
+              class="fas fa-external-link-alt text-[8px] opacity-70 group-hover:opacity-100 transition-opacity"
+            ></i>
+          </a>
+        </div>
         <a
           href="https://forms.gle/wXRn7M6gAHEFkFe38"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center justify-center px-8 py-3.5 font-bold uppercase tracking-wide text-sm bg-transparent border-2 border-white text-white rounded hover:bg-white hover:text-js-black transition-all"
+          class="inline-flex items-center justify-center px-6 py-3 font-bold uppercase tracking-wide text-sm bg-transparent border-2 border-white text-white rounded hover:bg-white hover:text-js-black transition-all h-fit"
         >
           <i class="fas fa-microphone mr-2.5"></i> Enviar CFP
         </a>

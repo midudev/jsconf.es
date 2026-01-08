@@ -27,14 +27,20 @@
     </button>
     <!-- Ticket Tailor Widget. Paste this into your website where you want the widget to appear. Do not change the code or the widget may not work properly. -->
     <div class="tt-widget">
-      <div class="tt-widget-fallback">
-        <p>
-          <a
-            href="https://www.tickettailor.com/checkout/new-session/id/7330734/chk/40c2/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true"
-            target="_blank"
-            rel="noopener noreferrer">Comprar entradas</a
-          ><br />
+      <!-- Fallback visibility improved -->
+      <div class="tt-widget-fallback py-10 text-center">
+        <p class="text-gray-400 mb-6">
+          Si el buscador de entradas no carga correctamente, puedes comprarlas directamente en la
+          web oficial.
         </p>
+        <a
+          href="https://www.tickettailor.com/checkout/new-session/id/7330734/chk/40c2/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center px-8 py-3.5 font-bold uppercase tracking-wide text-sm bg-js-yellow text-js-black border-2 border-js-yellow rounded hover:bg-transparent hover:text-js-yellow transition-all"
+        >
+          <i class="fas fa-external-link-alt mr-2.5"></i> Ver entradas en Ticket Tailor
+        </a>
       </div>
       <script
         is:inline

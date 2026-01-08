@@ -4,10 +4,24 @@ import Button from '@/components/Button.astro'
 const { style = 'black' } = Astro.props
 ---
 
-<Button style={style} class="buy-tickets-button">
-  <span> Comprar Entradas </span>
-  <Ticket slot="icon-left" />
-</Button>
+<div class="flex flex-col items-center gap-2">
+  <Button style={style} class="buy-tickets-button">
+    <span> Comprar Entradas </span>
+    <Ticket slot="icon-left" />
+  </Button>
+  <a
+    href="https://www.tickettailor.com/events/midudev/1981059"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="group inline-flex items-center gap-1 text-[10px] text-white/50 hover:text-white transition-colors"
+    aria-label="Abrir preventa de entradas en otra ventana"
+  >
+    Abrir en otra ventana
+    <i
+      class="fas fa-external-link-alt text-[8px] opacity-70 group-hover:opacity-100 transition-opacity"
+    ></i>
+  </a>
+</div>
 
 <script>
   const buyTicketsButtons = document.querySelectorAll('.buy-tickets-button')

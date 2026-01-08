@@ -24,5 +24,18 @@
         "description": "DOMINIOS, HOSTING Y CERTIFICADOS SSL"
       }
     ]
+  },
+  {
+    "category": "Sponsors Pro",
+    "color": "#777",
+    "icon": "star",
+    "companies": [
+      {
+        "name": "Codely",
+        "image": "/sponsors/codely.svg",
+        "url": "https://codely.com/",
+        "description": "MUCHO MÁS QUE CURSOS DE PROGRAMACIÓN"
+      }
+    ]
   }
 ]

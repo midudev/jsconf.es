@@ -1,8 +1,5 @@
 ---
-import { getAvailableTickets } from '@/services/tickettailor'
 import InfoJobsLogo from '@/icons/InfojobsLogo.svg'
-
-const availableTickets = await getAvailableTickets()
 
 const techIcons = [
   'icon-angular',
@@ -64,37 +61,37 @@ const backgroundIcons = generateRandomIcons(techIcons.length * 5)
 
   <div class="container mx-auto px-5 relative z-20 text-center max-w-[900px] pointer-events-none">
     <div
-      class="inline-flex items-center bg-white/10 px-6 py-3 rounded-full mb-8 border border-white/20 text-sm tracking-wide backdrop-blur-sm pointer-events-auto hover:animate-pop animate-duration-fast"
+      class="inline-flex items-center bg-white/10 px-6 py-3 rounded-full mb-8 border border-white/20 text-sm tracking-wide backdrop-blur-sm pointer-events-auto"
     >
       <span class="mr-2 opacity-70 font-bold">POWERED BY</span>
 
       <InfoJobsLogo class="h-6 w-auto -mb-1" />
     </div>
     <h1
-      class="text-5xl lg:text-7xl font-bold font-display mb-4 tracking-tighter drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)] animate-fade-in-down animate-duration-slow"
+      class="text-5xl lg:text-7xl font-bold font-display mb-4 tracking-tighter drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)]"
     >
       JSCONF ESPAÑA 2026
     </h1>
     <div
-      class="text-2xl text-js-yellow font-display font-medium mb-12 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)] text-balance animate-fade-in-up animate-duration-slow animate-delay-200"
+      class="text-2xl text-js-yellow font-display font-medium mb-12 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)] text-balance"
     >
       <i class="far fa-calendar-alt mr-2"></i> 14 DE MARZO, 2026 &bull; MADRID &bull; LA NAVE
     </div>
 
-    <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto animate-fade-in animate-duration-slow animate-delay-300">
+    <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
       Únete a la comunidad de desarrolladores más vibrante en un día lleno de código, innovación y
       networking de primer nivel.
     </p>
 
-    <div class="flex flex-col items-center animate-fade-in animate-duration-slow animate-delay-500">
-      {
-        availableTickets !== null && availableTickets > 0 && (
-          <span class="text-js-yellow text-sm font-bold mb-2.5 uppercase tracking-wide animate-pulse-slow">
-            Quedan {availableTickets} entradas
-          </span>
-        )
-      }
-      <div class="flex flex-wrap gap-5 justify-center pointer-events-auto">
+    <div class="flex flex-col items-center">
+      <div class="h-8 flex items-center justify-center">
+        <span
+          id="tickets-count"
+          class="text-js-yellow text-sm font-bold uppercase tracking-wide opacity-0"
+        >
+        </span>
+      </div>
+      <div class="flex flex-wrap gap-5 justify-center pointer-events-auto mt-2">
         <div class="flex flex-col items-center gap-2">
           <button
             id="buy-tickets-hero"
@@ -133,6 +130,21 @@ const backgroundIcons = generateRandomIcons(techIcons.length * 5)
   buyTicketsHero?.addEventListener('click', () => {
     window.dispatchEvent(new CustomEvent('open-ticket-tailor'))
   })
+
+  // Cargar entradas disponibles client-side
+  fetch('/api/tickets')
+    .then((res) => res.json())
+    .then(({ availableTickets }) => {
+      if (availableTickets && availableTickets > 0) {
+        const countSpan = document.getElementById('tickets-count')
+        if (countSpan) {
+          countSpan.textContent = `Quedan ${availableTickets} entradas`
+          countSpan.classList.remove('opacity-0')
+          countSpan.classList.add('animate-blurred-fade-in', 'animate-duration-slower')
+        }
+      }
+    })
+    .catch((err) => console.error('Error fetching tickets:', err))
 
   // Efecto de proximidad para los iconos
   const icons = document.querySelectorAll('.tech-icon')

@@ -32,33 +32,37 @@ const calendars = [
 
 <div class="group relative flex flex-col">
   <button
-    class="inline-flex items-center justify-center gap-2 px-5 py-2.5 font-bold uppercase tracking-wide text-xs bg-js-yellow text-js-black border-2 border-js-yellow rounded hover:bg-transparent hover:text-js-yellow transition-all cursor-pointer shadow-[0_0_10px_rgba(247,223,30,0.2)] hover:shadow-[0_0_20px_rgba(247,223,30,0.4)]"
+    class="inline-flex items-center justify-center gap-2 px-5 py-2.5 font-bold uppercase tracking-wide text-xs bg-js-yellow text-js-black border-2 border-js-yellow rounded hover:bg-transparent hover:text-js-yellow transition-all cursor-pointer shadow-[0_0_10px_rgba(247,223,30,0.2)] hover:shadow-[0_0_20px_rgba(247,223,30,0.4)] relative"
     id="add-to-calendar"
   >
     <Calendar class="size-4" />
     Añadir al calendario
   </button>
   <div
-    class="hidden absolute overflow-hidden z-20 rounded-lg top-full right-0 md:left-0 group-hover:flex group-focus-within:flex flex-col w-56 bg-dark-bg border border-white/10 shadow-2xl backdrop-blur-xl animate-in fade-in slide-in-from-top-2 duration-200 mt-2 before:absolute before:-top-4 before:left-0 before:w-full before:h-4 before:content-['']"
+    class="hidden absolute z-20 top-full right-0 md:left-0 group-hover:flex group-focus-within:flex flex-col w-56 pt-2 animate-in fade-in slide-in-from-top-2 duration-200"
     id="calendar-dialog"
   >
-    <div class="p-2 border-b border-white/5 bg-white/10">
-      <span class="text-[10px] font-bold text-white/40 uppercase tracking-widest px-2"
-        >Selecciona plataforma</span
-      >
-    </div>
-    {
-      calendars.map(({ name, url, icon: Icon }) => (
-        <a
-          href={url}
-          class="flex flex-row justify-start items-center gap-x-3 py-3 px-4 text-sm text-gray-300 hover:text-js-yellow hover:bg-white/10 transition-all border-b border-white/5 last:border-0"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div
+      class="flex flex-col overflow-hidden rounded-lg bg-dark-bg border border-white/10 shadow-2xl backdrop-blur-xl"
+    >
+      <div class="p-2 border-b border-white/5 bg-white/10">
+        <span class="text-[10px] font-bold text-white/40 uppercase tracking-widest px-2"
+          >Selecciona plataforma</span
         >
-          <Icon class="size-4" />
-          {name}
-        </a>
-      ))
-    }
+      </div>
+      {
+        calendars.map(({ name, url, icon: Icon }) => (
+          <a
+            href={url}
+            class="flex flex-row justify-start items-center gap-x-3 py-3 px-4 text-sm text-gray-300 hover:text-js-yellow hover:bg-white/10 transition-all border-b border-white/5 last:border-0 bg-black z-50"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon class="size-4" />
+            {name}
+          </a>
+        ))
+      }
+    </div>
   </div>
 </div>

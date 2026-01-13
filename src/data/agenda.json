@@ -1,16 +1,16 @@
 [
   {
     "day": "Día 1",
-    "date": "1 de marzo de 2025",
+    "date": "14 de marzo de 2026",
     "agenda": [
       {
         "type": "break",
-        "time": "08:30 - 09:30",
+        "time": "09:00 - 09:30",
         "topic": "Registro + Café de Bienvenida"
       },
       {
         "type": "talk",
-        "time": "09:30 - 09:40",
+        "time": "09:30 - 09:45",
         "topic": "Inicio Evento",
         "speaker": "Miguel Ángel Durán",
         "role": "Presentador",
@@ -18,85 +18,68 @@
       },
       {
         "type": "talk",
-        "time": "09:40 - 10:20",
+        "time": "09:45 - 10:25",
         "topic": "Animaciones espectaculares con JavaScript",
         "speaker": "Carmen Ansio",
-        "role": "Designer Engineer @LottieFiles",
+        "role": "Designer Engineer @Stripe",
         "image": "carmen-ansio.webp"
       },
       {
         "type": "talk",
-        "time": "10:20 - 11:00",
-        "topic": "El Futuro del Frontend Routing con la Navigation API",
-        "speaker": "Eduardo Vue",
-        "role": "Creador de Vue Router y Pinia",
-        "image": "eduardo-vue.webp"
+        "time": "10:25 - 11:05",
+        "topic": "TBD",
+        "speaker": "Speaker",
+        "role": "TBD"
       },
       {
         "type": "break",
-        "time": "11:00 - 11:30",
+        "time": "11:05 - 11:35",
         "topic": "Pausa de Café"
       },
       {
         "type": "talk",
-        "time": "11:30 - 11:40",
+        "time": "11:35 - 11:45",
         "topic": "Inicio Bloque"
       },
       {
         "type": "talk",
-        "time": "11:40 - 11:55",
-        "topic": "Descifrando Angular Signals: Computed vs Linked Signals",
-        "speaker": "Jaione Arnaez Telleria",
-        "role": "FrontEnd @IronTec",
-        "image": "jaione.webp"
+        "time": "11:45 - 12:25",
+        "topic": "Hackeando la administración pública para traer transparencia",
+        "speaker": "Jaime Gómez-Obregón",
+        "role": "Ingeniero y activista",
+        "image": "jaime-gomez-obregon.webp"
       },
       {
         "type": "talk",
-        "time": "11:55 - 12:00",
-        "topic": "Mejor código JavaScript con LLMs",
-        "speaker": "Fernando Rodríguez",
-        "role": "CEO @KeepCoding",
-        "image": "fernando-rodriguez.webp"
-      },
-      {
-        "type": "talk",
-        "time": "12:00 - 12:05",
-        "topic": "¿Componentes propios o bibliotecas externas? Decisiones clave y implementación",
-        "speaker": "Giulia Girardi",
-        "role": "Software Developer @Datamaran",
-        "image": "giulia.webp"
-      },
-      {
-        "type": "talk",
-        "time": "12:05 - 12:45",
+        "time": "12:25 - 13:05",
         "topic": "React Reinventado: IA, Next.js, Server Components y Vercel",
-        "speaker": "Javier Velasco",
-        "role": "Tech Lead @Vercel",
+        "speaker": "Javi Velasco",
+        "role": "Staff Software Engineer @Vercel",
         "image": "javier-velasco.webp"
       },
       {
+        "type": "talk",
+        "time": "13:05 - 13:45",
+        "topic": "TBD",
+        "speaker": "Gisela Torres",
+        "role": "Sr. Global Blackbelt @Microsoft",
+        "image": "gisela-torres.webp"
+      },
+      {
         "type": "break",
-        "time": "12:45 - 13:00",
+        "time": "13:45 - 14:15",
         "topic": "Pausa"
       },
       {
         "type": "talk",
-        "time": "13:00 - 13:25",
+        "time": "14:15 - 14:40",
         "topic": "Lightning Talks",
         "speaker": "Varios",
         "role": "Charlas rápidas de programación"
       },
       {
         "type": "talk",
-        "time": "13:25 - 14:05",
-        "topic": "Patrones de Diseño con JS y TS",
-        "speaker": "Fernando Herrera",
-        "role": "Profesor en Línea @DevTalles",
-        "image": "fernando-herrera.webp"
-      },
-      {
-        "type": "talk",
-        "time": "14:05 - 14:25",
+        "time": "14:40 - 15:00",
         "topic": "Sorteos",
         "speaker": "Miguel Ángel Durán",
         "role": "Presentador",
@@ -104,12 +87,12 @@
       },
       {
         "type": "break",
-        "time": "14:25 - 16:00",
+        "time": "15:00 - 16:30",
         "topic": "¡A comer!"
       },
       {
         "type": "talk",
-        "time": "16:00 - 16:05",
+        "time": "16:30 - 16:40",
         "topic": "Inicio del segundo bloque",
         "speaker": "Miguel Ángel Durán",
         "role": "Presentador",
@@ -117,15 +100,22 @@
       },
       {
         "type": "talk",
-        "time": "16:05 - 16:35",
-        "topic": "SonJs of Anarchy",
-        "speaker": "Vanessa Medina & Henar Hernández",
-        "role": "Charla conjunta",
-        "image": ["vanessa.webp", "henar.webp"]
+        "time": "16:40 - 17:20",
+        "topic": "Patrones de Diseño con JS y TS",
+        "speaker": "Fernando Herrera",
+        "role": "Full Stack Educator @DevTalles",
+        "image": "fernando-herrera.webp"
       },
       {
         "type": "talk",
-        "time": "16:35 - 17:05",
+        "time": "17:20 - 18:00",
+        "topic": "TBD",
+        "speaker": "Speaker",
+        "role": "TBD"
+      },
+      {
+        "type": "talk",
+        "time": "18:00 - 18:30",
         "topic": "JavaScript, frameworks y IA",
         "speaker": "midudev & Fernando Herrera",
         "image": ["midudev.webp", "fernando-herrera.webp"],
@@ -133,28 +123,20 @@
       },
       {
         "type": "break",
-        "time": "17:05 - 17:20",
+        "time": "18:30 - 18:45",
         "topic": "Break"
       },
       {
         "type": "talk",
-        "time": "17:20 - 17:40",
-        "topic": "Zustand para administrar estados en aplicaciones React",
-        "speaker": "Ilda Neta",
-        "role": "Mobile Software Engineer @RockTheSport",
-        "image": "ildaneta.webp"
-      },
-      {
-        "type": "talk",
-        "time": "17:40 - 18:20",
-        "topic": "Lo nuevo de JavaScript y Node.js para 2025",
+        "time": "18:45 - 19:25",
+        "topic": "Lo nuevo de JavaScript y Node.js para 2026",
         "speaker": "Erick Wendel",
         "image": "erick-wendel.webp",
-        "role": "Creador de Contenido"
+        "role": "Creador de Contenido y Emprendedor"
       },
       {
         "type": "talk",
-        "time": "18:20 - 18:30",
+        "time": "19:25 - 19:35",
         "topic": "Cierre del evento",
         "speaker": "Miguel Ángel Durán",
         "role": "Presentador",
@@ -162,7 +144,7 @@
       },
       {
         "type": "break",
-        "time": "18:30 - 21:00",
+        "time": "19:35 - 21:00",
         "topic": "Cóctel + Networking + Firma de libros"
       }
     ]

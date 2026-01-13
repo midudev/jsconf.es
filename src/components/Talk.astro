@@ -1,6 +1,6 @@
 ---
 const { item } = Astro.props
-const { time, topic, speaker, role, image } = item
+const { time, topic, speaker, role, image, description } = item
 ---
 
 <div
@@ -23,6 +23,13 @@ const { time, topic, speaker, role, image } = item
       >
         {topic}
       </h4>
+      {
+        description && (
+          <p class="text-gray-400 text-sm leading-relaxed max-w-[500px] text-balance">
+            {description}
+          </p>
+        )
+      }
     </div>
   </div>
 

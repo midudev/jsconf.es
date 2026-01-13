@@ -4,44 +4,58 @@ const { time, topic, speaker, role, image } = item
 ---
 
 <div
-  class="flex justify-between items-center bg-[#191919] p-4 px-4 border border-white border-opacity-5 flex-col md:flex-row"
+  class="flex justify-between items-center bg-dark-surface/50 p-6 rounded-xl border border-white/5 flex-col md:flex-row gap-6 hover:border-js-yellow/50 transition-all group"
 >
-  <div class="flex gap-4 flex-1 flex-col md:flex-row">
-    <h4
-      class="border-0 md:border-r border-white border-opacity-5 pr-4 text-javascript min-w-32 tabular-nums font-mono justify-center items-center flex tracking-tight"
-    >
-      {time}
-    </h4>
-    <p class="text-xl text-balance">{topic}</p>
-  </div>
-  <div class="flex items-center w-full md:w-[30%] mt-4 md:mt-0">
-    {
-      // Si 'image' existe, revisamos si es un array o un string
-      image && Array.isArray(image) ? (
-        <div class="flex relative mr-2">
-          {image.map((img, index) => (
-            <img
-              width={48}
-              height={48}
-              src={`/img/${img}`}
-              alt={`Imagen de avatar ${index + 1} de ${speaker} - ${role}`}
-              class="size-12 rounded-full -ml-4 border-2 border-[#191919]"
-            />
-          ))}
-        </div>
-      ) : image ? (
-        <img
-          width={48}
-          height={48}
-          src={`/img/${image}`}
-          alt={`Imagen de avatar de ${speaker} - ${role}`}
-          class="size-12 rounded-full mr-4"
-        />
-      ) : null
-    }
-    <div class="flex flex-col">
-      <p>{speaker}</p>
-      <p class="text-javascript text-balance">{role}</p>
+  <div class="flex gap-6 flex-1 flex-col md:flex-row items-center md:items-start text-center md:text-left">
+    <div class="flex flex-col items-center md:items-start min-w-[120px]">
+      <span class="text-js-yellow font-mono text-xl tabular-nums leading-none">
+        {time.split(' - ')[0]}
+      </span>
+      <span class="text-gray-500 font-mono text-xs uppercase mt-1">
+        {time.split(' - ')[1]}
+      </span>
+    </div>
+    <div class="flex flex-col gap-2">
+      <h4 class="text-2xl font-bold font-display text-white group-hover:text-js-yellow transition-colors leading-tight">
+        {topic}
+      </h4>
     </div>
   </div>
+
+  {speaker && (
+    <div class="flex items-center w-full md:w-auto mt-4 md:mt-0 bg-black/30 p-4 rounded-lg border border-white/5 min-w-[280px]">
+      {
+        // Si 'image' existe, revisamos si es un array o un string
+        image && Array.isArray(image) ? (
+          <div class="flex -space-x-4 mr-4">
+            {image.map((img, index) => (
+              <img
+                width={56}
+                height={56}
+                src={`/img/${img}`}
+                alt={`Imagen de avatar ${index + 1} de ${speaker}`}
+                class="size-14 rounded-full border-2 border-dark-surface object-cover"
+              />
+            ))}
+          </div>
+        ) : image ? (
+          <img
+            width={56}
+            height={56}
+            src={`/img/${image}`}
+            alt={`Imagen de avatar de ${speaker}`}
+            class="size-14 rounded-full mr-4 border-2 border-js-yellow/30 object-cover"
+          />
+        ) : (
+          <div class="size-14 rounded-full mr-4 border-2 border-dashed border-white/20 flex items-center justify-center bg-white/5">
+            <i class="fas fa-user text-white/20 text-xl"></i>
+          </div>
+        )
+      }
+      <div class="flex flex-col">
+        <p class="font-bold text-white text-lg leading-tight">{speaker}</p>
+        <p class="text-js-yellow/80 text-sm leading-tight mt-1 truncate max-w-[180px]">{role}</p>
+      </div>
+    </div>
+  )}
 </div>

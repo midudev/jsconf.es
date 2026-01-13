@@ -1,0 +1,132 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Container from '@/components/Container.astro'
+import UnderlineWord from '@/components/UnderlineWord.astro'
+
+const brands = [
+  {
+    title: 'Logotipo Principal',
+    description: 'El logotipo oficial de JSConf España 2026. Utilízalo en fondos claros o donde la visibilidad sea óptima.',
+    image: '/img/jsconf.png',
+    svg: '/favicon.svg',
+    png: '/img/jsconf.png'
+  }
+]
+
+const colors = [
+  { name: 'JS Yellow', hex: '#F7DF1E', bg: 'bg-[#F7DF1E]', text: 'text-black' },
+  { name: 'JS Black', hex: '#000000', bg: 'bg-[#000000]', text: 'text-white' },
+];
+---
+
+<Layout title="Marca y Recursos">
+  <main class="pt-32 pb-20">
+    <Container>
+      <header class="mb-20 text-center lg:text-left">
+        <h1 class="text-4xl md:text-6xl font-black mb-6 uppercase italic">
+          Marca y <UnderlineWord>Recursos</UnderlineWord>
+        </h1>
+        <p class="text-xl text-white/70 max-w-2xl">
+          Descarga los archivos oficiales y consulta las guías de estilo para representar correctamente la JSConf España 2026.
+        </p>
+      </header>
+
+      <!-- Logotipos -->
+      <section class="mb-32">
+        <h2 class="text-3xl font-bold mb-10 flex items-center gap-4">
+          <span class="text-js-yellow">01.</span> Logotipos
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {brands.map((brand) => (
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col items-center">
+              <div class="bg-white p-12 rounded-xl mb-8 flex items-center justify-center min-h-[200px] w-full">
+                <img src={brand.image} alt={brand.title} class="max-h-24 w-auto object-contain" />
+              </div>
+              <div class="text-center md:text-left w-full">
+                <h3 class="text-2xl font-bold mb-4">{brand.title}</h3>
+                <p class="text-white/60 mb-8">{brand.description}</p>
+                <div class="flex flex-wrap gap-4">
+                  <a href={brand.svg} download class="inline-flex items-center justify-center gap-2 px-6 py-3 font-bold uppercase tracking-wide text-xs bg-js-yellow text-js-black border-2 border-js-yellow rounded hover:bg-transparent hover:text-js-yellow transition-all">
+                    Descargar SVG
+                  </a>
+                  <a href={brand.png} download class="inline-flex items-center justify-center gap-2 px-6 py-3 font-bold uppercase tracking-wide text-xs border-2 border-white/20 text-white rounded hover:bg-white hover:text-black transition-all">
+                    Descargar PNG
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Colores -->
+      <section class="mb-32">
+        <h2 class="text-3xl font-bold mb-10 flex items-center gap-4">
+          <span class="text-js-yellow">02.</span> Colores
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {colors.map((color) => (
+            <div class="space-y-4">
+              <div class={`${color.bg} ${color.text} aspect-square rounded-2xl p-6 flex items-end font-bold text-xl shadow-lg border border-white/10`}>
+                {color.hex}
+              </div>
+              <div>
+                <h4 class="font-bold">{color.name}</h4>
+                <p class="text-white/40 text-sm italic">{color.hex}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Guías de uso -->
+      <section>
+        <h2 class="text-3xl font-bold mb-10 flex items-center gap-4">
+          <span class="text-js-yellow">03.</span> Guías de uso
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div class="bg-green-500/10 border border-green-500/20 p-8 rounded-2xl">
+            <h3 class="text-xl font-bold mb-6 text-green-400 flex items-center gap-2">
+              <i class="fas fa-check-circle"></i> Qué hacer
+            </h3>
+            <ul class="space-y-4 text-white/70">
+              <li class="flex gap-3">
+                <span class="text-green-500">•</span>
+                Deja suficiente espacio libre alrededor del logo.
+              </li>
+              <li class="flex gap-3">
+                <span class="text-green-500">•</span>
+                Asegúrate de que haya buen contraste entre el logo y el fondo.
+              </li>
+              <li class="flex gap-3">
+                <span class="text-green-500">•</span>
+                Utiliza las versiones oficiales proporcionadas arriba.
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-red-500/10 border border-red-500/20 p-8 rounded-2xl">
+            <h3 class="text-xl font-bold mb-6 text-red-400 flex items-center gap-2">
+              <i class="fas fa-times-circle"></i> Qué NO hacer
+            </h3>
+            <ul class="space-y-4 text-white/70">
+              <li class="flex gap-3">
+                <span class="text-red-500">•</span>
+                No cambies los colores ni la tipografía del logotipo.
+              </li>
+              <li class="flex gap-3">
+                <span class="text-red-500">•</span>
+                No estires, rotes ni distorsiones la imagen.
+              </li>
+              <li class="flex gap-3">
+                <span class="text-red-500">•</span>
+                No añadas sombras ni efectos adicionales innecesarios.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </Container>
+  </main>
+</Layout>

@@ -10,18 +10,23 @@ const { agenda, date } = data[0]
 
 <section
   id="agenda"
-  class="bg-black flex flex-col px-section text-white font-clash scroll-mt-28 py-20"
+  class="bg-black flex flex-col px-section text-white font-clash scroll-mt-28 py-24 border-t border-white/5"
 >
   <Container class="w-full">
-    <div class="flex gap-4 justify-between pb-6 flex-col md:flex-row md:items-center">
-      <h3 class="text-5xl">Programa del evento</h3>
-      <div class="flex flex-col md:flex-row gap-4 items-center">
-        <span class="text-xl text-gray-300 font-medium tabular-nums">{date}</span>
+    <div class="text-center mb-16 animate-on-scroll">
+      <h2 class="text-4xl md:text-6xl font-black font-display mb-6 tracking-tighter uppercase italic">
+        Programa del <span class="text-js-yellow">Evento</span>
+      </h2>
+      <div class="flex flex-col md:flex-row gap-6 items-center justify-center">
+        <div class="flex items-center gap-3 bg-white/5 px-6 py-2 rounded-full border border-white/10">
+          <i class="far fa-calendar-alt text-js-yellow"></i>
+          <span class="text-xl font-bold tabular-nums text-white/90 tracking-tight">{date}</span>
+        </div>
         <AddToCalendarDialog />
       </div>
     </div>
 
-    <div class="flex flex-col gap-y-4">
+    <div class="flex flex-col gap-y-6 animate-on-scroll">
       {
         agenda.map((item) => {
           const { type } = item

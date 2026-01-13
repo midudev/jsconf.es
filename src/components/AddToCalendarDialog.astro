@@ -39,13 +39,14 @@ const calendars = [
     Añadir al calendario
   </button>
   <div
-    class="hidden absolute z-20 top-full right-0 md:left-0 group-hover:flex group-focus-within:flex flex-col w-56 pt-2 animate-in fade-in slide-in-from-top-2 duration-200"
+    class="hidden absolute z-50 top-[calc(100%-5px)] right-0 md:left-0 group-hover:flex group-focus-within:flex flex-col w-56 animate-in fade-in duration-200"
     id="calendar-dialog"
   >
+    <div class="h-2 w-full"></div> <!-- Bridge to prevent mouse leave -->
     <div
-      class="flex flex-col overflow-hidden rounded-lg bg-dark-bg border border-white/10 shadow-2xl backdrop-blur-xl"
+      class="flex flex-col overflow-hidden rounded-lg bg-[#1a1a1a] border border-white/10 shadow-2xl"
     >
-      <div class="p-2 border-b border-white/5 bg-white/10">
+      <div class="p-2 border-b border-white/5 bg-white/5">
         <span class="text-[10px] font-bold text-white/40 uppercase tracking-widest px-2"
           >Selecciona plataforma</span
         >
@@ -54,7 +55,7 @@ const calendars = [
         calendars.map(({ name, url, icon: Icon }) => (
           <a
             href={url}
-            class="flex flex-row justify-start items-center gap-x-3 py-3 px-4 text-sm text-gray-300 hover:text-js-yellow hover:bg-white/10 transition-all border-b border-white/5 last:border-0 bg-black z-50"
+            class="flex flex-row justify-start items-center gap-x-3 py-3 px-4 text-sm text-gray-300 hover:text-js-yellow hover:bg-white/10 transition-all border-b border-white/5 last:border-0 bg-[#1a1a1a]"
             target="_blank"
             rel="noopener noreferrer"
           >

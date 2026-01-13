@@ -1,5 +1,4 @@
 ---
-import Button from '@/components/Button.astro'
 import Calendar from '@/icons/Calendar.svg'
 import Google from '@/icons/GoogleSmallLogo.svg'
 import Outlook from '@/icons/OutlookLogo.svg'
@@ -32,23 +31,25 @@ const calendars = [
 ---
 
 <div class="group relative flex flex-col">
-  <Button
-    class="rounded-t-md group-hover:rounded-t-md shadow-lg"
-    style="transparent"
+  <button
+    class="inline-flex items-center justify-center gap-2 px-5 py-2.5 font-bold uppercase tracking-wide text-xs bg-js-yellow text-js-black border-2 border-js-yellow rounded hover:bg-transparent hover:text-js-yellow transition-all cursor-pointer shadow-[0_0_10px_rgba(247,223,30,0.2)] hover:shadow-[0_0_20px_rgba(247,223,30,0.4)]"
     id="add-to-calendar"
   >
-    <Calendar slot="icon-left" class="size-4" />
-    Agregalo a tu calendario
-  </Button>
+    <Calendar class="size-4" />
+    Añadir al calendario
+  </button>
   <div
-    class="hidden absolute overflow-hidden z-10 rounded-b-md top-full left-0 group-hover:flex group-focus-within:flex flex-col items-center justify-center gap-y-2 w-full bg-zinc-950"
+    class="hidden absolute overflow-hidden z-20 rounded-lg top-full mt-2 right-0 md:left-0 group-hover:flex group-focus-within:flex flex-col w-56 bg-dark-bg border border-white/10 shadow-2xl backdrop-blur-xl animate-in fade-in slide-in-from-top-2 duration-200"
     id="calendar-dialog"
   >
+    <div class="p-2 border-b border-white/5 bg-white/5">
+      <span class="text-[10px] font-bold text-white/40 uppercase tracking-widest px-2">Selecciona plataforma</span>
+    </div>
     {
       calendars.map(({ name, url, icon: Icon }) => (
         <a
           href={url}
-          class="z-50 w-full flex flex-row justify-start items-center gap-x-4 py-3 px-4 hover:bg-zinc-800"
+          class="flex flex-row justify-start items-center gap-x-3 py-3 px-4 text-sm text-gray-300 hover:text-js-yellow hover:bg-white/5 transition-all border-b border-white/5 last:border-0"
           target="_blank"
           rel="noopener noreferrer"
         >

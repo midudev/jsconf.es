@@ -175,7 +175,7 @@ const colors = [
       const color = card.getAttribute('data-color')
       if (color) {
         navigator.clipboard.writeText(color)
-        
+
         // Efecto visual de copiado
         const originalText = (card.querySelector('span') as HTMLElement)?.innerText
         const span = card.querySelector('span') as HTMLElement

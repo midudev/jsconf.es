@@ -118,7 +118,16 @@
       },
       {
         "type": "talk",
-        "time": "15:25 - 16:00",
+        "time": "15:25 - 15:35",
+        "topic": "Accesibilidad web: Guía para un apocalipsis zombie",
+        "speaker": "Mia Salazar",
+        "role": "Front-end Developer @Step4ward",
+        "image": "mia-salazar.webp",
+        "description": "Si tu web no es accesible, ni los zombies podrán entrar... o quizás sea al revés. Aprende cómo sobrevivir al fin del mundo digital con una web para todos."
+      },
+      {
+        "type": "talk",
+        "time": "15:35 - 16:00",
         "topic": "Lightning Talks",
         "speaker": "Varios",
         "role": "Charlas rápidas de programación",

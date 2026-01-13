@@ -1,16 +1,24 @@
 ---
 import Layout from '@/layouts/Layout.astro'
 import Container from '@/components/Container.astro'
-import UnderlineWord from '@/components/UnderlineWord.astro'
 
 const brands = [
   {
     title: 'Logotipo Principal',
     description:
       'El logotipo oficial de JSConf España 2026. Utilízalo en fondos claros o donde la visibilidad sea óptima.',
-    image: '/img/jsconf.png',
+    image: '/logo.png',
     svg: '/favicon.svg',
-    png: '/img/jsconf.png',
+    png: '/logo.png',
+  },
+  {
+    title: 'Logotipo Secundario',
+    description:
+      'Versión en blanco y negro para usos específicos donde se requiera sobriedad o el fondo no permita el uso del color original.',
+    image: '/logo-bw.png',
+    svg: '/logo-bw.svg',
+    png: '/logo-bw.png',
+    bg: 'bg-js-yellow',
   },
 ]
 
@@ -23,13 +31,12 @@ const colors = [
 <Layout title="Marca y Recursos">
   <main class="pt-32 pb-20">
     <Container>
-      <header class="mb-20 text-center lg:text-left">
-        <h1 class="text-4xl md:text-6xl font-black mb-6 uppercase italic">
-          Marca y <UnderlineWord>Recursos</UnderlineWord>
+      <header class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold font-display mb-5 text-white uppercase tracking-tighter">
+          Marca y Recursos
         </h1>
-        <p class="text-xl text-white/70 max-w-2xl">
-          Descarga los archivos oficiales y consulta las guías de estilo para representar
-          correctamente la JSConf España 2026.
+        <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+          Descarga los archivos oficiales y consulta las guías de estilo para representar correctamente la JSConf España 2026.
         </p>
       </header>
 
@@ -43,7 +50,12 @@ const colors = [
           {
             brands.map((brand) => (
               <div class="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col items-center">
-                <div class="bg-white p-12 rounded-xl mb-8 flex items-center justify-center min-h-[200px] w-full">
+                <div
+                  class:list={[
+                    'p-12 rounded-xl mb-8 flex items-center justify-center min-h-[200px] w-full',
+                    brand.bg || 'bg-white',
+                  ]}
+                >
                   <img src={brand.image} alt={brand.title} class="max-h-24 w-auto object-contain" />
                 </div>
                 <div class="text-center md:text-left w-full">
@@ -81,14 +93,22 @@ const colors = [
           {
             colors.map((color) => (
               <div class="space-y-4">
-                <div
-                  class={`${color.bg} ${color.text} aspect-square rounded-2xl p-6 flex items-end font-bold text-xl shadow-lg border border-white/10`}
+                <button
+                  data-color={color.hex}
+                  class="color-card group relative w-full aspect-square rounded-2xl overflow-hidden shadow-lg border border-white/10 transition-all active:scale-95 cursor-pointer selection:bg-transparent"
+                  title="Click para copiar el color"
                 >
-                  {color.hex}
-                </div>
+                  <div class={`${color.bg} w-full h-full`} />
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="text-white font-bold text-sm uppercase tracking-widest">Copiar HEX</span>
+                  </div>
+                  <div class="absolute bottom-4 left-4 font-bold text-xl mix-blend-difference text-white">
+                    {color.hex}
+                  </div>
+                </button>
                 <div>
                   <h4 class="font-bold">{color.name}</h4>
-                  <p class="text-white/40 text-sm italic">{color.hex}</p>
+                  <p class="text-white/40 text-sm italic select-all cursor-text">{color.hex}</p>
                 </div>
               </div>
             ))
@@ -146,3 +166,26 @@ const colors = [
     </Container>
   </main>
 </Layout>
+
+<script>
+  const colorCards = document.querySelectorAll('.color-card')
+
+  colorCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const color = card.getAttribute('data-color')
+      if (color) {
+        navigator.clipboard.writeText(color)
+        
+        // Efecto visual de copiado
+        const originalText = (card.querySelector('span') as HTMLElement)?.innerText
+        const span = card.querySelector('span') as HTMLElement
+        if (span) {
+          span.innerText = '¡Copiado!'
+          setTimeout(() => {
+            span.innerText = originalText || 'Copiar HEX'
+          }, 2000)
+        }
+      }
+    })
+  })
+</script>

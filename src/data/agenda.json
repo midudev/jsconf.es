@@ -5,8 +5,8 @@
     "agenda": [
       {
         "type": "break",
-        "time": "09:00 - 09:30",
-        "topic": "Registro + Café de Bienvenida"
+        "time": "08:45 - 09:30",
+        "topic": "Café y Churros de Bienvenida"
       },
       {
         "type": "talk",
@@ -19,7 +19,7 @@
       {
         "type": "talk",
         "time": "09:45 - 10:25",
-        "topic": "Animaciones espectaculares con JavaScript",
+        "topic": "Retro JavaScript: rehaciendo el pasado con código moderno",
         "speaker": "Carmen Ansio",
         "role": "Designer Engineer @Stripe",
         "image": "carmen-ansio.webp"
@@ -28,8 +28,9 @@
         "type": "talk",
         "time": "10:25 - 11:05",
         "topic": "TBD",
-        "speaker": "Speaker",
-        "role": "TBD"
+        "speaker": "Jaime Gómez-Obregón",
+        "role": "Ingeniero y activista",
+        "image": "jaime-gomez-obregon.webp"
       },
       {
         "type": "break",
@@ -39,61 +40,87 @@
       {
         "type": "talk",
         "time": "11:35 - 11:45",
-        "topic": "Inicio Bloque"
+        "topic": "Inicio Bloque + Sorteos",
+        "speaker": "Miguel Ángel Durán",
+        "role": "Presentador",
+        "image": "midudev.webp"
       },
       {
         "type": "talk",
         "time": "11:45 - 12:25",
-        "topic": "Hackeando la administración pública para traer transparencia",
-        "speaker": "Jaime Gómez-Obregón",
-        "role": "Ingeniero y activista",
-        "image": "jaime-gomez-obregon.webp"
-      },
-      {
-        "type": "talk",
-        "time": "12:25 - 13:05",
-        "topic": "React Reinventado: IA, Next.js, Server Components y Vercel",
+        "topic": "TBD",
         "speaker": "Javi Velasco",
         "role": "Staff Software Engineer @Vercel",
         "image": "javier-velasco.webp"
       },
       {
         "type": "talk",
-        "time": "13:05 - 13:45",
-        "topic": "TBD",
+        "time": "12:25 - 13:00",
+        "topic": "MCP Servers con TypeScript: superpoderes para tu IA",
         "speaker": "Gisela Torres",
         "role": "Sr. Global Blackbelt @Microsoft",
         "image": "gisela-torres.webp"
       },
       {
-        "type": "break",
-        "time": "13:45 - 14:15",
-        "topic": "Pausa"
+        "type": "talk",
+        "time": "13:00 - 13:35",
+        "topic": "TBD",
+        "speaker": "Speaker",
+        "role": "TBD"
       },
       {
         "type": "talk",
-        "time": "14:15 - 14:40",
-        "topic": "Lightning Talks",
-        "speaker": "Varios",
-        "role": "Charlas rápidas de programación"
-      },
-      {
-        "type": "talk",
-        "time": "14:40 - 15:00",
-        "topic": "Sorteos",
+        "time": "13:35 - 13:45",
+        "topic": "Sorteos y avisos",
         "speaker": "Miguel Ángel Durán",
         "role": "Presentador",
         "image": "midudev.webp"
       },
       {
         "type": "break",
-        "time": "15:00 - 16:30",
+        "time": "13:45 - 15:00",
         "topic": "¡A comer!"
       },
       {
         "type": "talk",
+        "time": "15:00 - 15:05",
+        "topic": "Sorteos y avisos",
+        "speaker": "Miguel Ángel Durán",
+        "role": "Presentador",
+        "image": "midudev.webp"
+      },
+      {
+        "type": "talk",
+        "time": "15:05 - 15:15",
+        "topic": "React Compiler: el fin de los renders innecesarios",
+        "speaker": "Ilda Neta",
+        "role": "Mobile Software Engineer @RockTheSport",
+        "image": "ildaneta.webp"
+      },
+      {
+        "type": "talk",
+        "time": "15:15 - 15:25",
+        "topic": "Pair Programming con un Agente: Cómo construí un RPG complejo sin perder la cabeza",
+        "speaker": "Jorge del Casar",
+        "role": "Head of Tech @ActioGlobal",
+        "image": "jorge-del-casar.webp"
+      },
+      {
+        "type": "talk",
+        "time": "15:25 - 16:00",
+        "topic": "Lightning Talks",
+        "speaker": "Varios",
+        "role": "Charlas rápidas de programación"
+      },
+      {
+        "type": "break",
+        "time": "16:00 - 16:30",
+        "topic": "Pausa de Café"
+      },
+      {
+        "type": "talk",
         "time": "16:30 - 16:40",
-        "topic": "Inicio del segundo bloque",
+        "topic": "Inicio Bloque + Sorteos",
         "speaker": "Miguel Ángel Durán",
         "role": "Presentador",
         "image": "midudev.webp"
@@ -101,7 +128,7 @@
       {
         "type": "talk",
         "time": "16:40 - 17:20",
-        "topic": "Patrones de Diseño con JS y TS",
+        "topic": "TBD",
         "speaker": "Fernando Herrera",
         "role": "Full Stack Educator @DevTalles",
         "image": "fernando-herrera.webp"
@@ -110,42 +137,22 @@
         "type": "talk",
         "time": "17:20 - 18:00",
         "topic": "TBD",
-        "speaker": "Speaker",
-        "role": "TBD"
-      },
-      {
-        "type": "talk",
-        "time": "18:00 - 18:30",
-        "topic": "JavaScript, frameworks y IA",
-        "speaker": "midudev & Fernando Herrera",
-        "image": ["midudev.webp", "fernando-herrera.webp"],
-        "role": "Panel"
-      },
-      {
-        "type": "break",
-        "time": "18:30 - 18:45",
-        "topic": "Break"
-      },
-      {
-        "type": "talk",
-        "time": "18:45 - 19:25",
-        "topic": "Lo nuevo de JavaScript y Node.js para 2026",
         "speaker": "Erick Wendel",
-        "image": "erick-wendel.webp",
-        "role": "Creador de Contenido y Emprendedor"
+        "role": "Creador de Contenido y Emprendedor",
+        "image": "erick-wendel.webp"
       },
       {
         "type": "talk",
-        "time": "19:25 - 19:35",
-        "topic": "Cierre del evento",
+        "time": "18:00 - 18:10",
+        "topic": "Despedida del evento",
         "speaker": "Miguel Ángel Durán",
         "role": "Presentador",
         "image": "midudev.webp"
       },
       {
         "type": "break",
-        "time": "19:35 - 21:00",
-        "topic": "Cóctel + Networking + Firma de libros"
+        "time": "18:10 - 20:00",
+        "topic": "Coctel de despedida + networking"
       }
     ]
   }

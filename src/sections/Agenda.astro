@@ -13,7 +13,7 @@ const { agenda, date } = data[0]
   class="bg-black flex flex-col px-section text-white font-clash scroll-mt-28 py-24 border-t border-white/5"
 >
   <Container class="w-full">
-    <div class="text-center mb-16 animate-on-scroll relative z-30">
+    <div class="text-center mb-16 animate-fade-in view-animate-[--entrance] animate-range-rapid relative z-30">
       <h2 class="text-4xl md:text-5xl font-bold font-display mb-12 text-white tracking-tighter">
         Programa del <span class="text-js-yellow">Evento</span>
       </h2>
@@ -28,15 +28,25 @@ const { agenda, date } = data[0]
       </div>
     </div>
 
-    <div class="flex flex-col gap-y-6 animate-on-scroll">
+    <div class="flex flex-col gap-y-6">
       {
-        agenda.map((item) => {
+        agenda.map((item, index) => {
           const { type } = item
+          const animationClasses = `animate-fade-in-up view-animate-[--entrance] animate-range-rapid animate-delay-[${(index % 3) * 100}ms]`
+          
           if (type === 'talk') {
-            return <Talk item={item} />
+            return (
+              <div class={animationClasses}>
+                <Talk item={item} />
+              </div>
+            )
           }
           if (type === 'break') {
-            return <Break item={item} />
+            return (
+              <div class={animationClasses}>
+                <Break item={item} />
+              </div>
+            )
           }
           return null
         })

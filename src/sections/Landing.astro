@@ -64,29 +64,29 @@ const backgroundIcons = generateRandomIcons(techIcons.length * 5)
 
   <div class="container mx-auto px-5 relative z-20 text-center max-w-[900px] pointer-events-none">
     <div
-      class="inline-flex items-center bg-white/10 px-6 py-3 rounded-full mb-8 border border-white/20 text-sm tracking-wide backdrop-blur-sm pointer-events-auto"
+      class="inline-flex items-center bg-white/10 px-6 py-3 rounded-full mb-8 border border-white/20 text-sm tracking-wide backdrop-blur-sm pointer-events-auto hover:animate-pop animate-duration-fast"
     >
       <span class="mr-2 opacity-70 font-bold">POWERED BY</span>
 
       <InfoJobsLogo class="h-6 w-auto -mb-1" />
     </div>
     <h1
-      class="text-5xl lg:text-7xl font-bold font-display mb-4 tracking-tighter drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)]"
+      class="text-5xl lg:text-7xl font-bold font-display mb-4 tracking-tighter drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)] animate-fade-in-down animate-duration-slow"
     >
       JSCONF ESPAÑA 2026
     </h1>
     <div
-      class="text-2xl text-js-yellow font-display font-medium mb-12 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)] text-balance"
+      class="text-2xl text-js-yellow font-display font-medium mb-12 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)] text-balance animate-fade-in-up animate-duration-slow animate-delay-200"
     >
       <i class="far fa-calendar-alt mr-2"></i> 14 DE MARZO, 2026 &bull; MADRID &bull; LA NAVE
     </div>
 
-    <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+    <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto animate-fade-in animate-duration-slow animate-delay-300">
       Únete a la comunidad de desarrolladores más vibrante en un día lleno de código, innovación y
       networking de primer nivel.
     </p>
 
-    <div class="flex flex-col items-center">
+    <div class="flex flex-col items-center animate-fade-in animate-duration-slow animate-delay-500">
       {
         availableTickets !== null && availableTickets > 0 && (
           <span class="text-js-yellow text-sm font-bold mb-2.5 uppercase tracking-wide animate-pulse-slow">

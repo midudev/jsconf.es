@@ -40,68 +40,74 @@ import LinkEntrada from '@/components/LinkEntrada.astro'
 
   <Container class="relative z-20">
     <h2
-      class="md:text-6xl text-4xl md:w-5/6 mx-auto text-balance text-center font-medium font-clash mb-12"
+      class="md:text-6xl text-4xl md:w-5/6 mx-auto text-balance text-center font-medium font-clash mb-12 animate-fade-in view-animate-[--entrance] animate-range-rapid"
     >
       ¿Por qué no debes perderte la JSConf?
     </h2>
 
     <div id="cards" class="flex pt-6 pb-12 gap-x-6 justify-around flex-col xl:flex-row gap-y-6">
-      <WhyCard>
-        <h3 slot="title" class="font-clash md:text-4xl text-2xl font-[450]">
-          Contacto directo con los <strong class="text-javascript font-[450]"
-            >expertos del sector</strong
-          >
-        </h3>
-        <div slot="description" class="flex flex-col gap-y-4 opacity-90">
-          <p>Entre nuestros speakers:</p>
-          <ul class="flex flex-col gap-y-4 list-disc pl-5">
-            <li>
-              <strong class="font-bold">Javier Velasco</strong>, el séptimo desarrollador de Vercel,
-              pieza clave en el desarrollo de Next.js.
-            </li>
+      <div class="animate-fade-in-up view-animate-[--entrance] animate-range-rapid">
+        <WhyCard>
+          <h3 slot="title" class="font-clash md:text-4xl text-2xl font-[450]">
+            Contacto directo con los <strong class="text-javascript font-[450]"
+              >expertos del sector</strong
+            >
+          </h3>
+          <div slot="description" class="flex flex-col gap-y-4 opacity-90">
+            <p>Entre nuestros speakers:</p>
+            <ul class="flex flex-col gap-y-4 list-disc pl-5">
+              <li>
+                <strong class="font-bold">Javier Velasco</strong>, el séptimo desarrollador de Vercel,
+                pieza clave en el desarrollo de Next.js.
+              </li>
 
-            <li>
-              <strong class="font-bold">Eduardo San Martin</strong>, Core Contributor de Vue.js y
-              creador de Vue Router.
-            </li>
-          </ul>
-        </div>
-      </WhyCard>
-      <WhyCard>
-        <h3 slot="title" class="font-clash md:text-4xl text-2xl font-[450]">
-          <strong class="text-javascript font-[450]">Nuevas herramientas</strong> y enfoques
-        </h3>
-        <div slot="description" class="flex flex-col gap-y-4 opacity-90">
-          <p>
-            Cada charla ofrece profundidad y practicidad. Nuestros ponentes no solo muestran "cómo",
-            sino que explican "por qué".
-          </p>
+              <li>
+                <strong class="font-bold">Eduardo San Martin</strong>, Core Contributor de Vue.js y
+                creador de Vue Router.
+              </li>
+            </ul>
+          </div>
+        </WhyCard>
+      </div>
+      <div class="animate-fade-in-up view-animate-[--entrance] animate-range-rapid animate-delay-[200ms]">
+        <WhyCard>
+          <h3 slot="title" class="font-clash md:text-4xl text-2xl font-[450]">
+            <strong class="text-javascript font-[450]">Nuevas herramientas</strong> y enfoques
+          </h3>
+          <div slot="description" class="flex flex-col gap-y-4 opacity-90">
+            <p>
+              Cada charla ofrece profundidad y practicidad. Nuestros ponentes no solo muestran "cómo",
+              sino que explican "por qué".
+            </p>
 
-          <p>Unas ideas que puedes aplicar directamente en tus proyectos.</p>
-        </div>
-      </WhyCard>
-      <WhyCard>
-        <h3 slot="title" class="font-clash md:text-4xl text-2xl font-[450]">
-          <strong class="text-javascript font-[450]">Nuevos contactos</strong> que cambian carreras
-        </h3>
-        <div slot="description" class="flex flex-col gap-y-4">
-          <p class="opacity-90">
-            JSConf no es sólo un evento, es una comunidad. Conecta con otros apasionados del
-            desarrollo, intercambia ideas y construye relaciones profesionales valiosas.
-          </p>
+            <p>Unas ideas que puedes aplicar directamente en tus proyectos.</p>
+          </div>
+        </WhyCard>
+      </div>
+      <div class="animate-fade-in-up view-animate-[--entrance] animate-range-rapid animate-delay-[400ms]">
+        <WhyCard>
+          <h3 slot="title" class="font-clash md:text-4xl text-2xl font-[450]">
+            <strong class="text-javascript font-[450]">Nuevos contactos</strong> que cambian carreras
+          </h3>
+          <div slot="description" class="flex flex-col gap-y-4">
+            <p class="opacity-90">
+              JSConf no es sólo un evento, es una comunidad. Conecta con otros apasionados del
+              desarrollo, intercambia ideas y construye relaciones profesionales valiosas.
+            </p>
 
-          <a
-            target="_blank"
-            rel="noreferrer noopener"
-            href={COMPRAR_ENTRADA}
-            class="group py-2 font-clash text-javascript flex flex-row items-center gap-x-2"
-          >
-            Aprovecha la oportunidad <span
-              ><ArrowRight class="group-hover:translate-x-1 transition" />
-            </span></a
-          >
-        </div>
-      </WhyCard>
+            <a
+              target="_blank"
+              rel="noreferrer noopener"
+              href={COMPRAR_ENTRADA}
+              class="group py-2 font-clash text-javascript flex flex-row items-center gap-x-2"
+            >
+              Aprovecha la oportunidad <span
+                ><ArrowRight class="group-hover:translate-x-1 transition" />
+              </span></a
+            >
+          </div>
+        </WhyCard>
+      </div>
     </div>
 
     <!-- <div class="flex justify-center max-md:mx-9">

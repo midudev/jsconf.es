@@ -1,14 +1,17 @@
 ---
-const images = Array.from({ length: 10 }, (_, i) => `/gallery/${i.toString().padStart(2, '0')}.webp`)
+const images = Array.from(
+  { length: 10 },
+  (_, i) => `/gallery/${i.toString().padStart(2, '0')}.webp`
+)
 
 // Duplicate images for infinite scroll
 const marqueeImages = [...images, ...images]
 ---
 
 <div
-  class="group relative z-10 w-screen ml-[calc(-50vw+50%)] -translate-y-10 -rotate-2 border-y-4 border-white bg-js-yellow py-8 overflow-hidden"
+  class="group relative z-10 w-screen ml-[calc(-50vw+50%)] -translate-y-10 -rotate-2 border-y-4 border-white bg-js-yellow py-4 overflow-hidden"
 >
-  <div class="flex w-max gap-8 animate-marquee group-hover:[animation-play-state:paused]">
+  <div class="flex w-max gap-4 animate-marquee group-hover:[animation-play-state:paused]">
     {
       marqueeImages.map((src) => (
         <div class="h-[220px] w-[350px] shrink-0 overflow-hidden rounded-lg border-4 border-black grayscale transition-all hover:grayscale-0">

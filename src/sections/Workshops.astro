@@ -1,6 +1,4 @@
 ---
-import { Image } from 'astro:assets'
-
 const workshops = [
   {
     title:
@@ -8,8 +6,8 @@ const workshops = [
     description:
       '¿Cansado de que los agentes de IA no devuelvan lo que esperas? El problema suele ser la falta de estructura en el contexto. En este taller aprenderás a pasar del "vibe coding" al Software Engineering con IA mediante la arquitectura de agentes utilizada en Prowler (+12K stars). Descubre el patrón AGENTS.md, la división de conocimientos en skills específicas para reducir alucinaciones, y cómo orquestar subagentes de forma jerárquica para escalar proyectos reales de producción.',
     image: '/img/alan-buscaglia.webp',
-    author: 'Pedro Plasencia',
-    role: 'Principal Engineer @ Prowler',
+    author: 'Alan Buscaglia',
+    role: 'Software Architect @ Prowler',
   },
   {
     title: 'Astro y Headless CMS: La combinación perfecta',
@@ -24,7 +22,7 @@ const workshops = [
 
 <section id="workshops" class="py-20 bg-dark-bg">
   <div class="container mx-auto px-5">
-    <div class="text-center mb-16">
+    <div class="text-center mb-16 animate-fade-in view-animate-[--entrance] animate-range-rapid">
       <h2 class="text-4xl md:text-5xl font-bold font-display mb-5 text-white tracking-tighter">
         Workshops Prácticos
       </h2>
@@ -35,8 +33,10 @@ const workshops = [
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {
-        workshops.map((workshop) => (
-          <div class="bg-dark-surface rounded-2xl p-8 lg:p-10 border border-white/5 group hover:border-js-yellow/50 transition-all duration-500 shadow-2xl relative overflow-hidden flex flex-col justify-between">
+        workshops.map((workshop, index) => (
+          <div
+            class={`bg-dark-surface rounded-2xl p-8 lg:p-10 border border-white/5 group hover:border-js-yellow/50 transition-all duration-500 shadow-2xl relative overflow-hidden flex flex-col justify-between animate-fade-in-up view-animate-[--entrance] animate-range-rapid animate-delay-[${index * 200}ms]`}
+          >
             <div class="absolute top-0 right-0 p-8 opacity-5">
               <i class="fas fa-code text-7xl text-white" />
             </div>

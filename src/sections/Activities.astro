@@ -25,12 +25,22 @@ const activities = [
 
 <section id="activities" class="py-20 bg-gradient-to-b from-dark-bg to-[#111]">
   <div class="container mx-auto px-5">
-    <h2 class="text-center text-4xl md:text-5xl font-bold font-display mb-12 text-white">
+    <h2
+      class="text-center text-4xl md:text-5xl font-bold font-display mb-12 text-white animate-fade-in view-animate-[--entrance] animate-range-rapid"
+    >
       Más que charlas
     </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-      {activities.map((activity) => <ActivityCard {...activity} />)}
+      {
+        activities.map((activity, index) => (
+          <div
+            class={`animate-fade-in-up timeline-view animate-range-entry animate-delay-[${index * 200}ms]`}
+          >
+            <ActivityCard {...activity} />
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>

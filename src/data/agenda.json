@@ -14,7 +14,8 @@
         "topic": "Inicio Evento",
         "speaker": "Miguel Ángel Durán",
         "role": "Presentador",
-        "image": "midudev.webp"
+        "image": "midudev.webp",
+        "description": "Arrancamos motores. Si Miguel Ángel dice que JavaScript es el mejor lenguaje del mundo, prepárate para un día épico."
       },
       {
         "type": "talk",
@@ -22,7 +23,8 @@
         "topic": "Retro JavaScript: rehaciendo el pasado con código moderno",
         "speaker": "Carmen Ansio",
         "role": "Designer Engineer @Stripe",
-        "image": "carmen-ansio.webp"
+        "image": "carmen-ansio.webp",
+        "description": "Un viaje alucinante al pasado para ver cómo arreglar el desastre que hicimos hace 10 años, pero con mucho estilo y CSS moderno."
       },
       {
         "type": "talk",
@@ -30,7 +32,8 @@
         "topic": "TBD",
         "speaker": "Jaime Gómez-Obregón",
         "role": "Ingeniero y activista",
-        "image": "jaime-gomez-obregon.webp"
+        "image": "jaime-gomez-obregon.webp",
+        "description": "¿TBD? Seguro que nos enseña a hackear la burocracia con un switch case. El hombre que hace temblar a la administración pública."
       },
       {
         "type": "break",
@@ -43,7 +46,8 @@
         "topic": "Inicio Bloque + Sorteos",
         "speaker": "Miguel Ángel Durán",
         "role": "Presentador",
-        "image": "midudev.webp"
+        "image": "midudev.webp",
+        "description": "Más sorteos. La última vez alguien se llevó un teclado mecánico y todavía está intentando configurar las luces RGB."
       },
       {
         "type": "talk",
@@ -51,7 +55,8 @@
         "topic": "TBD",
         "speaker": "Javi Velasco",
         "role": "Staff Software Engineer @Vercel",
-        "image": "javier-velasco.webp"
+        "image": "javier-velasco.webp",
+        "description": "Staff Engineer en Vercel. Viene a explicarnos por qué tu web tarda 2 segundos y la suya ya ha cargado antes de que hagas click."
       },
       {
         "type": "talk",
@@ -59,14 +64,16 @@
         "topic": "MCP Servers con TypeScript: superpoderes para tu IA",
         "speaker": "Gisela Torres",
         "role": "Sr. Global Blackbelt @Microsoft",
-        "image": "gisela-torres.webp"
+        "image": "gisela-torres.webp",
+        "description": "Superpoderes para tu IA. Básicamente cómo evitar que tu modelo de lenguaje piense que 'JavaScript' es un tipo de café premium."
       },
       {
         "type": "talk",
         "time": "13:00 - 13:35",
         "topic": "TBD",
         "speaker": "Speaker",
-        "role": "TBD"
+        "role": "TBD",
+        "description": "Un misterioso speaker que nos dejará a todos con la boca abierta. O eso dice su cláusula de confidencialidad."
       },
       {
         "type": "talk",
@@ -74,7 +81,8 @@
         "topic": "Sorteos y avisos",
         "speaker": "Miguel Ángel Durán",
         "role": "Presentador",
-        "image": "midudev.webp"
+        "image": "midudev.webp",
+        "description": "Avisos importantes antes de soltar a la multitud: No se permiten tácticas de judo para conseguir los últimos canapés."
       },
       {
         "type": "break",
@@ -87,7 +95,8 @@
         "topic": "Sorteos y avisos",
         "speaker": "Miguel Ángel Durán",
         "role": "Presentador",
-        "image": "midudev.webp"
+        "image": "midudev.webp",
+        "description": "Si te has quedado con hambre, este bloque de sorteos te llenará el alma (y quizás la mochila de merchandising)."
       },
       {
         "type": "talk",
@@ -95,7 +104,8 @@
         "topic": "React Compiler: el fin de los renders innecesarios",
         "speaker": "Ilda Neta",
         "role": "Mobile Software Engineer @RockTheSport",
-        "image": "ildaneta.webp"
+        "image": "ildaneta.webp",
+        "description": "El fin de los renders innecesarios y de ese 'useMemo' que pusiste 'por si las moscas'. ¡Magia borrás para React!"
       },
       {
         "type": "talk",
@@ -103,14 +113,16 @@
         "topic": "Pair Programming con un Agente: Cómo construí un RPG complejo sin perder la cabeza",
         "speaker": "Jorge del Casar",
         "role": "Head of Tech @ActioGlobal",
-        "image": "jorge-del-casar.webp"
+        "image": "jorge-del-casar.webp",
+        "description": "Cómo crear un RPG épico sin llorar en posición fetal. Spoiler: La IA hace el trabajo sucio mientras tú tomas café."
       },
       {
         "type": "talk",
         "time": "15:25 - 16:00",
         "topic": "Lightning Talks",
         "speaker": "Varios",
-        "role": "Charlas rápidas de programación"
+        "role": "Charlas rápidas de programación",
+        "description": "Charlas de 5 minutos. Si parpadeas, te pierdes tres frameworks de CSS y un nuevo drama en X/Twitter."
       },
       {
         "type": "break",
@@ -123,7 +135,8 @@
         "topic": "Inicio Bloque + Sorteos",
         "speaker": "Miguel Ángel Durán",
         "role": "Presentador",
-        "image": "midudev.webp"
+        "image": "midudev.webp",
+        "description": "El tramo final. El café de hace una hora ya no hace efecto, pero la posibilidad de un regalo gratis te mantendrá alerta."
       },
       {
         "type": "talk",
@@ -131,7 +144,8 @@
         "topic": "TBD",
         "speaker": "Fernando Herrera",
         "role": "Full Stack Educator @DevTalles",
-        "image": "fernando-herrera.webp"
+        "image": "fernando-herrera.webp",
+        "description": "TBD. Pero viniendo de Fernando, seguro que sales sabiendo React, Angular, Vue y cómo montar una academia online en un fin de semana."
       },
       {
         "type": "talk",
@@ -139,7 +153,8 @@
         "topic": "TBD",
         "speaker": "Erick Wendel",
         "role": "Creador de Contenido y Emprendedor",
-        "image": "erick-wendel.webp"
+        "image": "erick-wendel.webp",
+        "description": "Esperad código en vivo a una velocidad inhumana, ritmo brasileño y probablemente alguna verdad incómoda sobre JavaScript."
       },
       {
         "type": "talk",
@@ -147,7 +162,8 @@
         "topic": "Despedida del evento",
         "speaker": "Miguel Ángel Durán",
         "role": "Presentador",
-        "image": "midudev.webp"
+        "image": "midudev.webp",
+        "description": "Lágrimas de cocodrilo y aplausos finales. El momento de intercambiar LinkedIn antes de ir al cóctel."
       },
       {
         "type": "break",

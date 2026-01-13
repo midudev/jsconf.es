@@ -3,6 +3,14 @@ import { Image } from 'astro:assets'
 
 const workshops = [
   {
+    title: 'De Vibe Coding a Software Engineering con IA: Arquitectura de Agentes para Proyectos Escalables',
+    description:
+      '¿Cansado de que los agentes de IA no devuelvan lo que esperas? El problema suele ser la falta de estructura en el contexto. En este taller aprenderás a pasar del "vibe coding" al Software Engineering con IA mediante la arquitectura de agentes utilizada en Prowler (+12K stars). Descubre el patrón AGENTS.md, la división de conocimientos en skills específicas para reducir alucinaciones, y cómo orquestar subagentes de forma jerárquica para escalar proyectos reales de producción.',
+    image: '/img/alan-buscaglia.webp',
+    author: 'Pedro Plasencia',
+    role: 'Principal Engineer @ Prowler',
+  },
+  {
     title: 'Astro y Headless CMS: La combinación perfecta',
     description:
       'Astro ha traído un soplo de aire fresco al desarrollo web. Es rápido, sencillo y está pensado para hacer sitios de contenido sin peleas con el rendimiento ni con el mantenimiento. Los Headless CMS, por su parte, nos dan una forma limpia de gestionar el contenido sin casarnos con ningún framework de UI ni tener que montar una "intranet" a mano. Juntos hacen muy buen equipo: tú te centras en la parte pública de tu sitio —que vaya como un cohete— y del resto se encargan Astro y tu Headless CMS favorito. En este curso empezamos desde cero con Astro y luego pasamos a un caso práctico: un sitio personal conectado a un Headless CMS.',
@@ -24,33 +32,31 @@ const workshops = [
       </p>
     </div>
 
-    <div class="grid grid-cols-1 gap-12 max-w-4xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {
         workshops.map((workshop) => (
-          <div class="bg-dark-surface rounded-2xl p-8 lg:p-12 border border-white/5 group hover:border-js-yellow/50 transition-all duration-500 shadow-2xl relative overflow-hidden">
+          <div class="bg-dark-surface rounded-2xl p-8 lg:p-10 border border-white/5 group hover:border-js-yellow/50 transition-all duration-500 shadow-2xl relative overflow-hidden flex flex-col justify-between">
             <div class="absolute top-0 right-0 p-8 opacity-5">
-              <i class="fas fa-code text-8xl text-white" />
+              <i class="fas fa-code text-7xl text-white" />
             </div>
 
-            <div class="relative z-10">
-              <div class="inline-block bg-js-yellow text-js-black text-xs font-bold px-3 py-1 rounded-full mb-6 uppercase tracking-wider">
-                Workshop Destacado
-              </div>
-
-              <h3 class="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight group-hover:text-js-yellow transition-colors">
+            <div class="relative z-10 flex flex-col h-full">
+              <h3 class="text-2xl md:text-3xl font-bold text-white mb-5 leading-tight group-hover:text-js-yellow transition-colors">
                 {workshop.title}
               </h3>
 
-              <p class="text-gray-300 text-lg leading-relaxed mb-10">{workshop.description}</p>
+              <p class="text-gray-400 text-base leading-relaxed mb-8 flex-grow">
+                {workshop.description}
+              </p>
 
-              <div class="flex items-center gap-5 pt-8 border-t border-white/10">
+              <div class="flex items-center gap-6 pt-6 border-t border-white/10">
                 <img
                   src={workshop.image}
                   alt={workshop.author}
-                  class="w-16 h-16 rounded-full object-cover border-2 border-js-yellow shadow-lg"
+                  class="w-20 h-20 rounded-full object-cover border-2 border-js-yellow shadow-lg transition-transform group-hover:scale-110"
                 />
                 <div class="flex flex-col">
-                  <span class="text-white font-bold text-xl">{workshop.author}</span>
+                  <span class="text-white font-bold text-2xl">{workshop.author}</span>
                   <span class="text-js-yellow/80 text-sm font-medium uppercase tracking-wide">
                     {workshop.role}
                   </span>

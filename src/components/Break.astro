@@ -1,5 +1,5 @@
 ---
-import Coffe from '@/icons/Coffe.svg'
+import Coffee from '@/icons/Coffee.svg'
 
 const { item } = Astro.props
 const { topic, time } = item
@@ -8,12 +8,12 @@ const { topic, time } = item
 <div class="text-center mt-8 w-[75%] mx-auto">
   <div class="flex items-center justify-center">
     <hr class="flex-grow border-t-0.5 border-[#191919]" />
-    <div>
-      <p class="px-4 flex items-center gap-2">
-        <Coffe class="size-4" />
+    <div class="flex flex-col items-center">
+      <Coffee class="size-6 text-gray-400 mb-2" />
+      <p class="px-4 text-gray-400 uppercase tracking-widest text-sm font-bold">
         {topic}
       </p>
-      <p>
+      <p class="text-xl font-mono text-gray-300">
         {time}
       </p>
     </div>

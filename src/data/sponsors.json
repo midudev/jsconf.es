@@ -9,6 +9,12 @@
         "image": "/sponsors/lemoncode.svg",
         "url": "https://lemoncode.net/",
         "description": "FORMACIÓN DE CALIDAD PARA DESARROLLADORES"
+      },
+      {
+        "name": "CubePath",
+        "image": "/sponsors/cubepath-logo.webp",
+        "url": "https://cubepath.com/",
+        "description": "Infraestructura de la siguiente generación, servidores dedicados, cloud, vps y más."
       }
     ]
   },

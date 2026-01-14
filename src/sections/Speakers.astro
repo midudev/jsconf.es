@@ -114,28 +114,6 @@ const speakers = [
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
       {speakers.map((speaker) => <Card {...speaker} />)}
-
-      <!-- Call for Papers Card -->
-      <div
-        class="bg-dark-surface/50 rounded-xl overflow-hidden border-2 border-dashed border-js-yellow relative hover:bg-js-yellow/10 transition-all duration-300 flex flex-col justify-center items-center text-center min-h-[400px] p-6 group"
-      >
-        <div class="text-5xl text-js-yellow mb-4 group-hover:scale-110 transition-transform">
-          <i class="fas fa-bullhorn"></i>
-        </div>
-        <h3 class="text-xl text-js-yellow font-bold mb-2.5 uppercase tracking-wider">¡TÚ!</h3>
-        <p class="text-gray-300 max-w-[80%] mb-6">
-          ¿Tienes una idea, experiencia o proyecto que compartir? Buscamos nuevas voces para la
-          comunidad.
-        </p>
-        <a
-          href="https://forms.gle/wXRn7M6gAHEFkFe38"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center justify-center px-8 py-3.5 font-bold uppercase tracking-wide text-sm bg-transparent border-2 border-js-yellow text-js-yellow rounded hover:bg-js-yellow hover:text-js-black transition-all"
-        >
-          Enviar Propuesta
-        </a>
-      </div>
     </div>
   </div>
 </section>

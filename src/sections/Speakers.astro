@@ -114,6 +114,24 @@ const speakers = [
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
       {speakers.map((speaker) => <Card {...speaker} />)}
+
+      <div
+        class="bg-dark-surface/50 rounded-xl overflow-hidden border-2 border-dashed border-white/20 relative flex flex-col justify-center items-center text-center min-h-[400px] p-6 group transition-all duration-300 hover:border-js-yellow/50"
+      >
+        <div
+          class="text-5xl text-white/20 mb-4 group-hover:scale-110 group-hover:text-js-yellow/50 transition-all duration-300"
+        >
+          <i class="fas fa-plus-circle"></i>
+        </div>
+        <h3
+          class="text-xl text-white/40 font-bold mb-2.5 uppercase tracking-wider group-hover:text-js-yellow/70 transition-colors"
+        >
+          Próximamente
+        </h3>
+        <p class="text-gray-500 max-w-[80%] group-hover:text-gray-400 transition-colors">
+          Estamos confirmando a más ponentes increíbles. ¡Mantente al tanto!
+        </p>
+      </div>
     </div>
   </div>
 </section>

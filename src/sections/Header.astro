@@ -136,6 +136,23 @@ import Logo from '@/icons/Logo.svg'
   </button>
 </div>
 
+<style>
+  @keyframes soft-pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.15);
+      opacity: 0.75;
+    }
+  }
+
+  .animate-soft-pulse {
+    animation: soft-pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+</style>
+
 <script>
   const menuToggle = document.getElementById('menu-toggle')
   const menuClose = document.getElementById('menu-close')

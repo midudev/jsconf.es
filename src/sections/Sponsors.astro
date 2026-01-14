@@ -45,7 +45,9 @@ import infojobsLogo from '@/icons/InfojobsLogo.svg?raw'
                   ? 'md:col-span-5 bg-gradient-to-br from-[#09f]/10 via-dark-surface to-dark-surface'
                   : tier.icon === 'max'
                     ? 'md:col-span-4 bg-dark-surface'
-                    : 'md:col-span-3 bg-dark-surface',
+                    : company.name === 'Codely'
+                      ? 'md:col-span-4 bg-dark-surface'
+                      : 'md:col-span-3 bg-dark-surface',
               ]}
             >
               <span
@@ -71,7 +73,14 @@ import infojobsLogo from '@/icons/InfojobsLogo.svg?raw'
                     alt={company.name}
                     class:list={[
                       'object-contain transition-all duration-300 group-hover:scale-110',
-                      'max-w-[180px] md:max-w-[220px] max-h-[100px]',
+                      company.name === 'DevTalles' && 'brightness-0 invert',
+                      company.name === 'CubePath' 
+                        ? 'max-w-[220px] md:max-w-[300px] max-h-[130px]' 
+                        : company.name === 'Codely'
+                          ? 'max-w-[300px] md:max-w-[440px] max-h-[180px]'
+                          : tier.icon === 'star' || tier.icon === 'max'
+                            ? 'max-w-[200px] md:max-w-[260px] max-h-[110px]'
+                            : 'max-w-[180px] md:max-w-[220px] max-h-[100px]',
                     ]}
                   />
                 ) : (

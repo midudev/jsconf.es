@@ -1,6 +1,64 @@
 ---
 import sponsors from '@/data/sponsors.json'
 import infojobsLogo from '@/icons/InfojobsLogo.svg?raw'
+
+const TIER_STYLES: Record<
+  string,
+  { container: string; badge: string; description: string; icon: string }
+> = {
+  platinum: {
+    container: 'md:col-span-5 bg-gradient-to-br from-[#09f]/10 via-dark-surface to-dark-surface',
+    badge: 'text-[#09f]',
+    description: 'text-[11px] md:text-[12px] text-[#b5d9ff]',
+    icon: 'fa-gem',
+  },
+  max: {
+    container: 'md:col-span-4 bg-dark-surface',
+    badge: 'text-[#ff3e00]',
+    description: 'text-[10px] md:text-[11px] text-gray-500',
+    icon: 'fa-trophy',
+  },
+  star: {
+    container: 'md:col-span-3 bg-dark-surface',
+    badge: 'text-gray-400',
+    description: 'text-[10px] md:text-[11px] text-gray-500',
+    icon: 'fa-star',
+  },
+}
+
+const COMPANY_OVERRIDES: Record<string, { container?: string; image?: string }> = {
+  Codely: {
+    container: 'md:col-span-4 bg-dark-surface',
+    image: 'max-w-[280px] md:max-w-[380px] max-h-[150px]',
+  },
+  CubePath: {
+    image: 'max-w-[220px] md:max-w-[300px] max-h-[130px]',
+  },
+  DevTalles: {
+    image: 'brightness-0 invert',
+  },
+}
+
+function getContainerClasses(companyName: string, tierIcon: string) {
+  const tierStyle = TIER_STYLES[tierIcon] || TIER_STYLES.star
+  const override = COMPANY_OVERRIDES[companyName]
+  return override?.container || tierStyle.container
+}
+
+function getImageClasses(companyName: string, tierIcon: string) {
+  const override = COMPANY_OVERRIDES[companyName]
+  if (override?.image && override.image.includes('max-w')) {
+    return override.image
+  }
+
+  const baseClasses = override?.image || ''
+  const sizeClasses =
+    tierIcon === 'star' || tierIcon === 'max'
+      ? 'max-w-[200px] md:max-w-[260px] max-h-[110px]'
+      : 'max-w-[180px] md:max-w-[220px] max-h-[100px]'
+
+  return `${baseClasses} ${sizeClasses}`.trim()
+}
 ---
 
 <section id="sponsors" class="py-20 bg-black relative overflow-hidden">
@@ -41,28 +99,16 @@ import infojobsLogo from '@/icons/InfojobsLogo.svg?raw'
               rel="noopener noreferrer"
               class:list={[
                 'relative rounded-xl flex flex-col items-center justify-center p-6 md:p-8 transition-all duration-300 hover:scale-[1.02] hover:bg-[#252525] group border border-white/5',
-                tier.icon === 'platinum'
-                  ? 'md:col-span-5 bg-gradient-to-br from-[#09f]/10 via-dark-surface to-dark-surface'
-                  : tier.icon === 'max'
-                    ? 'md:col-span-4 bg-dark-surface'
-                    : company.name === 'Codely'
-                      ? 'md:col-span-4 bg-dark-surface'
-                      : 'md:col-span-3 bg-dark-surface',
+                getContainerClasses(company.name, tier.icon),
               ]}
             >
               <span
                 class:list={[
                   'absolute top-4 left-4 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-white/5',
-                  tier.icon === 'platinum'
-                    ? 'text-[#09f]'
-                    : tier.icon === 'max'
-                      ? 'text-[#ff3e00]'
-                      : 'text-gray-400',
+                  TIER_STYLES[tier.icon]?.badge || TIER_STYLES.star.badge,
                 ]}
               >
-                <i
-                  class={`fas ${tier.icon === 'platinum' ? 'fa-gem' : tier.icon === 'max' ? 'fa-trophy' : 'fa-star'} mr-1`}
-                />{' '}
+                <i class={`fas ${TIER_STYLES[tier.icon]?.icon || TIER_STYLES.star.icon} mr-1`} />{' '}
                 {tier.category.replace('Sponsors ', '')}
               </span>
 
@@ -73,14 +119,7 @@ import infojobsLogo from '@/icons/InfojobsLogo.svg?raw'
                     alt={company.name}
                     class:list={[
                       'object-contain transition-all duration-300 group-hover:scale-110',
-                      company.name === 'DevTalles' && 'brightness-0 invert',
-                      company.name === 'CubePath' 
-                        ? 'max-w-[220px] md:max-w-[300px] max-h-[130px]' 
-                        : company.name === 'Codely'
-                          ? 'max-w-[300px] md:max-w-[440px] max-h-[180px]'
-                          : tier.icon === 'star' || tier.icon === 'max'
-                            ? 'max-w-[200px] md:max-w-[260px] max-h-[110px]'
-                            : 'max-w-[180px] md:max-w-[220px] max-h-[100px]',
+                      getImageClasses(company.name, tier.icon),
                     ]}
                   />
                 ) : (
@@ -91,9 +130,7 @@ import infojobsLogo from '@/icons/InfojobsLogo.svg?raw'
                 <p
                   class:list={[
                     'uppercase max-w-[240px] leading-tight font-light tracking-wider text-center',
-                    tier.icon === 'platinum'
-                      ? 'text-[11px] md:text-[12px] text-[#b5d9ff]'
-                      : 'text-[10px] md:text-[11px] text-gray-500',
+                    TIER_STYLES[tier.icon]?.description || TIER_STYLES.star.description,
                   ]}
                 >
                   {company.description}

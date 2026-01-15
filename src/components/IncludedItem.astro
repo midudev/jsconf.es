@@ -3,13 +3,35 @@ interface Props {
   icon: string
   title: string
   description: string
+  class?: string
 }
 
-const { icon, title, description } = Astro.props
+const { icon, title, description, class: className } = Astro.props
 ---
 
-<div class="text-center p-8 bg-white/5 rounded-xl border border-white/5 hover:-translate-y-1 hover:border-js-yellow hover:bg-white/10 transition-all duration-300 group">
-  <i class={`${icon} text-3xl text-js-yellow mb-5 block group-hover:scale-110 transition-transform`}></i>
-  <div class="font-bold mb-1.5 font-display text-lg text-white">{title}</div>
-  <div class="text-sm text-gray-400">{description}</div>
+<div class:list={[
+  "relative flex flex-col items-center justify-center p-8 text-center transition-all duration-500 border rounded-3xl group overflow-hidden",
+  "bg-white/[0.02] border-white/10 hover:border-javascript/40 hover:bg-white/[0.05]",
+  "hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(247,223,30,0.1)]",
+  className
+]}>
+  <!-- Background Glow Effect -->
+  <div class="absolute inset-0 bg-gradient-to-br from-javascript/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+  
+  <div class="relative z-10 flex flex-col items-center">
+    <div class="flex items-center justify-center w-16 h-16 mb-6 rounded-2xl bg-javascript/5 text-javascript transition-all duration-500 group-hover:scale-110 group-hover:bg-javascript/10 group-hover:rotate-6 shadow-xl shadow-javascript/5">
+      <i class:list={[icon, "text-3xl"]}></i>
+    </div>
+    
+    <h3 class="mb-3 text-xl font-bold tracking-tight text-white font-display leading-tight">
+      {title}
+    </h3>
+    
+    <p class="text-sm leading-relaxed text-gray-400 text-balance group-hover:text-gray-300 transition-colors duration-300">
+      {description}
+    </p>
+  </div>
+  
+  <!-- Decorative corner light -->
+  <div class="absolute -bottom-12 -right-12 w-24 h-24 bg-javascript/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 </div>

@@ -46,6 +46,12 @@
         "image": "/sponsors/windsurf.svg",
         "url": "https://windsurf.com/",
         "description": "La experiencia de programación con IA más intuitiva y divertida"
+      },
+      {
+        "name": "Nerdearla",
+        "image": "/sponsors/nerdearla.webp",
+        "url": "https://nerdearla.es/",
+        "description": "EL EVENTO DE CIENCIA Y TECNOLOGÍA MÁS GRANDE DE LATINOAMÉRICA"
       }
     ]
   },
@@ -59,6 +65,12 @@
         "image": "/sponsors/codely.svg",
         "url": "http://midu.link/codely",
         "description": "MUCHO MÁS QUE CURSOS DE PROGRAMACIÓN"
+      },
+      {
+        "name": "Vercel",
+        "image": "/sponsors/vercel.svg",
+        "url": "https://vercel.com",
+        "description": "LA PLATAFORMA PARA DESARROLLADORES FRONTEND"
       }
     ]
   }

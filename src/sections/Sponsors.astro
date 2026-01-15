@@ -7,19 +7,19 @@ const TIER_STYLES: Record<
   { container: string; badge: string; description: string; icon: string }
 > = {
   platinum: {
-    container: 'md:col-span-5 bg-gradient-to-br from-[#09f]/10 via-dark-surface to-dark-surface',
+    container: 'md:col-span-12 bg-gradient-to-br from-[#09f]/10 via-dark-surface to-dark-surface',
     badge: 'text-[#09f]',
     description: 'text-[11px] md:text-[12px] text-[#b5d9ff]',
     icon: 'fa-gem',
   },
   max: {
-    container: 'md:col-span-4 bg-dark-surface',
+    container: 'md:col-span-8 bg-dark-surface',
     badge: 'text-[#ff3e00]',
     description: 'text-[10px] md:text-[11px] text-gray-500',
     icon: 'fa-trophy',
   },
   star: {
-    container: 'md:col-span-3 bg-dark-surface',
+    container: 'md:col-span-6 bg-dark-surface',
     badge: 'text-gray-400',
     description: 'text-[10px] md:text-[11px] text-gray-500',
     icon: 'fa-star',
@@ -28,8 +28,12 @@ const TIER_STYLES: Record<
 
 const COMPANY_OVERRIDES: Record<string, { container?: string; image?: string }> = {
   Codely: {
-    container: 'md:col-span-4 bg-dark-surface',
-    image: 'max-w-[280px] md:max-w-[380px] max-h-[150px]',
+    container: 'md:col-span-7 bg-dark-surface',
+    image: 'max-w-[190px] md:max-w-[260px] max-h-[70px]',
+  },
+  Vercel: {
+    container: 'md:col-span-7 bg-dark-surface',
+    image: 'max-w-[170px] md:max-w-[220px] max-h-[55px]',
   },
   CubePath: {
     image: 'max-w-[220px] md:max-w-[300px] max-h-[130px]',
@@ -67,13 +71,13 @@ function getImageClasses(companyName: string, tierIcon: string) {
       Nuestros Patrocinadores
     </h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-10 gap-4 md:gap-6 mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-24 gap-4 md:gap-6 mb-12">
       <!-- Principal Sponsor -->
       <a
         href="https://www.infojobs.net"
         target="_blank"
         rel="noopener noreferrer"
-        class="md:col-span-10 relative bg-gradient-to-br from-js-yellow/10 via-dark-surface to-dark-surface rounded-xl flex flex-col items-center justify-center p-8 md:p-12 border-2 border-js-yellow/50 hover:border-js-yellow transition-all duration-300 group overflow-hidden"
+        class="md:col-span-24 relative bg-gradient-to-br from-js-yellow/10 via-dark-surface to-dark-surface rounded-xl flex flex-col items-center justify-center p-8 md:p-12 border-2 border-js-yellow/50 hover:border-js-yellow transition-all duration-300 group overflow-hidden"
       >
         <span
           class="absolute top-4 left-4 text-xs font-bold uppercase tracking-wider text-js-yellow bg-js-yeellow/10 px-3 py-1 rounded bg-white/5"
@@ -140,29 +144,6 @@ function getImageClasses(companyName: string, tierIcon: string) {
           ))
         )
       }
-
-      <!-- Become a Sponsor CTA -->
-      <a
-        href="mailto:miduga@gmail.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="md:col-span-3 relative bg-dark-surface/50 border-2 border-dashed border-white/10 rounded-xl flex flex-col items-start justify-center p-4 md:p-6 transition-all duration-300 hover:bg-dark-surface hover:border-white/20 group gap-3 text-left"
-      >
-        <div class="flex flex-col gap-1 max-w-md">
-          <span class="text-base md:text-lg font-bold font-display text-white leading-tight">
-            Tu empresa puede ser la siguiente
-          </span>
-          <p class="text-xs md:text-sm text-gray-400 text-balance">
-            Apoya la comunidad del ecosistema de JavaScript en España
-          </p>
-        </div>
-
-        <span
-          class="inline-flex items-center justify-center px-4 py-2.5 font-semibold uppercase tracking-wide text-[10px] md:text-[11px] bg-white text-js-black rounded group-hover:bg-js-yellow transition-all whitespace-nowrap"
-        >
-          Ponerse en contacto
-        </span>
-      </a>
     </div>
   </div>
 </section>

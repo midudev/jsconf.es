@@ -3,53 +3,86 @@ import IncludedItem from '@/components/IncludedItem.astro'
 
 const items = [
   {
-    icon: 'fas fa-mug-hot',
-    title: 'Desayuno Completo',
-    description: 'Café recién hecho y churros',
+    icon: 'fas fa-robot',
+    title: 'Windsurf Pro',
+    description: '1 mes de acceso al editor de IA con todos los modelos premium',
+    class:
+      'md:col-span-2 md:row-span-1 bg-gradient-to-br from-javascript/20 to-transparent border-javascript/30 shadow-[0_0_30px_rgba(247,223,30,0.1)]',
   },
   {
-    icon: 'fas fa-pizza-slice',
-    title: 'Comida Incluida',
-    description: 'Pizza caliente para recargar fuerzas',
+    icon: 'fas fa-utensils',
+    title: 'Comida y bebida',
+    description: 'Café, desayuno, comida, refrescos y cóctel final',
+    class: 'md:col-span-2',
   },
   {
-    icon: 'fas fa-glass-cheers',
-    title: 'Bebida Incluida',
-    description: 'Refrescos y agua',
+    icon: 'fas fa-laptop-code',
+    title: 'Hackathon IA',
+    description: 'Crea un producto real con IA durante el evento y participa',
   },
   {
-    icon: 'fas fa-tshirt',
-    title: 'Swag & Merch',
-    description: 'Camiseta y pegatinas exclusivas',
-  },
-  { icon: 'fas fa-id-badge', title: 'Acceso Total', description: 'Todas las charlas y workshops' },
-  {
-    icon: 'fas fa-pen-nib',
-    title: 'Firma de Libros',
-    description: 'Con autores técnicos destacados',
+    icon: 'fas fa-camera',
+    title: 'Fotografía Pro',
+    description: 'Llévate un buen recuerdo del evento',
   },
   {
-    icon: 'fas fa-cocktail',
-    title: 'Cóctel Despedida',
-    description: 'Networking al final del día',
+    icon: 'fas fa-shopping-bag',
+    title: 'Merchandising',
+    description: 'Bolsa oficial con recuerdos del evento',
+  },
+  {
+    icon: 'fas fa-certificate',
+    title: 'Certificado',
+    description: 'Acreditación firmada de asistencia al evento y formación',
   },
   {
     icon: 'fas fa-gift',
-    title: 'Sorteos y Regalos',
-    description: 'Premios de nuestros sponsors',
+    title: 'Sorteos y regalos',
+    description: 'Vamos a tener sorpresas épicas durante las charlas',
+  },
+  {
+    icon: 'fas fa-id-badge',
+    title: 'Acceso a todo',
+    description: 'Todas las charlas y workshops incluido',
   },
 ]
 ---
 
-<section id="included" class="py-20 bg-[#111]">
-  <div class="container mx-auto px-5">
-    <h2
-      class="text-center text-4xl md:text-5xl font-bold font-display mb-12 text-white tracking-tighter"
+<section
+  id="included"
+  class="relative pb-32 pt-24 -mt-20 overflow-hidden bg-black/40 backdrop-blur-3xl border-t border-white/10"
+>
+  <!-- Decorative background elements -->
+  <div
+    class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none overflow-hidden"
+  >
+    <div
+      class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-javascript/10 rounded-full blur-[120px] opacity-50"
     >
-      ¿Qué incluye la entrada?
-    </h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-      {items.map((item) => <IncludedItem {...item} />)}
+    </div>
+    <div
+      class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-javascript/5 rounded-full blur-[100px] opacity-30"
+    >
+    </div>
+  </div>
+
+  <div class="container relative z-10 mx-auto px-6">
+    <div class="max-w-3xl mx-auto text-center mb-20 animate-on-scroll">
+      <h2
+        class="text-4xl md:text-7xl font-bold font-display mb-6 text-white tracking-tighter leading-[0.9]"
+      >
+        Todo lo que incluye<br />tu entrada
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-20">
+      {
+        items.map((item, index) => (
+          <div class="animate-on-scroll" style={`transition-delay: ${index * 100}ms`}>
+            <IncludedItem {...item} />
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>

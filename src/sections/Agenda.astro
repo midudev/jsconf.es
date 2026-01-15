@@ -30,26 +30,39 @@ const { agenda, date } = data[0]
 
     <div class="flex flex-col gap-y-6">
       {
-        agenda.map((item, index) => {
-          const { type } = item
-          const animationClasses = `animate-fade-in-up view-animate-[--entrance] animate-range-rapid animate-delay-[${(index % 3) * 100}ms]`
-          
-          if (type === 'talk') {
-            return (
-              <div class={animationClasses}>
-                <Talk item={item} />
-              </div>
-            )
-          }
-          if (type === 'break') {
-            return (
-              <div class={animationClasses}>
-                <Break item={item} />
-              </div>
-            )
-          }
-          return null
-        })
+        (() => {
+          let presenterCount = 0
+          return agenda.map((item, index) => {
+            const { type, role } = item
+            const animationClasses = `animate-fade-in-up view-animate-[--entrance] animate-range-rapid animate-delay-[${(index % 3) * 100}ms]`
+
+            if (type === 'talk') {
+              const isPresenter = role === 'Presentador'
+              let showSpeaker = true
+
+              if (isPresenter) {
+                presenterCount++
+                if (presenterCount > 1) {
+                  showSpeaker = false
+                }
+              }
+
+              return (
+                <div class={animationClasses}>
+                  <Talk item={item} showSpeaker={showSpeaker} />
+                </div>
+              )
+            }
+            if (type === 'break') {
+              return (
+                <div class={animationClasses}>
+                  <Break item={item} />
+                </div>
+              )
+            }
+            return null
+          })
+        })()
       }
     </div>
   </Container>

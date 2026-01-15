@@ -1,5 +1,5 @@
 ---
-const { item } = Astro.props
+const { item, showSpeaker = true } = Astro.props
 const { time, topic, speaker, role, image, description } = item
 ---
 
@@ -34,7 +34,7 @@ const { time, topic, speaker, role, image, description } = item
   </div>
 
   {
-    speaker && (
+    speaker && showSpeaker && (
       <div class="flex items-center w-full md:w-auto mt-4 md:mt-0 bg-black/30 p-4 rounded-lg border border-white/5 min-w-[280px]">
         {
           // Si 'image' existe, revisamos si es un array o un string

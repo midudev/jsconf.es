@@ -5,25 +5,54 @@ const workshops = [
       'De Vibe Coding a Software Engineering con IA: Arquitectura de Agentes para Proyectos Escalables',
     description:
       '¿Cansado de que los agentes de IA no devuelvan lo que esperas? El problema suele ser la falta de estructura en el contexto. En este taller aprenderás a pasar del "vibe coding" al Software Engineering con IA mediante la arquitectura de agentes utilizada en Prowler (+12K stars). Descubre el patrón AGENTS.md, la división de conocimientos en skills específicas para reducir alucinaciones, y cómo orquestar subagentes de forma jerárquica para escalar proyectos reales de producción.',
-    image: '/img/alan-buscaglia.webp',
-    author: 'Alan Buscaglia',
-    role: 'Software Architect @ Prowler',
+    authors: [
+      {
+        name: 'Alan Buscaglia',
+        role: 'Software Architect @ Prowler',
+        image: '/img/alan-buscaglia.webp',
+      },
+    ],
   },
   {
     title: 'Astro y Headless CMS: La combinación perfecta',
     description:
       'Astro ha traído un soplo de aire fresco al desarrollo web. Es rápido, sencillo y está pensado para hacer sitios de contenido sin peleas con el rendimiento ni con el mantenimiento. Los Headless CMS, por su parte, nos dan una forma limpia de gestionar el contenido sin casarnos con ningún framework de UI ni tener que montar una "intranet" a mano. Juntos hacen muy buen equipo: tú te centras en la parte pública de tu sitio —que vaya como un cohete— y del resto se encargan Astro y tu Headless CMS favorito. En este curso empezamos desde cero con Astro y luego pasamos a un caso práctico: un sitio personal conectado a un Headless CMS.',
-    image: '/img/braulio-diez.webp',
-    author: 'Braulio Díez',
-    role: 'Technical Lead at Lemoncode',
+    authors: [
+      {
+        name: 'Braulio Díez',
+        role: 'Technical Lead at Lemoncode',
+        image: '/img/braulio-diez.webp',
+      },
+    ],
   },
   {
     title: 'Live coding: desarrollar una app full stack sin salir del editor con Windsurf AI',
     description:
       'A través de una demostración en vivo, construiremos una app full stack funcional, trabajando únicamente desde el editor de Windsurf y algunos MCPs. Veremos cómo integrar frontend, backend y datos en un solo flujo de trabajo ágil y moderno, ideal para MVPs y prototipos rápidos.',
-    image: '/img/erasmo-hernandez.webp',
-    author: 'Erasmo Hernandez',
-    role: 'Tech Lead @ Globant',
+    authors: [
+      {
+        name: 'Erasmo Hernandez',
+        role: 'Tech Lead @ Globant',
+        image: '/img/erasmo-hernandez.webp',
+      },
+    ],
+  },
+  {
+    title: 'Refactoring & Testing (TBD)',
+    description:
+      'En este workshop práctico, Carlos Blé y Jorge Aguiar te enseñarán las mejores técnicas de refactorización y testing para mejorar la calidad de tu código. Aprenderás a identificar deuda técnica, aplicar patrones de diseño y escribir tests efectivos que te den la confianza necesaria para evolucionar tu software.',
+    authors: [
+      {
+        name: 'Carlos Blé',
+        role: 'Founder @ Lean Mind',
+        image: '/img/carlos-ble.webp',
+      },
+      {
+        name: 'Jorge Aguiar',
+        role: 'Lead Developer @ Lean Mind',
+        image: '/img/jorge-aguiar.webp',
+      },
+    ],
   },
 ]
 ---
@@ -58,18 +87,22 @@ const workshops = [
                 {workshop.description}
               </p>
 
-              <div class="flex items-center gap-6 pt-6 border-t border-white/10">
-                <img
-                  src={workshop.image}
-                  alt={workshop.author}
-                  class="w-20 h-20 rounded-full object-cover border-2 border-js-yellow shadow-lg transition-transform group-hover:scale-110"
-                />
-                <div class="flex flex-col">
-                  <span class="text-white font-bold text-2xl">{workshop.author}</span>
-                  <span class="text-js-yellow/80 text-sm font-medium uppercase tracking-wide">
-                    {workshop.role}
-                  </span>
-                </div>
+              <div class="flex flex-col gap-6 pt-6 border-t border-white/10">
+                {workshop.authors.map((author) => (
+                  <div class="flex items-center gap-6">
+                    <img
+                      src={author.image}
+                      alt={author.name}
+                      class="w-20 h-20 rounded-full object-cover border-2 border-js-yellow shadow-lg transition-transform group-hover:scale-110"
+                    />
+                    <div class="flex flex-col">
+                      <span class="text-white font-bold text-2xl">{author.name}</span>
+                      <span class="text-js-yellow/80 text-sm font-medium uppercase tracking-wide">
+                        {author.role}
+                      </span>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

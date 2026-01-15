@@ -152,7 +152,7 @@ const pageUrl = canonical ?? Astro.url.href
     --font-display: 'Space Grotesk', sans-serif;
 
     /* Background images */
-    --background-image-hero-radial: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000000 100%);
+    --background-image-hero-radial: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #0d0d0d 70%);
 
     /* Animations */
     --animate-marquee: marquee 60s linear infinite;
@@ -262,8 +262,8 @@ const pageUrl = canonical ?? Astro.url.href
 
   /* Utility for masking background */
   .mask-radial-faded {
-    -webkit-mask-image: radial-gradient(circle at center, transparent 10%, black 85%);
-    mask-image: radial-gradient(circle at center, transparent 10%, black 85%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 20%, transparent 80%);
+    mask-image: radial-gradient(ellipse at center, black 20%, transparent 80%);
   }
 
   @media (prefers-reduced-motion) {

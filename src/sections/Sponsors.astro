@@ -29,11 +29,11 @@ const TIER_STYLES: Record<
 const COMPANY_OVERRIDES: Record<string, { container?: string; image?: string }> = {
   Codely: {
     container: 'md:col-span-7 bg-dark-surface',
-    image: 'max-w-[190px] md:max-w-[260px] max-h-[70px]',
+    image: 'max-w-[210px] md:max-w-[320px] max-h-[90px]',
   },
   Vercel: {
     container: 'md:col-span-7 bg-dark-surface',
-    image: 'max-w-[170px] md:max-w-[220px] max-h-[55px]',
+    image: 'max-w-[140px] md:max-w-[180px] max-h-[40px]',
   },
   CubePath: {
     image: 'max-w-[220px] md:max-w-[300px] max-h-[130px]',
@@ -66,7 +66,7 @@ function getImageClasses(companyName: string, tierIcon: string) {
 ---
 
 <section id="sponsors" class="py-20 bg-black relative overflow-hidden">
-  <div class="container mx-auto px-5 text-center relative z-10">
+  <div class="container mx-auto px-5 text-center relative z-20">
     <h2 class="text-4xl md:text-5xl font-bold font-display mb-16 text-white">
       Nuestros Patrocinadores
     </h2>
@@ -77,15 +77,15 @@ function getImageClasses(companyName: string, tierIcon: string) {
         href="https://www.infojobs.net"
         target="_blank"
         rel="noopener noreferrer"
-        class="md:col-span-24 relative bg-gradient-to-br from-js-yellow/10 via-dark-surface to-dark-surface rounded-xl flex flex-col items-center justify-center p-8 md:p-12 border-2 border-js-yellow/50 hover:border-js-yellow transition-all duration-300 group overflow-hidden"
+        class="md:col-span-24 relative bg-gradient-to-br from-js-yellow/10 via-dark-surface to-dark-surface rounded-xl flex flex-col items-center pt-16 pb-8 md:p-12 border-2 border-js-yellow/50 hover:border-js-yellow transition-all duration-300 group overflow-hidden"
       >
         <span
-          class="absolute top-4 left-4 text-xs font-bold uppercase tracking-wider text-js-yellow bg-js-yeellow/10 px-3 py-1 rounded bg-white/5"
+          class="absolute top-4 left-4 text-xs font-bold uppercase tracking-wider text-js-yellow bg-js-yellow/10 px-3 py-1 rounded bg-white/5"
         >
           <i class="fas fa-crown text-js-yellow mr-1"></i> Principal Sponsor
         </span>
 
-        <div class="w-full max-w-[400px] mb-4">
+        <div class="w-full max-w-[220px] md:max-w-[400px] mb-4 [&>svg]:w-full [&>svg]:h-auto">
           <Fragment set:html={infojobsLogo} />
         </div>
         <p class="text-xs md:text-sm uppercase font-light text-js-yellow/90 tracking-wider">

@@ -100,11 +100,24 @@ const speakers = [
     imageUrl: '/img/braulio-diez.webp',
     social: 'https://x.com/brauliodiez',
   },
+  {
+    name: 'Erasmo Hernandez',
+    role: 'Tech Lead',
+    company: 'Globant',
+    description:
+      'Experto en IA aplicada al desarrollo. Te enseñará cómo construir aplicaciones full stack en tiempo récord sin salir de tu editor favorito.',
+    imageUrl: '/img/erasmo-hernandez.webp',
+    social: 'https://x.com/erasmohm',
+  },
 ]
 ---
 
-<section id="speakers" class="py-20">
-  <div class="container mx-auto px-5">
+<section id="speakers" class="relative py-20">
+  <div
+    class="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-black via-black/80 to-transparent z-10 pointer-events-none"
+  >
+  </div>
+  <div class="container mx-auto px-5 relative z-20">
     <div class="text-center mb-12">
       <h2 class="text-4xl md:text-5xl font-bold font-display mb-5 text-white">Ponentes</h2>
       <p class="text-gray-400 max-w-2xl mx-auto">

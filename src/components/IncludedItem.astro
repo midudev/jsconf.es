@@ -4,13 +4,14 @@ interface Props {
   title: string
   description: string
   class?: string
+  iconClass?: string
 }
 
-const { icon, title, description, class: className } = Astro.props
+const { icon, title, description, class: className, iconClass } = Astro.props
 ---
 
 <div class:list={[
-  "relative flex flex-col items-center justify-center p-8 text-center transition-all duration-500 border rounded-3xl group overflow-hidden",
+  "relative flex flex-col items-center justify-center p-4 md:p-6 text-center transition-all duration-500 border rounded-3xl group overflow-hidden aspect-[16/11]",
   "bg-white/[0.02] border-white/10 hover:border-javascript/40 hover:bg-white/[0.05]",
   "hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(247,223,30,0.1)]",
   className
@@ -18,16 +19,33 @@ const { icon, title, description, class: className } = Astro.props
   <!-- Background Glow Effect -->
   <div class="absolute inset-0 bg-gradient-to-br from-javascript/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
   
-  <div class="relative z-10 flex flex-col items-center">
-    <div class="flex items-center justify-center w-16 h-16 mb-6 rounded-2xl bg-javascript/5 text-javascript transition-all duration-500 group-hover:scale-110 group-hover:bg-javascript/10 group-hover:rotate-6 shadow-xl shadow-javascript/5">
-      <i class:list={[icon, "text-3xl"]}></i>
+  <div class="relative z-10 flex flex-col items-center justify-center h-full w-full">
+    <div class:list={[
+      "flex items-center justify-center mb-4 rounded-2xl bg-javascript/5 text-javascript transition-all duration-500 group-hover:scale-110 group-hover:bg-javascript/10 group-hover:rotate-6 shadow-xl shadow-javascript/5",
+      iconClass ? iconClass : "w-20 h-20"
+    ]}>
+      {
+        icon.trim().startsWith('<') ? (
+          <div class:list={[
+            "flex items-center justify-center [&>svg]:w-full [&>svg]:h-auto",
+            iconClass?.includes('w-32') ? "w-20 h-20" : 
+            iconClass?.includes('w-28') ? "w-18 h-18" :
+            iconClass?.includes('w-24') ? "w-14 h-14" : 
+            iconClass ? "w-12 h-12" : "w-10 h-10"
+          ]}>
+            <Fragment set:html={icon} />
+          </div>
+        ) : (
+          <i class:list={[icon, iconClass?.includes('w-32') ? "text-7xl" : iconClass?.includes('w-28') ? "text-6xl" : iconClass ? "text-5xl" : "text-4xl"]}></i>
+        )
+      }
     </div>
     
-    <h3 class="mb-3 text-xl font-bold tracking-tight text-white font-display leading-tight">
+    <h3 class="mb-1 text-lg font-bold tracking-tight text-white font-display leading-tight">
       {title}
     </h3>
     
-    <p class="text-sm leading-relaxed text-gray-400 text-balance group-hover:text-gray-300 transition-colors duration-300">
+    <p class="text-xs leading-tight text-gray-400 text-balance group-hover:text-gray-300 transition-colors duration-300 px-2">
       {description}
     </p>
   </div>

@@ -1,16 +1,25 @@
 ---
 import IncludedItem from '@/components/IncludedItem.astro'
+import windsurfLogo from '@/icons/WindsurfLogo.svg?raw'
+import v0Logo from '@/icons/V0Logo.svg?raw'
 
 const items = [
   {
-    icon: 'fas fa-robot',
+    icon: windsurfLogo,
     title: 'Windsurf Pro',
     description: '1 mes de acceso al editor de IA con todos los modelos premium',
+    iconClass: 'w-32 h-32',
+  },
+  {
+    icon: v0Logo,
+    title: 'Créditos de V0',
+    description: '10$ de créditos para usar en v0.app y acelerar tu desarrollo con IA',
+    iconClass: 'w-32 h-32',
   },
   {
     icon: 'fas fa-utensils',
     title: 'Comida y bebida',
-    description: 'Café, desayuno, comida, refrescos y cóctel final',
+    description: 'Café, desayuno, comida, refrescos y cóctel final para hacer networking',
   },
   {
     icon: 'fas fa-laptop-code',
@@ -20,12 +29,12 @@ const items = [
   {
     icon: 'fas fa-camera',
     title: 'Fotografía Pro',
-    description: 'Llévate un buen recuerdo del evento',
+    description: 'Llévate un buen recuerdo del evento con una foto profesional',
   },
   {
-    icon: 'fas fa-shopping-bag',
-    title: 'Merchandising',
-    description: 'Bolsa oficial con recuerdos del evento',
+    icon: 'fas fa-gift',
+    title: 'Sorteos y regalos',
+    description: 'Bolsa oficial con merchandising y sorpresas épicas durante las charlas',
   },
   {
     icon: 'fas fa-certificate',
@@ -33,14 +42,9 @@ const items = [
     description: 'Acreditación firmada de asistencia al evento y formación',
   },
   {
-    icon: 'fas fa-gift',
-    title: 'Sorteos y regalos',
-    description: 'Vamos a tener sorpresas épicas durante las charlas',
-  },
-  {
     icon: 'fas fa-id-badge',
     title: 'Acceso a todo',
-    description: 'Todas las charlas y workshops incluido',
+    description: 'Todas las charlas y workshops incluidos. ¡Aprovecha al máximo!',
   },
 ]
 ---

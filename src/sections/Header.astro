@@ -7,37 +7,37 @@ import V0Logo from '@/icons/V0Logo.svg?raw'
   class="fixed top-0 w-full bg-dark-bg/90 backdrop-blur-md z-50 border-b border-white/10 transition-all duration-300"
 >
   <div class="container mx-auto px-5">
-    <nav class="flex justify-between items-center h-20">
+    <nav class="flex justify-between items-center h-16 md:h-20">
       <a
         href="/"
         class="flex items-center gap-3 group transition-all duration-300"
         aria-label="Ir al inicio"
       >
-        <Logo class="h-10 md:h-12 w-auto transition-transform group-hover:scale-105" />
+        <Logo class="h-8 sm:h-10 md:h-12 w-auto transition-transform group-hover:scale-105" />
         <div class="flex flex-col justify-center">
-          <div class="flex items-center gap-2">
+          <div class="flex items-center gap-1.5 md:gap-2">
             <span
-              class="text-xl md:text-2xl font-bold font-clash text-white tracking-tighter leading-none uppercase"
+              class="text-lg sm:text-xl md:text-2xl font-bold font-clash text-white tracking-tighter leading-none uppercase"
             >
               JSConf <span class="text-js-yellow font-bold">España</span>
             </span>
             <span
-              class="hidden sm:block bg-js-yellow text-js-black text-[10px] md:text-xs px-1.5 py-0.5 rounded-sm font-black leading-none transform -rotate-2 shadow-[2px_2px_0px_rgba(255,255,255,0.2)]"
+              class="hidden sm:block min-[1028px]:hidden 2xl:block bg-js-yellow text-js-black text-[8px] md:text-xs px-1 md:px-1.5 py-0.5 rounded-sm font-black leading-none transform -rotate-2 shadow-[2px_2px_0px_rgba(255,255,255,0.2)]"
             >
               2026
             </span>
           </div>
           <p
-            class="text-[9px] md:text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] mt-1 leading-none transition-colors group-hover:text-js-yellow/60"
+            class="hidden sm:block min-[1028px]:hidden 2xl:block text-[8px] md:text-[10px] font-bold text-white/40 uppercase tracking-[0.1em] md:tracking-[0.2em] mt-1 leading-none transition-colors group-hover:text-js-yellow/60"
           >
             14 Mar · La Nave, Madrid
           </p>
         </div>
       </a>
-      <div class="hidden md:flex gap-8">
+      <div class="hidden min-[1028px]:flex gap-4 2xl:gap-8">
         <a
           href="#speakers"
-          class="text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors"
+          class="hidden 2xl:block text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors"
           >Speakers</a
         >
         <a
@@ -47,7 +47,7 @@ import V0Logo from '@/icons/V0Logo.svg?raw'
         >
         <a
           href="#workshops"
-          class="text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors"
+          class="hidden 2xl:block text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors"
           >Workshops</a
         >
         <a
@@ -57,7 +57,7 @@ import V0Logo from '@/icons/V0Logo.svg?raw'
         >
         <a
           href="#activities"
-          class="text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors"
+          class="hidden 2xl:block text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors"
           >Actividades</a
         >
         <a
@@ -71,18 +71,18 @@ import V0Logo from '@/icons/V0Logo.svg?raw'
         </a>
         <a
           href="#venue"
-          class="text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors">Mapa</a
+          class="hidden 2xl:block text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors">Mapa</a
         >
       </div>
       <div class="flex gap-4 items-center">
         <button
           id="buy-tickets-header"
-          class="inline-flex items-center justify-center px-5 py-2.5 font-bold uppercase tracking-wide text-sm bg-js-yellow text-js-black border-2 border-js-yellow rounded hover:bg-transparent hover:text-js-yellow hover:shadow-[0_0_15px_rgba(247,223,30,0.4)] transition-all"
+          class="hidden sm:inline-flex min-[1028px]:hidden 2xl:inline-flex items-center justify-center px-5 py-2.5 font-bold uppercase tracking-wide text-sm bg-js-yellow text-js-black border-2 border-js-yellow rounded hover:bg-transparent hover:text-js-yellow hover:shadow-[0_0_15px_rgba(247,223,30,0.4)] transition-all"
           >ENTRADAS</button
         >
         <button
           id="menu-toggle"
-          class="md:hidden text-white text-2xl focus:outline-none cursor-pointer p-2 hover:text-js-yellow transition-colors"
+          class="2xl:hidden text-white text-2xl focus:outline-none cursor-pointer p-2 hover:text-js-yellow transition-colors"
           aria-label="Abrir menú"
         >
           <i class="fas fa-bars"></i>
@@ -95,7 +95,7 @@ import V0Logo from '@/icons/V0Logo.svg?raw'
 <!-- Mobile Menu -->
 <div
   id="mobile-menu"
-  class="fixed inset-0 w-screen h-dvh z-[100] bg-dark-bg/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 translate-x-full transition-transform duration-300 md:hidden"
+  class="fixed inset-0 w-screen h-dvh z-[100] bg-dark-bg/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 translate-x-full transition-transform duration-300 2xl:hidden"
 >
   <button
     id="menu-close"

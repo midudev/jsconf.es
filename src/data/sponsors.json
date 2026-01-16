@@ -21,12 +21,6 @@
         "image": "/sponsors/ignia-cloud.webp",
         "url": "https://igniacloud.com/",
         "description": "Soluciones en la Nube Seguras, Escalables y de Alto Rendimiento"
-      },
-      {
-        "name": "DevTalles",
-        "image": "/sponsors/devtalles.webp",
-        "url": "https://devtalles.com/",
-        "description": "CURSOS TOP DE DESARROLLO Y TECNOLOGÍA POR FERNANDO HERRERA"
       }
     ]
   },
@@ -35,6 +29,12 @@
     "color": "#ff3e00",
     "icon": "max",
     "companies": [
+      {
+        "name": "DevTalles",
+        "image": "/sponsors/devtalles.webp",
+        "url": "https://devtalles.com/",
+        "description": "CURSOS TOP DE DESARROLLO Y TECNOLOGÍA POR FERNANDO HERRERA"
+      },
       {
         "name": "DonDominio",
         "image": "/sponsors/dondominio.webp",

@@ -1,5 +1,6 @@
 ---
 import Logo from '@/icons/Logo.svg'
+import V0Logo from '@/icons/V0Logo.svg?raw'
 ---
 
 <header
@@ -59,6 +60,15 @@ import Logo from '@/icons/Logo.svg'
           class="text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors"
           >Actividades</a
         >
+        <a
+          href="#hackathon"
+          class="text-sm font-medium bg-gradient-to-r from-white via-white to-gray-400 bg-clip-text text-transparent hover:to-js-yellow transition-all flex items-center gap-1 group/hackathon"
+        >
+          Hackathon
+          <span class="size-4 text-white group-hover/hackathon:scale-110 group-hover/hackathon:text-js-yellow transition-all">
+            <Fragment set:html={V0Logo} />
+          </span>
+        </a>
         <a
           href="#venue"
           class="text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors">Mapa</a
@@ -121,6 +131,15 @@ import Logo from '@/icons/Logo.svg'
       class="text-4xl font-black font-clash text-white hover:text-js-yellow transition-colors mobile-link uppercase tracking-tighter"
       >Actividades</a
     >
+    <a
+      href="#hackathon"
+      class="text-4xl font-medium font-clash bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent hover:to-js-yellow transition-all mobile-link uppercase tracking-tighter flex items-center gap-2 group/hackathon"
+    >
+      Hackathon
+      <span class="size-8 text-white group-hover/hackathon:text-js-yellow transition-colors">
+        <Fragment set:html={V0Logo} />
+      </span>
+    </a>
     <a
       href="#venue"
       class="text-4xl font-black font-clash text-white hover:text-js-yellow transition-colors mobile-link uppercase tracking-tighter"

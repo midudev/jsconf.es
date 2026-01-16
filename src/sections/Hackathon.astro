@@ -1,0 +1,98 @@
+---
+import V0Logo from '@/icons/V0Logo.svg'
+
+const prizes = [
+  {
+    place: 'Primer',
+    title: '$500 en créditos para V0 + Ordenador Geekom',
+    icon: 'fa-trophy',
+    color: 'text-yellow-400',
+  },
+  {
+    place: 'Segundo',
+    title: '$300 en créditos para V0 + Peluche This is fine',
+    icon: 'fa-medal',
+    color: 'text-gray-300',
+  },
+  {
+    place: 'Tercer',
+    title: '$200 en créditos para V0 + Libro de Aprendiendo Git y GitHub físico',
+    icon: 'fa-award',
+    color: 'text-amber-600',
+  },
+]
+---
+
+<section id="hackathon" class="py-24 bg-black relative overflow-hidden">
+  <!-- Background decoration -->
+  <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
+    <div
+      class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-[#09f]/20 blur-[120px] rounded-full"
+    >
+    </div>
+    <div
+      class="absolute -bottom-[10%] -right-[10%] w-[40%] h-[40%] bg-js-yellow/10 blur-[120px] rounded-full"
+    >
+    </div>
+  </div>
+
+  <div class="container mx-auto px-5 relative z-10">
+    <div
+      class="flex flex-col items-center text-center mb-16 animate-fade-in view-animate-[--entrance] animate-range-rapid"
+    >
+      <div
+        class="flex items-center gap-3 mb-6 bg-white/5 px-4 py-2 rounded-full border border-white/10"
+      >
+        <span
+          class="text-white font-medium uppercase tracking-widest text-base inline-flex items-center gap-1"
+          >Hackathon <V0Logo class="text-white w-8 h-8" /></span
+        >
+      </div>
+
+      <h2 class="text-5xl md:text-7xl font-bold font-display mb-8 text-white tracking-tighter">
+        Crea el futuro <span class="text-js-yellow">con IA</span>
+      </h2>
+
+      <p class="text-gray-400 max-w-3xl mx-auto text-xl leading-relaxed text-balance inline-block">
+        Tendrás todo el día para crear un producto increíble usando <V0Logo
+          class="w-8 h-8 inline text-white"
+        />. Se distribuirá un código especial para que todos los asistentes tengan <span
+          class="text-js-yellow font-bold">$10 en créditos</span
+        >.
+      </p>
+
+      <div
+        class="mt-8 inline-flex items-center gap-2 text-red-400/80 text-sm font-medium uppercase tracking-wider"
+      >
+        <i class="fas fa-users text-xs"></i>
+        Solo para asistentes presenciales
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {
+        prizes.map((prize, index) => (
+          <div
+            class={`bg-dark-surface rounded-2xl p-8 border border-white/5 hover:border-js-yellow/30 transition-all duration-500 group animate-fade-in-up view-animate-[--entrance] animate-range-rapid animate-delay-[${index * 200}ms] flex flex-col items-center text-center`}
+          >
+            <div
+              class={`text-4xl mb-6 ${prize.color} group-hover:scale-110 transition-transform duration-500`}
+            >
+              <i class={`fas ${prize.icon}`} />
+            </div>
+
+            <div class={`${prize.color} font-display text-2xl font-bold mb-2`}>
+              {prize.place} Premio
+            </div>
+
+            <h3 class="text-white text-xl font-bold mb-4 min-h-[3.5rem] flex items-center justify-center text-balance">
+              {prize.title}
+            </h3>
+
+            <p class="text-gray-400 text-sm leading-relaxed text-balance">{prize.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

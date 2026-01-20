@@ -1,6 +1,6 @@
 ---
 const { item, showSpeaker = true } = Astro.props
-const { time, topic, speaker, role, image, description } = item
+const { time, topic, speaker, role, image, description, language } = item
 ---
 
 <div
@@ -18,11 +18,20 @@ const { time, topic, speaker, role, image, description } = item
       </span>
     </div>
     <div class="flex flex-col gap-2">
-      <h4
-        class="text-2xl font-bold font-display text-white group-hover:text-js-yellow transition-colors leading-tight"
-      >
-        {topic}
-      </h4>
+      <div class="flex items-center gap-3 justify-center md:justify-start">
+        <h4
+          class="text-2xl font-bold font-display text-white group-hover:text-js-yellow transition-colors leading-tight"
+        >
+          {topic}
+        </h4>
+        {
+          language === 'en' && (
+            <span class="flex items-center gap-1.5 bg-blue-500/10 text-blue-400 text-[10px] font-bold px-2 py-0.5 rounded-full border border-blue-500/20 uppercase tracking-wider">
+              🇬🇧 English
+            </span>
+          )
+        }
+      </div>
       {
         description && (
           <p class="text-gray-400 text-sm leading-relaxed max-w-[500px] text-balance">

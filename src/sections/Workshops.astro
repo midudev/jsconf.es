@@ -56,6 +56,7 @@ const workshops = [
   },
   {
     title: 'Construyendo el Futuro con Cloudflare Workers & AI',
+    language: 'en',
     description:
       'Aprende a desplegar aplicaciones globales en milisegundos utilizando Cloudflare Workers. En este taller práctico, Confidence te enseñará cómo integrar modelos de IA directamente en el Edge para crear experiencias de usuario inteligentes, rápidas y escalables sin complicaciones de infraestructura.',
     authors: [
@@ -91,9 +92,18 @@ const workshops = [
             </div>
 
             <div class="relative z-10 flex flex-col h-full">
-              <h3 class="text-2xl md:text-3xl font-bold text-white mb-5 leading-tight group-hover:text-js-yellow transition-colors">
-                {workshop.title}
-              </h3>
+              <div class="flex items-start justify-between gap-4 mb-5">
+                <h3 class="text-2xl md:text-3xl font-bold text-white leading-tight group-hover:text-js-yellow transition-colors">
+                  {workshop.title}
+                </h3>
+                {
+                  workshop.language === 'en' && (
+                    <span class="flex-shrink-0 flex items-center gap-1.5 bg-blue-500/10 text-blue-400 text-[10px] font-bold px-2 py-0.5 rounded-full border border-blue-500/20 uppercase tracking-wider mt-2">
+                      🇬🇧 English
+                    </span>
+                  )
+                }
+              </div>
 
               <p class="text-gray-400 text-base leading-relaxed mb-8 flex-grow">
                 {workshop.description}

@@ -71,9 +71,10 @@
         "type": "talk",
         "time": "13:00 - 13:35",
         "topic": "TBD",
-        "speaker": "Speaker",
-        "role": "TBD",
-        "description": "Un misterioso speaker que nos dejará a todos con la boca abierta. O eso dice su cláusula de confidencialidad."
+        "speaker": "Rita Kozlov",
+        "role": "VP Developers & AI @Cloudflare",
+        "image": "rita-kozlov.webp",
+        "description": "Workers, integración de IA y el edge en el futuro de la web"
       },
       {
         "type": "talk",

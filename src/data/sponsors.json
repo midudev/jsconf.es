@@ -21,6 +21,12 @@
         "image": "/sponsors/ignia-cloud.webp",
         "url": "https://igniacloud.com/",
         "description": "Soluciones en la Nube Seguras, Escalables y de Alto Rendimiento"
+      },
+      {
+        "name": "Vercel",
+        "image": "/sponsors/vercel.svg",
+        "url": "https://vercel.com",
+        "description": "CONSTRUYE Y DESPLIEGA EN LA NUBE DE IA"
       }
     ]
   },
@@ -65,12 +71,6 @@
         "image": "/sponsors/codely.svg",
         "url": "http://midu.link/codely",
         "description": "MUCHO MÁS QUE CURSOS DE PROGRAMACIÓN"
-      },
-      {
-        "name": "Vercel",
-        "image": "/sponsors/vercel.svg",
-        "url": "https://vercel.com",
-        "description": "CONSTRUYE Y DESPLIEGA EN LA NUBE DE IA"
       }
     ]
   }

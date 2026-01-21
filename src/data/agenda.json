@@ -65,7 +65,7 @@
         "speaker": "Gisela Torres",
         "role": "Sr. Global Blackbelt @Microsoft",
         "image": "gisela-torres.webp",
-        "description": "Live Coding de cómo usar JavaScript/TypeScript para hacer subir de nivel tu IA y conectarla con el mundo exterior."
+        "description": "La IA ha pasado de autocompletar líneas a currar contigo. Cómo usar agentes e IA para montar apps con Astro, Vue o tu framework frontend favorito, y hacer que programar pueda ser (todavía más) divertido."
       },
       {
         "type": "talk",

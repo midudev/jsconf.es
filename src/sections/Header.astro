@@ -22,22 +22,22 @@ import V0Logo from '@/icons/V0Logo.svg?raw'
               JSConf <span class="text-js-yellow font-bold">España</span>
             </span>
             <span
-              class="hidden sm:block min-[1028px]:hidden 2xl:block bg-js-yellow text-js-black text-[8px] md:text-xs px-1 md:px-1.5 py-0.5 rounded-sm font-black leading-none transform -rotate-2 shadow-[2px_2px_0px_rgba(255,255,255,0.2)]"
+              class="hidden sm:block min-[1028px]:hidden min-[1500px]:block bg-js-yellow text-js-black text-[8px] md:text-xs px-1 md:px-1.5 py-0.5 rounded-sm font-black leading-none transform -rotate-2 shadow-[2px_2px_0px_rgba(255,255,255,0.2)]"
             >
               2026
             </span>
           </div>
           <p
-            class="hidden sm:block min-[1028px]:hidden 2xl:block text-[8px] md:text-[10px] font-bold text-white/40 uppercase tracking-[0.1em] md:tracking-[0.2em] mt-1 leading-none transition-colors group-hover:text-js-yellow/60"
+            class="hidden sm:block min-[1028px]:hidden min-[1500px]:block text-[8px] md:text-[10px] font-bold text-white/40 uppercase tracking-[0.1em] md:tracking-[0.2em] mt-1 leading-none transition-colors group-hover:text-js-yellow/60"
           >
             14 Mar · La Nave, Madrid
           </p>
         </div>
       </a>
-      <div class="hidden min-[1028px]:flex gap-4 2xl:gap-8">
+      <div class="hidden min-[1028px]:flex gap-3 min-[1500px]:gap-5 2xl:gap-7">
         <a
           href="#speakers"
-          class="hidden 2xl:block text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors"
+          class="hidden min-[1500px]:block text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors"
           >Speakers</a
         >
         <a
@@ -47,7 +47,7 @@ import V0Logo from '@/icons/V0Logo.svg?raw'
         >
         <a
           href="#workshops"
-          class="hidden 2xl:block text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors"
+          class="hidden min-[1500px]:block text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors"
           >Workshops</a
         >
         <a
@@ -57,7 +57,7 @@ import V0Logo from '@/icons/V0Logo.svg?raw'
         >
         <a
           href="#activities"
-          class="hidden 2xl:block text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors"
+          class="hidden min-[1500px]:block text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors"
           >Actividades</a
         >
         <a
@@ -71,18 +71,18 @@ import V0Logo from '@/icons/V0Logo.svg?raw'
         </a>
         <a
           href="#venue"
-          class="hidden 2xl:block text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors">Mapa</a
+          class="hidden min-[1500px]:block text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors">Mapa</a
         >
       </div>
       <div class="flex gap-4 items-center">
         <button
           id="buy-tickets-header"
-          class="hidden sm:inline-flex min-[1028px]:hidden 2xl:inline-flex items-center justify-center px-5 py-2.5 font-bold uppercase tracking-wide text-sm bg-js-yellow text-js-black border-2 border-js-yellow rounded hover:bg-transparent hover:text-js-yellow hover:shadow-[0_0_15px_rgba(247,223,30,0.4)] transition-all"
+          class="hidden sm:inline-flex min-[1028px]:hidden min-[1500px]:inline-flex items-center justify-center px-4 min-[1500px]:px-5 py-2.5 font-bold uppercase tracking-wide text-sm bg-js-yellow text-js-black border-2 border-js-yellow rounded hover:bg-transparent hover:text-js-yellow hover:shadow-[0_0_15px_rgba(247,223,30,0.4)] transition-all"
           >ENTRADAS</button
         >
         <button
           id="menu-toggle"
-          class="2xl:hidden text-white text-2xl focus:outline-none cursor-pointer p-2 hover:text-js-yellow transition-colors"
+          class="min-[1500px]:hidden text-white text-2xl focus:outline-none cursor-pointer p-2 hover:text-js-yellow transition-colors"
           aria-label="Abrir menú"
         >
           <i class="fas fa-bars"></i>
@@ -95,7 +95,7 @@ import V0Logo from '@/icons/V0Logo.svg?raw'
 <!-- Mobile Menu -->
 <div
   id="mobile-menu"
-  class="fixed inset-0 w-screen h-dvh z-[100] bg-dark-bg/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 translate-x-full transition-transform duration-300 2xl:hidden"
+  class="fixed inset-0 w-screen h-dvh z-[100] bg-dark-bg/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 translate-x-full transition-transform duration-300 min-[1500px]:hidden"
 >
   <button
     id="menu-close"

@@ -20,7 +20,7 @@ const {
 } = Astro.props
 ---
 
-<div class="bg-dark-surface rounded-xl overflow-hidden border border-white/5 relative hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:border-js-yellow transition-all duration-300 group">
+<div class="bg-dark-surface rounded-xl overflow-hidden border border-white/5 relative hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:border-js-yellow transition-all duration-300 group flex flex-col h-full">
   <div class="relative h-[300px] overflow-hidden">
     <Image
       inferSize
@@ -31,15 +31,15 @@ const {
       class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
     />
   </div>
-  <div class="p-6">
+  <div class="p-6 flex flex-col flex-1">
     <h3 class="text-xl text-js-yellow font-bold mb-1">{name}</h3>
-    <div class="text-sm text-gray-400 mb-4 flex items-center gap-2">
+    <div class="text-sm text-gray-400 mb-4">
       <span>{role}</span>
-      {company && <span>@ {company}</span>}
+      {company && <span class="block text-gray-500">@ {company}</span>}
     </div>
-    <p class="text-sm leading-relaxed text-[#aaa] mb-4">{description}</p>
+    <p class="text-sm leading-relaxed text-[#aaa] mb-4 flex-1">{description}</p>
     {social && (
-      <div class="flex gap-4">
+      <div class="flex gap-4 mt-auto">
         <a 
           href={social} 
           target="_blank" 

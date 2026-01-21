@@ -71,6 +71,12 @@
         "image": "/sponsors/codely.svg",
         "url": "http://midu.link/codely",
         "description": "MUCHO MÁS QUE CURSOS DE PROGRAMACIÓN"
+      },
+      {
+        "name": "Plain Concepts",
+        "image": "/sponsors/plain-concepts.webp",
+        "url": "https://www.plainconcepts.com/",
+        "description": "DISEÑANDO Y CONSTRUYENDO PRODUCTOS DIGITALES AVANZADOS"
       }
     ]
   }

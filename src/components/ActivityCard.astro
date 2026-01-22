@@ -6,10 +6,11 @@ interface Props {
   description: string
   items: string[]
   buttonText?: string
+  buttonLink?: string
   footerIcon: string
 }
 
-const { icon, date, title, description, items, buttonText = 'Apuntarse (Próximamente)', footerIcon } = Astro.props
+const { icon, date, title, description, items, buttonText = 'Apuntarse', buttonLink, footerIcon } = Astro.props
 ---
 
 <div class="bg-dark-surface rounded-[20px] p-10 relative overflow-hidden border border-white/5 group hover:border-white/10 transition-all">
@@ -28,8 +29,14 @@ const { icon, date, title, description, items, buttonText = 'Apuntarse (Próxima
       </li>
     ))}
   </ul>
-  <span class="inline-block bg-white/10 text-[#777] cursor-not-allowed uppercase font-bold py-2.5 px-5 rounded">
-    {buttonText}
-  </span>
+  {buttonLink ? (
+    <a href={buttonLink} target="_blank" rel="noopener noreferrer" class="inline-block bg-js-yellow text-black uppercase font-bold py-2.5 px-5 rounded hover:bg-yellow-400 transition-colors">
+      {buttonText}
+    </a>
+  ) : (
+    <span class="inline-block bg-white/10 text-[#777] cursor-not-allowed uppercase font-bold py-2.5 px-5 rounded">
+      {buttonText} (Próximamente)
+    </span>
+  )}
   <i class={`${footerIcon} text-5xl absolute bottom-5 right-5 opacity-10 -rotate-[15deg] group-hover:opacity-20 group-hover:rotate-0 group-hover:scale-110 transition-all duration-500`}></i>
 </div>

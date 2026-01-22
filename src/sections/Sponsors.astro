@@ -7,13 +7,13 @@ const TIER_STYLES: Record<
   { container: string; badge: string; description: string; icon: string }
 > = {
   platinum: {
-    container: 'md:col-span-12 bg-gradient-to-br from-[#09f]/10 via-dark-surface to-dark-surface',
+    container: 'md:col-span-12 md:h-[220px] bg-gradient-to-br from-[#09f]/10 via-dark-surface to-dark-surface',
     badge: 'text-[#09f]',
     description: 'text-[11px] md:text-[12px] text-[#b5d9ff]',
     icon: 'fa-gem',
   },
   max: {
-    container: 'md:col-span-8 bg-dark-surface',
+    container: 'md:col-span-8 md:h-[200px] bg-dark-surface',
     badge: 'text-[#ff3e00]',
     description: 'text-[10px] md:text-[11px] text-gray-500',
     icon: 'fa-trophy',
@@ -42,6 +42,9 @@ const COMPANY_OVERRIDES: Record<string, { container?: string; image?: string }> 
   },
   DevTalles: {
     image: 'brightness-0 invert',
+  },
+  Mastra: {
+    image: 'max-w-[120px] md:max-w-[160px] max-h-[40px]',
   },
 }
 
@@ -97,54 +100,67 @@ function getImageClasses(companyName: string, tierIcon: string) {
 
       <!-- Other Sponsors -->
       {
-        sponsors.map((tier) =>
-          tier.companies.map((company) => (
-            <a
-              href={company.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              class:list={[
-                'relative rounded-xl flex flex-col items-center justify-center p-6 md:p-8 transition-all duration-300 hover:scale-[1.02] hover:bg-[#252525] group border border-white/5',
-                getContainerClasses(company.name, tier.icon),
-              ]}
-            >
-              <span
-                class:list={[
-                  'absolute top-4 left-4 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-white/5',
-                  TIER_STYLES[tier.icon]?.badge || TIER_STYLES.star.badge,
-                ]}
-              >
-                <i class={`fas ${TIER_STYLES[tier.icon]?.icon || TIER_STYLES.star.icon} mr-1`} />{' '}
-                {tier.category.replace('Sponsors ', '')}
-              </span>
+        sponsors.map((tier) => {
+          const itemsPerRow = tier.icon === 'platinum' ? 2 : tier.icon === 'max' ? 3 : 4
+          const remainder = tier.companies.length % itemsPerRow
+          const emptySlots = remainder === 0 ? 0 : itemsPerRow - remainder
 
-              <div class="flex-1 flex items-center justify-center w-full py-4">
-                {company.image ? (
-                  <img
-                    src={company.image}
-                    alt={company.name}
-                    class:list={[
-                      'object-contain transition-all duration-300 group-hover:scale-110',
-                      getImageClasses(company.name, tier.icon),
-                    ]}
-                  />
-                ) : (
-                  <span class="text-white font-bold font-display text-2xl">{company.name}</span>
-                )}
-              </div>
-              {company.description && (
-                <p
+          return (
+            <>
+              {tier.companies.map((company) => (
+                <a
+                  href={company.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class:list={[
-                    'uppercase max-w-[240px] leading-tight font-light tracking-wider text-center',
-                    TIER_STYLES[tier.icon]?.description || TIER_STYLES.star.description,
+                    'relative rounded-xl flex flex-col items-center justify-center p-6 md:p-8 transition-all duration-300 hover:scale-[1.02] hover:bg-[#252525] group border border-white/5',
+                    getContainerClasses(company.name, tier.icon),
                   ]}
                 >
-                  {company.description}
-                </p>
-              )}
-            </a>
-          ))
-        )
+                  <span
+                    class:list={[
+                      'absolute top-4 left-4 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-white/5',
+                      TIER_STYLES[tier.icon]?.badge || TIER_STYLES.star.badge,
+                    ]}
+                  >
+                    <i class={`fas ${TIER_STYLES[tier.icon]?.icon || TIER_STYLES.star.icon} mr-1`} />{' '}
+                    {tier.category.replace('Sponsors ', '')}
+                  </span>
+
+                  <div class="flex-1 flex items-center justify-center w-full py-4">
+                    {company.image ? (
+                      <img
+                        src={company.image}
+                        alt={company.name}
+                        class:list={[
+                          'object-contain transition-all duration-300 group-hover:scale-110',
+                          getImageClasses(company.name, tier.icon),
+                        ]}
+                      />
+                    ) : (
+                      <span class="text-white font-bold font-display text-2xl">{company.name}</span>
+                    )}
+                  </div>
+                  {company.description && (
+                    <p
+                      class:list={[
+                        'uppercase max-w-[240px] leading-tight font-light tracking-wider text-center',
+                        TIER_STYLES[tier.icon]?.description || TIER_STYLES.star.description,
+                      ]}
+                    >
+                      {company.description}
+                    </p>
+                  )}
+                </a>
+              ))}
+              {Array.from({ length: emptySlots }).map(() => (
+                <div
+                  class={`hidden md:block ${tier.icon === 'platinum' ? 'md:col-span-12' : tier.icon === 'max' ? 'md:col-span-8' : 'md:col-span-6'}`}
+                />
+              ))}
+            </>
+          )
+        })
       }
     </div>
   </div>

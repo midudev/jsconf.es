@@ -17,12 +17,6 @@
         "description": "Infraestructura de la siguiente generación, servidores dedicados, cloud, vps y más."
       },
       {
-        "name": "Ignia Cloud",
-        "image": "/sponsors/ignia-cloud.webp",
-        "url": "https://igniacloud.com/",
-        "description": "Soluciones en la Nube Seguras, Escalables y de Alto Rendimiento"
-      },
-      {
         "name": "Vercel",
         "image": "/sponsors/vercel.svg",
         "url": "https://vercel.com",
@@ -58,6 +52,12 @@
         "image": "/sponsors/nerdearla.webp",
         "url": "https://nerdearla.es/",
         "description": "EL EVENTO DE CIENCIA Y TECNOLOGÍA MÁS GRANDE DE LATINOAMÉRICA"
+      },
+      {
+        "name": "Ignia Cloud",
+        "image": "/sponsors/ignia-cloud.webp",
+        "url": "https://igniacloud.com/",
+        "description": "Soluciones en la Nube Seguras, Escalables y de Alto Rendimiento"
       }
     ]
   },
@@ -77,6 +77,12 @@
         "image": "/sponsors/plain-concepts.webp",
         "url": "https://www.plainconcepts.com/",
         "description": "DISEÑANDO Y CONSTRUYENDO PRODUCTOS DIGITALES AVANZADOS"
+      },
+      {
+        "name": "Mastra",
+        "image": "/sponsors/mastra.svg",
+        "url": "https://mastra.ai/",
+        "description": "EL FRAMEWORK DE TYPESCRIPT PARA CONSTRUIR AGENTES DE IA"
       }
     ]
   }

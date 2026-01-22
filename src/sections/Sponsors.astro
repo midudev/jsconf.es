@@ -13,13 +13,13 @@ const TIER_STYLES: Record<
     icon: 'fa-gem',
   },
   max: {
-    container: 'md:col-span-8 md:h-[200px] bg-dark-surface',
+    container: 'md:col-span-8 md:h-[180px] bg-dark-surface',
     badge: 'text-[#ff3e00]',
     description: 'text-[10px] md:text-[11px] text-gray-500',
     icon: 'fa-trophy',
   },
   star: {
-    container: 'md:col-span-6 bg-dark-surface',
+    container: 'md:col-span-6 md:h-[180px] bg-dark-surface',
     badge: 'text-gray-400',
     description: 'text-[10px] md:text-[11px] text-gray-500',
     icon: 'fa-star',
@@ -45,6 +45,9 @@ const COMPANY_OVERRIDES: Record<string, { container?: string; image?: string }> 
   },
   Mastra: {
     image: 'max-w-[120px] md:max-w-[160px] max-h-[40px]',
+  },
+  'Ignia Cloud': {
+    image: 'max-w-[140px] md:max-w-[180px] max-h-[80px]',
   },
 }
 
@@ -127,13 +130,13 @@ function getImageClasses(companyName: string, tierIcon: string) {
                     {tier.category.replace('Sponsors ', '')}
                   </span>
 
-                  <div class="flex-1 flex items-center justify-center w-full py-4">
+                  <div class="flex-1 flex items-center justify-center w-full py-4 px-4">
                     {company.image ? (
                       <img
                         src={company.image}
                         alt={company.name}
                         class:list={[
-                          'object-contain transition-all duration-300 group-hover:scale-110',
+                          'object-contain transition-all duration-300 group-hover:scale-110 w-full h-auto',
                           getImageClasses(company.name, tier.icon),
                         ]}
                       />

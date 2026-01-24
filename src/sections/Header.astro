@@ -36,42 +36,47 @@ import V0Logo from '@/icons/V0Logo.svg?raw'
       </a>
       <div class="hidden min-[1028px]:flex gap-3 min-[1500px]:gap-5 2xl:gap-7">
         <a
-          href="#speakers"
+          href="/#speakers"
           class="hidden min-[1500px]:block text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors"
           >Speakers</a
         >
         <a
-          href="#agenda"
+          href="/#agenda"
           class="text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors flex items-center gap-1.5"
-          >Agenda <span class="size-1.5 rounded-full bg-js-yellow animate-soft-pulse shadow-[0_0_8px_rgba(247,223,30,0.6)]"></span></a
+          >Agenda <span
+            class="size-1.5 rounded-full bg-js-yellow animate-soft-pulse shadow-[0_0_8px_rgba(247,223,30,0.6)]"
+          ></span></a
         >
         <a
-          href="#workshops"
+          href="/#workshops"
           class="hidden min-[1500px]:block text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors"
           >Workshops</a
         >
         <a
-          href="#sponsors"
+          href="/#sponsors"
           class="text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors"
           >Patrocinadores</a
         >
         <a
-          href="#activities"
+          href="/#activities"
           class="hidden min-[1500px]:block text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors"
           >Actividades</a
         >
         <a
-          href="#hackathon"
+          href="/#hackathon"
           class="text-sm font-medium bg-gradient-to-r from-white via-white to-gray-400 bg-clip-text text-transparent hover:to-js-yellow transition-all flex items-center gap-1 group/hackathon"
         >
           Hackathon
-          <span class="size-4 text-white group-hover/hackathon:scale-110 group-hover/hackathon:text-js-yellow transition-all">
+          <span
+            class="size-4 text-white group-hover/hackathon:scale-110 group-hover/hackathon:text-js-yellow transition-all"
+          >
             <Fragment set:html={V0Logo} />
           </span>
         </a>
         <a
-          href="#venue"
-          class="hidden min-[1500px]:block text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors">Mapa</a
+          href="/#venue"
+          class="hidden min-[1500px]:block text-sm font-medium text-gray-400 hover:text-js-yellow transition-colors"
+          >Mapa</a
         >
       </div>
       <div class="flex gap-4 items-center">
@@ -107,32 +112,34 @@ import V0Logo from '@/icons/V0Logo.svg?raw'
 
   <nav class="flex flex-col items-center gap-8">
     <a
-      href="#speakers"
+      href="/#speakers"
       class="text-4xl font-black font-clash text-white hover:text-js-yellow transition-colors mobile-link uppercase tracking-tighter"
       >Speakers</a
     >
     <a
-      href="#agenda"
+      href="/#agenda"
       class="text-4xl font-black font-clash text-white hover:text-js-yellow transition-colors mobile-link uppercase tracking-tighter flex items-center gap-2.5"
-      >Agenda <span class="size-3 rounded-full bg-js-yellow animate-soft-pulse shadow-[0_0_15px_rgba(247,223,30,0.8)]"></span></a
+      >Agenda <span
+        class="size-3 rounded-full bg-js-yellow animate-soft-pulse shadow-[0_0_15px_rgba(247,223,30,0.8)]"
+      ></span></a
     >
     <a
-      href="#workshops"
+      href="/#workshops"
       class="text-4xl font-black font-clash text-white hover:text-js-yellow transition-colors mobile-link uppercase tracking-tighter"
       >Workshops</a
     >
     <a
-      href="#sponsors"
+      href="/#sponsors"
       class="text-4xl font-black font-clash text-white hover:text-js-yellow transition-colors mobile-link uppercase tracking-tighter"
       >Patrocinadores</a
     >
     <a
-      href="#activities"
+      href="/#activities"
       class="text-4xl font-black font-clash text-white hover:text-js-yellow transition-colors mobile-link uppercase tracking-tighter"
       >Actividades</a
     >
     <a
-      href="#hackathon"
+      href="/#hackathon"
       class="text-4xl font-medium font-clash bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent hover:to-js-yellow transition-all mobile-link uppercase tracking-tighter flex items-center gap-2 group/hackathon"
     >
       Hackathon
@@ -141,7 +148,7 @@ import V0Logo from '@/icons/V0Logo.svg?raw'
       </span>
     </a>
     <a
-      href="#venue"
+      href="/#venue"
       class="text-4xl font-black font-clash text-white hover:text-js-yellow transition-colors mobile-link uppercase tracking-tighter"
       >Mapa</a
     >
@@ -157,7 +164,8 @@ import V0Logo from '@/icons/V0Logo.svg?raw'
 
 <style>
   @keyframes soft-pulse {
-    0%, 100% {
+    0%,
+    100% {
       transform: scale(1);
       opacity: 1;
     }

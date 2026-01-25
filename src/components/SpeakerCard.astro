@@ -8,6 +8,7 @@ export interface Props {
   description: string
   imageUrl: string
   social?: string
+  socialType: string
 }
 
 const {
@@ -17,6 +18,7 @@ const {
   description,
   imageUrl,
   social,
+  socialType,
 } = Astro.props
 ---
 
@@ -33,9 +35,9 @@ const {
   </div>
   <div class="p-6 flex flex-col flex-1">
     <h3 class="text-xl text-js-yellow font-bold mb-1">{name}</h3>
-    <div class="text-sm text-gray-400 mb-4">
+    <div class="text-sm text-gray-300 mb-4">
       <span>{role}</span>
-      {company && <span class="block text-gray-500">@ {company}</span>}
+      {company && <span class="block text-gray-300">@ {company}</span>}
     </div>
     <p class="text-sm leading-relaxed text-[#aaa] mb-4 flex-1">{description}</p>
     {social && (
@@ -43,6 +45,7 @@ const {
         <a 
           href={social} 
           target="_blank" 
+          title={socialType}
           rel="noopener noreferrer" 
           class="text-white text-lg hover:text-js-yellow transition-colors"
         >

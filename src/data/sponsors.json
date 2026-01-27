@@ -15,12 +15,6 @@
         "image": "/sponsors/cubepath-logo.webp",
         "url": "https://cubepath.com/",
         "description": "Infraestructura de la siguiente generación, servidores dedicados, cloud, vps y más."
-      },
-      {
-        "name": "Vercel",
-        "image": "/sponsors/vercel.svg",
-        "url": "https://vercel.com",
-        "description": "CONSTRUYE Y DESPLIEGA EN LA NUBE DE IA"
       }
     ]
   },
@@ -29,6 +23,12 @@
     "color": "#ff3e00",
     "icon": "max",
     "companies": [
+      {
+        "name": "Vercel",
+        "image": "/sponsors/vercel.svg",
+        "url": "https://vercel.com",
+        "description": "CONSTRUYE Y DESPLIEGA EN LA NUBE DE IA"
+      },
       {
         "name": "DevTalles",
         "image": "/sponsors/devtalles.webp",
@@ -83,6 +83,12 @@
         "image": "/sponsors/mastra.svg",
         "url": "https://mastra.ai/",
         "description": "EL FRAMEWORK DE TYPESCRIPT PARA CONSTRUIR AGENTES DE IA"
+      },
+      {
+        "name": "LeanMind",
+        "image": "/sponsors/lean-mind.webp",
+        "url": "https://leanmind.es/",
+        "description": "CREAMOS SOFTWARE A MEDIDA PARA CUMPLIR TUS METAS DE NEGOCIO"
       }
     ]
   }

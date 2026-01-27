@@ -7,7 +7,8 @@ const TIER_STYLES: Record<
   { container: string; badge: string; description: string; icon: string }
 > = {
   platinum: {
-    container: 'md:col-span-12 md:h-[220px] bg-gradient-to-br from-[#09f]/10 via-dark-surface to-dark-surface',
+    container:
+      'md:col-span-12 md:h-[220px] bg-gradient-to-br from-[#09f]/10 via-dark-surface to-dark-surface',
     badge: 'text-[#09f]',
     description: 'text-[11px] md:text-[12px] text-[#b5d9ff]',
     icon: 'fa-gem',
@@ -28,8 +29,7 @@ const TIER_STYLES: Record<
 
 const COMPANY_OVERRIDES: Record<string, { container?: string; image?: string }> = {
   Codely: {
-    container: 'md:col-span-7 bg-dark-surface',
-    image: 'max-w-[240px] md:max-w-[360px] max-h-[40px] h-auto w-full',
+    image: 'max-w-[200px] md:max-w-[280px] max-h-[40px] h-auto w-full',
   },
   'Plain Concepts': {
     image: 'max-w-[160px] md:max-w-[200px] max-h-[60px]',
@@ -45,6 +45,9 @@ const COMPANY_OVERRIDES: Record<string, { container?: string; image?: string }> 
   },
   Mastra: {
     image: 'max-w-[120px] md:max-w-[160px] max-h-[40px]',
+  },
+  LeanMind: {
+    image: 'max-w-[140px] md:max-w-[180px] max-h-[60px]',
   },
   'Ignia Cloud': {
     image: 'max-w-[140px] md:max-w-[180px] max-h-[80px]',
@@ -126,7 +129,9 @@ function getImageClasses(companyName: string, tierIcon: string) {
                       TIER_STYLES[tier.icon]?.badge || TIER_STYLES.star.badge,
                     ]}
                   >
-                    <i class={`fas ${TIER_STYLES[tier.icon]?.icon || TIER_STYLES.star.icon} mr-1`} />{' '}
+                    <i
+                      class={`fas ${TIER_STYLES[tier.icon]?.icon || TIER_STYLES.star.icon} mr-1`}
+                    />{' '}
                     {tier.category.replace('Sponsors ', '')}
                   </span>
 
@@ -147,7 +152,7 @@ function getImageClasses(companyName: string, tierIcon: string) {
                   {company.description && (
                     <p
                       class:list={[
-                        'uppercase max-w-[240px] leading-tight font-light tracking-wider text-center',
+                        'uppercase max-w-[240px] leading-tight font-light tracking-wider text-center text-balance',
                         TIER_STYLES[tier.icon]?.description || TIER_STYLES.star.description,
                       ]}
                     >

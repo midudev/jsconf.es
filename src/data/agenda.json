@@ -93,7 +93,7 @@
         "speaker": "Miguel Ángel Durán",
         "role": "Presentador",
         "image": "midudev.webp",
-        "description": "Avisos importantes antes de soltar a la multitud: No se permiten tácticas de judo para conseguir churros extra."
+        "description": "Avisos importantes antes de soltar a la multitud: No se permiten tácticas de judo para conseguir un peluche."
       },
       {
         "type": "break",
@@ -103,11 +103,11 @@
       {
         "type": "talk",
         "time": "15:00 - 15:05",
-        "topic": "Sorteos y avisos",
+        "topic": "¡Volvemos con la conferencia!",
         "speaker": "Miguel Ángel Durán",
         "role": "Presentador",
         "image": "midudev.webp",
-        "description": "Si te has quedado con hambre, este bloque de sorteos te llenará el alma (y quizás la mochila de merchandising)."
+        "description": "Después de comer, volvemos a escuchar charlas."
       },
       {
         "type": "talk",
@@ -116,7 +116,7 @@
         "speaker": "Estefany Aguilar",
         "role": "Developer Relations @NodeSource",
         "image": "estefany-aguilar.webp",
-        "description": "Vive entre JavaScript, Node y la comunidad dev. Convierte código en conocimiento sin romper producción."
+        "description": "TBD"
       },
       {
         "type": "talk",

@@ -61,21 +61,21 @@
       {
         "type": "talk",
         "time": "12:25 - 13:00",
-        "topic": "JavaScript en la era de los agentes: del código al Agentic DevOps",
-        "speaker": "Gisela Torres",
-        "role": "Sr. Global Blackbelt @Microsoft",
-        "image": "gisela-torres.webp",
-        "description": "La IA ha pasado de autocompletar líneas a currar contigo. Cómo usar agentes e IA para montar apps con Astro, Vue o tu framework frontend favorito, y hacer que programar pueda ser (todavía más) divertido."
-      },
-      {
-        "type": "talk",
-        "time": "13:00 - 13:35",
         "topic": "TBD",
         "speaker": "Rita Kozlov",
         "role": "VP Developers & AI @Cloudflare",
         "image": "rita-kozlov.webp",
         "language": "en",
         "description": "Workers, integración de IA y el edge en el futuro de la web"
+      },
+      {
+        "type": "talk",
+        "time": "13:00 - 13:35",
+        "topic": "JavaScript en la era de los agentes: del código al Agentic DevOps",
+        "speaker": "Gisela Torres",
+        "role": "Sr. Global Blackbelt @Microsoft",
+        "image": "gisela-torres.webp",
+        "description": "La IA ha pasado de autocompletar líneas a currar contigo. Cómo usar agentes e IA para montar apps con Astro, Vue o tu framework frontend favorito, y hacer que programar pueda ser (todavía más) divertido."
       },
       {
         "type": "talk",
@@ -129,7 +129,16 @@
       },
       {
         "type": "talk",
-        "time": "15:35 - 16:00",
+        "time": "15:35 - 15:45",
+        "topic": "Soluciones de IA en InfoJobs: Lecciones y aprendizajes",
+        "speaker": "Anna Vía",
+        "role": "Head of Artificial Intelligence @InfoJobs",
+        "image": "anna-via.webp",
+        "description": "Descubre cómo InfoJobs ha implementado IA de forma ética y responsable. Spoiler: ningún algoritmo se volvió Skynet en el proceso."
+      },
+      {
+        "type": "talk",
+        "time": "15:45 - 16:00",
         "topic": "Lightning Talks",
         "speaker": "Varios",
         "role": "Charlas rápidas de programación",

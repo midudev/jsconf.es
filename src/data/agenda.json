@@ -10,7 +10,7 @@
       },
       {
         "type": "talk",
-        "time": "09:30 - 09:45",
+        "time": "09:30 - 09:40",
         "topic": "Inicio Evento",
         "speaker": "Miguel Ángel Durán",
         "role": "Presentador",
@@ -19,7 +19,7 @@
       },
       {
         "type": "talk",
-        "time": "09:45 - 10:25",
+        "time": "09:40 - 10:20",
         "topic": "Retro JavaScript: rehaciendo el pasado con código moderno",
         "speaker": "Carmen Ansio",
         "role": "Designer Engineer @Stripe",
@@ -28,7 +28,7 @@
       },
       {
         "type": "talk",
-        "time": "10:25 - 11:05",
+        "time": "10:20 - 11:00",
         "topic": "TBD",
         "speaker": "Jaime Gómez-Obregón",
         "role": "Ingeniero y activista",
@@ -36,13 +36,22 @@
         "description": "Muy pronto desvelaremos el misterio. Pero os adelantamos que Jaime viene con ganas de demostrate que no necesitas ningún framework para ser feliz."
       },
       {
+        "type": "talk",
+        "time": "11:00 - 11:10",
+        "topic": "Pair Programming con un Agente: Cómo construí un RPG complejo sin perder la cabeza",
+        "speaker": "Jorge del Casar",
+        "role": "Head of Tech @ActioGlobal",
+        "image": "jorge-del-casar.webp",
+        "description": "Cómo crear un RPG épico sin llorar en posición fetal. Spoiler: La IA hace el trabajo sucio mientras tú tomas café."
+      },
+      {
         "type": "break",
-        "time": "11:05 - 11:35",
+        "time": "11:10 - 11:40",
         "topic": "Pausa de Café"
       },
       {
         "type": "talk",
-        "time": "11:35 - 11:45",
+        "time": "11:40 - 11:45",
         "topic": "Inicio Bloque + Sorteos",
         "speaker": "Miguel Ángel Durán",
         "role": "Presentador",
@@ -61,15 +70,6 @@
       {
         "type": "talk",
         "time": "12:25 - 13:00",
-        "topic": "JavaScript en la era de los agentes: del código al Agentic DevOps",
-        "speaker": "Gisela Torres",
-        "role": "Sr. Global Blackbelt @Microsoft",
-        "image": "gisela-torres.webp",
-        "description": "La IA ha pasado de autocompletar líneas a currar contigo. Cómo usar agentes e IA para montar apps con Astro, Vue o tu framework frontend favorito, y hacer que programar pueda ser (todavía más) divertido."
-      },
-      {
-        "type": "talk",
-        "time": "13:00 - 13:35",
         "topic": "TBD",
         "speaker": "Rita Kozlov",
         "role": "VP Developers & AI @Cloudflare",
@@ -79,12 +79,21 @@
       },
       {
         "type": "talk",
+        "time": "13:00 - 13:35",
+        "topic": "JavaScript en la era de los agentes: del código al Agentic DevOps",
+        "speaker": "Gisela Torres",
+        "role": "Sr. Global Blackbelt @Microsoft",
+        "image": "gisela-torres.webp",
+        "description": "La IA ha pasado de autocompletar líneas a currar contigo. Cómo usar agentes e IA para montar apps con Astro, Vue o tu framework frontend favorito, y hacer que programar pueda ser (todavía más) divertido."
+      },
+      {
+        "type": "talk",
         "time": "13:35 - 13:45",
         "topic": "Sorteos y avisos",
         "speaker": "Miguel Ángel Durán",
         "role": "Presentador",
         "image": "midudev.webp",
-        "description": "Avisos importantes antes de soltar a la multitud: No se permiten tácticas de judo para conseguir churros extra."
+        "description": "Avisos importantes antes de soltar a la multitud: No se permiten tácticas de judo para conseguir un peluche."
       },
       {
         "type": "break",
@@ -94,15 +103,24 @@
       {
         "type": "talk",
         "time": "15:00 - 15:05",
-        "topic": "Sorteos y avisos",
+        "topic": "¡Volvemos con la conferencia!",
         "speaker": "Miguel Ángel Durán",
         "role": "Presentador",
         "image": "midudev.webp",
-        "description": "Si te has quedado con hambre, este bloque de sorteos te llenará el alma (y quizás la mochila de merchandising)."
+        "description": "Después de comer, volvemos a escuchar charlas."
       },
       {
         "type": "talk",
-        "time": "15:05 - 15:15",
+        "time": "15:05 - 15:30",
+        "topic": "TBD",
+        "speaker": "Estefany Aguilar",
+        "role": "Developer Relations @NodeSource",
+        "image": "estefany-aguilar.webp",
+        "description": "TBD"
+      },
+      {
+        "type": "talk",
+        "time": "15:30 - 15:40",
         "topic": "React Compiler: el fin de los renders innecesarios",
         "speaker": "Ilda Neta",
         "role": "Mobile Software Engineer @RockTheSport",
@@ -111,16 +129,7 @@
       },
       {
         "type": "talk",
-        "time": "15:15 - 15:25",
-        "topic": "Pair Programming con un Agente: Cómo construí un RPG complejo sin perder la cabeza",
-        "speaker": "Jorge del Casar",
-        "role": "Head of Tech @ActioGlobal",
-        "image": "jorge-del-casar.webp",
-        "description": "Cómo crear un RPG épico sin llorar en posición fetal. Spoiler: La IA hace el trabajo sucio mientras tú tomas café."
-      },
-      {
-        "type": "talk",
-        "time": "15:25 - 15:35",
+        "time": "15:40 - 15:50",
         "topic": "Accesibilidad web: Guía para un apocalipsis zombie",
         "speaker": "Mia Salazar",
         "role": "Front-end Developer @Service Club",
@@ -129,11 +138,12 @@
       },
       {
         "type": "talk",
-        "time": "15:35 - 16:00",
-        "topic": "Lightning Talks",
-        "speaker": "Varios",
-        "role": "Charlas rápidas de programación",
-        "description": "Charlas de 5 minutos. Si parpadeas, te pierdes tres frameworks de CSS y un nuevo drama en X/Twitter."
+        "time": "15:50 - 16:00",
+        "topic": "Soluciones de IA en InfoJobs: Lecciones y aprendizajes",
+        "speaker": "Anna Vía",
+        "role": "Head of Artificial Intelligence @InfoJobs",
+        "image": "anna-via.webp",
+        "description": "Descubre cómo InfoJobs ha implementado IA de forma ética y responsable. Spoiler: ningún algoritmo se volvió Skynet en el proceso."
       },
       {
         "type": "break",

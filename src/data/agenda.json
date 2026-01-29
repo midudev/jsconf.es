@@ -61,11 +61,11 @@
       {
         "type": "talk",
         "time": "11:45 - 12:25",
-        "topic": "TBD",
+        "topic": "Programar en 2026: the human-in-the-loop",
         "speaker": "Javi Velasco",
         "role": "Staff Software Engineer @Vercel",
         "image": "javier-velasco.webp",
-        "description": "Muy pronto desvelamos el contenido de la charla de Javi, pero seguro que nos vuela la cabeza."
+        "description": "El secreto de un Tech Lead que lleva dos semanas sin escribir código: agentes de IA, automatizaciones, MCPS, y el futuro de la programación."
       },
       {
         "type": "talk",

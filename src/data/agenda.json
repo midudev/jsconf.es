@@ -20,30 +20,29 @@
       {
         "type": "talk",
         "time": "09:40 - 10:20",
-        "topic": "TBD",
-        "speaker": "Rita Kozlov",
-        "role": "VP Developers & AI @Cloudflare",
-        "image": "rita-kozlov.webp",
-        "language": "en",
-        "description": "Workers, integración de IA y el edge en el futuro de la web"
+        "topic": "Retro JavaScript: rehaciendo el pasado con código moderno",
+        "speaker": "Carmen Ansio",
+        "role": "Designer Engineer @Stripe",
+        "image": "carmen-ansio.webp",
+        "description": "Aprende las últimas novedades de JavaScript y CSS mientras reconstruyes recuerdos de tu pasado."
       },
       {
         "type": "talk",
         "time": "10:20 - 11:00",
+        "topic": "TBD",
+        "speaker": "Jaime Gómez-Obregón",
+        "role": "Ingeniero y activista",
+        "image": "jaime-gomez-obregon.webp",
+        "description": "Muy pronto desvelaremos el misterio. Pero os adelantamos que Jaime viene con ganas de demostrate que no necesitas ningún framework para ser feliz."
+      },
+      {
+        "type": "talk",
+        "time": "11:00 - 11:10",
         "topic": "Pair Programming con un Agente: Cómo construí un RPG complejo sin perder la cabeza",
         "speaker": "Jorge del Casar",
         "role": "Head of Tech @ActioGlobal",
         "image": "jorge-del-casar.webp",
         "description": "Cómo crear un RPG épico sin llorar en posición fetal. Spoiler: La IA hace el trabajo sucio mientras tú tomas café."
-      },
-      {
-        "type": "talk",
-        "time": "11:00 - 11:10",
-        "topic": "JavaScript en la era de los agentes: del código al Agentic DevOps",
-        "speaker": "Gisela Torres",
-        "role": "Sr. Global Blackbelt @Microsoft",
-        "image": "gisela-torres.webp",
-        "description": "La IA ha pasado de autocompletar líneas a currar contigo. Cómo usar agentes e IA para montar apps con Astro, Vue o tu framework frontend favorito, y hacer que programar pueda ser (todavía más) divertido."
       },
       {
         "type": "break",
@@ -62,29 +61,30 @@
       {
         "type": "talk",
         "time": "11:45 - 12:25",
-        "topic": "Retro JavaScript: rehaciendo el pasado con código moderno",
-        "speaker": "Carmen Ansio",
-        "role": "Designer Engineer @Stripe",
-        "image": "carmen-ansio.webp",
-        "description": "Aprende las últimas novedades de JavaScript y CSS mientras reconstruyes recuerdos de tu pasado."
+        "topic": "Programar en 2026: the human-in-the-loop",
+        "speaker": "Javi Velasco",
+        "role": "Staff Software Engineer @Vercel",
+        "image": "javier-velasco.webp",
+        "description": "El secreto de un Tech Lead que lleva dos semanas sin escribir código: agentes de IA, automatizaciones, MCPS, y el futuro de la programación."
       },
       {
         "type": "talk",
         "time": "12:25 - 13:00",
-        "topic": "React Compiler: el fin de los renders innecesarios",
-        "speaker": "Ilda Neta",
-        "role": "Mobile Software Engineer @RockTheSport",
-        "image": "ildaneta.webp",
-        "description": "Adiós useMemo, useCallback y demás. Con el nuevo compilador de React, tu código será tan eficiente que hasta tu abuela notará la diferencia."
+        "topic": "TBD",
+        "speaker": "Rita Kozlov",
+        "role": "VP Developers & AI @Cloudflare",
+        "image": "rita-kozlov.webp",
+        "language": "en",
+        "description": "Workers, integración de IA y el edge en el futuro de la web"
       },
       {
         "type": "talk",
         "time": "13:00 - 13:35",
-        "topic": "TBD",
-        "speaker": "Jaime Gómez-Obregón",
-        "role": "Ingeniero y activista",
-        "image": "jaime-gomez-obregon.webp",
-        "description": "Muy pronto desvelaremos el misterio. Pero os adelantamos que Jaime viene con ganas de demostrate que no necesitas ningún framework para ser feliz."
+        "topic": "JavaScript en la era de los agentes: del código al Agentic DevOps",
+        "speaker": "Gisela Torres",
+        "role": "Sr. Global Blackbelt @Microsoft",
+        "image": "gisela-torres.webp",
+        "description": "La IA ha pasado de autocompletar líneas a currar contigo. Cómo usar agentes e IA para montar apps con Astro, Vue o tu framework frontend favorito, y hacer que programar pueda ser (todavía más) divertido."
       },
       {
         "type": "talk",
@@ -112,20 +112,20 @@
       {
         "type": "talk",
         "time": "15:05 - 15:30",
-        "topic": "Programar en 2026: the human-in-the-loop",
-        "speaker": "Javi Velasco",
-        "role": "Staff Software Engineer @Vercel",
-        "image": "javier-velasco.webp",
-        "description": "El secreto de un Tech Lead que lleva dos semanas sin escribir código: agentes de IA, automatizaciones, MCPS, y el futuro de la programación."
-      },
-      {
-        "type": "talk",
-        "time": "15:30 - 15:40",
         "topic": "TBD",
         "speaker": "Estefany Aguilar",
         "role": "Developer Relations @NodeSource",
         "image": "estefany-aguilar.webp",
         "description": "TBD"
+      },
+      {
+        "type": "talk",
+        "time": "15:30 - 15:40",
+        "topic": "React Compiler: el fin de los renders innecesarios",
+        "speaker": "Ilda Neta",
+        "role": "Mobile Software Engineer @RockTheSport",
+        "image": "ildaneta.webp",
+        "description": "Adiós useMemo, useCallback y demás. Con el nuevo compilador de React, tu código será tan eficiente que hasta tu abuela notará la diferencia."
       },
       {
         "type": "talk",

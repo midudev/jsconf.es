@@ -15,6 +15,12 @@
         "image": "/sponsors/cubepath-logo.webp",
         "url": "https://cubepath.com/",
         "description": "Infraestructura de la siguiente generación, servidores dedicados, cloud, vps y más."
+      },
+      {
+        "name": "Cloudflare",
+        "image": "/sponsors/cloudflare.svg",
+        "url": "https://www.cloudflare.com/es-es/",
+        "description": "CONECTA, PROTEGE Y DESARROLLA EN CUALQUIER PARTE"
       }
     ]
   },

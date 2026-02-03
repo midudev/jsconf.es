@@ -135,7 +135,7 @@ const backgroundIcons = generateRandomIcons(techIcons.length * 5)
       if (availableTickets && availableTickets > 0) {
         const countSpan = document.getElementById('tickets-count')
         if (countSpan) {
-          countSpan.textContent = `Quedan ${availableTickets} entradas`
+          countSpan.textContent = `🔥 ¡Sólo quedan ${availableTickets} entradas!`
           countSpan.classList.remove('opacity-0')
           countSpan.classList.add('animate-blurred-fade-in', 'animate-duration-slower')
         }

@@ -82,13 +82,13 @@ function getImageClasses(companyName: string, tierIcon: string) {
       Nuestros Patrocinadores
     </h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-24 gap-4 md:gap-6 mb-12">
+    <div class="flex flex-col gap-4 md:gap-6 mb-12">
       <!-- Principal Sponsor -->
       <a
         href="https://www.infojobs.net"
         target="_blank"
         rel="noopener noreferrer"
-        class="md:col-span-24 relative bg-gradient-to-br from-js-yellow/10 via-dark-surface to-dark-surface rounded-xl flex flex-col items-center pt-16 pb-8 md:p-12 border-2 border-js-yellow/50 hover:border-js-yellow transition-all duration-300 group overflow-hidden"
+        class="relative bg-gradient-to-br from-js-yellow/10 via-dark-surface to-dark-surface rounded-xl flex flex-col items-center pt-16 pb-8 md:p-12 border-2 border-js-yellow/50 hover:border-js-yellow transition-all duration-300 group overflow-hidden"
       >
         <span
           class="absolute top-4 left-4 text-xs font-bold uppercase tracking-wider text-js-yellow bg-js-yellow/10 px-3 py-1 rounded bg-white/5"
@@ -107,20 +107,25 @@ function getImageClasses(companyName: string, tierIcon: string) {
       <!-- Other Sponsors -->
       {
         sponsors.map((tier) => {
-          const itemsPerRow = tier.icon === 'platinum' ? 2 : tier.icon === 'max' ? 3 : 4
-          const remainder = tier.companies.length % itemsPerRow
-          const emptySlots = remainder === 0 ? 0 : itemsPerRow - remainder
+          const containerClass = tier.icon === 'star' ? 'max-w-4xl mx-auto w-full' : 'w-full'
+          const cardWidth = tier.icon === 'platinum' 
+            ? 'md:w-[calc(50%-12px)]' 
+            : 'md:w-[calc(33.333%-16px)]'
 
           return (
-            <>
+            <div class:list={[
+              'flex flex-wrap justify-center gap-4 md:gap-6',
+              containerClass
+            ]}>
               {tier.companies.map((company) => (
                 <a
                   href={company.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   class:list={[
-                    'relative rounded-xl flex flex-col items-center justify-center p-6 md:p-8 transition-all duration-300 hover:scale-[1.02] hover:bg-[#252525] group border border-white/5',
-                    getContainerClasses(company.name, tier.icon),
+                    'relative rounded-xl flex flex-col items-center justify-center p-6 md:p-8 transition-all duration-300 hover:scale-[1.02] hover:bg-[#252525] group border border-white/5 w-full',
+                    cardWidth,
+                    tier.icon === 'platinum' ? 'md:h-[220px] bg-gradient-to-br from-[#09f]/10 via-dark-surface to-dark-surface' : 'md:h-[180px] bg-dark-surface',
                   ]}
                 >
                   <span
@@ -161,12 +166,7 @@ function getImageClasses(companyName: string, tierIcon: string) {
                   )}
                 </a>
               ))}
-              {Array.from({ length: emptySlots }).map(() => (
-                <div
-                  class={`hidden md:block ${tier.icon === 'platinum' ? 'md:col-span-12' : tier.icon === 'max' ? 'md:col-span-8' : 'md:col-span-6'}`}
-                />
-              ))}
-            </>
+            </div>
           )
         })
       }

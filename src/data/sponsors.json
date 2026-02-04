@@ -95,6 +95,12 @@
         "image": "/sponsors/lean-mind.webp",
         "url": "https://leanmind.es/",
         "description": "CREAMOS SOFTWARE A MEDIDA PARA CUMPLIR TUS METAS DE NEGOCIO"
+      },
+      {
+        "name": "Freepik",
+        "image": "/sponsors/freepik.svg",
+        "url": "https://www.freepik.es/",
+        "description": "LA SUITE CREATIVA DE IA MÁS COMPLETA"
       }
     ]
   }

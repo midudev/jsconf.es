@@ -108,15 +108,11 @@ function getImageClasses(companyName: string, tierIcon: string) {
       {
         sponsors.map((tier) => {
           const containerClass = tier.icon === 'star' ? 'max-w-4xl mx-auto w-full' : 'w-full'
-          const cardWidth = tier.icon === 'platinum' 
-            ? 'md:w-[calc(50%-12px)]' 
-            : 'md:w-[calc(33.333%-16px)]'
+          const cardWidth =
+            tier.icon === 'platinum' ? 'md:w-[calc(50%-12px)]' : 'md:w-[calc(33.333%-16px)]'
 
           return (
-            <div class:list={[
-              'flex flex-wrap justify-center gap-4 md:gap-6',
-              containerClass
-            ]}>
+            <div class:list={['flex flex-wrap justify-center gap-4 md:gap-6', containerClass]}>
               {tier.companies.map((company) => (
                 <a
                   href={company.url}
@@ -125,7 +121,9 @@ function getImageClasses(companyName: string, tierIcon: string) {
                   class:list={[
                     'relative rounded-xl flex flex-col items-center justify-center p-6 md:p-8 transition-all duration-300 hover:scale-[1.02] hover:bg-[#252525] group border border-white/5 w-full',
                     cardWidth,
-                    tier.icon === 'platinum' ? 'md:h-[220px] bg-gradient-to-br from-[#09f]/10 via-dark-surface to-dark-surface' : 'md:h-[180px] bg-dark-surface',
+                    tier.icon === 'platinum'
+                      ? 'md:h-[220px] bg-gradient-to-br from-[#09f]/10 via-dark-surface to-dark-surface'
+                      : 'md:h-[180px] bg-dark-surface',
                   ]}
                 >
                   <span

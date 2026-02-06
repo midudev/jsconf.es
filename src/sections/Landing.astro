@@ -105,17 +105,19 @@ const backgroundIcons = generateRandomIcons(techIcons.length * 5)
             id="buy-tickets-hero"
             class="inline-flex items-center justify-center px-8 py-4 font-bold uppercase tracking-wide text-base bg-js-yellow text-js-black border-2 border-js-yellow rounded hover:bg-js-black hover:text-js-yellow hover:shadow-[0_0_20px_rgba(247,223,30,0.5)] transition-all scale-110"
           >
-            <i class="fas fa-ticket-alt mr-2.5"></i> Comprar Entradas
+            <i class="fas fa-ticket-alt mr-2.5"></i> <span id="buy-tickets-text">Comprar Entradas</span>
           </button>
           <a
+            id="tickets-link"
             href="https://www.tickettailor.com/checkout/view-event/id/7330734/chk/40c2/?modal_widget=true&widget=true"
             target="_blank"
             rel="noopener noreferrer"
             class="group inline-flex items-center gap-1 text-[10px] text-white/50 hover:text-white transition-colors"
             aria-label="Abrir preventa de entradas en otra ventana"
           >
-            Abrir en otra ventana
+            <span id="tickets-link-text">Abrir en otra ventana</span>
             <i
+              id="tickets-link-icon"
               class="fas fa-external-link-alt text-[8px] opacity-70 group-hover:opacity-100 transition-opacity"
             ></i>
           </a>
@@ -135,12 +137,38 @@ const backgroundIcons = generateRandomIcons(techIcons.length * 5)
   fetch('/api/tickets')
     .then((res) => res.json())
     .then(({ availableTickets }) => {
+      const countSpan = document.getElementById('tickets-count')
+      const buttonText = document.getElementById('buy-tickets-text')
+      const linkText = document.getElementById('tickets-link-text')
+      const linkIcon = document.getElementById('tickets-link-icon')
+
       if (availableTickets && availableTickets > 0) {
-        const countSpan = document.getElementById('tickets-count')
         if (countSpan) {
           countSpan.textContent = `🔥 ¡Sólo quedan ${availableTickets} entradas!`
           countSpan.classList.remove('opacity-0')
           countSpan.classList.add('animate-blurred-fade-in', 'animate-duration-slower')
+        }
+      } else {
+        // Entradas agotadas
+        if (countSpan) {
+          countSpan.textContent = '¡ENTRADAS AGOTADAS!'
+          countSpan.classList.remove('opacity-0')
+          countSpan.classList.add('animate-blurred-fade-in', 'animate-duration-slower')
+        }
+        if (buttonText) {
+          buttonText.textContent = 'Apúntate a la lista de espera'
+        }
+        const ticketsLink = document.getElementById('tickets-link')
+        if (ticketsLink) {
+          ticketsLink.removeAttribute('href')
+          ticketsLink.removeAttribute('target')
+          ticketsLink.setAttribute('aria-label', 'Te avisaremos si se libera alguna entrada')
+        }
+        if (linkText) {
+          linkText.textContent = 'Te avisaremos si se libera alguna entrada'
+        }
+        if (linkIcon) {
+          linkIcon.classList.add('hidden')
         }
       }
     })

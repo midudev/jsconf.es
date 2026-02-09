@@ -102,21 +102,12 @@
       },
       {
         "type": "talk",
-        "time": "15:00 - 15:05",
+        "time": "15:00 - 15:30",
         "topic": "¡Volvemos con la conferencia!",
         "speaker": "Miguel Ángel Durán",
         "role": "Presentador",
         "image": "midudev.webp",
         "description": "Después de comer, volvemos a escuchar charlas."
-      },
-      {
-        "type": "talk",
-        "time": "15:05 - 15:30",
-        "topic": "TBD",
-        "speaker": "Estefany Aguilar",
-        "role": "Developer Relations @NodeSource",
-        "image": "estefany-aguilar.webp",
-        "description": "TBD"
       },
       {
         "type": "talk",

@@ -112,11 +112,11 @@
       {
         "type": "talk",
         "time": "15:05 - 15:30",
-        "topic": "TBD",
+        "topic": "Node.js por dentro: entendiendo el runtime en producción",
         "speaker": "Estefany Aguilar",
         "role": "Developer Relations @NodeSource",
         "image": "estefany-aguilar.webp",
-        "description": "TBD"
+        "description": "Node.js está en todas partes, pero ¿realmente entendemos lo que ocurre bajo el capó? Esta charla explora el runtime desde dentro: el event loop, la concurrencia y la gestión de memoria, y cómo estos mecanismos internos afectan al rendimiento y la escalabilidad en producción."
       },
       {
         "type": "talk",

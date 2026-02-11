@@ -101,6 +101,12 @@
         "image": "/sponsors/freepik.svg",
         "url": "https://www.freepik.es/",
         "description": "LA SUITE CREATIVA DE IA MÁS COMPLETA"
+      },
+      {
+        "name": "NodeSource",
+        "image": "/sponsors/nodesource.svg",
+        "url": "https://nodesource.com/",
+        "description": "NO NECESITAS MÁS LOGS. NECESITAS UNA HERRAMIENTA MÁS INTELIGENTE"
       }
     ]
   }

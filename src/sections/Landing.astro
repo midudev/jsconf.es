@@ -44,7 +44,7 @@ const backgroundIcons = generateRandomIcons(techIcons.length * 5)
 
 <section
   id="home"
-  class="min-h-[80vh] flex items-center justify-center relative bg-hero-radial pt-28 sm:pt-10 pb-10 overflow-hidden"
+  class="min-h-[80vh] flex items-center justify-center relative bg-hero-radial pt-28 sm:pt-28 pb-10 overflow-hidden"
 >
   <!-- Background Pattern of Tech Logos -->
   <div
@@ -83,96 +83,120 @@ const backgroundIcons = generateRandomIcons(techIcons.length * 5)
       <i class="far fa-calendar-alt mr-2"></i> 14 DE MARZO, 2026 &bull; MADRID &bull; LA NAVE
     </div>
 
-    <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+    <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
       Únete a la comunidad de desarrolladores más vibrante en un día lleno de código, innovación y
       networking de primer nivel.
     </p>
 
-    <div class="flex flex-col items-center">
-      <div class="h-8 flex items-center justify-center">
-        <span
-          id="tickets-count"
-          class="text-js-yellow text-sm font-bold uppercase tracking-wide opacity-0"
-          role="status"
-          aria-live="polite"
-          aria-atomic="true"
-        >
-        </span>
-      </div>
-      <div class="flex flex-wrap gap-5 justify-center pointer-events-auto mt-2">
-        <div class="flex flex-col items-center gap-2">
-          <button
-            id="buy-tickets-hero"
-            class="inline-flex items-center justify-center px-8 py-4 font-bold uppercase tracking-wide text-base bg-js-yellow text-js-black border-2 border-js-yellow rounded hover:bg-js-black hover:text-js-yellow hover:shadow-[0_0_20px_rgba(247,223,30,0.5)] transition-all scale-110"
-          >
-            <i class="fas fa-ticket-alt mr-2.5"></i> <span id="buy-tickets-text">Comprar Entradas</span>
-          </button>
-          <a
-            id="tickets-link"
-            href="https://www.tickettailor.com/checkout/view-event/id/7330734/chk/40c2/?modal_widget=true&widget=true"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group inline-flex items-center gap-1 text-[10px] text-white/50 hover:text-white transition-colors"
-            aria-label="Abrir preventa de entradas en otra ventana"
-          >
-            <span id="tickets-link-text">Abrir en otra ventana</span>
-            <i
-              id="tickets-link-icon"
-              class="fas fa-external-link-alt text-[8px] opacity-70 group-hover:opacity-100 transition-opacity"
-            ></i>
-          </a>
+    <!-- Countdown -->
+    <div class="mb-12 pointer-events-auto">
+      <p class="text-sm uppercase tracking-widest text-white/50 mb-4 font-bold">La conferencia empieza en</p>
+      <div id="countdown" class="flex justify-center gap-3 sm:gap-5">
+        <div class="flex flex-col items-center">
+          <span id="countdown-days" class="text-4xl sm:text-5xl md:text-6xl font-black font-display text-js-yellow tabular-nums leading-none">--</span>
+          <span class="text-[10px] sm:text-xs uppercase tracking-wider text-white/40 mt-2 font-bold">Días</span>
+        </div>
+        <span class="text-3xl sm:text-4xl md:text-5xl font-bold text-white/20 self-start">:</span>
+        <div class="flex flex-col items-center">
+          <span id="countdown-hours" class="text-4xl sm:text-5xl md:text-6xl font-black font-display text-js-yellow tabular-nums leading-none">--</span>
+          <span class="text-[10px] sm:text-xs uppercase tracking-wider text-white/40 mt-2 font-bold">Horas</span>
+        </div>
+        <span class="text-3xl sm:text-4xl md:text-5xl font-bold text-white/20 self-start">:</span>
+        <div class="flex flex-col items-center">
+          <span id="countdown-minutes" class="text-4xl sm:text-5xl md:text-6xl font-black font-display text-js-yellow tabular-nums leading-none">--</span>
+          <span class="text-[10px] sm:text-xs uppercase tracking-wider text-white/40 mt-2 font-bold">Min</span>
+        </div>
+        <span class="text-3xl sm:text-4xl md:text-5xl font-bold text-white/20 self-start">:</span>
+        <div class="flex flex-col items-center">
+          <span id="countdown-seconds" class="text-4xl sm:text-5xl md:text-6xl font-black font-display text-js-yellow tabular-nums leading-none">--</span>
+          <span class="text-[10px] sm:text-xs uppercase tracking-wider text-white/40 mt-2 font-bold">Seg</span>
         </div>
       </div>
+    </div>
+
+    <!-- Social Run CTA -->
+    <div class="pointer-events-auto max-w-lg mx-auto mb-8">
+      <div class="relative bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 backdrop-blur-sm hover:border-js-yellow/30 transition-all group">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+          <span class="bg-green-500 text-white text-[10px] sm:text-xs font-black uppercase tracking-widest px-4 py-1 rounded-full shadow-lg">
+            <i class="fas fa-gift mr-1.5"></i> Camiseta gratis
+          </span>
+        </div>
+        <div class="flex items-center justify-center gap-3 mb-3">
+          <i class="fas fa-running text-3xl text-js-yellow"></i>
+          <h3 class="text-xl sm:text-2xl font-black font-display uppercase tracking-tight text-white">Social Run 5K</h3>
+        </div>
+        <p class="text-sm text-white/60 mb-1">
+          <i class="fas fa-map-marker-alt mr-1.5 text-js-yellow/70"></i> Parque del Retiro, Madrid
+          &bull;
+          <i class="far fa-calendar-alt mr-1.5 ml-1 text-js-yellow/70"></i> 13 marzo · 17:30H
+        </p>
+        <p class="text-sm text-white/50 mb-5">
+          Corre con la comunidad antes de la conferencia. Todos los niveles. ¡Camiseta técnica para todos los participantes!
+        </p>
+        <button
+          id="open-running-signup"
+          class="inline-flex items-center justify-center w-full px-6 py-3.5 font-bold uppercase tracking-wide text-sm bg-js-yellow text-js-black border-2 border-js-yellow rounded-lg hover:bg-js-black hover:text-js-yellow hover:shadow-[0_0_25px_rgba(247,223,30,0.4)] transition-all cursor-pointer"
+        >
+          <i class="fas fa-running mr-2"></i> ¡Apúntate al Running!
+        </button>
+      </div>
+    </div>
+
+    <!-- Lista de espera -->
+    <div class="pointer-events-auto">
+      <button
+        id="buy-tickets-hero"
+        class="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white/70 transition-colors cursor-pointer group"
+      >
+        <i class="fas fa-ticket-alt text-xs"></i>
+        <span class="border-b border-dashed border-white/20 group-hover:border-white/50 transition-colors">¿Quieres entrada? Apúntate a la lista de espera</span>
+      </button>
     </div>
   </div>
 </section>
 
 <script>
+  // Countdown al evento: 14 marzo 2026 9:00 hora España (CET = UTC+1)
+  const eventDate = new Date('2026-03-14T09:00:00+01:00')
+
+  function updateCountdown() {
+    const now = new Date()
+    const diff = eventDate.getTime() - now.getTime()
+
+    if (diff <= 0) {
+      document.getElementById('countdown-days')!.textContent = '00'
+      document.getElementById('countdown-hours')!.textContent = '00'
+      document.getElementById('countdown-minutes')!.textContent = '00'
+      document.getElementById('countdown-seconds')!.textContent = '00'
+      return
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24))
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000)
+
+    document.getElementById('countdown-days')!.textContent = String(days).padStart(2, '0')
+    document.getElementById('countdown-hours')!.textContent = String(hours).padStart(2, '0')
+    document.getElementById('countdown-minutes')!.textContent = String(minutes).padStart(2, '0')
+    document.getElementById('countdown-seconds')!.textContent = String(seconds).padStart(2, '0')
+  }
+
+  updateCountdown()
+  setInterval(updateCountdown, 1000)
+
+  // Running signup modal
+  const openRunningBtn = document.getElementById('open-running-signup')
+  openRunningBtn?.addEventListener('click', () => {
+    window.dispatchEvent(new CustomEvent('open-running-signup'))
+  })
+
+  // Lista de espera
   const buyTicketsHero = document.getElementById('buy-tickets-hero')
   buyTicketsHero?.addEventListener('click', () => {
     window.dispatchEvent(new CustomEvent('open-ticket-tailor'))
   })
-
-  // Cargar entradas disponibles client-side
-  fetch('/api/tickets')
-    .then((res) => res.json())
-    .then(({ availableTickets }) => {
-      const countSpan = document.getElementById('tickets-count')
-      const buttonText = document.getElementById('buy-tickets-text')
-      const linkText = document.getElementById('tickets-link-text')
-      const linkIcon = document.getElementById('tickets-link-icon')
-
-      if (availableTickets && availableTickets > 0) {
-        if (countSpan) {
-          countSpan.textContent = `🔥 ¡Sólo quedan ${availableTickets} entradas!`
-          countSpan.classList.remove('opacity-0')
-          countSpan.classList.add('animate-blurred-fade-in', 'animate-duration-slower')
-        }
-      } else {
-        // Entradas agotadas
-        if (countSpan) {
-          countSpan.textContent = '¡ENTRADAS AGOTADAS!'
-          countSpan.classList.remove('opacity-0')
-          countSpan.classList.add('animate-blurred-fade-in', 'animate-duration-slower')
-        }
-        if (buttonText) {
-          buttonText.textContent = 'Apúntate a la lista de espera'
-        }
-        const ticketsLink = document.getElementById('tickets-link')
-        if (ticketsLink) {
-          ticketsLink.removeAttribute('href')
-          ticketsLink.removeAttribute('target')
-          ticketsLink.setAttribute('aria-label', 'Te avisaremos si se libera alguna entrada')
-        }
-        if (linkText) {
-          linkText.textContent = 'Te avisaremos si se libera alguna entrada'
-        }
-        if (linkIcon) {
-          linkIcon.classList.add('hidden')
-        }
-      }
-    })
-    .catch((err) => console.error('Error fetching tickets:', err))
 
   // Efecto de proximidad para los iconos
   const icons = document.querySelectorAll('.tech-icon')

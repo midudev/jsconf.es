@@ -329,6 +329,9 @@
   runningForm.addEventListener('submit', async (e) => {
     e.preventDefault()
 
+    // Prevent double submission
+    if (isSubmitting) return
+
     // Client-side validation first
     const nameErr = validateName(nameInput.value)
     const emailErr = validateEmail(emailInput.value)
@@ -361,14 +364,17 @@
     }
 
     // Call server action
+    isSubmitting = true
     setLoading(true)
 
+    try {
     const { error, data } = await actions.runningSignup({
       name: nameInput.value.trim(),
       email: emailInput.value.trim(),
     })
 
     setLoading(false)
+    isSubmitting = false
 
     if (error) {
       // Handle Zod validation errors (field-level)

@@ -16,7 +16,17 @@
       class="absolute -top-4 -right-4 bg-zinc-900 text-white rounded-full p-2 hover:bg-zinc-800 border border-white/10 transition-colors z-[100] cursor-pointer"
       aria-label="Cerrar modal"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
         <line x1="18" y1="6" x2="6" y2="18"></line>
         <line x1="6" y1="6" x2="18" y2="18"></line>
       </svg>
@@ -26,15 +36,19 @@
     <div id="running-form-view">
       <!-- Header -->
       <div class="text-center mb-6">
-        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-js-yellow/10 mb-4">
+        <div
+          class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-js-yellow/10 mb-4"
+        >
           <i class="fas fa-running text-3xl text-js-yellow"></i>
         </div>
-        <h2 id="running-signup-heading" class="text-2xl font-black font-display uppercase tracking-tight text-white mb-1">
+        <h2
+          id="running-signup-heading"
+          class="text-2xl font-black font-display uppercase tracking-tight text-white mb-1"
+        >
           Social Run 5K
         </h2>
         <p class="text-sm text-white/50">
-          <i class="fas fa-map-marker-alt mr-1 text-js-yellow/70"></i> Parque del Retiro
-          &bull;
+          <i class="fas fa-map-marker-alt mr-1 text-js-yellow/70"></i> Parque del Retiro &bull;
           <i class="far fa-calendar-alt mr-1 ml-1 text-js-yellow/70"></i> 13 marzo · 17:30H
         </p>
       </div>
@@ -43,12 +57,17 @@
       <div class="bg-white/5 border border-white/10 rounded-xl p-4 mb-6">
         <p class="text-sm text-white/60 text-balance text-center">
           <i class="fas fa-tshirt text-green-400 mr-1.5"></i>
-          Necesitamos tus datos para saber cuánta gente vendrá y preparar las <strong class="text-white/80">camisetas de running gratis</strong> para todos los asistentes.
+          Necesitamos tus datos para saber cuánta gente vendrá y preparar las <strong
+            class="text-white/80">camisetas de running gratis</strong
+          > para todos los asistentes.
         </p>
       </div>
 
       <!-- Server error banner -->
-      <div id="running-server-error" class="hidden mb-5 bg-red-500/10 border border-red-500/20 rounded-xl p-4 text-center">
+      <div
+        id="running-server-error"
+        class="hidden mb-5 bg-red-500/10 border border-red-500/20 rounded-xl p-4 text-center"
+      >
         <p class="text-sm text-red-300">
           <i class="fas fa-exclamation-triangle mr-1.5"></i>
           <span id="running-server-error-msg"></span>
@@ -56,7 +75,10 @@
       </div>
 
       <!-- Already registered banner -->
-      <div id="running-already-registered" class="hidden mb-5 bg-amber-500/10 border border-amber-500/20 rounded-xl p-4 text-center">
+      <div
+        id="running-already-registered"
+        class="hidden mb-5 bg-amber-500/10 border border-amber-500/20 rounded-xl p-4 text-center"
+      >
         <p class="text-sm text-amber-300">
           <i class="fas fa-info-circle mr-1.5"></i>
           <span id="running-already-registered-msg"></span>
@@ -125,7 +147,8 @@
           class="w-full px-6 py-3.5 font-bold uppercase tracking-wide text-sm bg-js-yellow text-js-black border-2 border-js-yellow rounded-xl hover:bg-js-black hover:text-js-yellow hover:shadow-[0_0_25px_rgba(247,223,30,0.4)] transition-all cursor-pointer flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-js-yellow disabled:hover:text-js-black disabled:hover:shadow-none"
         >
           <i class="fas fa-running" id="running-submit-icon"></i>
-          <i class="fas fa-circle-notch fa-spin" id="running-submit-spinner" style="display:none"></i>
+          <i class="fas fa-circle-notch fa-spin" id="running-submit-spinner" style="display:none"
+          ></i>
           <span id="running-submit-text">¡Me apunto!</span>
         </button>
 
@@ -138,17 +161,25 @@
 
     <!-- Success view -->
     <div id="running-success-view" class="hidden text-center py-4">
-      <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-500/10 mb-5 animate-success-pop">
-        <svg class="w-10 h-10 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <div
+        class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-500/10 mb-5 animate-success-pop"
+      >
+        <svg
+          class="w-10 h-10 text-green-400"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
           <polyline points="20 6 9 17 4 12" class="check-animation"></polyline>
         </svg>
       </div>
       <h3 class="text-2xl font-black font-display uppercase tracking-tight text-white mb-2">
         ¡Estás dentro!
       </h3>
-      <p class="text-white/60 mb-2 text-sm">
-        Te hemos registrado correctamente para la
-      </p>
+      <p class="text-white/60 mb-2 text-sm">Te hemos registrado correctamente para la</p>
       <p class="text-js-yellow font-bold text-lg mb-4">
         <i class="fas fa-running mr-1"></i> Social Run 5K
       </p>
@@ -368,52 +399,59 @@
     setLoading(true)
 
     try {
-    const { error, data } = await actions.runningSignup({
-      name: nameInput.value.trim(),
-      email: emailInput.value.trim(),
-    })
+      const { error, data } = await actions.runningSignup({
+        name: nameInput.value.trim(),
+        email: emailInput.value.trim(),
+      })
 
-    setLoading(false)
-    isSubmitting = false
+      setLoading(false)
+      isSubmitting = false
 
-    if (error) {
-      // Handle Zod validation errors (field-level)
-      if (error.code === 'BAD_REQUEST' && error.fields) {
-        const fields = error.fields as Record<string, string[] | undefined>
-        if (fields.name?.length) {
-          showError(nameError, fields.name[0])
-          nameInput.classList.add('!border-red-400/50')
+      if (error) {
+        // Handle Zod validation errors (field-level)
+        if (error.code === 'BAD_REQUEST' && error.fields) {
+          const fields = error.fields as Record<string, string[] | undefined>
+          if (fields.name?.length) {
+            showError(nameError, fields.name[0])
+            nameInput.classList.add('!border-red-400/50')
+          }
+          if (fields.email?.length) {
+            showError(emailError, fields.email[0])
+            emailInput.classList.add('!border-red-400/50')
+          }
+          return
         }
-        if (fields.email?.length) {
-          showError(emailError, fields.email[0])
-          emailInput.classList.add('!border-red-400/50')
+
+        // Handle already registered
+        if (error.code === 'CONFLICT') {
+          alreadyRegisteredMsg.textContent = error.message
+          alreadyRegistered.classList.remove('hidden')
+          return
         }
-        return
-      }
 
-      // Handle already registered
-      if (error.code === 'CONFLICT') {
-        alreadyRegisteredMsg.textContent = error.message
-        alreadyRegistered.classList.remove('hidden')
-        return
-      }
+        // Handle rate limit
+        if (error.code === 'TOO_MANY_REQUESTS') {
+          serverErrorMsg.textContent = error.message
+          serverError.classList.remove('hidden')
+          return
+        }
 
-      // Handle rate limit
-      if (error.code === 'TOO_MANY_REQUESTS') {
-        serverErrorMsg.textContent = error.message
+        // Generic server error
+        serverErrorMsg.textContent = 'Ha ocurrido un error inesperado. Inténtalo de nuevo.'
         serverError.classList.remove('hidden')
         return
       }
 
-      // Generic server error
-      serverErrorMsg.textContent = 'Ha ocurrido un error inesperado. Inténtalo de nuevo.'
+      if (data?.success) {
+        runningFormView.classList.add('hidden')
+        runningSuccessView.classList.remove('hidden')
+      }
+    } catch {
+      setLoading(false)
+      isSubmitting = false
+      serverErrorMsg.textContent =
+        'Error de conexión. Comprueba tu conexión a internet e inténtalo de nuevo.'
       serverError.classList.remove('hidden')
-      return
-    }
-
-    if (data?.success) {
-      runningFormView.classList.add('hidden')
-      runningSuccessView.classList.remove('hidden')
     }
   })
 
@@ -443,7 +481,12 @@
     if (event.key !== 'Tab') return
     const focusable = Array.from(
       runningModal.querySelectorAll<HTMLElement>(focusableSelectors)
-    ).filter((el) => !el.hasAttribute('disabled') && el.getAttribute('aria-hidden') !== 'true' && !el.closest('.hidden'))
+    ).filter(
+      (el) =>
+        !el.hasAttribute('disabled') &&
+        el.getAttribute('aria-hidden') !== 'true' &&
+        !el.closest('.hidden')
+    )
 
     if (focusable.length === 0) {
       event.preventDefault()

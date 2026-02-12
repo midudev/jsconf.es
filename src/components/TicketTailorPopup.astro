@@ -101,9 +101,9 @@
 
   modal?.addEventListener('keydown', (event) => {
     if (event.key !== 'Tab') return
-    const focusable = Array.from(
-      modal.querySelectorAll<HTMLElement>(focusableSelectors)
-    ).filter((el) => !el.hasAttribute('disabled') && el.getAttribute('aria-hidden') !== 'true')
+    const focusable = Array.from(modal.querySelectorAll<HTMLElement>(focusableSelectors)).filter(
+      (el) => !el.hasAttribute('disabled') && el.getAttribute('aria-hidden') !== 'true'
+    )
 
     if (focusable.length === 0) {
       event.preventDefault()

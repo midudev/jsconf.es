@@ -90,49 +90,83 @@ const backgroundIcons = generateRandomIcons(techIcons.length * 5)
 
     <!-- Countdown -->
     <div class="mb-12 pointer-events-auto">
-      <p class="text-sm uppercase tracking-widest text-white/50 mb-4 font-bold">La conferencia empieza en</p>
+      <p class="text-sm uppercase tracking-widest text-white/50 mb-4 font-bold">
+        La conferencia empieza en
+      </p>
       <div id="countdown" class="flex justify-center gap-3 sm:gap-5">
         <div class="flex flex-col items-center">
-          <span id="countdown-days" class="text-4xl sm:text-5xl md:text-6xl font-black font-display text-js-yellow tabular-nums leading-none">--</span>
-          <span class="text-[10px] sm:text-xs uppercase tracking-wider text-white/40 mt-2 font-bold">Días</span>
+          <span
+            id="countdown-days"
+            class="text-4xl sm:text-5xl md:text-6xl font-black font-display text-js-yellow tabular-nums leading-none"
+            >--</span
+          >
+          <span class="text-[10px] sm:text-xs uppercase tracking-wider text-white/40 mt-2 font-bold"
+            >Días</span
+          >
         </div>
         <span class="text-3xl sm:text-4xl md:text-5xl font-bold text-white/20 self-start">:</span>
         <div class="flex flex-col items-center">
-          <span id="countdown-hours" class="text-4xl sm:text-5xl md:text-6xl font-black font-display text-js-yellow tabular-nums leading-none">--</span>
-          <span class="text-[10px] sm:text-xs uppercase tracking-wider text-white/40 mt-2 font-bold">Horas</span>
+          <span
+            id="countdown-hours"
+            class="text-4xl sm:text-5xl md:text-6xl font-black font-display text-js-yellow tabular-nums leading-none"
+            >--</span
+          >
+          <span class="text-[10px] sm:text-xs uppercase tracking-wider text-white/40 mt-2 font-bold"
+            >Horas</span
+          >
         </div>
         <span class="text-3xl sm:text-4xl md:text-5xl font-bold text-white/20 self-start">:</span>
         <div class="flex flex-col items-center">
-          <span id="countdown-minutes" class="text-4xl sm:text-5xl md:text-6xl font-black font-display text-js-yellow tabular-nums leading-none">--</span>
-          <span class="text-[10px] sm:text-xs uppercase tracking-wider text-white/40 mt-2 font-bold">Min</span>
+          <span
+            id="countdown-minutes"
+            class="text-4xl sm:text-5xl md:text-6xl font-black font-display text-js-yellow tabular-nums leading-none"
+            >--</span
+          >
+          <span class="text-[10px] sm:text-xs uppercase tracking-wider text-white/40 mt-2 font-bold"
+            >Min</span
+          >
         </div>
         <span class="text-3xl sm:text-4xl md:text-5xl font-bold text-white/20 self-start">:</span>
         <div class="flex flex-col items-center">
-          <span id="countdown-seconds" class="text-4xl sm:text-5xl md:text-6xl font-black font-display text-js-yellow tabular-nums leading-none">--</span>
-          <span class="text-[10px] sm:text-xs uppercase tracking-wider text-white/40 mt-2 font-bold">Seg</span>
+          <span
+            id="countdown-seconds"
+            class="text-4xl sm:text-5xl md:text-6xl font-black font-display text-js-yellow tabular-nums leading-none"
+            >--</span
+          >
+          <span class="text-[10px] sm:text-xs uppercase tracking-wider text-white/40 mt-2 font-bold"
+            >Seg</span
+          >
         </div>
       </div>
     </div>
 
     <!-- Social Run CTA -->
     <div class="pointer-events-auto max-w-lg mx-auto mb-8">
-      <div class="relative bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 backdrop-blur-sm hover:border-js-yellow/30 transition-all group">
+      <div
+        class="relative bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 backdrop-blur-sm hover:border-js-yellow/30 transition-all group"
+      >
         <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-          <span class="bg-green-500 text-white text-[10px] sm:text-xs font-black uppercase tracking-widest px-4 py-1 rounded-full shadow-lg">
+          <span
+            class="bg-green-500 text-white text-[10px] sm:text-xs font-black uppercase tracking-widest px-4 py-1 rounded-full shadow-lg"
+          >
             <i class="fas fa-gift mr-1.5"></i> Camiseta gratis
           </span>
         </div>
         <div class="flex items-center justify-center gap-3 mb-3">
           <i class="fas fa-running text-3xl text-js-yellow"></i>
-          <h3 class="text-xl sm:text-2xl font-black font-display uppercase tracking-tight text-white">Social Run 5K</h3>
+          <h3
+            class="text-xl sm:text-2xl font-black font-display uppercase tracking-tight text-white"
+          >
+            Social Run 5K
+          </h3>
         </div>
         <p class="text-sm text-white/60 mb-1">
-          <i class="fas fa-map-marker-alt mr-1.5 text-js-yellow/70"></i> Parque del Retiro, Madrid
-          &bull;
+          <i class="fas fa-map-marker-alt mr-1.5 text-js-yellow/70"></i> Parque del Retiro, Madrid &bull;
           <i class="far fa-calendar-alt mr-1.5 ml-1 text-js-yellow/70"></i> 13 marzo · 17:30H
         </p>
         <p class="text-sm text-white/50 mb-5">
-          Corre con la comunidad antes de la conferencia. Todos los niveles. ¡Camiseta técnica para todos los participantes!
+          Corre con la comunidad antes de la conferencia. Todos los niveles. ¡Camiseta técnica para
+          todos los participantes!
         </p>
         <button
           id="open-running-signup"
@@ -150,7 +184,10 @@ const backgroundIcons = generateRandomIcons(techIcons.length * 5)
         class="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white/70 transition-colors cursor-pointer group"
       >
         <i class="fas fa-ticket-alt text-xs"></i>
-        <span class="border-b border-dashed border-white/20 group-hover:border-white/50 transition-colors">¿Quieres entrada? Apúntate a la lista de espera</span>
+        <span
+          class="border-b border-dashed border-white/20 group-hover:border-white/50 transition-colors"
+          >¿Quieres entrada? Apúntate a la lista de espera</span
+        >
       </button>
     </div>
   </div>

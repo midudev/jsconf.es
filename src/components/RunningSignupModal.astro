@@ -446,7 +446,7 @@
         runningFormView.classList.add('hidden')
         runningSuccessView.classList.remove('hidden')
       }
-    } catch {
+    } catch (_err) {
       setLoading(false)
       isSubmitting = false
       serverErrorMsg.textContent =

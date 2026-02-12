@@ -32,11 +32,14 @@ const colors = [
   <main class="pt-32 pb-20">
     <Container>
       <header class="text-center mb-12">
-        <h1 class="text-4xl md:text-5xl font-bold font-display mb-5 text-white uppercase tracking-tighter">
+        <h1
+          class="text-4xl md:text-5xl font-bold font-display mb-5 text-white uppercase tracking-tighter"
+        >
           Marca y Recursos
         </h1>
         <p class="text-gray-400 max-w-2xl mx-auto text-lg">
-          Descarga los archivos oficiales y consulta las guías de estilo para representar correctamente la JSConf España 2026.
+          Descarga los archivos oficiales y consulta las guías de estilo para representar
+          correctamente la JSConf España 2026.
         </p>
       </header>
 
@@ -100,7 +103,9 @@ const colors = [
                 >
                   <div class={`${color.bg} w-full h-full`} />
                   <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span class="text-white font-bold text-sm uppercase tracking-widest">Copiar HEX</span>
+                    <span class="text-white font-bold text-sm uppercase tracking-widest">
+                      Copiar HEX
+                    </span>
                   </div>
                   <div class="absolute bottom-4 left-4 font-bold text-xl mix-blend-difference text-white">
                     {color.hex}
@@ -170,7 +175,7 @@ const colors = [
 <script>
   const colorCards = document.querySelectorAll('.color-card')
 
-  colorCards.forEach(card => {
+  colorCards.forEach((card) => {
     card.addEventListener('click', () => {
       const color = card.getAttribute('data-color')
       if (color) {

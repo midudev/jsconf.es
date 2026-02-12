@@ -23,11 +23,13 @@ const socialNetworks = [
 <section class="py-20 bg-[#151515]">
   <div class="container mx-auto px-5">
     <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 items-center">
-      <div class="rounded-xl border-2 border-js-yellow overflow-hidden shadow-[0_0_20px_rgba(247,223,30,0.2)]">
-        <Image 
-          src="https://unavatar.io/midudev" 
-          alt="Miguel Ángel Durán (midudev)" 
-          width={400} 
+      <div
+        class="rounded-xl border-2 border-js-yellow overflow-hidden shadow-[0_0_20px_rgba(247,223,30,0.2)]"
+      >
+        <Image
+          src="https://unavatar.io/midudev"
+          alt="Miguel Ángel Durán (midudev)"
+          width={400}
           height={400}
           class="w-full block transition-transform duration-500 hover:scale-105"
         />
@@ -38,29 +40,33 @@ const socialNetworks = [
           Miguel Ángel Durán <br /><span class="text-[#777] text-4xl">(midudev)</span>
         </h2>
         <p class="text-lg text-gray-300 mb-8 leading-relaxed">
-          Reconocido Google Developer Expert, creador de contenido y divulgador de programación. Miguel Ángel será el maestro de ceremonias encargado de guiar la jornada, entrevistar a los ponentes y asegurar que la energía no decaiga ni un segundo durante toda la JSConf.
+          Reconocido Google Developer Expert, creador de contenido y divulgador de programación.
+          Miguel Ángel será el maestro de ceremonias encargado de guiar la jornada, entrevistar a
+          los ponentes y asegurar que la energía no decaiga ni un segundo durante toda la JSConf.
         </p>
         <div class="flex gap-6">
-          {socialNetworks.map(({ name, url, icon }) => (
-            <a 
-              href={url} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label={`Sigue a midudev en ${name}`}
-              class="text-white text-3xl hover:text-js-yellow transition-all hover:-translate-y-1"
-            >
-              {icon === 'fab fa-twitter' ? (
-                <svg class="w-8 h-8" fill="none" viewBox="0 0 1200 1227">
-                  <path
-                    fill="currentColor"
-                    d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"
-                  />
-                </svg>
-              ) : (
-                <i class={icon} />
-              )}
-            </a>
-          ))}
+          {
+            socialNetworks.map(({ name, url, icon }) => (
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Sigue a midudev en ${name}`}
+                class="text-white text-3xl hover:text-js-yellow transition-all hover:-translate-y-1"
+              >
+                {icon === 'fab fa-twitter' ? (
+                  <svg class="w-8 h-8" fill="none" viewBox="0 0 1200 1227">
+                    <path
+                      fill="currentColor"
+                      d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"
+                    />
+                  </svg>
+                ) : (
+                  <i class={icon} />
+                )}
+              </a>
+            ))
+          }
         </div>
       </div>
     </div>

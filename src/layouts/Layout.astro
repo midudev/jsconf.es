@@ -2,6 +2,7 @@
 import Header from '@/sections/Header.astro'
 import Footer from '@/sections/Footer.astro'
 import TicketTailorPopup from '@/components/TicketTailorPopup.astro'
+import RunningSignupModal from '@/components/RunningSignupModal.astro'
 interface Props {
   title?: string
   description?: string
@@ -125,6 +126,7 @@ const pageUrl = canonical ?? Astro.url.href
       }
     </script>
     <TicketTailorPopup />
+    <RunningSignupModal />
   </head>
   <body
     class="bg-dark-bg text-white font-sans antialiased selection:bg-js-yellow selection:text-js-black overflow-x-hidden"

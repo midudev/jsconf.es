@@ -80,10 +80,9 @@ import V0Logo from '@/icons/V0Logo.svg?raw'
         >
       </div>
       <div class="flex gap-4 items-center">
-        <button
-          id="buy-tickets-header"
-          class="hidden sm:inline-flex min-[1028px]:hidden min-[1500px]:inline-flex items-center justify-center px-4 min-[1500px]:px-5 py-2.5 font-bold uppercase tracking-wide text-sm bg-js-yellow text-js-black border-2 border-js-yellow rounded hover:bg-transparent hover:text-js-yellow hover:shadow-[0_0_15px_rgba(247,223,30,0.4)] transition-all"
-          >ENTRADAS</button
+        <span
+          class="hidden sm:inline-flex min-[1028px]:hidden min-[1500px]:inline-flex items-center justify-center px-4 min-[1500px]:px-5 py-2.5 font-bold uppercase tracking-wide text-xs bg-white/5 text-white/40 border border-white/10 rounded cursor-default"
+          >¡Entradas agotadas!</span
         >
         <button
           id="menu-toggle"
@@ -161,12 +160,11 @@ import V0Logo from '@/icons/V0Logo.svg?raw'
     >
   </nav>
 
-  <button
-    id="buy-tickets-mobile"
-    class="mt-12 inline-flex items-center justify-center px-12 py-5 font-black uppercase tracking-widest text-xl bg-js-yellow text-js-black border-2 border-js-yellow rounded-full hover:bg-white hover:text-js-black hover:border-white hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all active:scale-95 shadow-lg"
+  <span
+    class="mt-12 inline-flex items-center justify-center px-12 py-5 font-black uppercase tracking-widest text-xl bg-white/5 text-white/30 border-2 border-white/10 rounded-full cursor-default"
   >
-    ENTRADAS
-  </button>
+    ¡Entradas agotadas!
+  </span>
 </div>
 
 <style>
@@ -192,8 +190,6 @@ import V0Logo from '@/icons/V0Logo.svg?raw'
   const menuClose = document.getElementById('menu-close')
   const mobileMenu = document.getElementById('mobile-menu')
   const mobileLinks = document.querySelectorAll('.mobile-link')
-  const buyTicketsHeader = document.getElementById('buy-tickets-header')
-  const buyTicketsMobile = document.getElementById('buy-tickets-mobile')
   const focusableSelectors =
     'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
   let lastFocusedElement: HTMLElement | null = null
@@ -254,14 +250,6 @@ import V0Logo from '@/icons/V0Logo.svg?raw'
       last.focus()
     }
   })
-
-  const handleBuyTickets = () => {
-    window.dispatchEvent(new CustomEvent('open-ticket-tailor'))
-    closeMenu()
-  }
-
-  buyTicketsHeader?.addEventListener('click', handleBuyTickets)
-  buyTicketsMobile?.addEventListener('click', handleBuyTickets)
 
   // Scroll visibility
   let lastScroll = 0

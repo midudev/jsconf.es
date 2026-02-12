@@ -78,7 +78,7 @@ function getEmailTypoSuggestion(email: string): string | null {
 function sanitizeName(name: string): string {
   return name
     .replace(/[\x00-\x1F\x7F]/g, '') // strip control chars
-    .replace(/\s+/g, ' ')            // normalize whitespace
+    .replace(/\s+/g, ' ') // normalize whitespace
     .trim()
 }
 
@@ -127,14 +127,22 @@ const runningSignupSchema = z.object({
 // ----- Helpers -----
 
 function getClientIp(request: Request): string {
-  // On Vercel, x-forwarded-for is set by the platform and cannot be spoofed
+  // 1. Cloudflare sets cf-connecting-ip with the real client IP
+  //    (Vercel sits behind Cloudflare proxy, so x-forwarded-for
+  //    gets overwritten with Cloudflare's edge IP, not the user's)
+  const cfIp = request.headers.get('cf-connecting-ip')?.trim()
+  if (cfIp) return cfIp
+
+  // 2. Fallback: direct Vercel access (no Cloudflare proxy)
   const forwarded = request.headers.get('x-forwarded-for')
   if (forwarded) {
     const first = forwarded.split(',')[0]?.trim()
     if (first) return first
   }
-  const realIp = request.headers.get('x-real-ip')?.trim()
-  if (realIp) return realIp
+
+  // 3. Dev mode: no proxy headers available, use localhost
+  if (import.meta.env.DEV) return '127.0.0.1'
+
   // Never fall back to a shared key — deny instead
   return ''
 }
@@ -148,8 +156,10 @@ export const server = {
     handler: async ({ name, email }, context) => {
       // 1. Resolve client IP — reject if unidentifiable
       const clientIp = getClientIp(context.request)
+      console.log(`[running-signup] IP: ${clientIp || '(empty)'} | Email: ${email}`)
 
       if (!clientIp) {
+        console.warn('[running-signup] FORBIDDEN: no client IP detected')
         throw new ActionError({
           code: 'FORBIDDEN',
           message: 'No se ha podido verificar tu solicitud. Inténtalo de nuevo.',
@@ -160,6 +170,7 @@ export const server = {
       const { success: ipOk } = await ipRatelimit.limit(clientIp)
 
       if (!ipOk) {
+        console.warn(`[running-signup] RATE LIMITED (IP): ${clientIp}`)
         throw new ActionError({
           code: 'TOO_MANY_REQUESTS',
           message: 'Demasiados intentos. Espera un momento antes de volver a intentarlo.',
@@ -170,6 +181,7 @@ export const server = {
       const { success: emailOk } = await emailRatelimit.limit(email)
 
       if (!emailOk) {
+        console.warn(`[running-signup] RATE LIMITED (email): ${email}`)
         throw new ActionError({
           code: 'TOO_MANY_REQUESTS',
           message: 'Demasiados intentos con este correo. Espera unos minutos.',
@@ -180,6 +192,7 @@ export const server = {
       const existing = await redis.hget(REDIS_KEY_RUNNERS, email)
 
       if (existing) {
+        console.info(`[running-signup] CONFLICT: ${email} already registered`)
         throw new ActionError({
           code: 'CONFLICT',
           message: 'Este correo electrónico ya está registrado para la Social Run 5K.',
@@ -197,6 +210,7 @@ export const server = {
         }),
       })
 
+      console.info(`[running-signup] OK: ${email} registered successfully`)
       return { success: true }
     },
   }),

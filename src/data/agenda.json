@@ -61,11 +61,11 @@
       {
         "type": "talk",
         "time": "11:45 - 12:25",
-        "topic": "TBD",
+        "topic": "Programar en 2026: the human-in-the-loop",
         "speaker": "Javi Velasco",
         "role": "Staff Software Engineer @Vercel",
         "image": "javier-velasco.webp",
-        "description": "Muy pronto desvelamos el contenido de la charla de Javi, pero seguro que nos vuela la cabeza."
+        "description": "El secreto de un Tech Lead que lleva dos semanas sin escribir código: agentes de IA, automatizaciones, MCPS, y el futuro de la programación."
       },
       {
         "type": "talk",
@@ -112,11 +112,11 @@
       {
         "type": "talk",
         "time": "15:05 - 15:30",
-        "topic": "TBD",
+        "topic": "Node.js por dentro: entendiendo el runtime en producción",
         "speaker": "Estefany Aguilar",
         "role": "Developer Relations @NodeSource",
         "image": "estefany-aguilar.webp",
-        "description": "TBD"
+        "description": "Node.js está en todas partes, pero ¿realmente entendemos lo que ocurre bajo el capó? Esta charla explora el runtime desde dentro: el event loop, la concurrencia y la gestión de memoria, y cómo estos mecanismos internos afectan al rendimiento y la escalabilidad en producción."
       },
       {
         "type": "talk",
@@ -162,20 +162,20 @@
       {
         "type": "talk",
         "time": "16:40 - 17:20",
-        "topic": "TBD",
+        "topic": "Framework Fatigue: ¿cómo elegir (y abandonar) un framework?",
         "speaker": "Fernando Herrera",
         "role": "Full Stack Educator @DevTalles",
         "image": "fernando-herrera.webp",
-        "description": "TBD. Pero viniendo de Fernando, seguro que sales sabiendo React, Angular, Vue y cómo montar una academia online en un fin de semana."
+        "description": "¿Vamos a usar React para siempre? ¿Es el momento de cambiar? ¿Cuál es el siguiente framework que debemos usar?"
       },
       {
         "type": "talk",
         "time": "17:20 - 18:00",
-        "topic": "TBD",
+        "topic": "Web AI Más Allá del Chat: Algoritmos Genéticos, RL y Transformers.js en el Edge",
         "speaker": "Erick Wendel",
         "role": "Creador de Contenido y Emprendedor",
         "image": "erick-wendel.webp",
-        "description": "Esperad código en vivo a una velocidad inhumana, ritmo brasileño y probablemente alguna verdad incómoda sobre JavaScript."
+        "description": "Construye funcionalidades de IA que corren directamente en el navegador y en Node.js, sin coste por request y con privacidad por defecto. RAG local con SQLite en WebAssembly para crear experiencias inteligentes, sin lock-in y listas para producción."
       },
       {
         "type": "talk",

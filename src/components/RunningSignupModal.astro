@@ -1,0 +1,567 @@
+---
+
+---
+
+<dialog
+  id="running-signup-modal"
+  class="fixed inset-0 m-auto bg-transparent backdrop:bg-black/80 backdrop:backdrop-blur-sm border-none p-6 w-[95%] max-w-md max-h-[95vh] overflow-y-auto overflow-x-hidden"
+  aria-labelledby="running-signup-heading"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="relative bg-zinc-950 border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl my-4">
+    <!-- Close button -->
+    <button
+      id="running-close-modal"
+      class="absolute -top-4 -right-4 bg-zinc-900 text-white rounded-full p-2 hover:bg-zinc-800 border border-white/10 transition-colors z-[100] cursor-pointer"
+      aria-label="Cerrar modal"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <!-- Form view -->
+    <div id="running-form-view">
+      <!-- Header -->
+      <div class="text-center mb-6">
+        <div
+          class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-js-yellow/10 mb-4"
+        >
+          <i class="fas fa-running text-3xl text-js-yellow"></i>
+        </div>
+        <h2
+          id="running-signup-heading"
+          class="text-2xl font-black font-display uppercase tracking-tight text-white mb-1"
+        >
+          Social Run 5K
+        </h2>
+        <p class="text-sm text-white/50">
+          <i class="fas fa-map-marker-alt mr-1 text-js-yellow/70"></i> Parque del Retiro &bull;
+          <i class="far fa-calendar-alt mr-1 ml-1 text-js-yellow/70"></i> 13 marzo · 17:30H
+        </p>
+      </div>
+
+      <!-- Explanation -->
+      <div class="bg-white/5 border border-white/10 rounded-xl p-4 mb-6">
+        <p class="text-sm text-white/60 text-balance text-center">
+          <i class="fas fa-tshirt text-green-400 mr-1.5"></i>
+          Necesitamos tus datos para saber cuánta gente vendrá y preparar las <strong
+            class="text-white/80">camisetas de running gratis</strong
+          > para todos los asistentes.
+        </p>
+      </div>
+
+      <!-- Server error banner -->
+      <div
+        id="running-server-error"
+        class="hidden mb-5 bg-red-500/10 border border-red-500/20 rounded-xl p-4 text-center"
+      >
+        <p class="text-sm text-red-300">
+          <i class="fas fa-exclamation-triangle mr-1.5"></i>
+          <span id="running-server-error-msg"></span>
+        </p>
+      </div>
+
+      <!-- Already registered banner -->
+      <div
+        id="running-already-registered"
+        class="hidden mb-5 bg-amber-500/10 border border-amber-500/20 rounded-xl p-4 text-center"
+      >
+        <p class="text-sm text-amber-300">
+          <i class="fas fa-info-circle mr-1.5"></i>
+          <span id="running-already-registered-msg"></span>
+        </p>
+      </div>
+
+      <!-- Form -->
+      <form id="running-signup-form" class="space-y-5" novalidate>
+        <!-- Name field -->
+        <div>
+          <label for="running-name" class="block text-sm font-semibold text-white/80 mb-2">
+            Nombre y Apellidos
+          </label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
+              <i class="fas fa-user text-white/30"></i>
+            </div>
+            <input
+              type="text"
+              id="running-name"
+              name="name"
+              required
+              minlength="3"
+              maxlength="100"
+              autocomplete="name"
+              placeholder="Ej: María García López"
+              class="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-white/25 focus:outline-none focus:border-js-yellow/50 focus:ring-1 focus:ring-js-yellow/25 transition-all text-sm"
+            />
+          </div>
+          <p id="running-name-error" class="mt-1.5 text-xs text-red-400 hidden">
+            <i class="fas fa-exclamation-circle mr-1"></i>
+            <span></span>
+          </p>
+        </div>
+
+        <!-- Email field -->
+        <div>
+          <label for="running-email" class="block text-sm font-semibold text-white/80 mb-2">
+            Correo electrónico
+          </label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
+              <i class="fas fa-envelope text-white/30"></i>
+            </div>
+            <input
+              type="email"
+              id="running-email"
+              name="email"
+              required
+              maxlength="254"
+              autocomplete="email"
+              placeholder="Ej: maria@ejemplo.com"
+              class="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-white/25 focus:outline-none focus:border-js-yellow/50 focus:ring-1 focus:ring-js-yellow/25 transition-all text-sm"
+            />
+          </div>
+          <p id="running-email-error" class="mt-1.5 text-xs text-red-400 hidden">
+            <i class="fas fa-exclamation-circle mr-1"></i>
+            <span></span>
+          </p>
+        </div>
+
+        <!-- Submit button -->
+        <button
+          type="submit"
+          id="running-submit-btn"
+          class="w-full px-6 py-3.5 font-bold uppercase tracking-wide text-sm bg-js-yellow text-js-black border-2 border-js-yellow rounded-xl hover:bg-js-black hover:text-js-yellow hover:shadow-[0_0_25px_rgba(247,223,30,0.4)] transition-all cursor-pointer flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-js-yellow disabled:hover:text-js-black disabled:hover:shadow-none"
+        >
+          <i class="fas fa-running" id="running-submit-icon"></i>
+          <i class="fas fa-circle-notch fa-spin" id="running-submit-spinner" style="display:none"
+          ></i>
+          <span id="running-submit-text">¡Me apunto!</span>
+        </button>
+
+        <!-- Free t-shirt badge -->
+        <p class="text-center text-xs text-white/40">
+          <i class="fas fa-gift text-green-400 mr-1"></i> Camiseta técnica gratis para todos los participantes
+        </p>
+      </form>
+    </div>
+
+    <!-- Success view -->
+    <div id="running-success-view" class="hidden text-center py-4">
+      <div
+        class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-500/10 mb-5 animate-success-pop"
+      >
+        <svg
+          class="w-10 h-10 text-green-400"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="20 6 9 17 4 12" class="check-animation"></polyline>
+        </svg>
+      </div>
+      <h3 class="text-2xl font-black font-display uppercase tracking-tight text-white mb-2">
+        ¡Estás dentro!
+      </h3>
+      <p class="text-white/60 mb-2 text-sm">Te hemos registrado correctamente para la</p>
+      <p class="text-js-yellow font-bold text-lg mb-4">
+        <i class="fas fa-running mr-1"></i> Social Run 5K
+      </p>
+      <div class="bg-white/5 border border-white/10 rounded-xl p-4 mb-6 space-y-3">
+        <p class="text-white/70 text-sm">
+          <i class="fas fa-envelope mr-2 text-js-yellow/70"></i>
+          Pronto recibirás un correo electrónico con todos los detalles.
+        </p>
+        <p class="text-white/70 text-sm">
+          <i class="far fa-calendar-check mr-2 text-js-yellow/70"></i>
+          Te enviaremos una invitación al calendario para que no se te olvide.
+        </p>
+      </div>
+      <div class="flex flex-col gap-2 text-xs text-white/40">
+        <p>
+          <i class="fas fa-map-marker-alt mr-1 text-js-yellow/50"></i> Parque del Retiro, Madrid
+        </p>
+        <p>
+          <i class="far fa-calendar-alt mr-1 text-js-yellow/50"></i> 13 de marzo de 2026 · 17:30H
+        </p>
+        <p>
+          <i class="fas fa-tshirt mr-1 text-green-400/50"></i> Camiseta técnica incluida
+        </p>
+      </div>
+      <button
+        id="running-close-success"
+        class="mt-6 px-8 py-3 text-sm font-bold uppercase tracking-wide text-white/60 hover:text-white border border-white/10 hover:border-white/30 rounded-xl transition-all cursor-pointer"
+      >
+        Cerrar
+      </button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  import { actions } from 'astro:actions'
+
+  const runningModal = document.getElementById('running-signup-modal') as HTMLDialogElement
+  const runningCloseBtn = document.getElementById('running-close-modal')
+  const runningCloseSuccessBtn = document.getElementById('running-close-success')
+  const runningForm = document.getElementById('running-signup-form') as HTMLFormElement
+  const runningFormView = document.getElementById('running-form-view')!
+  const runningSuccessView = document.getElementById('running-success-view')!
+
+  const nameInput = document.getElementById('running-name') as HTMLInputElement
+  const emailInput = document.getElementById('running-email') as HTMLInputElement
+  const nameError = document.getElementById('running-name-error')!
+  const emailError = document.getElementById('running-email-error')!
+
+  const serverError = document.getElementById('running-server-error')!
+  const serverErrorMsg = document.getElementById('running-server-error-msg')!
+  const alreadyRegistered = document.getElementById('running-already-registered')!
+  const alreadyRegisteredMsg = document.getElementById('running-already-registered-msg')!
+
+  const submitBtn = document.getElementById('running-submit-btn') as HTMLButtonElement
+  const submitIcon = document.getElementById('running-submit-icon')!
+  const submitSpinner = document.getElementById('running-submit-spinner')!
+  const submitText = document.getElementById('running-submit-text')!
+
+  let previouslyFocused: HTMLElement | null = null
+  let isSubmitting = false
+
+  const focusableSelectors =
+    'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+
+  const setBodyScroll = (disabled: boolean) => {
+    document.body.style.overflow = disabled ? 'hidden' : ''
+  }
+
+  const showError = (el: HTMLElement, message: string) => {
+    const span = el.querySelector('span')
+    if (span) span.textContent = message
+    el.classList.remove('hidden')
+  }
+
+  const hideError = (el: HTMLElement) => {
+    el.classList.add('hidden')
+  }
+
+  const hideServerErrors = () => {
+    serverError.classList.add('hidden')
+    alreadyRegistered.classList.add('hidden')
+  }
+
+  const setLoading = (loading: boolean) => {
+    submitBtn.disabled = loading
+    submitIcon.style.display = loading ? 'none' : ''
+    submitSpinner.style.display = loading ? '' : 'none'
+    submitText.textContent = loading ? 'Registrando...' : '¡Me apunto!'
+  }
+
+  // ----- Client-side validation (mirrors Zod schema) -----
+
+  const validateName = (value: string): string | null => {
+    const trimmed = value.trim()
+    if (!trimmed) return 'Este campo es obligatorio'
+    if (trimmed.length < 3) return 'Introduce al menos 3 caracteres'
+    if (!/\s/.test(trimmed)) return 'Introduce tu nombre y al menos un apellido'
+    if (!/^[\p{L}\s\-'.]+$/u.test(trimmed)) return 'El nombre contiene caracteres no válidos'
+    return null
+  }
+
+  const validateEmail = (value: string): string | null => {
+    const trimmed = value.trim()
+    if (!trimmed) return 'Este campo es obligatorio'
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
+    if (!emailRegex.test(trimmed)) return 'Introduce un correo electrónico válido'
+    return null
+  }
+
+  const resetModal = () => {
+    runningFormView.classList.remove('hidden')
+    runningSuccessView.classList.add('hidden')
+    runningForm.reset()
+    hideError(nameError)
+    hideError(emailError)
+    hideServerErrors()
+    nameInput.classList.remove('!border-red-400/50')
+    emailInput.classList.remove('!border-red-400/50')
+    setLoading(false)
+  }
+
+  const closeRunningModal = () => {
+    if (!runningModal?.open) return
+    runningModal.close()
+  }
+
+  // ----- Real-time validation on blur -----
+
+  nameInput.addEventListener('blur', () => {
+    const error = validateName(nameInput.value)
+    if (error) {
+      showError(nameError, error)
+      nameInput.classList.add('!border-red-400/50')
+    } else {
+      hideError(nameError)
+      nameInput.classList.remove('!border-red-400/50')
+    }
+  })
+
+  emailInput.addEventListener('blur', () => {
+    const error = validateEmail(emailInput.value)
+    if (error) {
+      showError(emailError, error)
+      emailInput.classList.add('!border-red-400/50')
+    } else {
+      hideError(emailError)
+      emailInput.classList.remove('!border-red-400/50')
+    }
+  })
+
+  // ----- Clear errors on input -----
+
+  nameInput.addEventListener('input', () => {
+    hideServerErrors()
+    if (!nameError.classList.contains('hidden')) {
+      const error = validateName(nameInput.value)
+      if (!error) {
+        hideError(nameError)
+        nameInput.classList.remove('!border-red-400/50')
+      }
+    }
+  })
+
+  emailInput.addEventListener('input', () => {
+    hideServerErrors()
+    if (!emailError.classList.contains('hidden')) {
+      const error = validateEmail(emailInput.value)
+      if (!error) {
+        hideError(emailError)
+        emailInput.classList.remove('!border-red-400/50')
+      }
+    }
+  })
+
+  // ----- Form submission -----
+
+  runningForm.addEventListener('submit', async (e) => {
+    e.preventDefault()
+
+    // Prevent double submission
+    if (isSubmitting) return
+
+    // Client-side validation first
+    const nameErr = validateName(nameInput.value)
+    const emailErr = validateEmail(emailInput.value)
+    let hasErrors = false
+
+    hideServerErrors()
+
+    if (nameErr) {
+      showError(nameError, nameErr)
+      nameInput.classList.add('!border-red-400/50')
+      hasErrors = true
+    } else {
+      hideError(nameError)
+      nameInput.classList.remove('!border-red-400/50')
+    }
+
+    if (emailErr) {
+      showError(emailError, emailErr)
+      emailInput.classList.add('!border-red-400/50')
+      hasErrors = true
+    } else {
+      hideError(emailError)
+      emailInput.classList.remove('!border-red-400/50')
+    }
+
+    if (hasErrors) {
+      if (nameErr) nameInput.focus()
+      else emailInput.focus()
+      return
+    }
+
+    // Call server action
+    isSubmitting = true
+    setLoading(true)
+
+    try {
+      const { error, data } = await actions.runningSignup({
+        name: nameInput.value.trim(),
+        email: emailInput.value.trim(),
+      })
+
+      setLoading(false)
+      isSubmitting = false
+
+      if (error) {
+        // Handle Zod validation errors (field-level)
+        if (error.code === 'BAD_REQUEST' && error.fields) {
+          const fields = error.fields as Record<string, string[] | undefined>
+          if (fields.name?.length) {
+            showError(nameError, fields.name[0])
+            nameInput.classList.add('!border-red-400/50')
+          }
+          if (fields.email?.length) {
+            showError(emailError, fields.email[0])
+            emailInput.classList.add('!border-red-400/50')
+          }
+          return
+        }
+
+        // Handle already registered
+        if (error.code === 'CONFLICT') {
+          alreadyRegisteredMsg.textContent = error.message
+          alreadyRegistered.classList.remove('hidden')
+          return
+        }
+
+        // Handle rate limit
+        if (error.code === 'TOO_MANY_REQUESTS') {
+          serverErrorMsg.textContent = error.message
+          serverError.classList.remove('hidden')
+          return
+        }
+
+        // Generic server error
+        serverErrorMsg.textContent = 'Ha ocurrido un error inesperado. Inténtalo de nuevo.'
+        serverError.classList.remove('hidden')
+        return
+      }
+
+      if (data?.success) {
+        runningFormView.classList.add('hidden')
+        runningSuccessView.classList.remove('hidden')
+      }
+    } catch (_err) {
+      setLoading(false)
+      isSubmitting = false
+      serverErrorMsg.textContent =
+        'Error de conexión. Comprueba tu conexión a internet e inténtalo de nuevo.'
+      serverError.classList.remove('hidden')
+    }
+  })
+
+  // ----- Close handlers -----
+
+  runningCloseBtn?.addEventListener('click', closeRunningModal)
+  runningCloseSuccessBtn?.addEventListener('click', closeRunningModal)
+
+  runningModal?.addEventListener('click', (e) => {
+    if (e.target === runningModal) closeRunningModal()
+  })
+
+  runningModal?.addEventListener('cancel', (event) => {
+    event.preventDefault()
+    closeRunningModal()
+  })
+
+  runningModal?.addEventListener('close', () => {
+    setBodyScroll(false)
+    previouslyFocused?.focus()
+    setTimeout(resetModal, 300)
+  })
+
+  // ----- Focus trap -----
+
+  runningModal?.addEventListener('keydown', (event) => {
+    if (event.key !== 'Tab') return
+    const focusable = Array.from(
+      runningModal.querySelectorAll<HTMLElement>(focusableSelectors)
+    ).filter(
+      (el) =>
+        !el.hasAttribute('disabled') &&
+        el.getAttribute('aria-hidden') !== 'true' &&
+        !el.closest('.hidden')
+    )
+
+    if (focusable.length === 0) {
+      event.preventDefault()
+      return
+    }
+
+    const first = focusable[0]
+    const last = focusable[focusable.length - 1]
+    const isShift = event.shiftKey
+
+    if (!isShift && document.activeElement === last) {
+      event.preventDefault()
+      first.focus()
+    } else if (isShift && document.activeElement === first) {
+      event.preventDefault()
+      last.focus()
+    }
+  })
+
+  // ----- Open modal -----
+
+  window.addEventListener('open-running-signup', () => {
+    previouslyFocused = document.activeElement as HTMLElement
+    resetModal()
+    runningModal.showModal()
+    setBodyScroll(true)
+    requestAnimationFrame(() => nameInput.focus())
+  })
+</script>
+
+<style>
+  dialog::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+  }
+
+  dialog[open] {
+    animation: zoom 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  @keyframes zoom {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .animate-success-pop {
+    animation: success-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+  }
+
+  @keyframes success-pop {
+    from {
+      transform: scale(0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .check-animation {
+    stroke-dasharray: 24;
+    stroke-dashoffset: 24;
+    animation: check-draw 0.4s ease-out 0.4s forwards;
+  }
+
+  @keyframes check-draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+</style>

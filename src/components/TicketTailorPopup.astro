@@ -5,8 +5,12 @@
 <dialog
   id="ticket-tailor-modal"
   class="fixed inset-0 m-auto bg-transparent backdrop:bg-black/80 backdrop:backdrop-blur-sm border-none p-6 w-[95%] max-w-4xl max-h-[95vh] overflow-y-auto overflow-x-hidden"
+  aria-labelledby="ticket-tailor-heading"
+  aria-modal="true"
+  role="dialog"
 >
   <div class="relative bg-zinc-950 border border-white/10 rounded-2xl p-4 md:p-8 shadow-2xl my-4">
+    <h2 class="sr-only" id="ticket-tailor-heading">Entradas para JSConf España 2026</h2>
     <button
       id="close-modal"
       class="absolute -top-4 -right-4 bg-zinc-900 text-white rounded-full p-2 hover:bg-zinc-800 border border-white/10 transition-colors z-[100] cursor-pointer"
@@ -59,25 +63,72 @@
 <script>
   const modal = document.getElementById('ticket-tailor-modal') as HTMLDialogElement
   const closeBtn = document.getElementById('close-modal')
+  const focusableSelectors =
+    'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+  let previouslyFocusedElement: HTMLElement | null = null
 
-  closeBtn?.addEventListener('click', () => {
+  const setBodyScroll = (disabled: boolean) => {
+    document.body.style.overflow = disabled ? 'hidden' : ''
+  }
+
+  const focusFirstElement = () => {
+    const firstFocusable = modal?.querySelector<HTMLElement>(focusableSelectors)
+    firstFocusable?.focus()
+  }
+
+  const closeModal = () => {
+    if (!modal?.open) return
     modal.close()
-  })
+  }
+
+  closeBtn?.addEventListener('click', closeModal)
 
   modal?.addEventListener('click', (e) => {
     if (e.target === modal) {
-      modal.close()
+      closeModal()
+    }
+  })
+
+  modal?.addEventListener('cancel', (event) => {
+    event.preventDefault()
+    closeModal()
+  })
+
+  modal?.addEventListener('close', () => {
+    setBodyScroll(false)
+    previouslyFocusedElement?.focus()
+  })
+
+  modal?.addEventListener('keydown', (event) => {
+    if (event.key !== 'Tab') return
+    const focusable = Array.from(modal.querySelectorAll<HTMLElement>(focusableSelectors)).filter(
+      (el) => !el.hasAttribute('disabled') && el.getAttribute('aria-hidden') !== 'true'
+    )
+
+    if (focusable.length === 0) {
+      event.preventDefault()
+      return
+    }
+
+    const first = focusable[0]
+    const last = focusable[focusable.length - 1]
+    const isShift = event.shiftKey
+
+    if (!isShift && document.activeElement === last) {
+      event.preventDefault()
+      first.focus()
+    } else if (isShift && document.activeElement === first) {
+      event.preventDefault()
+      last.focus()
     }
   })
 
   // Listen for custom event to open modal
   window.addEventListener('open-ticket-tailor', () => {
+    previouslyFocusedElement = document.activeElement as HTMLElement
     modal.showModal()
-    document.body.style.overflow = 'hidden'
-  })
-
-  modal?.addEventListener('close', () => {
-    document.body.style.overflow = ''
+    setBodyScroll(true)
+    requestAnimationFrame(focusFirstElement)
   })
 </script>
 
@@ -104,6 +155,18 @@
 </style>
 
 <style is:global>
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
   .tt-widget-inline {
     display: flex;
     justify-content: center;

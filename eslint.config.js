@@ -2,12 +2,14 @@ import eslintPluginAstro from 'eslint-plugin-astro'
 import neostandard from 'neostandard'
 
 export default [
+  {
+    ignores: ['.astro/**'],
+  },
   ...neostandard(),
   // add more generic rule sets here, such as:
   // js.configs.recommended,
   ...eslintPluginAstro.configs.recommended,
   {
-    ignores: ['.astro/**/*.*'],
     files: ['**/*.astro', '**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
     rules: {
       '@stylistic/jsx-quotes': ['error', 'prefer-double'],

@@ -17,10 +17,10 @@
         "description": "Infraestructura de la siguiente generación, servidores dedicados, cloud, vps y más."
       },
       {
-        "name": "Vercel",
-        "image": "/sponsors/vercel.svg",
-        "url": "https://vercel.com",
-        "description": "CONSTRUYE Y DESPLIEGA EN LA NUBE DE IA"
+        "name": "Cloudflare",
+        "image": "/sponsors/cloudflare.svg",
+        "url": "https://www.cloudflare.com/es-es/",
+        "description": "CONECTA, PROTEGE Y DESARROLLA EN CUALQUIER PARTE"
       }
     ]
   },
@@ -29,6 +29,12 @@
     "color": "#ff3e00",
     "icon": "max",
     "companies": [
+      {
+        "name": "Vercel",
+        "image": "/sponsors/vercel.svg",
+        "url": "https://vercel.com",
+        "description": "CONSTRUYE Y DESPLIEGA EN LA NUBE DE IA"
+      },
       {
         "name": "DevTalles",
         "image": "/sponsors/devtalles.webp",
@@ -58,6 +64,12 @@
         "image": "/sponsors/ignia-cloud.webp",
         "url": "https://www.ignia.cloud/es",
         "description": "Soluciones en la Nube Seguras, Escalables y de Alto Rendimiento"
+      },
+      {
+        "name": "Plain Concepts",
+        "image": "/sponsors/plain-concepts.webp",
+        "url": "https://www.plainconcepts.com/",
+        "description": "DISEÑANDO Y CONSTRUYENDO PRODUCTOS DIGITALES AVANZADOS"
       }
     ]
   },
@@ -73,16 +85,28 @@
         "description": "MUCHO MÁS QUE CURSOS DE PROGRAMACIÓN"
       },
       {
-        "name": "Plain Concepts",
-        "image": "/sponsors/plain-concepts.webp",
-        "url": "https://www.plainconcepts.com/",
-        "description": "DISEÑANDO Y CONSTRUYENDO PRODUCTOS DIGITALES AVANZADOS"
-      },
-      {
         "name": "Mastra",
         "image": "/sponsors/mastra.svg",
         "url": "https://mastra.ai/",
         "description": "EL FRAMEWORK DE TYPESCRIPT PARA CONSTRUIR AGENTES DE IA"
+      },
+      {
+        "name": "LeanMind",
+        "image": "/sponsors/lean-mind.webp",
+        "url": "https://leanmind.es/",
+        "description": "CREAMOS SOFTWARE A MEDIDA PARA CUMPLIR TUS METAS DE NEGOCIO"
+      },
+      {
+        "name": "Freepik",
+        "image": "/sponsors/freepik.svg",
+        "url": "https://www.freepik.es/",
+        "description": "LA SUITE CREATIVA DE IA MÁS COMPLETA"
+      },
+      {
+        "name": "NodeSource",
+        "image": "/sponsors/nodesource.svg",
+        "url": "https://nodesource.com/",
+        "description": "NO NECESITAS MÁS LOGS. NECESITAS UNA HERRAMIENTA MÁS INTELIGENTE"
       }
     ]
   }

@@ -2,6 +2,7 @@
 import Header from '@/sections/Header.astro'
 import Footer from '@/sections/Footer.astro'
 import TicketTailorPopup from '@/components/TicketTailorPopup.astro'
+import RunningSignupModal from '@/components/RunningSignupModal.astro'
 interface Props {
   title?: string
   description?: string
@@ -125,12 +126,16 @@ const pageUrl = canonical ?? Astro.url.href
       }
     </script>
     <TicketTailorPopup />
+    <RunningSignupModal />
   </head>
   <body
     class="bg-dark-bg text-white font-sans antialiased selection:bg-js-yellow selection:text-js-black overflow-x-hidden"
   >
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
     <Header />
-    <slot />
+    <main id="main-content" tabindex="-1">
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
@@ -202,6 +207,25 @@ const pageUrl = canonical ?? Astro.url.href
   button,
   a {
     cursor: pointer;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -200%);
+    top: 0;
+    background: #f7df1e;
+    color: #1a1a1a;
+    padding: 0.75rem 1.5rem;
+    font-weight: 700;
+    border-radius: 9999px;
+    text-decoration: none;
+    z-index: 60;
+    transition: transform 0.15s ease;
+  }
+
+  .skip-link:focus {
+    transform: translate(-50%, 10px);
   }
 
   /* SVGs Backgrounds */

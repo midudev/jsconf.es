@@ -7,6 +7,7 @@ interface Props {
   items: string[]
   buttonText?: string
   buttonLink?: string
+  openModal?: string
   footerIcon: string
 }
 
@@ -18,6 +19,7 @@ const {
   items,
   buttonText = 'Apuntarse',
   buttonLink,
+  openModal,
   footerIcon,
 } = Astro.props
 ---
@@ -52,6 +54,13 @@ const {
       >
         {buttonText}
       </a>
+    ) : openModal ? (
+      <button
+        data-open-modal={openModal}
+        class="inline-block bg-js-yellow text-black uppercase font-bold py-2.5 px-5 rounded hover:bg-yellow-400 transition-colors cursor-pointer"
+      >
+        {buttonText}
+      </button>
     ) : (
       <span class="inline-block bg-white/10 text-[#777] cursor-not-allowed uppercase font-bold py-2.5 px-5 rounded">
         {buttonText} (Próximamente)
@@ -62,3 +71,12 @@ const {
     class={`${footerIcon} text-5xl absolute bottom-5 right-5 opacity-10 -rotate-[15deg] group-hover:opacity-20 group-hover:rotate-0 group-hover:scale-110 transition-all duration-500`}
   ></i>
 </div>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-open-modal]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const eventName = btn.dataset.openModal
+      if (eventName) window.dispatchEvent(new CustomEvent(eventName))
+    })
+  })
+</script>

@@ -11,12 +11,12 @@
     "format": "prettier -w --cache --plugin prettier-plugin-astro ."
   },
   "dependencies": {
-    "@astrojs/sitemap": "3.6.1",
-    "@astrojs/vercel": "9.0.3",
+    "@astrojs/sitemap": "3.7.0",
+    "@astrojs/vercel": "9.0.4",
     "@tailwindcss/vite": "4.1.18",
     "@upstash/ratelimit": "2.0.8",
     "@upstash/redis": "1.36.2",
-    "astro": "5.16.9",
+    "astro": "5.17.2",
     "tailwind-animations": "1",
     "tailwindcss": "4.1.18"
   },

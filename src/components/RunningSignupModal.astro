@@ -445,6 +445,7 @@
       if (data?.success) {
         runningFormView.classList.add('hidden')
         runningSuccessView.classList.remove('hidden')
+        window.dispatchEvent(new CustomEvent('running-signup-success'))
       }
     } catch (_err) {
       setLoading(false)

@@ -83,11 +83,6 @@ const backgroundIcons = generateRandomIcons(techIcons.length * 5)
       <i class="far fa-calendar-alt mr-2"></i> 14 DE MARZO, 2026 &bull; MADRID &bull; LA NAVE
     </div>
 
-    <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-      Únete a la comunidad de desarrolladores más vibrante en un día lleno de código, innovación y
-      networking de primer nivel.
-    </p>
-
     <!-- Countdown -->
     <div class="mb-12 pointer-events-auto">
       <p class="text-sm uppercase tracking-widest text-white/50 mb-4 font-bold">
@@ -168,6 +163,10 @@ const backgroundIcons = generateRandomIcons(techIcons.length * 5)
           Corre con la comunidad antes de la conferencia. Todos los niveles. ¡Camiseta técnica para
           todos los participantes!
         </p>
+        <p class="text-sm text-js-yellow/90 mb-5 font-semibold">
+          <i class="fas fa-users mr-1.5"></i>
+          <span id="running-signups-count">...</span> personas ya apuntadas
+        </p>
         <button
           id="open-running-signup"
           class="inline-flex items-center justify-center w-full px-6 py-3.5 font-bold uppercase tracking-wide text-sm bg-js-yellow text-js-black border-2 border-js-yellow rounded-lg hover:bg-js-black hover:text-js-yellow hover:shadow-[0_0_25px_rgba(247,223,30,0.4)] transition-all cursor-pointer"
@@ -227,6 +226,29 @@ const backgroundIcons = generateRandomIcons(techIcons.length * 5)
   const openRunningBtn = document.getElementById('open-running-signup')
   openRunningBtn?.addEventListener('click', () => {
     window.dispatchEvent(new CustomEvent('open-running-signup'))
+  })
+
+  // Contador Social Run (CSR para no bloquear el render inicial)
+  const runningSignupsCount = document.getElementById('running-signups-count')
+  const updateRunningSignupsCount = async () => {
+    if (!runningSignupsCount) return
+
+    try {
+      const response = await fetch('/api/running-signups-count', { cache: 'no-store' })
+      if (!response.ok) throw new Error('No se pudo cargar el contador')
+      const data = (await response.json()) as { count?: number }
+      if (typeof data.count === 'number') {
+        runningSignupsCount.textContent = data.count.toLocaleString('es-ES')
+      } else {
+        runningSignupsCount.textContent = '--'
+      }
+    } catch {
+      runningSignupsCount.textContent = '--'
+    }
+  }
+  updateRunningSignupsCount()
+  window.addEventListener('running-signup-success', () => {
+    updateRunningSignupsCount()
   })
 
   // Lista de espera

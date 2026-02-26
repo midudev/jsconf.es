@@ -22,7 +22,7 @@ const { time, topic, speaker, role, image, description, language } = item
         <h4
           class="text-2xl font-bold font-display text-white group-hover:text-js-yellow transition-colors leading-tight text-balance"
         >
-          {topic}
+          <Fragment set:html={topic} />
         </h4>
         {
           language === 'en' && (

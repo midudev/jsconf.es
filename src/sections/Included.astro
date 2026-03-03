@@ -2,6 +2,7 @@
 import IncludedItem from '@/components/IncludedItem.astro'
 import windsurfLogo from '@/icons/WindsurfLogo.svg?raw'
 import v0Logo from '@/icons/V0Logo.svg?raw'
+import cubePathLogo from '@/icons/CubePathLogo.svg?raw'
 
 const items = [
   {
@@ -17,9 +18,15 @@ const items = [
     iconClass: 'w-24 h-24',
   },
   {
-    icon: 'fas fa-utensils',
-    title: 'Comida y bebida',
-    description: 'Café, desayuno, comida, refrescos y cóctel final para hacer networking',
+    icon: cubePathLogo,
+    title: '15$ en CubePath',
+    description: 'Cupón de 15$ para usar en hosting y desplegar servidores VPS',
+    iconClass: 'w-24 h-24',
+  },
+  {
+    icon: 'fas fa-book',
+    title: 'Libros de IA + TypeScript',
+    description: '2 libros físicos de Programación de Agentes con IA con TypeScript',
   },
   {
     icon: 'fas fa-laptop-code',
@@ -37,14 +44,9 @@ const items = [
     description: 'Bolsa oficial con merchandising y sorpresas épicas durante las charlas',
   },
   {
-    icon: 'fas fa-certificate',
-    title: 'Certificado',
-    description: 'Acreditación firmada de asistencia al evento y formación',
-  },
-  {
-    icon: 'fas fa-book',
-    title: 'Libros de IA + TypeScript',
-    description: '2 libros físicos de Programación de Agentes con IA con TypeScript',
+    icon: 'fas fa-utensils',
+    title: 'Comida y bebida',
+    description: 'Café, desayuno, comida, refrescos y cóctel final para hacer networking',
   },
 ]
 ---

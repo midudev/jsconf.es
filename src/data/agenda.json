@@ -60,7 +60,7 @@
       },
       {
         "type": "talk",
-        "time": "11:45 - 12:25",
+        "time": "11:45 - 12:30",
         "topic": "Programar en 2026: the human-in-the-loop",
         "speaker": "Javi Velasco",
         "role": "Staff Software Engineer @Vercel",
@@ -69,11 +69,11 @@
       },
       {
         "type": "talk",
-        "time": "12:25 - 13:00",
-        "topic": "TBD",
-        "speaker": "Rita Kozlov",
-        "role": "VP Developers & AI @Cloudflare",
-        "image": "rita-kozlov.webp",
+        "time": "12:30 - 13:00",
+        "topic": "Code Mode: let the code do the talking",
+        "speaker": "Sunil Pai",
+        "role": "Principal Systems Engineer @Cloudflare",
+        "image": "sunil-pai.webp",
         "language": "en",
         "description": "Workers, integración de IA y el edge en el futuro de la web"
       },

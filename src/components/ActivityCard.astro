@@ -9,6 +9,7 @@ interface Props {
   buttonLink?: string
   openModal?: string
   footerIcon: string
+  disabled?: boolean
 }
 
 const {
@@ -21,6 +22,7 @@ const {
   buttonLink,
   openModal,
   footerIcon,
+  disabled = false,
 } = Astro.props
 ---
 
@@ -45,7 +47,11 @@ const {
     }
   </ul>
   {
-    buttonLink ? (
+    disabled ? (
+      <span class="inline-block bg-white/10 text-[#777] cursor-not-allowed uppercase font-bold py-2.5 px-5 rounded">
+        Evento finalizado
+      </span>
+    ) : buttonLink ? (
       <a
         href={buttonLink}
         target="_blank"

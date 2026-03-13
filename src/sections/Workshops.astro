@@ -1,6 +1,21 @@
 ---
 const workshops = [
   {
+    hour: '10:20',
+    title: 'Construyendo el Futuro con Cloudflare Workers & AI',
+    language: 'en',
+    description:
+      'Aprende a desplegar aplicaciones globales en milisegundos utilizando Cloudflare Workers. En este taller práctico, Confidence te enseñará cómo integrar modelos de IA directamente en el Edge para crear experiencias de usuario inteligentes, rápidas y escalables sin complicaciones de infraestructura.',
+    authors: [
+      {
+        name: 'Confidence Okoghenun',
+        role: 'Senior Developer Advocate @ Cloudflare',
+        image: '/img/confidence-okoghenun.webp',
+      },
+    ],
+  },
+  {
+    hour: '11:40',
     title:
       'De Vibe Coding a Software Engineering con IA: Arquitectura de Agentes para Proyectos Escalables',
     description:
@@ -14,6 +29,7 @@ const workshops = [
     ],
   },
   {
+    hour: '13:00',
     title: 'Astro y Headless CMS: La combinación perfecta',
     description:
       'Astro ha traído un soplo de aire fresco al desarrollo web. Es rápido, sencillo y está pensado para hacer sitios de contenido sin peleas con el rendimiento ni con el mantenimiento. Los Headless CMS, por su parte, nos dan una forma limpia de gestionar el contenido sin casarnos con ningún framework de UI ni tener que montar una "intranet" a mano. Juntos hacen muy buen equipo: tú te centras en la parte pública de tu sitio —que vaya como un cohete— y del resto se encargan Astro y tu Headless CMS favorito. En este curso empezamos desde cero con Astro y luego pasamos a un caso práctico: un sitio personal conectado a un Headless CMS.',
@@ -26,6 +42,7 @@ const workshops = [
     ],
   },
   {
+    hour: '15:00',
     title: 'Live coding: desarrollar una app full stack sin salir del editor con Windsurf AI',
     description:
       'A través de una demostración en vivo, construiremos una app full stack funcional, trabajando únicamente desde el editor de Windsurf y algunos MCPs. Veremos cómo integrar frontend, backend y datos en un solo flujo de trabajo ágil y moderno, ideal para MVPs y prototipos rápidos.',
@@ -38,6 +55,7 @@ const workshops = [
     ],
   },
   {
+    hour: '16:30',
     title: 'Refactoring & Testing (TBD)',
     description:
       'En este workshop práctico, Carlos Blé y Jorge Aguiar te enseñarán las mejores técnicas de refactorización y testing para mejorar la calidad de tu código. Aprenderás a identificar deuda técnica, aplicar patrones de diseño y escribir tests efectivos que te den la confianza necesaria para evolucionar tu software.',
@@ -51,19 +69,6 @@ const workshops = [
         name: 'Jorge Aguiar',
         role: 'Lead Developer @ Lean Mind',
         image: '/img/jorge-aguiar.webp',
-      },
-    ],
-  },
-  {
-    title: 'Construyendo el Futuro con Cloudflare Workers & AI',
-    language: 'en',
-    description:
-      'Aprende a desplegar aplicaciones globales en milisegundos utilizando Cloudflare Workers. En este taller práctico, Confidence te enseñará cómo integrar modelos de IA directamente en el Edge para crear experiencias de usuario inteligentes, rápidas y escalables sin complicaciones de infraestructura.',
-    authors: [
-      {
-        name: 'Confidence Okoghenun',
-        role: 'Senior Developer Advocate @ Cloudflare',
-        image: '/img/confidence-okoghenun.webp',
       },
     ],
   },
@@ -92,6 +97,11 @@ const workshops = [
             </div>
 
             <div class="relative z-10 flex flex-col h-full">
+              <div class="flex items-center gap-2 text-js-yellow/80 text-sm font-medium mb-3">
+                <i class="fas fa-clock" />
+                <span>{workshop.hour}h</span>
+              </div>
+
               <div class="flex items-start justify-between gap-4 mb-5">
                 <h3 class="text-2xl md:text-3xl font-bold text-white leading-tight group-hover:text-js-yellow transition-colors">
                   {workshop.title}

@@ -135,44 +135,17 @@ const backgroundIcons = generateRandomIcons(techIcons.length * 5)
       </div>
     </div>
 
-    <!-- Social Run CTA -->
-    <div class="pointer-events-auto max-w-lg mx-auto mb-8">
-      <div
-        class="relative bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 backdrop-blur-sm hover:border-js-yellow/30 transition-all group"
-      >
-        <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-          <span
-            class="bg-green-500 text-white text-[10px] sm:text-xs font-black uppercase tracking-widest px-4 py-1 rounded-full shadow-lg"
-          >
-            <i class="fas fa-gift mr-1.5"></i> Camiseta gratis*
-          </span>
-        </div>
-        <div class="flex items-center justify-center gap-3 mb-3">
-          <i class="fas fa-running text-3xl text-js-yellow"></i>
-          <h3
-            class="text-xl sm:text-2xl font-black font-display uppercase tracking-tight text-white"
-          >
-            Social Run 5K
-          </h3>
-        </div>
-        <p class="text-sm text-white/60 mb-1">
-          <i class="fas fa-map-marker-alt mr-1.5 text-js-yellow/70"></i> Parque del Retiro, Madrid &bull;
-          <i class="far fa-calendar-alt mr-1.5 ml-1 text-js-yellow/70"></i> 13 marzo · 17:30H
-        </p>
-        <p class="text-sm text-white/50 mb-5">
-          Corre con la comunidad antes de la conferencia. Todos los niveles. ¡Camiseta técnica para
-          todos los participantes!
-        </p>
-        <p class="text-sm text-js-yellow/90 mb-5 font-semibold">
-          <i class="fas fa-users mr-1.5"></i>
-          <span id="running-signups-count">...</span> personas ya apuntadas
-        </p>
-        <button
-          id="open-running-signup"
-          class="inline-flex items-center justify-center w-full px-6 py-3.5 font-bold uppercase tracking-wide text-sm bg-js-yellow text-js-black border-2 border-js-yellow rounded-lg hover:bg-js-black hover:text-js-yellow hover:shadow-[0_0_25px_rgba(247,223,30,0.4)] transition-all cursor-pointer"
-        >
-          <i class="fas fa-running mr-2"></i> ¡Apúntate al Running!
-        </button>
+    <!-- YouTube Live -->
+    <div id="youtube-live" class="hidden mb-12 pointer-events-auto w-full max-w-3xl mx-auto">
+      <div class="relative w-full" style="padding-bottom:56.25%">
+        <iframe
+          id="youtube-iframe"
+          class="absolute inset-0 w-full h-full rounded-xl shadow-2xl"
+          src=""
+          title="JSConf España 2026 - En directo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
       </div>
     </div>
 
@@ -201,10 +174,14 @@ const backgroundIcons = generateRandomIcons(techIcons.length * 5)
     const diff = eventDate.getTime() - now.getTime()
 
     if (diff <= 0) {
-      document.getElementById('countdown-days')!.textContent = '00'
-      document.getElementById('countdown-hours')!.textContent = '00'
-      document.getElementById('countdown-minutes')!.textContent = '00'
-      document.getElementById('countdown-seconds')!.textContent = '00'
+      const countdownContainer = document.getElementById('countdown')!.parentElement!
+      countdownContainer.classList.add('hidden')
+      const youtubeLive = document.getElementById('youtube-live')!
+      youtubeLive.classList.remove('hidden')
+      const iframe = document.getElementById('youtube-iframe') as HTMLIFrameElement
+      if (!iframe.src || iframe.src === '') {
+        iframe.src = 'https://www.youtube.com/embed/Bh3u33ERUOk?autoplay=1'
+      }
       return
     }
 
@@ -221,35 +198,6 @@ const backgroundIcons = generateRandomIcons(techIcons.length * 5)
 
   updateCountdown()
   setInterval(updateCountdown, 1000)
-
-  // Running signup modal
-  const openRunningBtn = document.getElementById('open-running-signup')
-  openRunningBtn?.addEventListener('click', () => {
-    window.dispatchEvent(new CustomEvent('open-running-signup'))
-  })
-
-  // Contador Social Run (CSR para no bloquear el render inicial)
-  const runningSignupsCount = document.getElementById('running-signups-count')
-  const updateRunningSignupsCount = async () => {
-    if (!runningSignupsCount) return
-
-    try {
-      const response = await fetch('/api/running-signups-count', { cache: 'no-store' })
-      if (!response.ok) throw new Error('No se pudo cargar el contador')
-      const data = (await response.json()) as { count?: number }
-      if (typeof data.count === 'number') {
-        runningSignupsCount.textContent = data.count.toLocaleString('es-ES')
-      } else {
-        runningSignupsCount.textContent = '--'
-      }
-    } catch {
-      runningSignupsCount.textContent = '--'
-    }
-  }
-  updateRunningSignupsCount()
-  window.addEventListener('running-signup-success', () => {
-    updateRunningSignupsCount()
-  })
 
   // Lista de espera
   const buyTicketsHero = document.getElementById('buy-tickets-hero')

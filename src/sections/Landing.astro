@@ -149,19 +149,6 @@ const backgroundIcons = generateRandomIcons(techIcons.length * 5)
       </div>
     </div>
 
-    <!-- Lista de espera -->
-    <div class="pointer-events-auto">
-      <button
-        id="buy-tickets-hero"
-        class="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white/70 transition-colors cursor-pointer group"
-      >
-        <i class="fas fa-ticket-alt text-xs"></i>
-        <span
-          class="border-b border-dashed border-white/20 group-hover:border-white/50 transition-colors"
-          >¿Quieres entrada? Apúntate a la lista de espera</span
-        >
-      </button>
-    </div>
   </div>
 </section>
 
@@ -198,12 +185,6 @@ const backgroundIcons = generateRandomIcons(techIcons.length * 5)
 
   updateCountdown()
   setInterval(updateCountdown, 1000)
-
-  // Lista de espera
-  const buyTicketsHero = document.getElementById('buy-tickets-hero')
-  buyTicketsHero?.addEventListener('click', () => {
-    window.dispatchEvent(new CustomEvent('open-ticket-tailor'))
-  })
 
   // Efecto de proximidad para los iconos
   const icons = document.querySelectorAll('.tech-icon')

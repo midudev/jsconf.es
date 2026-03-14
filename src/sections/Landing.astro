@@ -165,7 +165,8 @@ const backgroundIcons = generateRandomIcons(techIcons.length * 5)
       const youtubeLive = document.getElementById('youtube-live')!
       youtubeLive.classList.remove('hidden')
       const iframe = document.getElementById('youtube-iframe') as HTMLIFrameElement
-      if (!iframe.src || iframe.src === '') {
+      const currentSrc = iframe.getAttribute('src')
+      if (!currentSrc) {
         iframe.src = 'https://www.youtube.com/embed/Bh3u33ERUOk?autoplay=1'
       }
       return

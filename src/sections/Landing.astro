@@ -167,7 +167,7 @@ const backgroundIcons = generateRandomIcons(techIcons.length * 5)
       const iframe = document.getElementById('youtube-iframe') as HTMLIFrameElement
       const currentSrc = iframe.getAttribute('src')
       if (!currentSrc) {
-        iframe.src = 'https://www.youtube.com/embed/Bh3u33ERUOk?autoplay=1'
+        iframe.src = 'https://www.youtube.com/embed/Bh3u33ERUOk?autoplay=1&mute=1'
       }
       return
     }

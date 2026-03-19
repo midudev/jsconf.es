@@ -74,8 +74,8 @@ const CertificatePage = ({
       <Image
         src={IMAGES_PATHS.logo}
         style={{
-          width: '100px',
-          height: '120px',
+          width: '80px',
+          height: '100px',
         }}
       />
     </View>
@@ -255,9 +255,9 @@ const CertificatePage = ({
           color: '#737300',
           textDecoration: 'none',
         }}
-        href="mailto:hola@jsconf.es"
+        href="mailto:hi@midu.dev"
       >
-        hola@jsconf.es
+        hi@midu.dev
       </Link>
       .
     </Text>

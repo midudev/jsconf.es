@@ -65,12 +65,17 @@ const backgroundIcons = generateRandomIcons(techIcons.length * 5)
   </div>
 
   <div class="container mx-auto px-5 relative z-40 text-center max-w-[900px] pointer-events-none">
-    <div
-      class="inline-flex items-center bg-white/10 px-6 py-3 rounded-full mb-8 border border-white/20 text-sm tracking-wide backdrop-blur-sm pointer-events-auto"
-    >
-      <span class="mr-2 opacity-70 font-bold">POWERED BY</span>
+    <div class="flex items-center flex-wrap gap-4 mb-8 justify-center">
+      <div
+        class="inline-flex items-center bg-white/10 px-6 py-3 rounded-full border border-white/20 text-sm tracking-wide backdrop-blur-sm pointer-events-auto"
+      >
+        <span class="mr-2 opacity-70 font-bold">POWERED BY</span>
 
-      <InfoJobsLogo class="h-6 w-auto -mb-1" />
+        <InfoJobsLogo class="h-6 w-auto -mb-1" />
+      </div>
+      <p class="text-2xl font-display font-semibold text-js-yellow tracking-tight">
+        Volvemos en 2027
+      </p>
     </div>
     <h1
       class="text-5xl lg:text-7xl font-bold font-display mb-4 tracking-tighter drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)]"
@@ -85,11 +90,32 @@ const backgroundIcons = generateRandomIcons(techIcons.length * 5)
 
     <div class="mb-12 pointer-events-auto max-w-2xl mx-auto">
       <p class="text-lg sm:text-xl text-white/70 mb-6 text-balance leading-relaxed">
-        La edición 2026 ha terminado. ¡Gracias a todos los asistentes, ponentes y patrocinadores por hacer posible esta conferencia!
+        La edición 2026 ha terminado. ¡Gracias a todos los asistentes, ponentes y patrocinadores por
+        hacer posible esta conferencia!
       </p>
-      <p class="text-2xl sm:text-3xl font-display font-bold text-js-yellow tracking-tight">
-        Volvemos en 2027
-      </p>
+
+      <!-- CTA Certificado -->
+      <a
+        href="/certificado"
+        class="px-5 py-4 font-clash font-[450] bg-js-yellow text-js-black border border-js-yellow hover:bg-white hover:border-white transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed text-lg"
+      >
+        <span id="btn-text">Obtener certificado de asistencia</span>
+        <svg
+          id="btn-spinner"
+          class="hidden animate-spin h-5 w-5"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"
+          ></circle>
+          <path
+            class="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+          ></path>
+        </svg>
+      </a>
     </div>
   </div>
 </section>

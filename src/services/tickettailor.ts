@@ -1,4 +1,34 @@
 const API_KEY = import.meta.env.TICKET_TAILOR_API_KEY
+const auth = () => btoa(`${API_KEY}:`)
+
+interface TicketInfo {
+  id: string
+  reference: string
+  fullName: string
+  email: string
+  checkedIn: boolean
+}
+
+export const getTicketByCode = async (ticketCode: string): Promise<TicketInfo | null> => {
+  try {
+    const { redis } = await import('./redis')
+    const key = `ticket:${ticketCode}`
+    const data = await redis.get<{ fullName: string; checkedIn: boolean }>(key)
+
+    if (!data) return null
+
+    return {
+      id: ticketCode,
+      reference: ticketCode,
+      fullName: data.fullName,
+      email: '',
+      checkedIn: data.checkedIn,
+    }
+  } catch (error) {
+    console.error('Error fetching ticket by code:', error)
+    return null
+  }
+}
 
 let cachedTickets: number | null = null
 let lastFetchTime = 0
@@ -12,12 +42,10 @@ export const getAvailableTickets = async () => {
     return cachedTickets
   }
 
-  const auth = btoa(`${API_KEY}:`)
-
   try {
     const response = await fetch('https://api.tickettailor.com/v1/events', {
       headers: {
-        Authorization: `Basic ${auth}`,
+        Authorization: `Basic ${auth()}`,
         Accept: 'application/json',
       },
     })
@@ -33,7 +61,7 @@ export const getAvailableTickets = async () => {
     // Obtenemos los detalles para tener los ticket_types con su disponibilidad
     const eventDetailRes = await fetch(`https://api.tickettailor.com/v1/events/${event.id}`, {
       headers: {
-        Authorization: `Basic ${auth}`,
+        Authorization: `Basic ${auth()}`,
         Accept: 'application/json',
       },
     })

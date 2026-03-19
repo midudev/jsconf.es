@@ -1,0 +1,186 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Container from '@/components/Container.astro'
+import CrossContainerTitle from '@/components/CrossContainerTitle.astro'
+---
+
+<Layout
+  title="Certificado de asistencia"
+  description="Descarga tu certificado de asistencia a la JSConf España 2026."
+  noindex
+>
+  <section class="min-h-[calc(100vh-200px)] flex items-center justify-center py-20">
+    <Container class="items-center text-center max-w-2xl mx-auto">
+      <h1
+        class="font-clash text-white lg:text-6xl sm:text-5xl text-3xl text-center leading-tight mb-4"
+      >
+        Tu <CrossContainerTitle>certificado</CrossContainerTitle>
+      </h1>
+
+      <p class="text-lg text-neutral-400 mb-10 max-w-lg mx-auto text-balance">
+        Introduce el código de tu ticket para descargar tu certificado de asistencia a la JSConf
+        España 2026.
+      </p>
+
+      <form id="certificate-form" class="w-full max-w-md mx-auto">
+        <div class="flex flex-col gap-4">
+          <div class="relative">
+            <input
+              type="text"
+              id="ticket-code"
+              name="ticketCode"
+              placeholder="Ej: 6J4G9zF"
+              required
+              maxlength="20"
+              autocomplete="off"
+              class="w-full px-5 py-4 bg-dark-surface border border-white/10 text-white text-center text-lg font-mono tracking-widest placeholder:text-neutral-500 placeholder:tracking-normal placeholder:font-sans focus:outline-none focus:border-js-yellow/50 focus:ring-1 focus:ring-js-yellow/30 transition-all"
+            />
+          </div>
+
+          <button
+            type="submit"
+            id="submit-btn"
+            class="px-5 py-4 font-clash font-[450] bg-js-yellow text-js-black border border-js-yellow hover:bg-white hover:border-white transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <span id="btn-text">Obtener certificado</span>
+            <svg
+              id="btn-spinner"
+              class="hidden animate-spin h-5 w-5"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                class="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                stroke-width="4"></circle>
+              <path
+                class="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <p class="text-xs text-neutral-500 mt-3">
+          El código es sensible a mayúsculas y minúsculas.
+        </p>
+      </form>
+
+      <!-- Error message -->
+      <div
+        id="error-msg"
+        class="hidden mt-6 p-4 bg-red-500/10 border border-red-500/30 text-red-400 text-sm max-w-md mx-auto"
+      >
+      </div>
+
+      <!-- Success message with download link -->
+      <div
+        id="success-msg"
+        class="hidden mt-8 p-6 bg-js-yellow/5 border border-js-yellow/20 max-w-md mx-auto"
+      >
+        <div class="flex flex-col items-center gap-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-10 w-10 text-js-yellow"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <p class="text-white font-medium">¡Certificado generado!</p>
+          <a
+            id="download-link"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-js-yellow text-js-black font-clash font-[450] hover:bg-white transition-all"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              ></path>
+            </svg>
+            Descargar certificado
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
+</Layout>
+
+<script>
+  import { actions } from 'astro:actions'
+
+  const form = document.getElementById('certificate-form') as HTMLFormElement
+  const input = document.getElementById('ticket-code') as HTMLInputElement
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement
+  const btnText = document.getElementById('btn-text') as HTMLSpanElement
+  const btnSpinner = document.getElementById('btn-spinner') as HTMLElement
+  const errorMsg = document.getElementById('error-msg') as HTMLDivElement
+  const successMsg = document.getElementById('success-msg') as HTMLDivElement
+  const downloadLink = document.getElementById('download-link') as HTMLAnchorElement
+
+  const setLoading = (loading: boolean) => {
+    submitBtn.disabled = loading
+    input.disabled = loading
+    btnText.textContent = loading ? 'Generando...' : 'Obtener certificado'
+    btnSpinner.classList.toggle('hidden', !loading)
+  }
+
+  const showError = (message: string) => {
+    errorMsg.textContent = message
+    errorMsg.classList.remove('hidden')
+    successMsg.classList.add('hidden')
+  }
+
+  const showSuccess = (url: string) => {
+    downloadLink.href = url
+    successMsg.classList.remove('hidden')
+    errorMsg.classList.add('hidden')
+    form.classList.add('hidden')
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault()
+
+    const ticketCode = input.value.trim()
+    if (!ticketCode) return
+
+    errorMsg.classList.add('hidden')
+    setLoading(true)
+
+    try {
+      const { data, error } = await actions.certificate({ ticketCode })
+
+      if (error) {
+        showError(error.message)
+        return
+      }
+
+      showSuccess(data.certificateURL)
+    } catch {
+      showError('Error inesperado. Inténtalo de nuevo más tarde.')
+    } finally {
+      setLoading(false)
+    }
+  })
+</script>

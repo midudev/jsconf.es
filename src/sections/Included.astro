@@ -1,67 +1,102 @@
 ---
-import IncludedItem from '@/components/IncludedItem.astro'
-import windsurfLogo from '@/icons/WindsurfLogo.svg?raw'
-import v0Logo from '@/icons/V0Logo.svg?raw'
-import cubePathLogo from '@/icons/CubePathLogo.svg?raw'
-
-const items = [
+const videos = [
   {
-    icon: windsurfLogo,
-    title: 'Windsurf Pro',
-    description: '1 mes de acceso al editor de IA con todos los modelos premium',
-    iconClass: 'w-24 h-24',
+    id: 'jPd-qj7Thss',
+    title: 'Programar en 2026: the human-in-the-loop',
+    speaker: 'Javi Velasco',
+    type: 'charla',
   },
   {
-    icon: v0Logo,
-    title: 'Créditos de V0',
-    description: '10$ de créditos para usar en v0.app y acelerar tu desarrollo con IA',
-    iconClass: 'w-24 h-24',
+    id: 'ybOmL7sBAO0',
+    title: 'Programando como Rambo: del Vietnam de los frameworks a la web nativa',
+    speaker: 'Jaime Gómez',
+    type: 'charla',
   },
   {
-    icon: cubePathLogo,
-    title: '15$ en CubePath',
-    description: 'Cupón de 15$ para usar en hosting y desplegar servidores VPS',
-    iconClass: 'w-24 h-24',
+    id: 'NRKmzyo2-Vw',
+    title: 'Pair Programming con Agente: Cómo construí un RPG complejo sin perder la cabeza',
+    speaker: 'Jorge',
+    type: 'charla',
   },
   {
-    icon: 'fas fa-book',
-    title: 'Libros de IA + TypeScript',
-    description: '2 libros físicos de Programación de Agentes con IA con TypeScript',
+    id: 'X_v1cjA35D0',
+    title: 'Code Mode: let the code do the talking',
+    speaker: 'Sunil Pai',
+    type: 'charla',
   },
   {
-    icon: 'fas fa-laptop-code',
-    title: 'Hackathon IA',
-    description: 'Crea un producto real con IA durante el evento y participa',
+    id: 'j6ZkkDmjp_Q',
+    title: 'JavaScript en la era de los agentes: del código al Agentic DevOps',
+    speaker: 'Gisela Torres',
+    type: 'charla',
   },
   {
-    icon: 'fas fa-camera',
-    title: 'Fotografía Pro',
-    description: 'Llévate un buen recuerdo del evento con una foto profesional',
+    id: '9Z7uwo8SI_A',
+    title: 'Node.js por dentro: entendiendo el runtime en producción',
+    speaker: 'Estefany Aguilar',
+    type: 'charla',
   },
   {
-    icon: 'fas fa-gift',
-    title: 'Sorteos y regalos',
-    description: 'Bolsa oficial con merchandising y sorpresas épicas durante las charlas',
+    id: '6HvLFmTH1mI',
+    title: 'React Compiler: el fin de los renders innecesarios',
+    speaker: 'Ilda Neta',
+    type: 'charla',
   },
   {
-    icon: 'fas fa-utensils',
-    title: 'Comida y bebida',
-    description: 'Café, desayuno, comida, refrescos y cóctel final para hacer networking',
+    id: 'h0ktgs_OG_4',
+    title: 'Accesibilidad web: Guía para un apocalipsis zombie',
+    speaker: 'Mia Salazar',
+    type: 'charla',
+  },
+  {
+    id: 'ozRfe57liMw',
+    title: 'Soluciones de IA: Lecciones y aprendizajes',
+    speaker: 'Anna Vía',
+    type: 'charla',
+  },
+  {
+    id: 'myLojJcq-8U',
+    title: 'Framework Fatigue: ¿cómo elegir (y abandonar) un framework?',
+    speaker: 'Fernando Herrera',
+    type: 'charla',
+  },
+  {
+    id: 'VYV36ANCc2w',
+    title: 'De Vibe Coding a Dev con IA: Arquitectura de Agentes para Proyectos Escalables',
+    speaker: '',
+    type: 'workshop',
+  },
+  {
+    id: 'LXPIz6-FEyg',
+    title: 'Astro y Headless CMS: La combinación perfecta',
+    speaker: '',
+    type: 'workshop',
+  },
+  {
+    id: 'eHsBTiRdxSc',
+    title: 'Live coding: desarrollar una app fullStack sin salir del IDE con Windsurf AI',
+    speaker: '',
+    type: 'workshop',
+  },
+  {
+    id: 'hUNJL06Z318',
+    title: 'Refactoring & Testing',
+    speaker: 'Carlos Blé & Jorge Aguiar',
+    type: 'workshop',
   },
 ]
 ---
 
-<section id="included" class="relative pb-0 pt-20 -mt-32 overflow-hidden">
-  <!-- Decorative background elements -->
+<section id="videos" class="relative pb-0 pt-20 -mt-32 overflow-hidden">
   <div
     class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none overflow-hidden"
   >
     <div
-      class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-javascript/5 rounded-full blur-[120px] opacity-30"
+      class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-js-yellow/5 rounded-full blur-[120px] opacity-30"
     >
     </div>
     <div
-      class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-javascript/5 rounded-full blur-[100px] opacity-30"
+      class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-js-yellow/5 rounded-full blur-[100px] opacity-30"
     >
     </div>
   </div>
@@ -71,16 +106,67 @@ const items = [
       <h2
         class="text-3xl md:text-5xl font-bold font-display mb-0 text-white tracking-tighter leading-[0.9]"
       >
-        Todo lo que incluye<br />tu entrada
+        Revive las charlas<br />y talleres
       </h2>
     </div>
 
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 md:gap-6 mb-20">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 mb-20"
+    >
       {
-        items.map((item, index) => (
-          <div class="animate-on-scroll" style={`transition-delay: ${index * 100}ms`}>
-            <IncludedItem {...item} />
-          </div>
+        videos.map((video, index) => (
+          <a
+            href={`https://www.youtube.com/watch?v=${video.id}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group block animate-on-scroll"
+            style={`transition-delay: ${index * 60}ms`}
+          >
+            <div class="relative overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] transition-all duration-300 ease-out hover:border-js-yellow/40 hover:-translate-y-1 hover:shadow-[0_20px_50px_-12px_rgba(247,223,30,0.2)]">
+              <div class="relative aspect-video overflow-hidden">
+                <img
+                  src={`https://i.ytimg.com/vi/${video.id}/maxresdefault.jpg`}
+                  alt={video.title}
+                  class="w-full h-full object-cover transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <svg
+                    class="w-14 h-14 drop-shadow-xl transition-transform duration-300 ease-out scale-75 group-hover:scale-100"
+                    viewBox="0 0 64 64"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <circle cx="32" cy="32" r="32" fill="rgba(247,223,30,0.9)" />
+                    <path d="M26 20 L26 44 L46 32 Z" fill="#1a1a1a" />
+                  </svg>
+                </div>
+                <div class="absolute top-2 left-2">
+                  <span
+                    class:list={[
+                      'text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full backdrop-blur-sm',
+                      video.type === 'charla'
+                        ? 'bg-js-yellow/90 text-js-black'
+                        : 'bg-white/90 text-js-black',
+                    ]}
+                  >
+                    {video.type}
+                  </span>
+                </div>
+              </div>
+              <div class="p-3 sm:p-4">
+                <h3 class="text-sm sm:text-base font-semibold text-white font-display leading-tight line-clamp-2 group-hover:text-js-yellow transition-colors duration-300">
+                  {video.title}
+                </h3>
+                {video.speaker && (
+                  <p class="mt-1.5 text-xs sm:text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                    {video.speaker}
+                  </p>
+                )}
+              </div>
+            </div>
+          </a>
         ))
       }
     </div>

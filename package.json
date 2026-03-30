@@ -11,10 +11,10 @@
     "format": "prettier -w --cache --plugin prettier-plugin-astro ."
   },
   "dependencies": {
-    "@astrojs/react": "5.0.1",
-    "@astrojs/sitemap": "3.7.0",
+    "@astrojs/react": "5.0.2",
+    "@astrojs/sitemap": "3.7.2",
     "@astrojs/ts-plugin": "1.10.7",
-    "@astrojs/vercel": "9.0.4",
+    "@astrojs/vercel": "10.0.3",
     "@aws-sdk/client-s3": "3.1012.0",
     "@react-pdf/renderer": "4.3.2",
     "@tailwindcss/vite": "4.1.18",
@@ -23,7 +23,7 @@
     "@types/react-dom": "19.2.3",
     "@upstash/ratelimit": "2.0.8",
     "@upstash/redis": "1.36.2",
-    "astro": "5.17.2",
+    "astro": "6.1.1",
     "csv-parse": "6.2.0",
     "qrcode": "1.5.4",
     "react": "19.2.4",
